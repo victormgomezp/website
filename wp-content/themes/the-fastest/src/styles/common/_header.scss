@@ -1,0 +1,35 @@
+.navbar{ 
+    img{
+        max-width: 70px;
+        -webkit-transition: width 2s; /* Safari */
+        transition: width 2s;
+    }
+    .collapse.show {
+        display: inline-table;
+        position: absolute;
+        top: 0px;
+        z-index: 1;
+        background: black;
+        width: 100%;
+        left: 0;
+        height: 100vh;
+        text-align: center;
+        ul{ margin-top: 55px; }
+    }
+    .nav-item{
+        width: 200px;
+        padding-left: 10px;
+        .nav-link{
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            font-weight: 800;
+            .details{
+                display: inline-block;
+                font-weight: 300;
+                margin-top: 20px;
+                text-transform: initial;
+            }
+        }
+    }
+}
+.navbar-dark .navbar-toggler{ z-index: 2; }

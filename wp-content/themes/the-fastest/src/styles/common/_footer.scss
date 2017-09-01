@@ -1,0 +1,23 @@
+footer{
+    padding: 30px;
+    font-size: 0.8rem;
+    color: $gray-300;
+    a{color: white; }
+    hr{ border-top: 2px solid $gray-700; }
+    .address-section{
+        address{ margin-top: 10px;}
+    }
+    .company-section{
+        font-size: 1rem;
+        color: white;
+    }
+    .social-media{ font-size: 2em; 
+        a:hover{ text-decoration: none; color: white; }
+    }
+}
+
+
+//Tablets or bigger screens
+@include media-breakpoint-up(md) { 
+    
+}

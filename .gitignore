@@ -33,6 +33,9 @@
 
 # track this file .gitignore (i.e. do NOT ignore it)
 !composer.json
+!webpack.config.js
+!webpack.production.js
+!webpack.development.js
 
 # track .editorconfig file (i.e. do NOT ignore it)
 !.editorconfig
@@ -83,7 +86,7 @@ wp-content/*
 wp-content/plugins/*
 
 !wp-content/themes/
-wp-content/themes/the-fastest
+!wp-content/themes/the-fastest
 
 # ignore these plugins
 wp-content/plugins/hello.php

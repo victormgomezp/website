@@ -1,0 +1,14 @@
+.chart-wrapper{
+    padding: 20px;
+    .pie-chart{
+        width: 200px !important;
+        height: 200px !important;
+        margin: auto;
+    }
+}
+
+//Tablets or bigger screens
+@include media-breakpoint-up(md) { 
+    width: 300px !important;
+    height: 300px !important;    
+}
