@@ -88,6 +88,8 @@ wp-content/plugins/*
 
 !wp-content/themes/
 !wp-content/themes/the-fastest
+!wp-content/themes/the-fastest/public/
+wp-content/themes/the-fastest/public/*
 
 # ignore these plugins
 wp-content/plugins/hello.php
