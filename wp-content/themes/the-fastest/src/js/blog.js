@@ -1,0 +1,1 @@
+require('../styles/blog.scss');

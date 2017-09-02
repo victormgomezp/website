@@ -7,8 +7,8 @@
     }
 }
 
-//Tablets or bigger screens
-@include media-breakpoint-up(md) { 
+/* Medium. Above 48em (768px) */
+@media screen and (min-width: 48em) {
     width: 300px !important;
     height: 300px !important;    
 }

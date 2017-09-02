@@ -81,29 +81,6 @@
         </div>
     </footer>
     <?php wp_footer(); ?>
-    <script type="text/javascript">
-    
-        function loadScript(url, nextScript){
-            // get some kind of XMLHttpRequest
-            var xhrObj = new XMLHttpRequest();
-            // open and send a synchronous request
-            xhrObj.open('GET', url);
-            xhrObj.addEventListener('load',function(){
-                // add the returned content to a newly created script tag
-                var se = document.createElement('script');
-                se.type = "text/javascript";
-                se.text = xhrObj.responseText;
-                document.getElementsByTagName('head')[0].appendChild(se);
-                
-                if(nextScript) loadScript(nextScript);
-            });
-            xhrObj.send();
-        }
-        
-        window.onload = function(){
-            loadScript(<?php echo "'".WPASAsyncLoader::load('vendor.js')."'"; ?>, <?php echo "'".WPASAsyncLoader::load('index.js')."'"; ?>);
-        };
-
-    </script>
+    <?php echo WPASAsyncLoader::loadScripts(); ?>
     </body>
 </html>

@@ -9,14 +9,13 @@ const ExtractTextPlugin = require("extract-text-webpack-plugin");
 module.exports = {
   entry: {
     index: pathToTheme+'/src/js/index.js',
+    blog: pathToTheme+'/src/js/blog.js',
+    above: pathToTheme+'/src/js/above.js',
     vendor: ['jquery','chart.js', 'bootstrap/js/dist/util', 'bootstrap/js/dist/collapse']
   },
   output: {
-    filename: '[name].[chunkhash].js',
-    //filename: '[name].js',
     path: pathToTheme+'/public/',
-    publicPath: publicPath+'/public/',
-    //sourceMapFilename: '[name].map'
+    publicPath: publicPath+'/public/'
   },
   module: {
     rules: [

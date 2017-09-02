@@ -10,9 +10,10 @@
 		"wpackagist-plugin/w3-total-cache": "*",
 		"wpackagist-plugin/wordpress-seo": "*",
 		"wpackagist-plugin/amp": "*",
-		"wpackagist-plugin/autoptimize": "*",
 		"wpackagist-plugin/duplicator": "*",
-		"alesanchezr/wpas-wordpress-dash": "^1.1"
+		"alesanchezr/wpas-wordpress-dash": "^1.1",
+		"wpackagist-plugin/advanced-custom-fields": "^4.4",
+		"jjgrainger/posttypes": "^1.1"
 	},
 	"require-dev": {
         "wpackagist-plugin/transients-manager": "*",

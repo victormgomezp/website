@@ -1,3 +1,10 @@
+body, html { overflow-x:hidden; }
+body{
+    background: $background-color;
+    color: white;
+    font-size: 14px;
+}
+
 .navbar{ 
     img{
         max-width: 70px;
@@ -33,3 +40,51 @@
     }
 }
 .navbar-dark .navbar-toggler{ z-index: 2; }
+
+//Tablets or bigger screens
+@include media-breakpoint-up(md) { 
+    
+    .navbar{ margin-top: 50px; 
+        img{
+            max-width: 140px;
+        }
+    }
+}
+
+
+.masthead{
+    margin-top: 5vh;
+    padding: 30px;
+    min-height: 32vh;
+    .certified{
+        margin-top: 60px;
+        text-align: center;
+        .imoon{ font-size: 20px; color: orange; }
+        .florida{ margin-bottom: 20px; }
+    }
+}
+
+//Tablets or bigger screens
+@include media-breakpoint-up(md) { 
+    
+    .masthead{ 
+        h1{ font-size: 3.4rem; }
+        margin-top: 60px; 
+        .certified{
+            margin-bottom: 50px;
+            .oi-star{ font-size: 30px;}
+            .florida{
+                text-align: left;
+                margin-bottom: 0px;
+            }
+        }
+    }
+    
+    section.call-to-action{
+        width: 800px;
+        margin: auto;
+        text-align: center;
+        form{display: block;}
+        #request-call{display: none;}
+    }
+}

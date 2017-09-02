@@ -1,17 +1,6 @@
 @import "../common/webcharts";
 
 
-.masthead{
-    margin-top: 5vh;
-    padding: 30px;
-    min-height: 32vh;
-    .certified{
-        margin-top: 60px;
-        text-align: center;
-        .imoon{ font-size: 20px; color: orange; }
-        .florida{ margin-bottom: 20px; }
-    }
-}
 section{ 
     padding: 50px 0px;
     .card-block {
@@ -56,14 +45,17 @@ section.pricing-section{
         background: $gray-200;
     }
 }
-//Tablets or bigger screens
-@include media-breakpoint-down(xs) { 
+
+/* Small. Above 34em (544px) */
+@media screen and (max-width: 34em) {
     section.pricing-section{
         .card h2{font-size: 1rem;}
         .card h3{font-size: 0.8rem;}
         .upfront{ float: left; }
     }
 }
+
+
 section.email-newsletter{
     padding: 20px;
     form{
@@ -79,46 +71,9 @@ section.call-to-action{
     #request-call{ display: inline-block; }
     form{ display: none; }
 } 
-.h-scroll {
-  white-space: nowrap;
-  overflow-x: auto;
-  -webkit-overflow-scrolling: touch;
-  -ms-overflow-style: -ms-autohiding-scrollbar; 
-  margin: auto;
-}
-//Tablets or bigger screens
-@include media-breakpoint-up(md) { 
-    
-    .h-scroll {
-      white-space: initial;
-      overflow-x: initial;
-      -webkit-overflow-scrolling: initial;
-      -ms-overflow-style: -ms-autohiding-scrollbar; 
-    }
-    .navbar{ margin-top: 50px; 
-        img{
-            max-width: 140px;
-        }
-    }
-    .masthead{ 
-        h1{ font-size: 3.4rem; }
-        margin-top: 60px; 
-        .certified{
-            margin-bottom: 50px;
-            .oi-star{ font-size: 30px;}
-            .florida{
-                text-align: left;
-                margin-bottom: 0px;
-            }
-        }
-    }
-    section.call-to-action{
-        width: 800px;
-        margin: auto;
-        text-align: center;
-        form{display: block;}
-        #request-call{display: none;}
-    }
+
+/* Medium. Above 48em (768px) */
+@media screen and (min-width: 48em) {
     section{
         h2{ margin: 30px; }
         padding: 60px 0px;

@@ -10,7 +10,9 @@ h3, .h3 { font-size: 1.3rem; }
     color: black;
 }
 
-@include media-breakpoint-up(md) { 
+
+/* Medium. Above 48em (768px) */
+@media screen and (min-width: 48em) {
     h1, .h1{font-size: 2.3rem; }
     h2, .h2{font-size: 2rem; }
     h4, .h4 { font-size: 1.1rem; }

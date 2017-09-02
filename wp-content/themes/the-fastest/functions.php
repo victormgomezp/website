@@ -10,7 +10,20 @@
     $themeManager = new ThemeManager();
     use TF\WPASAsyncLoader;
     $asyncLoader = new WPASAsyncLoader([
-        'public-url' => get_stylesheet_directory_uri().'/public/'
+        'public-url' => get_stylesheet_directory_uri().'/public/',
+        'minify-output' => true,
+        'critical-paths' => [
+            "page" => [
+                "home" => 'public/above.css',
+                "blog" => 'public/blog.css'
+                ]
+            ],
+        'scripts' => [
+            "page" => [
+                "home" => ['vendor.js','index.js'],
+                "blog" => ['blog.js']
+                ]
+            ]
         ]);
         
     use \WPAS\Controller\WPASController;
@@ -18,3 +31,6 @@
         'namespace' => 'TF\\Controller\\'    
     ]);
     $controller->route([ 'slug' => 'home', 'controller' => 'General']);
+    
+    use TF\Types\PostTypesManager;
+    $postTypeManager = new PostTypesManager();

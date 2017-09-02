@@ -12,21 +12,12 @@ Tags: one-column, two-columns, right-sidebar, flexible-header, accessibility-rea
 This theme, like WordPress, is licensed under the GPL.
 Use it to make something cool, have fun, and share what you've learned with others.
 */
-
-@import "~bootstrap/scss/bootstrap";
 @import "common/custom";
 @import "common/colors";
 @import "common/icons";
-@import "common/header";
 @import "common/footer";
 @import "pages/home";
 
-body, html { overflow-x:hidden; }
-body{
-    background: $background-color;
-    color: white;
-    font-size: 14px;
-}
 .circle-img{
     background-size: cover;
     width: 150px;
@@ -34,4 +25,24 @@ body{
     border-radius: 100%;
     display: inline-block;
     margin: auto;
+}
+
+
+/*Horizontal Scrolling on mobile devices*/
+.h-scroll {
+  white-space: nowrap;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  -ms-overflow-style: -ms-autohiding-scrollbar; 
+  margin: auto;
+}
+//Tablets or bigger screens
+@media screen and (min-width: 48em) {
+    
+    .h-scroll {
+      white-space: initial;
+      overflow-x: initial;
+      -webkit-overflow-scrolling: initial;
+      -ms-overflow-style: -ms-autohiding-scrollbar; 
+    }
 }
