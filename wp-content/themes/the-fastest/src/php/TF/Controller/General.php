@@ -10,7 +10,7 @@ class General{
     public function renderHome(){
         
         $args = [];
-        $profilesJSON = @file_get_contents(BREATHECODE_API.'specialties/');
+        $profilesJSON = @file_get_contents(BREATHECODE_API.'/specialties/');
         if($profilesJSON)
         {
             $result = json_decode($profilesJSON);

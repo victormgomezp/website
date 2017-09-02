@@ -1,6 +1,6 @@
 <?php
 
-    if(!defined('BREATHECODE_API')) define('BREATHECODE_API', 'https://api.breatheco.de/');
+    if(!defined('BREATHECODE_API')) define('BREATHECODE_API', 'https://api.breatheco.de');
     
     if(!defined('ABSPATH')) define('ABSPATH', dirname(__FILE__) . '/');
     if(!defined('PUBLICPATH')) define('PUBLICPATH', get_site_url() . '/wp-content/themes/the-fastest/public/');
