@@ -10,6 +10,7 @@ class General{
     public function renderHome(){
         
         $args = [];
+        /*
         $profilesJSON = @file_get_contents(BREATHECODE_API.'/specialties/');
         if($profilesJSON)
         {
@@ -25,6 +26,7 @@ class General{
             
             $args['profiles'][] = (object) $profile;
         }
+        */
         //print_r($args['profiles']); die();
         return $args;
     }

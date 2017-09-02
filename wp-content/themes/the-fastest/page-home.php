@@ -75,8 +75,10 @@ $args = WPAS\Controller\WPASController::getViewData();
           <div class="col-md-6">
             <p class='section-message pb-1'>
               Complete challenges, projects, quizes to develop all skills from the <a href="#">Talent Tree</a>.
+              <img style="max-height: 150px;" src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/specialties.png"></img>
+              <!--
               <ul class="list-inline h-scroll">
-                <?php foreach($args['profiles'] as $profile){ ?>
+                <?php if(!empty($args['profiles'])) foreach($args['profiles'] as $profile){ ?>
                 <li class="list-inline-item">
                   <div class="card card-block card-primary card-inverse specialty">
                     <img src="<?php echo BREATHECODE_API.$profile->image_url; ?>"></img>
@@ -85,6 +87,7 @@ $args = WPAS\Controller\WPASController::getViewData();
                 </li>
                 <?php } ?>
               </ul>
+              -->
             </p>
           </div>
           <div class="col-md-6 ">
