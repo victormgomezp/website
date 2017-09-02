@@ -16,12 +16,18 @@
             "page" => [
                 "home" => 'public/above.css',
                 "blog" => 'public/blog.css'
+                ],
+            "post" => [
+                'all' => 'public/blog.css'
                 ]
             ],
         'scripts' => [
             "page" => [
                 "home" => ['vendor.js','index.js'],
-                "blog" => ['blog.js']
+                "blog" => ['vendor.js','blog.js']
+                ],
+            "post" => [
+                'all' => ['vendor.js','blog.js']
                 ]
             ]
         ]);

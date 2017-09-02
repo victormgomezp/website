@@ -93,10 +93,14 @@ class WPASAsyncLoader{
         {
             $currentPage = self::getCurrentViewId();
             //print_r($currentPage); die();
-            if(!empty(self::$criticalPaths[$currentPage['type']]) && !empty(self::$criticalPaths[$currentPage['type']][$currentPage['slug']]))
-            {
-                //if(!$this->file_url_exists(self::$criticalPaths[$currentPage['type']][$currentPage['slug']])) throw new Exception('Critical CSS file now found');
-                echo '<style type="text/css">'.file_get_contents(PUBLICPATH.'../'.self::$criticalPaths[$currentPage['type']][$currentPage['slug']]).'</style>';
+            if(!empty(self::$criticalPaths[$currentPage['type']])){
+                
+                if(!empty(self::$criticalPaths[$currentPage['type']]['all'])) echo '<style type="text/css">'.file_get_contents(PUBLICPATH.'../'.self::$criticalPaths[$currentPage['type']]['all']).'</style>';
+                else if(!empty(self::$criticalPaths[$currentPage['type']][$currentPage['slug']]))
+                {
+                    //if(!$this->file_url_exists(self::$criticalPaths[$currentPage['type']][$currentPage['slug']])) throw new Exception('Critical CSS file now found');
+                    echo '<style type="text/css">'.file_get_contents(PUBLICPATH.'../'.self::$criticalPaths[$currentPage['type']][$currentPage['slug']]).'</style>';
+                }
             }
         }
         //echo print_r(self::getCurrentViewId()); die();
