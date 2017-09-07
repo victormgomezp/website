@@ -8,14 +8,22 @@
     
     use TF\ThemeManager;
     $themeManager = new ThemeManager();
-    use TF\WPASAsyncLoader;
+    use WPAS\Performance\WPASAsyncLoader;
     $asyncLoader = new WPASAsyncLoader([
         'public-url' => get_stylesheet_directory_uri().'/public/',
-        'minify-output' => true,
-        'critical-paths' => [
+        'minify-html' => true,
+        'styles' => [
+            "page" => [
+                "home" => 'index.css',
+                ]
+            ],
+        'critical-styles' => [
             "page" => [
                 "home" => 'public/above.css',
                 "blog" => 'public/blog.css'
+                ],
+            "custom-post" => [
+                "course" => 'public/above.css'
                 ],
             "post" => [
                 'all' => 'public/blog.css'
@@ -37,6 +45,16 @@
         'namespace' => 'TF\\Controller\\'    
     ]);
     $controller->route([ 'slug' => 'home', 'controller' => 'General']);
+    $controller->route([ 'slug' => 'Course', 'controller' => 'Course']);
     
-    use TF\Types\PostTypesManager;
-    $postTypeManager = new PostTypesManager();
+    
+    use \WPAS\Types\PostTypesManager;
+    $namespace = '\TF\Types\\';
+    
+    $postTypeManager = new PostTypesManager([
+        'course:'.$namespace.'CoursePostType',
+        'location:'.$namespace.'LocationPostType'
+    ]);
+    
+    use TF\ActiveCampaign\ACAPI;
+    ACAPI::start();

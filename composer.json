@@ -3,7 +3,11 @@
 	    {
     		"type": "composer",
     		"url": "https://wpackagist.org"
-	    }
+	    },
+        {
+            "type": "vcs",
+            "url": "https://github.com/alesanchezr/wpas-wordpress-dash"
+        }
 	],
 	"require": {
 		"wpackagist-plugin/akismet": "3.1.1",
@@ -11,10 +15,11 @@
 		"wpackagist-plugin/wordpress-seo": "*",
 		"wpackagist-plugin/amp": "*",
 		"wpackagist-plugin/duplicator": "*",
-		"alesanchezr/wpas-wordpress-dash": "^1.1",
+		"alesanchezr/wpas-wordpress-dash": "dev-master",
 		"wpackagist-plugin/advanced-custom-fields": "^4.4",
 		"jjgrainger/posttypes": "^1.1",
-		"wpackagist-plugin/tiny-compress-images": "^2.2"
+		"wpackagist-plugin/tiny-compress-images": "^2.2",
+		"guzzlehttp/guzzle": "~6.0"
 	},
 	"require-dev": {
         "wpackagist-plugin/transients-manager": "*",

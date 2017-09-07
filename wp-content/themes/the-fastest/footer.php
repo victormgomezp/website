@@ -1,4 +1,3 @@
-    <?php use TF\WPASAsyncLoader; ?>
     <section class="bg-primary text-center email-newsletter" id="about">
         <div class="container">
             <h4>Subscribe to our Newsletter!</h4>
@@ -81,6 +80,5 @@
         </div>
     </footer>
     <?php wp_footer(); ?>
-    <?php echo WPASAsyncLoader::loadScripts(); ?>
     </body>
 </html>
