@@ -27,7 +27,7 @@ if(WPAS_APP.view.slug === 'the-program'){
   
   $(document).ready(function() {
     // Custom 
-    var stickyToggle = function(sticky, stickyWrapper, scrollElement, finalScrollOffsetElement=null) {
+    var stickyToggle = function(sticky, stickyWrapper, scrollElement) {
       var stickyHeight = sticky.outerHeight();
       var stickyWidth = sticky.outerWidth();
       var offset = stickyWrapper.offset();

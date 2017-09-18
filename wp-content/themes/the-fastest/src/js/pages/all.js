@@ -30,7 +30,7 @@ $('.newsletter-signup').submit(function(event){
          {
             if(response.code == 200)
             {
-               formNewsletter.html(`<div class="alert alert-info" role="alert"> ${response.data}</div>`);
+               formNewsletter.html('<div class="alert alert-info" role="alert">'+response.data+'</div>');
             }
             else formNewsletter.find('.alert-danger').html(response.msg).css('display','block');
          }
