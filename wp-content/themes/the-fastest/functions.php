@@ -91,7 +91,7 @@
     ACAPI::start();
     
     use WPAS\GravityForm\WPASGravityForm;
-    if ( class_exists( 'GFCommon' ) ) {
+    if ( class_exists( 'GFCommon' ) )
     {
         $gfManager = new WPASGravityForm();
     }
