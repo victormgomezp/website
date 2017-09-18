@@ -1,3 +1,3 @@
 <?php get_header(); ?>
-  <?php echo the_content(); ?>
+  <h1>Woops!</h1>
 <?php get_footer(); ?>

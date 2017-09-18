@@ -7,5 +7,5 @@
     </head>
     <body <?php echo body_class(); ?>>
     <div id="bg-sketch"></div>
-    <?php do_action('wpas_print_critical_styles'); ?>
+    <?php wpas_critical_head(); ?>
     <?php get_template_part('partials/navbar','main'); ?>

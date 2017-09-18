@@ -23,18 +23,10 @@
                 ]
             ],
         'critical-styles' => [
-            "page" => [
-                "all" => 'above.css',
-                ],
-            "custom-post" => [
-                "all" => 'above.css'
-                ],
-            "post" => [
-                'all' => 'blog.css'
-                ],
-            "category" => [
-                'all' => 'blog.css'
-                ]
+            "page" =>           ["blog" => 'blog.css', "all" => 'above.css'],
+            "custom-post" =>    ["all" => 'above.css'],
+            "post" =>           ['all' => 'blog.css'],
+            "category" =>       ['all' => 'blog.css']
             ],
         'scripts' => [
             "page" => [
