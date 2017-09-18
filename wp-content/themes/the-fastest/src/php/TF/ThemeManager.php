@@ -4,20 +4,40 @@ namespace TF;
 
 class ThemeManager{
     
-    public $version = 1;
+    public $version = 1.1;
     
     public function __construct(){
 
         $this->removeDefauls();
         
-        add_action( 'init', [$this,'manage_styles_and_scripts'], 10 );
+        add_action( 'after_setup_theme', [$this,'register_menus'], 10 );
+        add_filter( 'walker_nav_menu_start_el', [$this,'prefix_nav_description'], 10, 4 );
+        add_filter( 'body_class', [$this,'add_slug_body_class'], 10 );
     }
     
-    public function manage_styles_and_scripts(){
-        if (!is_admin() && !$this->is_login_page()) {
-          wp_deregister_script('jquery');
-          wp_deregister_script( 'wp-embed' );
-       }
+    function prefix_nav_description( $item_output, $item, $depth, $args ) {
+        if ( !empty( $item->description ) ) {
+            $item_output = str_replace( $args->link_after . '</a>', '<span class="menu-item-description details">' . $item->description . '</span>' . $args->link_after . '</a>', $item_output );
+        }
+ 
+        return $item_output;
+    }
+    
+    //Page Slug Body Class
+    function add_slug_body_class( $classes ) {
+        global $post;
+        if (isset($post)) {
+            $classes[] = $post->post_type . '-' . $post->post_name;
+        }
+        return $classes;
+    }
+    
+    public function register_menus(){
+        register_nav_menus( array( 
+            'header' => 'Header menu', 
+            'blog-header' => 'Blog Header menu', 
+            'footer' => 'Footer menu' 
+        ));
     }
     
     private function removeDefauls(){
@@ -43,10 +63,6 @@ class ThemeManager{
         
         // filter to remove TinyMCE emojis
         add_filter( 'tiny_mce_plugins', 'disable_emojicons_tinymce' );
-    }
-    
-    public function test(){
-        echo 'hello';die();
     }
     
     function is_login_page() {

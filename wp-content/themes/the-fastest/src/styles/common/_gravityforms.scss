@@ -1,0 +1,67 @@
+.gform_body{
+    .gform_fields{
+        padding: 0;
+        .gfield{
+            margin: 10px 0;
+            list-style: none;
+            input, select{
+                display: block;
+                width: 100%;
+                padding: .5rem .75rem;
+                font-size: 1rem;
+                line-height: 1.25;
+                color: #495057;
+                background-color: #fff;
+                background-image: none;
+                background-clip: padding-box;
+                border: 1px solid rgba(0,0,0,.15);
+                border-radius: .25rem;
+                transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+            }
+            label{
+                font-weight: 900;
+            }
+            select {
+                height: calc(2.25rem + 2px);
+            }
+        }
+        .gfield.gfield_error{
+            input{
+                border-color: #f5c6cb;
+            }
+        }
+    }
+}
+.gform_validation_error{
+    .validation_error{
+        border-radius: 5px;
+    }
+    .validation_error,.validation_message{
+        padding: 10px;
+        color: #721c24;
+        background-color: #f8d7da;
+        border-color: #f5c6cb;
+    }
+    .validation_message{
+        margin-top: -3px;
+        border-radius: 0 0 5px 5px;
+    }
+}
+.gform_footer{
+    button, input[type="button"], input[type="reset"], input[type="submit"]{
+        display: block;
+        width: 100%;
+        color: #495057;
+        background-color: #fff;
+        background-image: none;
+        background-clip: padding-box;
+        border: 1px solid rgba(0,0,0,.15);
+        border-radius: .25rem;
+        transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+    }
+    input[type="submit"]{
+        color: #fff;
+        background-color: #dc3545;
+        border-color: #dc3545;
+    }
+}

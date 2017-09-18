@@ -1,0 +1,38 @@
+.page-pricing{
+    background-color: #3f3f3f;
+    background-image: url('../../assets/img/pricing-bg.jpg');
+    section{ z-index: 2; position: relative;}
+    svg{
+        margin: 0px auto;
+        display: block;
+    }
+    .glow{
+    	transition: all 0.1s ease-in-out;
+    	box-shadow: 0 5px 15px rgba(255, 255, 0, .4);
+    	background: rgba(255, 255, 0, .4);
+    	padding: 0px 5px 5px 5px;
+    	color: black;
+    }
+}
+
+.underline:after {
+    content: '';
+    z-index: -1;
+    display: block;
+    position: absolute;
+    border: solid 6px #007bff;
+    border-radius: 100% 0% 100% 2%;
+    
+    right: 0px;
+    top: 40px;
+    width: 460px;
+}
+
+/* Medium. Above 48em (768px) */
+@media screen and (min-width: 48em) {
+    .underline:after {
+        top: 50px;
+        right: 50px;
+        width: 500px;
+    }
+}

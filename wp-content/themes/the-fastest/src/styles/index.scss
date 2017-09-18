@@ -14,9 +14,20 @@ Use it to make something cool, have fun, and share what you've learned with othe
 */
 @import "common/custom";
 @import "common/colors";
-@import "common/icons";
+@import "common/tech-icons";
 @import "common/footer";
+@import "common/slider";
+@import "common/badges";
+@import "common/testimonial";
+@import "common/icons";
+@import "common/vc";
+@import "common/gravityforms";
 @import "pages/home";
+@import "pages/program";
+@import "pages/about";
+@import "pages/pricing";
+@import "pages/apply";
+@import "pages/calendar";
 
 .circle-img{
     background-size: cover;
@@ -27,6 +38,15 @@ Use it to make something cool, have fun, and share what you've learned with othe
     margin: auto;
 }
 
+#bg-sketch{
+  width: 100%; height: 100vh; overflow:hidden; position: absolute; top: 0; left: 0; z-index: 1; display: none;
+}
+
+.loading-animation{
+  display: none;
+  text-align: center;
+  svg{height: 100px;}
+}
 
 /*Horizontal Scrolling on mobile devices*/
 .h-scroll {
@@ -36,13 +56,46 @@ Use it to make something cool, have fun, and share what you've learned with othe
   -ms-overflow-style: -ms-autohiding-scrollbar; 
   margin: auto;
 }
+
+.sticky.is-sticky {
+  position: fixed;
+  right: 0;
+  top: 0;
+  z-index: 1000;
+}
+.sticky.fozen-sticky{
+  position: absolute;
+  left: 0;
+}
+
+section.part-time{
+  svg{
+      max-height: 100%;
+      max-width: 100%;
+  }
+}
+
+section.instructors{
+  .card-img-top{
+      background-repeat: no-repeat;
+      background-size: cover;
+  }
+}
+
+
 //Tablets or bigger screens
 @media screen and (min-width: 48em) {
     
-    .h-scroll {
-      white-space: initial;
-      overflow-x: initial;
-      -webkit-overflow-scrolling: initial;
-      -ms-overflow-style: -ms-autohiding-scrollbar; 
+  section.part-time{
+    svg{
+        max-height: 115px;
     }
+  }
+
+  .h-scroll {
+    white-space: initial;
+    overflow-x: initial;
+    -webkit-overflow-scrolling: initial;
+    -ms-overflow-style: -ms-autohiding-scrollbar; 
+  }
 }

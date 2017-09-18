@@ -18,9 +18,26 @@ class ACAPI{
         
     }
     
-    private function request($slug, $args)
+    /**
+     *  $contact = array(
+    		"email"              => "test@example.com",
+    		"first_name"         => "Test",
+    		"last_name"          => "Test",
+    		"p[{$list_id}]"      => $list_id,
+    		"status[{$list_id}]" => 1, // "Active" status
+    	);
+    */
+    
+    public static function subscribeToList($contact, $listId)
     {
+        $contact["p[{$listId}]"] = $listId;
+        $contact["status[{$listId}]"] = 1;
         
+    	$result = self::$connector['old']->api("contact/sync", $contact);
+    	if (!(int)$result->success) throw new \Exception('Syncing contact failed. Error returned: '. $result->error);
+        
+        // successful request
+        return (int)$result->subscriber_id;
     }
     
     public static function getCustomField($slug, $listIds='1'){

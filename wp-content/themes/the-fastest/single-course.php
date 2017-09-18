@@ -1,5 +1,5 @@
 <?php get_header(); 
-$args = WPAS\Controller\WPASController::getViewData();
+$args = wpas_get_view_data();
 ?>
     <header class="masthead">
       <div class="header-content">

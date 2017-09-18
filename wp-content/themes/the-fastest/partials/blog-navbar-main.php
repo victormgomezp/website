@@ -3,7 +3,7 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top mediumnavigation">
 <div class="container">
 	<!-- Begin Logo -->
-	<a class="navbar-brand" href="index.html">
+	<a class="navbar-brand" href="<?php echo get_permalink( get_page_by_path( 'blog' ) ); ?>">
 	    <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/logo-black.png" alt="logo">
 	</a>
 	<!-- End Logo -->
@@ -12,17 +12,20 @@
     </button>
 	<div class="collapse navbar-collapse" id="navbarsExampleDefault">
 		<!-- Begin Menu -->
-		<ul class="navbar-nav ml-auto">
-			<li class="nav-item active">
-			<a class="nav-link" href="index.html">Stories <span class="sr-only">(current)</span></a>
-			</li>
-			<li class="nav-item">
-			<a class="nav-link" href="post.html">Post</a>
-			</li>
-			<li class="nav-item">
-			<a class="nav-link" href="author.html">Author</a>
-			</li>
-		</ul>
+       <?php
+       wp_nav_menu([
+         'menu'            => 'Blog Header Menu',
+         'theme_location'  => 'blog-header',
+         'container'       => 'div',
+         'container_id'    => 'navbarResponsive',
+         'container_class' => 'collapse navbar-collapse',
+         'menu_id'         => false,
+         'menu_class'      => 'navbar-nav ml-auto',
+         'depth'           => 2,
+         'fallback_cb'     => 'bs4navwalker::fallback',
+         'walker'          => new WPAS\Utils\BS4Navwalker()
+       ]);
+       ?>
 		<!-- End Menu -->
 		<!-- Begin Search -->
 		<form class="form-inline my-2 my-lg-0">

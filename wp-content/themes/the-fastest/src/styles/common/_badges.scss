@@ -1,0 +1,116 @@
+$letters-up: 9;
+$letters-down: 7;
+$size: 70px;
+$border: 30px;
+$outer-radius: 3px;
+$slice-width: 10px;
+$font: 10px;
+$main-font: 50px;
+$font-color: #000;
+$circle-color: orange;
+$inner-color: transparent;
+$outer-color: #000;
+$font-family: Monaco,
+MonoSpace;
+$angle-up: 80deg/$letters-up;
+$angle-down: 80deg/$letters-down;
+
+%size {
+  width: $size;
+  height: $size;
+}
+
+%pos {
+  top: 0;
+  left: 0;
+  margin: 0;
+  position: absolute;
+  border-radius: 50%;
+}
+
+%slice {
+  font: $font $font-family;
+  line-height: $font;
+  box-sizing: border-box;
+  position: absolute;
+  color: $font-color;
+  position: absolute;
+  width: $slice-width;
+  height: $size/2 + $border;
+}
+
+.svg-badge {
+  svg{
+    @extend %size;
+    position: absolute;
+    z-index: 2;
+    left: 0;
+    @keyframes rotation {
+      from { transform:rotate(0); }
+      to { transform:rotate(360deg); }
+    }
+  }
+  @extend %size;
+  position: relative;
+  margin: 0px auto 0;
+  border-radius: 50%;
+  /* مقاس الإطار الأوسط ولونه */
+  border: $border solid $inner-color;
+  text-transform: uppercase;
+  text-align: center;
+  &:after {
+    content: "";
+    width: $size + 2*$border;
+    height: $size + 2*$border;
+    position: absolute;
+    top: -($border);
+    left: -($border);
+    border-radius: 50%;
+    display: block;
+    border: $outer-radius solid $outer-color;
+  }
+  &:before {
+    content: "";
+    width: $size;
+    height: $size;
+    display: block;
+    border-radius: 50%;
+    position: absolute;
+    background: $circle-color;
+    z-index: 1;
+  }
+  .up {
+    @extend %size;
+    @extend %pos;
+    transform: rotate(-($letters-up + 1)*$angle-up/2);
+    span {
+      @extend %slice;
+      padding-top: ($border - $font)/2;
+      left: ($size - $slice-width)/2;
+      top: - $border;
+      transform-origin: bottom center;
+    }
+    @for $i from 1 through $letters-up {
+      .char#{$i} {
+        transform: rotate($i*$angle-up);
+      }
+    }
+  }
+  .down {
+    @extend %size;
+    @extend %pos;
+    transform: rotate(($letters-down + 1)*$angle-down/2);
+    span {
+      @extend %slice;
+      padding-top: ($size + $border - $font)/2;
+      left: ($size - $slice-width)/2;
+      bottom: - $border;
+      transform-origin: top center;
+    }
+    @for $i from 1 through $letters-down {
+      .char#{$i} {
+        transform: rotate(-$i*$angle-down);
+      }
+    }
+  }
+}

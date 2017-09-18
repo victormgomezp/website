@@ -1,48 +1,58 @@
 @import "../common/webcharts";
 
-
-section{ 
-    padding: 50px 0px;
-    .card-block {
-        border: 0;
-        background: inherit;
-        .imoon{
-            font-size: 90px;
-        }
-        a{
-            text-decoration: underline;
-            color: black;
-            margin-top: 10px;
-        }
-    }
-    .student-projects{
-        margin-top: 20px;
+.page-home{
+    background-image: url('../../assets/img/home-bg.jpg');
+    .masthead .heading-row{ padding: 0; }
+    .tech-icons{font-size: 60px;}
+    section{ 
+        padding: 50px 0px;
         .card-block {
-            margin: 5px 0px 5px 50px;
+            border: 0;
+            background: inherit;
+            .imoon{
+                font-size: 90px;
+            }
+            a{
+                text-decoration: underline;
+                color: black;
+                margin-top: 10px;
+            }
+        }
+        .student-projects{
+            margin-top: 20px;
+            .card-block {
+                margin: 5px 0px 5px 50px;
+            }
+        }
+        img{ max-width: 320px; }
+        .call-to-action{ 
+            margin: 30px;
+            padding: 30px; 
+            form{ display:table; margin: 10px auto;}
+        }
+        .section-message{ padding: 10px; 
+            img{margin: 20px auto; display: block;}
+        }
+        .card.specialty{
+            margin: 0;
+            margin-bottom: 10px;
+            img{max-height: 64px; max-width: 64px; margin: auto;}
+            a{text-decoration: none; font-size: 9px; }
         }
     }
-    img{ max-width: 320px; }
-    .call-to-action{ 
-        margin: 30px;
-        padding: 30px; 
-        form{ display:table; margin: 10px auto;}
+    section.part-time{
+        img{ max-width: 100%;}
     }
-    .section-message{ padding: 10px; 
-        img{margin: 20px auto; display: block;}
+    section.pricing-section{
+        .card-block {
+            background: $gray-200;
+        }
     }
-    .card.specialty{
-        margin: 0;
-        margin-bottom: 10px;
-        img{max-height: 64px; max-width: 64px; margin: auto;}
-        a{text-decoration: none; font-size: 9px; }
-    }
-}
-section.part-time{
-    img{ max-width: 100%;}
-}
-section.pricing-section{
-    .card-block {
-        background: $gray-200;
+    section .student-projects{
+        svg{
+            height: 100px;
+            width: 100px;
+        }
     }
 }
 
@@ -75,7 +85,6 @@ section.call-to-action{
 /* Medium. Above 48em (768px) */
 @media screen and (min-width: 48em) {
     section{
-        h2{ margin: 30px; }
         padding: 60px 0px;
         .section-message{
             padding: 30px 20px;

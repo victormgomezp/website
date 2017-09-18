@@ -1,0 +1,213 @@
+$outline-width: 0;
+$break-point: 48em;
+$gray-base:     #999999;
+$brand-primary: black; //Zen Blue
+
+
+.page-the-program{
+    
+    #flip {
+      display: block !important;
+      height:80px;
+      overflow:hidden;
+      font-size: 40px;
+      font-weight: 900;
+    }
+    #flip > div > div {
+      color:#fff;
+      padding: 0px 15px;
+      margin-bottom:30px;
+      display:inline-block;
+    }
+    
+    #flip div:first-child {
+      animation: show 8s linear infinite;
+    }
+    
+    #flip div div {
+      background:#42c58a;
+    }
+    #flip div:first-child div {
+      background:#4ec7f3;
+    }
+    #flip div:last-child div {
+      background:#DC143C;
+    }
+    
+    @keyframes show {
+      0% {margin-top:-270px;}
+      5% {margin-top:-180px;}
+      33% {margin-top:-180px;}
+      38% {margin-top:-90px;}
+      66% {margin-top:-90px;}
+      71% {margin-top:0px;}
+      99.99% {margin-top:0px;}
+      100% {margin-top:-270px;}
+    }
+    
+    @keyframes bg {
+      0% {background: #ff0075;}
+      3% {background: #0094ff;}
+      20% {background: #0094ff;}
+      23% {background: #b200ff;}
+      40% {background: #b200ff;}
+      43% {background: #8BC34A;}
+      60% {background: #8BC34A;}
+      63% {background: #F44336;}
+      80% {background: #F44336;}
+      83% {background: #F44336;}
+      100% {background: #F44336;}
+    }
+  
+    animation:bg 20s linear infinite;
+    section{ padding: 20px 0;}
+    .program-menu{ display: none; }
+    .tech-icons{font-size: 60px;}
+    section.instructors{
+        .card-deck{
+            .card{
+                border: none;
+                border-radius: 0;
+                .card-img-top{
+                    border-radius: 0;
+                    background-size: contain;
+                    background-repeat: no-repeat;
+                    background-position: center;
+                }
+            }
+        }
+    }
+    section.skills{
+      svg{
+        width: 75px;
+        float: left;
+        margin-right: 20px;
+      }
+    }
+
+    .section-header {
+      color: $brand-primary;
+      font-weight: 400;
+      font-size: 1.4em;
+    }
+    
+    .steps-timeline {
+      outline: 1px dashed rgba(red, $outline-width);
+      
+      @media screen and (max-width: $break-point) {
+        border-left: 2px solid $brand-primary;
+        margin-left: 25px;
+      }
+      
+      @media screen and (min-width: $break-point) {
+        border-top: 2px solid $brand-primary;
+        padding-top: 35px;
+        margin-top: 40px;
+        margin-left: 6.65%;
+        margin-right: 6.65%;
+      }
+      
+      &:after {
+        content: "";
+        display: table;
+        clear: both;
+      }
+    }
+    .steps{
+      outline: 1px dashed rgba(green, $outline-width);
+      
+      @media screen and (max-width: $break-point) {
+        margin-left: -25px;
+      }
+      
+      @media screen and (min-width: $break-point) {
+        float: left;
+        width: 31%;  
+        margin-right: 2%;
+        margin-top: -50px;
+      }
+    }
+    .steps-timeline .steps:first-child {
+      @media screen and (min-width: $break-point) {
+        margin-left: -16%;
+      }
+    }
+    .steps-timeline .steps:last-child {
+      @media screen and (max-width: $break-point) {
+        margin-bottom: 20px;
+      }
+      @media screen and (min-width: $break-point) {
+        //margin-left: 16.65%;
+        margin-right: -16.65%;
+      }
+    }
+    
+    .steps-img {
+      display: block;
+      margin: auto;
+      width: 25px;
+      height: 25px;
+      background: black;
+      border-radius: 50%; 
+      @media screen and (max-width: $break-point) {
+        float: left;
+        margin-right: 20px;
+        margin-left: 12px;
+      }
+    }
+    
+    .steps-name{
+      margin: 20px 0;
+    }
+    .steps-description {
+      margin-left: 50px;
+    }
+    .steps-name {
+      @extend .section-header;
+      
+      @media screen and (min-width: $break-point) {
+        text-align: center;
+      }
+    }
+    .steps-description {
+        overflow: hidden;
+        background: #f9f9f9;
+        padding: 5px;
+        margin-top: 10px;
+        min-height: 100px;
+      
+        @media screen and (min-width: $break-point) {
+            text-align: left;
+        }
+    }
+    
+}
+
+//Tablets or bigger screens
+@media screen and (min-width: 48em) {
+
+    .page-the-program{
+        background: #3f3f3f;
+        .program-menu{
+            margin-top: 30px;
+            display: block;
+            //background: #2c2c35;
+            //a{color: white;}
+            a{color: black;}
+            background: #e8e8e8;
+            border-left: 5px solid orange;
+            font-size: 15px;
+            text-align: right;
+            font-weight: 900;
+            .nav-link{ padding-right: 0; padding-left: 0;}
+            li{padding-right: 10px;}
+            li.active{background: #ccc;}
+            li:last-child{padding-bottom: 10px;}
+        }
+      .steps .steps-description {
+        margin-left: 0px;
+      }
+    }
+
+    
+}

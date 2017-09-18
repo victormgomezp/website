@@ -1,11 +1,27 @@
 body, html { overflow-x:hidden; }
 body{
-    background: $background-color;
-    color: white;
+    background: #3f3f3f;
+    background-repeat: no-repeat;
+    color: black;
     font-size: 14px;
+    font-family: 'Prida', sans-serif;
+    .video-background{
+        position: absolute;
+        width: 100vw;
+        top: 0px;
+        left: 0;
+        z-index: -1;
+    }
 }
-
+.page-home{
+    .header-content{
+        h3{font-size: 1.5rem; }
+    }
+}
 .navbar{ 
+    z-index: 10;
+    img{ filter: invert(100%); }
+    .nav-link:hover{ font-weight: 900; cursor: pointer;}
     img{
         max-width: 70px;
         -webkit-transition: width 2s; /* Safari */
@@ -13,7 +29,7 @@ body{
     }
     .collapse.show {
         display: inline-table;
-        position: absolute;
+        position: fixed;
         top: 0px;
         z-index: 1;
         background: black;
@@ -21,7 +37,10 @@ body{
         left: 0;
         height: 100vh;
         text-align: center;
-        ul{ margin-top: 55px; }
+        ul{ 
+            margin-top: 55px; 
+            display: inline-block;
+        }
     }
     .nav-item{
         width: 200px;
@@ -39,12 +58,21 @@ body{
         }
     }
 }
-.navbar-dark .navbar-toggler{ z-index: 2; }
+.navbar-dark .navbar-toggler{ z-index: 10; }
+.masthead{
+    z-index: 5;
+    position: relative;
+    .heading-row{
+        padding: 10vh 0 20vh 0;
+    }
+}
 
 //Tablets or bigger screens
-@include media-breakpoint-up(md) { 
-    
-    .navbar{ margin-top: 50px; 
+@include media-breakpoint-up(lg) { 
+    .navbar{ margin-top: 50px; }
+}
+@include media-breakpoint-up(sm) { 
+    .navbar{
         img{
             max-width: 140px;
         }
@@ -55,18 +83,28 @@ body{
 .masthead{
     margin-top: 5vh;
     padding: 30px;
-    min-height: 32vh;
     .certified{
         margin-top: 60px;
         text-align: center;
+        color: white;
         .imoon{ font-size: 20px; color: orange; }
         .florida{ margin-bottom: 20px; }
     }
 }
 
 //Tablets or bigger screens
-@include media-breakpoint-up(md) { 
-    
+@include media-breakpoint-down(sm) { 
+    body{ background-size: initial; background-position-y: 0px; }
+    .video-background{
+        display: none;
+    }
+}
+//Tablets or bigger screens
+@include media-breakpoint-up(md) {
+    body{ background-size: contain;}
+    .video-background{
+        display: block;
+    }
     .masthead{ 
         h1{ font-size: 3.4rem; }
         margin-top: 60px; 
@@ -83,8 +121,23 @@ body{
     section.call-to-action{
         width: 800px;
         margin: auto;
-        text-align: center;
-        form{display: block;}
+        text-align: center !important;
+        form{display: block !important;}
         #request-call{display: none;}
+    }
+}
+
+//Tablets or bigger screens
+@include media-breakpoint-up(lg) {
+    body{ background-size: contain; background-position-y: -230px;}
+    .video-background{
+        top: -400px;
+    }
+}
+
+@include media-breakpoint-only(md) { 
+    body{ background-position-y: 0px; }
+    .video-background{
+        top: 0px;
     }
 }

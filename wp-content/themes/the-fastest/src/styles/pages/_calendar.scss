@@ -1,0 +1,102 @@
+.page-calendar{
+    .courses{
+        .list-group-item{
+            padding: 0;
+            border: 3px solid black;
+        }
+        .media-left{
+            width: 75px;
+            background: #dc3545;
+            padding: 10px;
+            border-right: 3px solid black;
+            p{
+                margin: 0; font-weight: 900;
+                text-align: center;
+                color: white;
+            }
+            .event-date{
+                font-size: 45px;
+                line-height: 40px;
+            }
+            .event-month{
+                font-size: 20px;
+                line-height: 20px;
+            }
+            .event-year{
+                font-size: 18px;
+                line-height: 15px;
+            }
+        }
+        .media-body{
+            padding: 15px;
+            // Extra small devices (portrait phones, less than 576px)
+            @media (max-width: 575px) { .media-heading{font-size: 1rem;} }
+            .additional-details{
+                font-size: 14px;
+                svg{height: 20px; width: 25px; margin-right: 10px; float: left;}
+                .language{ 
+                    font-size: 80%;
+                }
+            }
+        }
+    }
+    .filters{
+        border-top: 1px solid #ddd;
+        border-bottom: 1px solid #ddd;
+        .filter-label{
+            display: inline-block;
+            position: relative;
+            display: inline-block;
+            position: relative;
+            top: 0px;
+            margin: 0;
+            padding: 15px 10px;
+            font-size: 24px;
+            @media (max-width: 575px) { font-size: 15px; }
+            line-height: 24px;
+        }
+        .dropdown{
+            display: inline-block;
+            margin-left: -5px;
+            .dropdown-toggle::after{
+                border-top: 0.3em solid #ddd;
+            }
+            .dropdown-toggle:hover::after{
+                border-top: 0.3em solid black;
+            }
+            .dropdown-toggle{
+                background: white;
+                border-width: 0px 1px;
+                font-size: 24px;
+                @media (max-width: 575px) { font-size: 15px; }
+                border: solid #ddd;
+                border-width: 0px;
+                padding: 10px;
+                svg{height: 20px;}
+            }
+            &.show{
+                .dropdown-toggle{
+                    border-width: 0px 1px;
+                }
+            }
+            .dropdown-menu{
+                font-size: 24px;
+                border-radius: 0px;
+                min-width: 200px;
+            }
+            svg{height: 25px; width: 25px; top: 5px; position: relative;}
+        }
+    }
+}
+
+//Tablets or bigger screens
+@media screen and (min-width: 48em) {
+    .page-calendar{
+        .courses{
+            .additional-details{
+                font-size: 17px !important;
+                svg{height: 20px !important;}
+            }
+        }
+    }
+}
