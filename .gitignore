@@ -85,6 +85,9 @@ Thumbs.db
 wp-content/*
 !wp-content/plugins/
 wp-content/plugins/*
+!wp-content/plugins/js_composer
+!wp-content/plugins/gravityforms
+
 
 !wp-content/themes/
 !wp-content/themes/the-fastest
