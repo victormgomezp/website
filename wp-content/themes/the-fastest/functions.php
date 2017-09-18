@@ -90,8 +90,11 @@
     use TF\ActiveCampaign\ACAPI;
     ACAPI::start();
     
-    use WPAS\GravityForm\WPASGravityForm;
-    $gfManager = new WPASGravityForm();
+    if(is_plugin_active('gravityforms/gravityforms.php'))
+    {
+        use WPAS\GravityForm\WPASGravityForm;
+        $gfManager = new WPASGravityForm();
+    }
     
     use WPAS\Messaging\WPASAdminNotifier;
     WPASAdminNotifier::loadTransientMessages();
