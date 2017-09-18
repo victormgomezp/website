@@ -36,7 +36,8 @@ class ThemeManager{
         register_nav_menus( array( 
             'header' => 'Header menu', 
             'blog-header' => 'Blog Header menu', 
-            'footer' => 'Footer menu' 
+            'footer-company' => 'Footer menu',
+            'footer-locations' => 'Footer Locations' 
         ));
     }
     

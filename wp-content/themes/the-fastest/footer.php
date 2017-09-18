@@ -51,11 +51,16 @@
                 <div class='col-md-3'>
                     <h3>Locations</h3>
                     <hr />
-                    <ul class="list-unstyled">
-                        <?php foreach($args['locations'] as $l){ ?>
-                        <li><?php echo $l['post_title']; ?></li>
-                        <?php } ?>
-                    </ul>
+                    <?php
+                       wp_nav_menu([
+                         'menu'            => 'Footer Locations',
+                         'theme_location'  => 'footer-locations',
+                         'container'       => false,
+                         'menu_id'         => false,
+                         'menu_class'      => 'list-unstyled company-section',
+                         'depth'           => 2
+                       ]);
+                    ?>
                 </div>
             </div>
             <div class='row'>
