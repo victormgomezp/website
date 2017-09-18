@@ -23,5 +23,6 @@
     <script src="assets/js/ie10-viewport-bug-workaround.js"></script>
     -->
     <?php wp_footer(); ?>
+    <?php wpas_footer(); ?>
     </body>
 </html>

@@ -10,15 +10,7 @@ class ThemeAdminSettings {
 	
 	private $wpts;
 	function __construct() {
-	    /*
-				[
-				    'type' => 'select', 
-				    'label' => 'Full Stack Premium Course',
-				    'name' => 'whatever-slug' ,
-					'description' => 'What is the parent course for the rest of whole fullstack?',
-					'options' => []
-				]
-		*/
+
 		$generalFields = [
 				[
 				    'type' => 'text', 
@@ -69,7 +61,7 @@ class ThemeAdminSettings {
 					'description' => 'Full URL'
 				]
 			];
-			
+		
 		$activeCampaignFields = [
 				[
 				    'type' => 'text', 
@@ -128,8 +120,6 @@ class ThemeAdminSettings {
 				]
 			];
 			
-		
-		
 		/*
 		* WPTS
 		*/

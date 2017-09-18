@@ -180,13 +180,13 @@ $args = wpas_get_view_data();
             <div class="row">
               <div class='col-sm-8 mb-3'>
                 <h5>
-                  Develop the 9 skills senior developers need to be successfull like the following.
+                  Develop the skills senior developers need to be successfull like the following.
                 </h5>
                 <ul class="list-group">
-                  <li class="list-group-item bg-yellow">
+                  <li class="list-group-item">
                     <div class="media">
                       <div class="media-left">
-                        <?php echo file_get_contents(get_stylesheet_directory_uri().'/assets/icons/web-architect.svg'); ?>
+                        <?php wpas_get_inline_svg('assets/icons/inline','webarchitect.svg'); ?>
                       </div>
                       <div class="media-body">
                         <h5 class="media-heading">Web Architect</h5>
@@ -197,7 +197,7 @@ $args = wpas_get_view_data();
                   <li class="list-group-item">
                     <div class="media">
                       <div class="media-left">
-                        <?php echo file_get_contents(get_stylesheet_directory_uri().'/assets/icons/dynamic-websites.svg'); ?>
+                        <?php wpas_get_inline_svg('assets/icons/inline','dynamicwebsites.svg'); ?>
                       </div>
                       <div class="media-body">
                         <h5 class="media-heading">Dynamic Websties</h5>
@@ -208,7 +208,7 @@ $args = wpas_get_view_data();
                   <li class="list-group-item">
                     <div class="media">
                       <div class="media-left">
-                        <?php echo file_get_contents(get_stylesheet_directory_uri().'/assets/icons/data-master.svg'); ?>
+                        <?php wpas_get_inline_svg('assets/icons/inline','datamaster.svg'); ?>
                       </div>
                       <div class="media-body">
                         <h5 class="media-heading">Data Master</h5>
@@ -219,7 +219,7 @@ $args = wpas_get_view_data();
                   <li class="list-group-item">
                     <div class="media">
                       <div class="media-left">
-                        <?php echo file_get_contents(get_stylesheet_directory_uri().'/assets/icons/logical-thinking.svg'); ?>
+                        <?php wpas_get_inline_svg('assets/icons/inline','logicalthinking.svg'); ?>
                       </div>
                       <div class="media-body">
                         <h5 class="media-heading">Logical Thinker</h5>
@@ -230,7 +230,7 @@ $args = wpas_get_view_data();
                   <li class="list-group-item">
                     <div class="media">
                       <div class="media-left">
-                        <?php echo file_get_contents(get_stylesheet_directory_uri().'/assets/icons/research.svg'); ?>
+                        <?php wpas_get_inline_svg('assets/icons/inline','research.svg'); ?>
                       </div>
                       <div class="media-body">
                         <h5 class="media-heading">Search and Research</h5>

@@ -33,8 +33,8 @@ $args = wpas_get_view_data();
                 <span class='d-inline d-lg-none'>in all langs</span>
                 <span class='d-none d-lg-inline'>in all languages</span>
               </a>
-              <a class="dropdown-item lang-option" data-value="en" href="#">in english <?php echo file_get_contents(get_stylesheet_directory_uri().'/assets/icons/flags/united-states.svg'); ?></a>
-              <a class="dropdown-item lang-option" data-value="es" href="#">en español <?php echo file_get_contents(get_stylesheet_directory_uri().'/assets/icons/flags/spain.svg'); ?></a>
+              <a class="dropdown-item lang-option" data-value="en" href="#">in english <?php wpas_get_inline_svg('assets/icons/flags/inline','unitedstates.svg'); ?></a>
+              <a class="dropdown-item lang-option" data-value="es" href="#">en español <?php wpas_get_inline_svg('assets/icons/flags/inline','spain.svg'); ?></a>
             </div>
           </div>
           <div class="dropdown cities">
@@ -50,7 +50,7 @@ $args = wpas_get_view_data();
               <?php foreach($args['locations'] as $l){ ?>
               <a class="dropdown-item location-option" href="#" data-value="<?php echo $l['bc_location_slug']; ?>">
                 <?php echo $l['short-title']; ?>
-                <?php echo file_get_contents(get_stylesheet_directory_uri().'/assets/icons/flags/'.$l['flag'].'.svg'); ?>
+                <?php wpas_get_inline_svg('assets/icons/flags/inline',$l['flag'].'.svg'); ?>
               </a>
               <?php } ?>
             </div>
@@ -66,7 +66,7 @@ $args = wpas_get_view_data();
               echo '<div class="alert alert-warning" role="alert">There are no courses or events with this requierments.</div>';
             ?>
             <div class='loading-animation'>
-              <?php echo file_get_contents(get_stylesheet_directory_uri().'/assets/icons/loading.svg'); ?>
+              <?php wpas_get_inline_svg('assets/icons/inline','loading.svg'); ?>
             </div>
             <ul class="list-group">
               <?php if(count($args['courses'])>0) foreach ($args['courses'] as $course){ ?>
@@ -86,7 +86,7 @@ $args = wpas_get_view_data();
                         <span class='d-none d-md-block'>from $240 / month.</span>
                       </div>
                       <div class="col-3">
-                        <?php echo file_get_contents(get_stylesheet_directory_uri().'/assets/icons/flags/'.$course['icon'].'.svg'); ?> 
+                        <?php wpas_get_inline_svg('assets/icons/flags/inline',$course['icon'].'.svg'); ?>
                         <span class='language d-none d-sm-block d-lg-none'><?php echo substr($course['language'],0,3); ?></span>
                         <span class='language d-none d-lg-block'><?php echo $course['language']; ?></span>
                       </div>

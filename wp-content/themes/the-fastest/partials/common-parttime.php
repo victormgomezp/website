@@ -7,7 +7,7 @@
         </div>
         <div class="row">
           <div class="col-4 col-md-3 ml-auto align-vertical pt-3 mt-3 mt-sm-0">
-            <?php echo file_get_contents(get_stylesheet_directory_uri().'/assets/icons/partime.svg'); ?>
+            <?php wpas_get_inline_svg('assets/icons/inline','partime.svg'); ?>
           </div>
           <div class="col-8 col-md-6 mr-auto">
             <p class='section-message mt-sm-4'>

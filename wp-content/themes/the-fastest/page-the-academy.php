@@ -109,7 +109,7 @@ $args = wpas_get_view_data();
               4Geeks Academy was founded in 2015. What started as an internal project to train more developers has now become our full-time passion.<br/><br/>
               4Geeks is today a USA based Coding Bootcamp pursuing to build a new framework for Coding Education, because coding is becoming an essential part of our society. <br/><br/>
               4Geeks Academy has now Locations in 3 cities, 5 on-going campuses, and more than 200 graduates.
-              <button class='btn btn-danger mt-3'>Learn more about 4Geeks Academy</button>
+              <a target="_blank" href="https://4geeksacademy.co/en/4geeks-academy-history/" class='btn btn-danger mt-3'>Learn more about 4Geeks Academy</a>
             </p>
           </div>
         </div>

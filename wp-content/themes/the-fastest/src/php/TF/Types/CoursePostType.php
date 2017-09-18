@@ -70,7 +70,7 @@ class CoursePostType extends BasePostType{
         $course['month'] = date('M',$time);
         $course['year'] = date('Y',$time);
         $course['date'] = date('F j, Y',$time);
-        $course['name'] = "Full Stack";
+        $course['name'] = "FS Web Development";
         $course['bc_location_slug'] = $cohort['location_slug'];
         $course['status'] = $cohort['status'];
         $course['time'] = $time;

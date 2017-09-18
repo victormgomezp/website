@@ -6,7 +6,7 @@ $args = wpas_get_view_data();
         <div class="row">
           <div class="col-md-10 mx-auto">
             <h1 class="text-center text-white">Celebrate the <span class="underline">best price in town</span></h1>
-            <h4 class="text-center text-white">We never stop trying until we finally solved the tuition challenge</h4>
+            <h4 class="text-center text-white">We never stopped trying until we finally solved the tuition challenge</h4>
           </div>
         </div>
       </div>
@@ -27,7 +27,7 @@ $args = wpas_get_view_data();
           <div class="col-md-7 mr-auto order-1 order-md-2">
             <h4 class='text-center mt-5'>There is no need to pay more to get premium</h4>
             <p class='section-message pb-1 text-center'>
-              We hit the price mark by developing a premium content, with a unique methodology, and building -from the ground- the best possible technology to teach coding;
+              We hit the price mark by developing a premium content, with a unique methodology, and building -from the ground up- the best possible technology to teach coding;
             </p>
           </div>
         </div>

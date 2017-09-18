@@ -33,15 +33,15 @@ $args = wpas_get_view_data();
             <h4 class="section-heading text-black">Finally an affordable & premium course in Miami</h4>
             <p class="text-faded">We never stopped trying until we mastered a real premium but affordable program. Talk to one of our student advisors and make sure you are a good fit for our program;</p>
             <form class="form-inline">
-              <button class='btn btn-lg btn-default'>Request Syllabus</button>
+              <a href="<?php echo get_permalink( get_page_by_path( 'download-syllabus' ) ) ?>" target="_blank" class='btn btn-lg btn-secondary'>Request Syllabus</a>
               <a href="<?php echo get_permalink( get_page_by_path( 'apply' ) ); ?>" class='btn btn-lg btn-danger'>Apply Now</a>
             </form>
           </div>
         </div>
       </div>
     </section>
-    <?php include(locate_template('partials/common-parttime.php')); ?>
-    <section class="bg-light text-black text-center pb-0">
+    <?php get_template_part('partials/common','parttime'); ?>
+    <section class="bg-white text-black text-center pb-0">
       <div class="container">
         <div class="row">
           <div class="col-12 ">
@@ -113,18 +113,22 @@ $args = wpas_get_view_data();
             </div>
           </div>
         </div>
+      </div>
+    </section>
+    <section class="bg-yellow text-black text-center p-0">
+      <div class="container">
         <div class="row">
-          <div class="bg-success col-sm-10 mx-auto call-to-action mb-0">
-            <h4>Download our Syllabus (PDF) and understand all the details</h4>
+          <div class="col-sm-10 mx-auto call-to-action mb-0">
+            <h4>Download our Syllabus (PDF) and get all the details</h4>
              <form class="form-inline text-center">
               <input type="email" class="form-control" name="" placeholder="Your email"/>
-              <a class="btn btn-default btn-secondary form-control" href="#services">Download</a>
+              <a class="btn btn-secondary form-control ml-3" href="<?php echo get_permalink( get_page_by_path( 'download-syllabus' ) ) ?>" target="_blank">Download</a>
             </form>
           </div>
         </div>
       </div>
     </section>
-    <section class="bg-white text-black text-center">
+    <section class="bg-white">
       <div class="container">
         <div class="row">
           <div class="col-12">
@@ -138,25 +142,25 @@ $args = wpas_get_view_data();
           <ul class="list-inline h-scroll">
             <li class="list-inline-item">
               <div class="card card-block card-primary card-inverse">
-                <?php echo file_get_contents(get_stylesheet_directory_uri().'/assets/icons/airbnb.svg'); ?>
+                <?php wpas_get_inline_svg('assets/icons/inline','airbnb.svg'); ?>
                 <a href="#">Airbnb Clone</a>
               </div>
             </li>
             <li class="list-inline-item">
               <div class="card card-block card-primary card-inverse">
-                <?php echo file_get_contents(get_stylesheet_directory_uri().'/assets/icons/instagram.svg'); ?>
+                <?php wpas_get_inline_svg('assets/icons/inline','instagram.svg'); ?>
                 <a href="#">Instagram Clone</a>
               </div>
             </li>
             <li class="list-inline-item">
               <div class="card card-block card-primary card-inverse">
-                <?php echo file_get_contents(get_stylesheet_directory_uri().'/assets/icons/slack.svg'); ?>
+                <?php wpas_get_inline_svg('assets/icons/inline','slack.svg'); ?>
                 <a href="#">Slack.com Clone</a>
               </div>
             </li>
             <li class="list-inline-item">
               <div class="card card-block card-primary card-inverse">
-                <?php echo file_get_contents(get_stylesheet_directory_uri().'/assets/icons/coursera.svg'); ?>
+                <?php wpas_get_inline_svg('assets/icons/inline','coursera.svg'); ?>
                 <a href="#">Coursera Clone</a>
               </div>
             </li>

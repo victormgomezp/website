@@ -7,7 +7,7 @@
                     <div class="alert alert-danger" style=" width: 100%; display: none;" role="alert"></div>
                     <label for="staticEmail2" class='text-right'>Get updates right in your inbox. <br/>We promise to not spam you.</label>
                     <input type="email" class="form-control newsletter-email" id="staticEmail2" placeholder="email@example.com" required>
-                    <button type="submit" class="btn btn-default">Sign Up</button>
+                    <button type="submit" class="btn btn-secondary">Sign Up</button>
                 </div>
             </form>
         </div>
@@ -113,8 +113,6 @@
                             	<stop  offset="0" style="stop-color:#000000;stop-opacity:0.1"/>
                             	<stop  offset="1" style="stop-color:#000000;stop-opacity:0"/>
                             </linearGradient>
-                            <path style="fill:url(#SVGID_1_);" d="M341.333,448v-64c0-23.531,19.146-42.667,42.667-42.667h64V170.667H21.333L298.667,448
-                            	H341.333z"/>
                             <g>
                             <text x="130" y="330" style="font-weight: bold; font-size: 200px;" fill="#303C42"><?php echo $args['upcoming']['day']; ?></text>
                             <text x="140" y="420" style="font-weight: bold; font-size: 95px;" fill="#303C42"><?php echo $args['upcoming']['month']; ?></text>
@@ -138,5 +136,6 @@
         </div>
     </div>
     <?php wp_footer(); ?>
+    <?php wpas_footer(); ?>
     </body>
 </html>
