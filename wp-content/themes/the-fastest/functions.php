@@ -24,16 +24,10 @@
             ],
         'critical-styles' => [
             "page" => [
-                "home" => 'above.css',
-                "the-program" => 'above.css',
-                "pricing" => 'above.css',
-                "the-academy" => 'above.css',
-                "calendar" => 'above.css',
-                "apply" => 'above.css',
-                "blog" => 'blog.css'
+                "all" => 'above.css',
                 ],
             "custom-post" => [
-                "course" => 'above.css'
+                "all" => 'above.css'
                 ],
             "post" => [
                 'all' => 'blog.css'
@@ -44,13 +38,7 @@
             ],
         'scripts' => [
             "page" => [
-                "home" => ['vendor.js','index.js'],
-                "the-program" => ['vendor.js','index.js'],
-                "pricing" => ['vendor.js','index.js'],
-                "the-academy" => ['vendor.js','index.js'],
-                "blog" => ['vendor.js','blog.js'],
-                "apply" => ['vendor.js','index.js'],
-                "calendar" => ['vendor.js','index.js']
+                "all" => ['vendor.js','index.js']
                 ],
             "post" => [
                 'all' => ['vendor.js','blog.js']
