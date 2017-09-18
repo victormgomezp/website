@@ -145,7 +145,7 @@ class General{
     
     function populate_location_dropdown( $form ) {
         
-        foreach ( $form['fields'] as &$field ) {
+        if(!empty($form['fields'])) foreach ( $form['fields'] as &$field ) {
     
             if ( $field->type != 'select' || strpos( $field->cssClass, 'populate-locations' ) === false ) {
                 continue;

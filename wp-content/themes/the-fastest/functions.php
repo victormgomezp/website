@@ -24,22 +24,22 @@
             ],
         'critical-styles' => [
             "page" => [
-                "home" => 'public/above.css',
-                "the-program" => 'public/above.css',
-                "pricing" => 'public/above.css',
-                "the-academy" => 'public/above.css',
-                "calendar" => 'public/above.css',
-                "apply" => 'public/above.css',
-                "blog" => 'public/blog.css'
+                "home" => 'above.css',
+                "the-program" => 'above.css',
+                "pricing" => 'above.css',
+                "the-academy" => 'above.css',
+                "calendar" => 'above.css',
+                "apply" => 'above.css',
+                "blog" => 'blog.css'
                 ],
             "custom-post" => [
-                "course" => 'public/above.css'
+                "course" => 'above.css'
                 ],
             "post" => [
-                'all' => 'public/blog.css'
+                'all' => 'blog.css'
                 ],
             "category" => [
-                'all' => 'public/blog.css'
+                'all' => 'blog.css'
                 ]
             ],
         'scripts' => [
