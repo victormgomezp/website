@@ -2401,7 +2401,7 @@ SET d.value = l.value"
 		wp_register_script( 'gform_form_admin', $base_url . "/js/form_admin{$min}.js", array( 'jquery', 'jquery-ui-autocomplete', 'gform_placeholder' ), $version );
 		wp_register_script( 'gform_form_editor', $base_url . "/js/form_editor{$min}.js", array( 'jquery', 'gform_json', 'gform_placeholder' ), $version );
 		wp_register_script( 'gform_forms', $base_url . "/js/forms{$min}.js", array( 'jquery' ), $version );
-		wp_register_script( 'gform_gravityforms', $base_url . "/js/gravityforms{$min}.js", array( 'jquery', 'gform_json' ), $version );
+		wp_register_script( 'gform_gravityforms', $base_url . "/js/gravityforms{$min}.js", array( 'jquery', 'gform_json' ), $version, true);
 		wp_register_script( 'gform_json', $base_url . '/js/jquery.json.js', array( 'jquery' ), $version, true );
 		wp_register_script( 'gform_masked_input', $base_url . '/js/jquery.maskedinput.min.js', array( 'jquery' ), $version );
 		wp_register_script( 'gform_menu', $base_url . "/js/menu{$min}.js", array( 'jquery' ), $version );

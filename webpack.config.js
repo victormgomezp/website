@@ -11,7 +11,7 @@ module.exports = {
     index: pathToTheme+'/src/js/index.js',
     blog: pathToTheme+'/src/js/blog.js',
     above: pathToTheme+'/src/js/above.js',
-    vendor: ['jquery','chart.js', 'bootstrap/js/dist/util', 'bootstrap/js/dist/dropdown', 'bootstrap/js/dist/collapse', 'bootstrap/js/dist/carousel', 'bootstrap/js/dist/modal', 'bootstrap-slider']
+    vendor: ['jquery','chart.js','jquery-mask-plugin', 'bootstrap/js/dist/util', 'bootstrap/js/dist/dropdown', 'bootstrap/js/dist/collapse', 'bootstrap/js/dist/carousel', 'bootstrap/js/dist/modal', 'bootstrap-slider']
   },
   output: {
     path: pathToTheme+'/public/',
@@ -45,8 +45,19 @@ module.exports = {
           }]
         })
       }, //css only files
+      {
+          test: require.resolve('jquery'),
+          use: [{
+              loader: 'expose-loader',
+              options: 'jQuery'
+          },{
+              loader: 'expose-loader',
+              options: '$'
+          }]
+      },
       { test: /\.(png|svg|jpg|gif)$/, use: ['file-loader'] }, //for images
       { test: /\.woff($|\?)|\.woff2($|\?)|\.ttf($|\?)|\.eot($|\?)|\.svg($|\?)/, use: ['file-loader'] } //for fonts
+      
     ]
   },
   plugins: [
