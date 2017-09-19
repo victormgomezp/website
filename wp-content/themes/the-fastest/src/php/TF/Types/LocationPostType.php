@@ -23,7 +23,7 @@ class LocationPostType extends BasePostType{
         // reset choices
         $field['choices'] = array();
         $field['choices']['0'] = 'Select a slug from active campaign';
-        foreach($coursesField->options as $opt) $field['choices'][$opt->value] = $opt->name;
+        foreach($coursesField->options as $opt) $field['choices'][$opt->name] = $opt->value;
     
         // return the field
         return $field;
@@ -62,7 +62,7 @@ class LocationPostType extends BasePostType{
     
             $choices = array();
             foreach ( $locations as $l ) {
-                $choices[] = array( 'text' => $l['post_title'], 'value' => $l['ID'] );
+                $choices[] = array( 'text' => $l['post_title'], 'value' => $l['ac_location_slug'] );
             }
     
             // update 'Select a Post' to whatever you'd like the instructive option to be
@@ -100,6 +100,7 @@ class LocationPostType extends BasePostType{
         $arrayObject = (array) $object;
         $arrayObject['flag'] = get_field('flag_icon',$object->ID);
         $arrayObject['bc_location_slug'] = get_field('breathecode_location_slug',$object->ID);
+        $arrayObject['ac_location_slug'] = get_field('active_campaign_location_slug',$object->ID);
         $arrayObject['short-title'] = substr($object->post_title,0,13).'...';
         return $arrayObject;
     }
