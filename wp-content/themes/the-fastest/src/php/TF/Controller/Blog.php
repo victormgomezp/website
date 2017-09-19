@@ -14,9 +14,14 @@ class Blog{
         $args['featured'] = PostPostType::All(array(
         	'numberposts'	=> 4,
         	'meta_key'		=> 'featured_post',
-        	'meta_value'	=> true
+        	'meta_value'	=> 'true'
         ));
         $args['upcoming'] = $this->getNextCohort();
+        $args['posts'] = get_posts(array(
+        	'numberposts'	=> 10,
+        	'meta_key'		=> 'featured_post',
+        	'meta_value'	=> 'false'
+        ));
         return $args;
     }
     

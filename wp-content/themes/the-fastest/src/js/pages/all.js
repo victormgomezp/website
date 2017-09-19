@@ -41,3 +41,39 @@ $('.newsletter-signup').submit(function(event){
    });
    
 });
+
+$('.syllabus-download').submit(function(event){
+   
+   event.preventDefault();
+   
+   var formSyllabus = $(this);
+   var emailField = formSyllabus.find('input[type=email]');
+   var email = emailField.val();
+   
+   $.ajax({
+      url: WPAS_APP.ajax_url,
+      dataType: 'JSON',
+      method: 'POST',
+      data: {
+         action: 'download_syllabus',
+         email: email
+      },
+      success: function(response){
+         if(response)
+         {
+            if(response.code == 200)
+            {
+               formSyllabus.html('<div class="alert alert-info" role="alert">'+response.data+'</div>');
+               setTimeout(function(){
+                  $('#syllabusModal').modal('hide');
+               },2000)
+            }
+            else formSyllabus.find('.alert-danger').html(response.msg).css('display','block');
+         }
+      },
+      error: function(p1,p2,p3){
+         alert(p3);
+      }
+   });
+   
+});

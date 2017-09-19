@@ -33,7 +33,7 @@ $args = wpas_get_view_data();
             <h4 class="section-heading text-black">Finally an affordable & premium course in Miami</h4>
             <p class="text-faded">We never stopped trying until we mastered a real premium but affordable program. Talk to one of our student advisors and make sure you are a good fit for our program;</p>
             <form class="form-inline">
-              <a href="<?php echo get_permalink( get_page_by_path( 'download-syllabus' ) ) ?>" target="_blank" class='btn btn-lg btn-secondary'>Request Syllabus</a>
+              <a href="#syllabusModal"  data-toggle="modal" data-target="#syllabusModal" class='btn btn-lg btn-secondary'>Request Syllabus</a>
               <a href="<?php echo get_permalink( get_page_by_path( 'apply' ) ); ?>" class='btn btn-lg btn-danger'>Apply Now</a>
             </form>
           </div>
@@ -120,9 +120,10 @@ $args = wpas_get_view_data();
         <div class="row">
           <div class="col-sm-10 mx-auto call-to-action mb-0">
             <h4>Download our Syllabus (PDF) and get all the details</h4>
-             <form class="form-inline text-center">
-              <input type="email" class="form-control" name="" placeholder="Your email"/>
-              <a class="btn btn-secondary form-control ml-3" href="<?php echo get_permalink( get_page_by_path( 'download-syllabus' ) ) ?>" target="_blank">Download</a>
+             <form class="form-inline text-center syllabus-download">
+              <div class="alert alert-danger" style=" width: 100%; display: none;" role="alert"></div>
+              <input type="email" class="form-control" name="" placeholder="Your email" required/>
+              <button class="btn btn-secondary form-control ml-3">Download</button>
             </form>
           </div>
         </div>

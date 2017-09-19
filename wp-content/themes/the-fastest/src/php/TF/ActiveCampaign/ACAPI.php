@@ -28,12 +28,25 @@ class ACAPI{
     	);
     */
     
-    public static function subscribeToList($contact, $listId)
-    {
+    public static function subscribeToList($contact, $listId, $tags=null){
+        
         $contact["p[{$listId}]"] = $listId;
         $contact["status[{$listId}]"] = 1;
+        if($tags) $contact["tags"] = $tags;
         
     	$result = self::$connector['old']->api("contact/sync", $contact);
+    	if (!(int)$result->success) throw new \Exception('Syncing contact failed. Error returned: '. $result->error);
+        
+        // successful request
+        return (int)$result->subscriber_id;
+    }
+    
+    public static function tagContact($email, $tags){
+        
+        $request["email"] = $email;
+        $request["tags"] = $tags;
+
+    	$result = self::$connector['old']->api("contact/tag_add", $request);
     	if (!(int)$result->success) throw new \Exception('Syncing contact failed. Error returned: '. $result->error);
         
         // successful request

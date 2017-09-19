@@ -100,7 +100,7 @@ class General{
         $args['upcoming'] = $this->getNextCohort();
         return $args;
     }
-    
+
     private function getCalendarQuery(){
         
         $query = [];
@@ -140,9 +140,28 @@ class General{
         $coursesField = \TF\ActiveCampaign\ACAPI::subscribeToList($contact, $listId);
 
         if($coursesField) WPASController::ajaxSuccess('Thank you! Your subscription has been processed successfully');
+        else WPASController::ajaxError('Something went wrong');
         
     }
     
+    public function download_syllabus(){
+        
+        $listId = get_option('activecampaign-soft-leads-list-id');
+        
+        if(empty($_POST['email'])) WPASController::ajaxError('Invalid Email');
+        
+        $contact = array(
+    		"email" => $_POST['email'],
+    		"tags" => 'download_syllabus',
+    	);
+        
+        $coursesField = \TF\ActiveCampaign\ACAPI::subscribeToList($contact, $listId);
+
+        if($coursesField) WPASController::ajaxSuccess('Check your email! In the next minutes your should receive what you asked for :)');
+        else WPASController::ajaxError('Something went wrong');
+        
+    }
+
     function populate_location_dropdown( $form ) {
         
         if(!empty($form['fields'])) foreach ( $form['fields'] as &$field ) {

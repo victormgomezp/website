@@ -70,11 +70,10 @@ $args = wpas_get_view_data();
 	<div class="card-columns listrecent">
 
 		<!-- begin post -->
-	<?php if ( have_posts() ) {
-		while ( have_posts() ) { the_post(); ?>
+	<?php foreach($args['posts'] as $post){ ?>
 		<div class="card">
 			<a href="post.html">
-				<img class="img-fluid" src="<?php echo get_the_post_thumbnail_url(); ?>" alt="">
+				<img class="img-fluid" src="<?php echo get_the_post_thumbnail_url($post->id); ?>" alt="">
 			</a>
 			<div class="card-block">
 				<h2 class="card-title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
@@ -95,7 +94,6 @@ $args = wpas_get_view_data();
 				</div>
 			</div>
 		</div>
-		<?php } ?>
 	<?php } ?>
 		<!-- end post -->
 	</div>

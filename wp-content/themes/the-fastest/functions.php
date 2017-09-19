@@ -54,6 +54,7 @@
     $controller->route([ 'slug' => 'Category:news', 'controller' => 'Blog']);
     
     $controller->routeAjax([ 'slug' => 'all', 'controller' => 'General:newsletter_signup' ]);
+    $controller->routeAjax([ 'slug' => 'all', 'controller' => 'General:download_syllabus' ]);
     //$controller->routeAjax([ 'slug' => 'apply', 'controller' => 'General:get_incoming_dates' ]);
     
     
@@ -73,7 +74,12 @@
     use WPAS\GravityForm\WPASGravityForm;
     if ( class_exists( 'GFCommon' ) )
     {
-        $gfManager = new WPASGravityForm();
+        $gfManager = new WPASGravityForm([
+            'submit-button-class' => true,
+            'fields' => [
+                ['type' => 'button-group', 'label' => 'Button Group']
+            ]
+        ]);
     }
     
     use WPAS\Messaging\WPASAdminNotifier;

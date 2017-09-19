@@ -14,8 +14,12 @@
       }
       .avatar{
         margin-bottom: 2rem;
-        img { 
-          max-width: 170px; 
+        .img-fluid { 
+          width: 180px;
+          height: 180px;
+          display: inline-block;
+          background-position: center;
+          background-size: 100%;
           border: 2px solid black;
         }
       } 

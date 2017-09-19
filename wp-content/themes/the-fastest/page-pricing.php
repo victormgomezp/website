@@ -66,6 +66,13 @@ $args = wpas_get_view_data();
             </div>
           </div>
         </div>
+        <!--
+        <div class='row'>
+          <div class='col-md-12 mx-auto text-center mt-4 mb-4'>
+            <img src="<?php echo get_template_directory_uri(); ?>/assets/img/pricing.png" />
+          </div>
+        </div>
+        -->
         <div class='row'>
           <div class='col-md-12 mx-auto text-center mt-4 mb-4'>
             <a href="<?php echo get_permalink( get_page_by_path( 'apply' ) ); ?>" class="btn btn-danger btn-lg">Apply now to the program</a>

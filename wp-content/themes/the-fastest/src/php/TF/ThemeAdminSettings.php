@@ -86,6 +86,12 @@ class ThemeAdminSettings {
 				    'label' => 'Newletter Signup List',
 				    'name' => 'activecampaign-newsletter-list-id',
 					'description' => 'What is the list you use for the newsletter'
+				],
+				[
+				    'type' => 'text', 
+				    'label' => 'Soft Leads List',
+				    'name' => 'activecampaign-soft-leads-list-id',
+					'description' => 'What is the list you use for the soft leads'
 				]
 			];
 		

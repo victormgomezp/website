@@ -87,6 +87,7 @@
             </div>
         </div>
     </footer>
+    <?php if(!empty($args['upcoming'])){ ?>
     <div class="footer-bar fixed-bottom">
         <div class="container">
             <div class="row">
@@ -139,6 +140,22 @@
                 </div>
             </div>
         </div>
+    </div>
+    <?php } ?>
+    <div id="syllabusModal" class="modal fade bd-example-modal-lg mt-5" tabindex="-1" role="dialog" aria-labelledby="syllabusModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-lg">
+        <div class="modal-content p-3 text-center">
+            <h3>Full Stack Web Development Syllabus</h3>
+            <p>Please fill out this form to receive our syllabus and program catalog.</p>
+            <div class="mb-4">
+                <form class="form-inline text-center syllabus-download d-inline">
+                    <div class="alert alert-danger" style=" width: 100%; display: none;" role="alert"></div>
+                    <input type="email" class="form-control" name="" placeholder="Your email" required/>
+                    <button class="btn btn-secondary form-control ml-3">Download</button>
+                </form>
+            </div>
+        </div>
+      </div>
     </div>
     <?php wp_footer(); ?>
     <?php wpas_footer(); ?>
