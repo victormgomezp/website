@@ -14,6 +14,7 @@
 		"wpackagist-plugin/w3-total-cache": "*",
 		"wpackagist-plugin/wordpress-seo": "*",
 		"wpackagist-plugin/amp": "*",
+		"wpackagist-plugin/redirection": "*",
 		"wpackagist-plugin/polylang": "*",
 		"wpackagist-plugin/duplicator": "*",
 		"wpackagist-plugin/simple-custom-post-order": "*",

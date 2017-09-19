@@ -7,7 +7,7 @@
                     <div class="alert alert-danger" style=" width: 100%; display: none;" role="alert"></div>
                     <label for="staticEmail2" class='text-right'>Get updates right in your inbox. <br/>We promise to not spam you.</label>
                     <input type="email" class="form-control newsletter-email" id="staticEmail2" placeholder="email@example.com" required>
-                    <button type="submit" class="btn btn-secondary">Sign Up</button>
+                    <button type="submit" class="btn btn-secondary ml-0 ml-sm-3 mt-3 mt-sm-0 form-control">Subscribe</button>
                 </div>
             </form>
         </div>

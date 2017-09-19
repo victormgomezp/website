@@ -123,7 +123,7 @@ $args = wpas_get_view_data();
              <form class="form-inline text-center syllabus-download">
               <div class="alert alert-danger" style=" width: 100%; display: none;" role="alert"></div>
               <input type="email" class="form-control" name="" placeholder="Your email" required/>
-              <button class="btn btn-secondary form-control ml-3">Download</button>
+              <button class="btn btn-secondary form-control mt-3 ml-0 ml-sm-3 mt-sm-0">Download</button>
             </form>
           </div>
         </div>
