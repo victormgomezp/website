@@ -16,7 +16,7 @@
     $asyncLoader = new WPASAsyncLoader([
         'public-url' => get_stylesheet_directory_uri().'/public/',
         'debug' => WP_DEBUG,
-        'minify-html' => false,
+        'minify-html' => !WP_DEBUG,
         'styles' => [
             "page" => [
                 "all" => 'index.css'
