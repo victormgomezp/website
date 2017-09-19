@@ -179,7 +179,18 @@ class ThemeAdminSettings {
         {
             $cohorts = json_decode($cohortsJSON);
             $upcoming = [];
-            if($cohorts && $cohorts->code==200) foreach($cohorts->data as $c) $upcoming[] = CoursePostType::getDateInformation($c);
+            if($cohorts && $cohorts->code==200){
+            	foreach($cohorts->data as $c){
+            		
+            		$cohort = CoursePostType::getDateInformation($c);
+            		if($cohort['time'] > time()) $upcoming[] = $cohort;
+            	} 
+            }
+            
+            
+			usort($upcoming, function( $a, $b ) {
+			    return $b["time"] - $a["time"];
+			});
 
             WPASThemeSettingsBuilder::setThemeOption($inputId,$upcoming);
         }
