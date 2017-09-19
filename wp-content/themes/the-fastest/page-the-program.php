@@ -13,8 +13,8 @@ $args = wpas_get_view_data();
               <div><div>build your own Tech Startup</div></div>
               <div><div> and join the Tech community</div></div>
             </div>
-            <form class="form-inline">
-              <button href="#" class='btn btn-lg btn-default'>Request Syllabus</button>&nbsp;
+            <form class="form-inline mt-3 mt-sm-0">
+              <a href="#syllabusModal"  data-toggle="modal" data-target="#syllabusModal" class='btn btn-lg btn-secondary mr-3'>Request Syllabus</a>
               <a href="<?php echo get_permalink( get_page_by_path( 'apply' ) ); ?>" class='btn btn-lg btn-danger'>Apply Now</a>
             </form>
           </div>
@@ -51,7 +51,7 @@ $args = wpas_get_view_data();
                 <a class="nav-link disabled" href="#pricing">Price & Financing</a>
               </li>
               <li class="nav-item">
-                <button class='btn btn-defaut btn-danger'>Apply Now</button>
+                <a href="<?php echo get_permalink( get_page_by_path( 'apply' ) ); ?>" class='btn btn-danger'>Apply Now</a>
               </li>
             </ul>
           </div>
@@ -134,10 +134,11 @@ $args = wpas_get_view_data();
       <div class="container">
         <div class="row">
           <div class="col-md-9 ml-auto call-to-action mb-0">
-            <h4>Download our syllabus PDF to understand all the details</h4>
-             <form class="form-inline text-center">
+            <h4>Download our syllabus PDF to get all the details</h4>
+             <form class="form-inline text-center syllabus-download">
+              <div class="alert alert-danger" style=" width: 100%; display: none;" role="alert"></div>
               <input type="email" class="form-control" name="" placeholder="Your email"/>
-              <a class="btn btn-default btn-secondary form-control" href="#services">Download</a>
+              <button class="btn btn-secondary form-control ml-sm-3 mt-sm-0 mt-3">Download</a>
             </form>
           </div>
         </div>

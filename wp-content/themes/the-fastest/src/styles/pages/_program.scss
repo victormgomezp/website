@@ -8,10 +8,14 @@ $brand-primary: black; //Zen Blue
     
     #flip {
       display: block !important;
-      height:80px;
       overflow:hidden;
-      font-size: 40px;
+      font-size: 20px;
+      height:60px;
       font-weight: 900;
+      @media screen and (min-width: $break-point) {
+        height:80px;
+        font-size: 40px;
+      }
     }
     #flip > div > div {
       color:#fff;
@@ -193,7 +197,7 @@ $brand-primary: black; //Zen Blue
             display: block;
             //background: #2c2c35;
             //a{color: white;}
-            a{color: black;}
+            a:not(.btn){color: black;}
             background: #e8e8e8;
             border-left: 5px solid orange;
             font-size: 15px;

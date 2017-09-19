@@ -76,7 +76,7 @@ $args = wpas_get_view_data();
       <div class="container">
         <div class="row">
           <div class="col-md-12 ml-auto">
-            <h2 class="section-heading text-black mb-3">Receive training from Senior-only instructors</h2>
+            <h2 class="section-heading text-black mb-3">The Team</h2>
             <p>
               Our team is devoted to deliver a premium program. In order to be part of our team, everybody needs to feel the passion for education, coding and helping students develop their skills. At 4Geeks Academy we believe in the power of education and the importance of coding.
             </p>

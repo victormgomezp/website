@@ -15,8 +15,8 @@
     use WPAS\Performance\WPASAsyncLoader;
     $asyncLoader = new WPASAsyncLoader([
         'public-url' => get_stylesheet_directory_uri().'/public/',
-        'debug' => WP_DEBUG,
-        'minify-html' => true,
+        'debug' => false,
+        'minify-html' => false,
         'styles' => [
             "page" => [
                 "all" => 'index.css'
@@ -76,10 +76,12 @@
     {
         $gfManager = new WPASGravityForm([
             'submit-button-class' => true,
+            'populate-current-language' => true,
             'fields' => [
                 ['type' => 'button-group', 'label' => 'Button Group']
             ]
         ]);
+        
     }
     
     use WPAS\Messaging\WPASAdminNotifier;
