@@ -3,7 +3,7 @@
 var topMenu = $(".program-menu"),
     topMenuHeight = topMenu.outerHeight()+15,
     // All list items
-    menuItems = topMenu.find("a"),
+    menuItems = topMenu.find("a[href*='#']"),
     // Anchors corresponding to menu items
     scrollItems = menuItems.map(function(){
       var item = $($(this).attr("href"));

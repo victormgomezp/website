@@ -14,8 +14,6 @@ class General{
     
     public function load_controller_hooks(){
         
-        $formId = 1;
-        add_filter( 'gform_pre_render_'.$formId, [$this,'populate_location_dropdown'] );
         //add_filter( 'gform_pre_validation_'.$fieldId, [$this,'populate_location_dropdown'] );
         //add_filter( 'gform_pre_submission_filter_'.$fieldId, [$this,'populate_location_dropdown'] );
         //add_filter( 'gform_admin_pre_render_'.$fieldId, [$this,'populate_location_dropdown'] );
@@ -162,30 +160,4 @@ class General{
         
     }
 
-    function populate_location_dropdown( $form ) {
-        
-        if(!empty($form['fields'])) foreach ( $form['fields'] as &$field ) {
-    
-            if ( $field->type != 'select' || strpos( $field->cssClass, 'populate-locations' ) === false ) {
-                continue;
-            }
-    
-            // you can add additional parameters here to alter the posts that are retrieved
-            // more info: [http://codex.wordpress.org/Template_Tags/get_posts](http://codex.wordpress.org/Template_Tags/get_posts)
-            $locations = LocationPostType::all();
-    
-            $choices = array();
-            foreach ( $locations as $l ) {
-                $choices[] = array( 'text' => $l['post_title'], 'value' => $l['ID'] );
-            }
-    
-            // update 'Select a Post' to whatever you'd like the instructive option to be
-            $field->placeholder = 'Select a Location';
-            $field->choices = $choices;
-    
-        }
-    
-        return $form;
-    }
-    
 }

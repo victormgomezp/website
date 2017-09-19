@@ -133,7 +133,7 @@ $args = wpas_get_view_data();
       <div class="container">
         <div class="row">
           <div class="col-12">
-            <h2 class="section-heading text-black">Ace any job interview or code for your self</h2>
+            <h2 class="section-heading text-black text-center">Ace any job interview or code for your self</h2>
             <p class='section-message pb-1'>
               We know how typical coding interviews are, and what they will ask you to code (testing your skills). Here you can have a taste of the projects built by some of our students:
             </p>
