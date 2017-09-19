@@ -26,10 +26,10 @@ $brand-primary: black; //Zen Blue
     
     #flip div:first-child {
       @media screen and (max-width: $break-point) {
-        animation: show-mobile 6s linear infinite;
+        animation: show-mobile 8s linear infinite;
       }
       @media screen and (min-width: $break-point) {
-        animation: show-desktop 6s linear infinite;
+        animation: show-desktop 8s linear infinite;
       }
     }
     
