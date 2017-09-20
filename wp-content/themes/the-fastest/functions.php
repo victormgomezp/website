@@ -52,6 +52,7 @@
     $controller->route([ 'slug' => 'blog:blog', 'controller' => 'Blog']);
     $controller->route([ 'slug' => 'Single:post', 'controller' => 'Blog']);
     $controller->route([ 'slug' => 'Category:news', 'controller' => 'Blog']);
+    $controller->route([ 'slug' => 'Single:event', 'controller' => 'Event']);
     
     $controller->routeAjax([ 'slug' => 'all', 'controller' => 'General:newsletter_signup' ]);
     $controller->routeAjax([ 'slug' => 'all', 'controller' => 'General:download_syllabus' ]);
@@ -65,7 +66,8 @@
         'course:'.$namespace.'CoursePostType',
         'location:'.$namespace.'LocationPostType',
         'team-member:'.$namespace.'TeamMemberPostType',
-        'testimonial:'.$namespace.'TestimonialPostType'
+        'testimonial:'.$namespace.'TestimonialPostType',
+        'event:'.$namespace.'EventPostType'
     ]);
     
     use TF\ActiveCampaign\ACAPI;

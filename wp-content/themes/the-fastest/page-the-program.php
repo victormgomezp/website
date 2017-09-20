@@ -62,16 +62,16 @@ $args = wpas_get_view_data();
             </h5>
             <div class="row">
               <div class='col-sm-8 mb-3'>
-                <h4>Learn from the best</h4>
+                <h4>Really senior mentoring</h4>
                 All of our staff has 10+ years coding and holds senior possitions in Miami's tech industry.
               </div>
               <div class='col-sm-8 mb-3'>
                 <h4>Top notch technology stack</h4>
-                Coding is changing a lot RIGHT NOW, learn the newest and most needed languages and frameworks in the market. 
+                Coding is changing a lot RIGHT NOW, learn the newest and most needed languages and frameworks in the market. Your potencial employeers will love it.
               </div>
               <div class='col-sm-8 mb-3'>
-                <h4>Top notch technology stack</h4>
-                Coding is changing a lot RIGHT NOW, learn the newest and most needed languages and frameworks in the market. 
+                <h4>Really Part-time</h4>
+                It is not about teaching on after-hours, it requires much more! This course is meant for employed professionals, we have designed the perfect method for flexible and blended learning.
               </div>
             </div>
           </div>
@@ -137,7 +137,7 @@ $args = wpas_get_view_data();
             <h4>Download our syllabus PDF to get all the details</h4>
              <form class="form-inline text-center syllabus-download">
               <div class="alert alert-danger" style=" width: 100%; display: none;" role="alert"></div>
-              <input type="email" class="form-control" name="" placeholder="Your email"/>
+              <input type="email" class="form-control" name="" placeholder="Your email" required/>
               <button class="btn btn-secondary form-control ml-sm-3 mt-sm-0 mt-3">Download</a>
             </form>
           </div>
