@@ -57,7 +57,7 @@ $args = wpas_get_view_data();
 					</a>
 				</div>
 				<div class="col-md-10">
-					<a class="link-dark" href="author.html"><?php the_author(); ?></a><a href="<?php the_author_meta('twitter'); ?>" class="btn follow">Follow on Twitter</a>
+					<a class="link-dark" href="author.html"><?php the_author(); ?></a><a href="http://www.twitter.com/<?php the_author_meta('twitter'); ?>" class="btn follow">Follow on Twitter</a>
 					<span class="author-description"><?php the_author_meta('description'); ?></span>
 					<span class="post-date"><?php the_date(); ?></span><span class="dot"></span><span class="post-read">6 min read</span>
 				</div>
