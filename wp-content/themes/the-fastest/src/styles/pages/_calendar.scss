@@ -31,6 +31,7 @@
             padding: 15px;
             overflow-y: hidden;
             height: 95px;
+            a{color: black;}
             // Extra small devices (portrait phones, less than 576px)
             @media (max-width: 575px) { .media-heading{font-size: 1rem;} }
             .additional-details{

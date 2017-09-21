@@ -42,13 +42,27 @@
     $controller = new WPASController([
         'namespace' => 'TF\\Controller\\'
     ]);
+    
     $controller->route([ 'slug' => 'home', 'controller' => 'General']);
+    $controller->route([ 'slug' => 'inicio', 'controller' => 'General:renderHome']);
+    
     $controller->route([ 'slug' => 'Course', 'controller' => 'Course']);
+    
     $controller->route([ 'slug' => 'the-academy', 'controller' => 'General']);
+    $controller->route([ 'slug' => 'academia', 'controller' => 'General:renderTheAcademy']);
+    
     $controller->route([ 'slug' => 'apply', 'controller' => 'General']);
+    $controller->route([ 'slug' => 'aplica', 'controller' => 'General:renderApply']);
+    
     $controller->route([ 'slug' => 'the-program', 'controller' => 'General']);
+    $controller->route([ 'slug' => 'programa', 'controller' => 'General:renderTheProgram']);
+    
     $controller->route([ 'slug' => 'calendar', 'controller' => 'General']);
+    $controller->route([ 'slug' => 'calendario', 'controller' => 'General:renderCalendar']);
+    
     $controller->route([ 'slug' => 'pricing', 'controller' => 'General']);
+    $controller->route([ 'slug' => 'precio', 'controller' => 'General:renderPricing']);
+    
     $controller->route([ 'slug' => 'blog:blog', 'controller' => 'Blog']);
     $controller->route([ 'slug' => 'Single:post', 'controller' => 'Blog']);
     $controller->route([ 'slug' => 'Category:news', 'controller' => 'Blog']);

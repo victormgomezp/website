@@ -75,7 +75,8 @@ class General{
     }
     
     public function renderApply(){
-        $args = $this->getData();
+        $args = [];
+        $args['upcoming'] = $this->getNextCohort();
         return $args;
     }
 

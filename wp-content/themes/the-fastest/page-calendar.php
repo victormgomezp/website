@@ -78,7 +78,7 @@ $args = wpas_get_view_data();
                     <p class='event-year'><?php echo $course['year']; ?></p>
                   </div>
                   <div class="media-body text-left pb-0">
-                    <h3 class="media-heading mt-0"><?php echo $course['name']; ?></h3>
+                    <h3 class="media-heading mt-0"><a href="<?php echo get_permalink( get_page_by_path( 'the-program' ) ); ?>"><?php echo $course['name']; ?></a></h3>
                     <div class="row additional-details">
                       <div class="col-9 col-sm-6"><span class="imoon icon-location"></span> <?php echo $course['location']; ?></div>
                       <div class="col-3  col-sm-4 col-md-3 d-none d-sm-block">
