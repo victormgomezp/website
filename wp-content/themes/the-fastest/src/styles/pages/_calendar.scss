@@ -1,4 +1,4 @@
-.page-calendar{
+.page-calendar, .page-calendario{
     .courses{
         .list-group-item{
             padding: 0;
@@ -91,7 +91,7 @@
 
 //Tablets or bigger screens
 @media screen and (min-width: 48em) {
-    .page-calendar{
+    .page-calendar, .page-calendario{
         .courses{
             .additional-details{
                 font-size: 15px !important;

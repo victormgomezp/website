@@ -1,4 +1,4 @@
-.page-the-academy{
+.page-the-academy, .page-academia{
     background-image: url('../../assets/img/about.jpg');
     .founders-img{
         height: 216px;
@@ -16,7 +16,7 @@
 
 //Tablets or bigger screens
 @media screen and (min-width: 48em) {
-    .page-the-academy{
+    .page-the-academy, .page-academia{
         .founders-img{
             height: 100%;
             background-position-x: 0;
