@@ -48,21 +48,21 @@ $args = wpas_get_view_data();
 		<!-- Begin Post -->
 		<div class="col-md-8 col-md-offset-2 col-xs-12">
 			<div class="mainheading">
-
-				<!-- Begin Top Meta -->
-				<div class="row post-top-meta">
-					<div class="col-md-2">
-						<a href="author.html">
-							<?php echo get_avatar( get_the_author_meta( 'ID' ), 250,null,get_the_author_meta( 'user_nicename' ),['class' => 'author-thumb'] ); ?>
-						</a>
-					</div>
-					<div class="col-md-10">
-						<a class="link-dark" href="author.html"><?php the_author(); ?></a><a href="#" class="btn follow">Follow</a>
-						<span class="author-description"><?php the_author_meta('description'); ?></span>
-						<span class="post-date"><?php the_date(); ?></span><span class="dot"></span><span class="post-read">6 min read</span>
-					</div>
+				
+<!-- Begin Top Meta -->
+			<div class="row post-top-meta">
+				<div class="col-md-2 text-center">
+					<a href="#">
+						<?php echo get_avatar( get_the_author_meta( 'ID' ), 250,null,get_the_author_meta( 'user_nicename' ),['class' => 'author-thumb'] ); ?>
+					</a>
 				</div>
-				<!-- End Top Menta -->
+				<div class="col-md-10">
+					<a class="link-dark" href="author.html"><?php the_author(); ?></a><a href="<?php the_author_meta('twitter'); ?>" class="btn follow">Follow on Twitter</a>
+					<span class="author-description"><?php the_author_meta('description'); ?></span>
+					<span class="post-date"><?php the_date(); ?></span><span class="dot"></span><span class="post-read">6 min read</span>
+				</div>
+			</div>
+			<!-- End Top Menta -->
 
 				<h1 class="posttitle"><?php the_title(); ?></h1>
 
@@ -114,9 +114,15 @@ $args = wpas_get_view_data();
 
 <!-- Begin AlertBar
 ================================================== -->
-<div class="alertbar">
-	<div class="container text-center">
-		<img src="assets/img/logo.png" alt="">Our next cohort starts on <?php echo $args['upcoming']['date']; ?> <a href="<?php echo get_permalink( get_page_by_path( 'apply' ) ); ?>" class="btn subscribe">Apply Now</a>
+<div class="alertbar bg-light">
+	<div class="row">
+		<div class="col-xs-6 ml-auto text-center">
+			<h5>Intersted in learning to code?</h5>
+			Our next cohort starts on <?php echo $args['upcoming']['date']; ?>
+		</div>
+		<div class="col-xs-2 mr-auto text-center pl-3 pt-2">
+			<a href="<?php echo get_permalink( get_page_by_path( 'the-program' ) ); ?>" class="btn btn-danger">Learn More</a>
+		</div>
 	</div>
 </div>
 <!-- End AlertBar
