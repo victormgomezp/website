@@ -12,7 +12,7 @@ class LocationPostType extends BasePostType{
     function populate_fields(){
         
         add_filter('acf/load_field/name=active_campaign_location_slug', [$this,'populate_active_campaign_slug']);
-        add_filter('acf/load_field/name=breathecode_location_slug', [$this,'populate_gf_location_dropdown']);
+        add_filter('acf/load_field/name=breathecode_location_slug', [$this,'populate_breathecode_slug']);
         
         add_filter( 'gform_pre_render', [$this,'populate_gf_location_dropdown'] );
     }
@@ -74,11 +74,13 @@ class LocationPostType extends BasePostType{
         return $form;
     }
     
-    public static function get($args){
+    public static function get($args=null){
         
-        $query = new WP_Query(['post_type' => 'location', 'slug' => $args['slug']]);
+        $args['post_type'] = 'location';
+        $query = new WP_Query($args);
+
         if($query->posts && count($query->posts)==1){
-            return end($query->posts);
+            return $query->posts[0];
         }else return null;
     }
     
@@ -92,16 +94,17 @@ class LocationPostType extends BasePostType{
             if($hook) $objectsArray[] = $hook($object);
             else $objectsArray[] = self::fillMember($object);
         } 
+        
         return $objectsArray;
     }
     
     private static function fillMember($object){
-        
         $arrayObject = (array) $object;
         $arrayObject['flag'] = get_field('flag_icon',$object->ID);
         $arrayObject['bc_location_slug'] = get_field('breathecode_location_slug',$object->ID);
         $arrayObject['ac_location_slug'] = get_field('active_campaign_location_slug',$object->ID);
         $arrayObject['short-title'] = substr($object->post_title,0,13).'...';
+        
         return $arrayObject;
     }
 }

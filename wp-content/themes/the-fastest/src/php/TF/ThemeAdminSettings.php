@@ -61,7 +61,7 @@ class ThemeAdminSettings {
 					'description' => 'Full URL'
 				]
 			];
-		
+
 		$activeCampaignFields = [
 				[
 				    'type' => 'text', 
@@ -106,7 +106,7 @@ class ThemeAdminSettings {
 					    $cohorts = WPASThemeSettingsBuilder::getThemeOption('sync-bc-cohorts-api');
 					    if(empty($cohorts)) echo 'No cohort sync';
 					    else $this->printTableFromArray($cohorts,function($cohort){
-					        return $cohort['date'] .' @ '.$cohort['bc_location_slug'].' ('.$cohort['name'].', '.$cohort['language'].')';
+					        return $cohort['date'] .' @ '.$cohort['location'].' ('.$cohort['name'].', '.$cohort['language'].')';
 					    });
 					}
 				],

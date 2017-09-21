@@ -80,7 +80,7 @@ class General{
     }
 
     public function renderCalendar(){
-        
+
         $args = [];
         $args['locations'] = LocationPostType::all();
         $args['courses'] = CoursePostType::getUpcomingDates();
@@ -94,7 +94,7 @@ class General{
     private function getData(){
         $args = [];
         $args['testimonials'] = TestimonialPostType::All();
-        $args['locations'] = LocationPostType::All();
+        //$args['locations'] = LocationPostType::All();
         $args['upcoming'] = $this->getNextCohort();
         return $args;
     }
@@ -159,5 +159,5 @@ class General{
         else WPASController::ajaxError('Something went wrong');
         
     }
-
+    
 }

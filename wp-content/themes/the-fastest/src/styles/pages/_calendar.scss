@@ -29,14 +29,13 @@
         }
         .media-body{
             padding: 15px;
+            overflow-y: hidden;
+            height: 95px;
             // Extra small devices (portrait phones, less than 576px)
             @media (max-width: 575px) { .media-heading{font-size: 1rem;} }
             .additional-details{
-                font-size: 14px;
+                font-size: 12px;
                 svg{height: 20px; width: 25px; margin-right: 10px; float: left;}
-                .language{ 
-                    font-size: 80%;
-                }
             }
         }
     }
@@ -94,7 +93,7 @@
     .page-calendar{
         .courses{
             .additional-details{
-                font-size: 17px !important;
+                font-size: 15px !important;
                 svg{height: 20px !important;}
             }
         }

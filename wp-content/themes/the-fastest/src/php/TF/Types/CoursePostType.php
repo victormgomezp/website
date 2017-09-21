@@ -52,7 +52,6 @@ class CoursePostType extends BasePostType{
         
         $query = self::getCalendarQuery();
         $cohorts = WPASThemeSettingsBuilder::getThemeOption('sync-bc-cohorts-api');
-
         $upcoming = [];
         if(!empty($cohorts)) foreach($cohorts as $c) if(self::hasValues($c,$query)) $upcoming[] = $c;
         
@@ -76,12 +75,12 @@ class CoursePostType extends BasePostType{
         $course['time'] = $time;
         $course['language'] = ($cohort['language']=='en') ? 'English' : 'Español';
         $course['icon'] = ($cohort['language']=='en') ? 'united-states' : 'spain';
-        
-        $location = LocationPostType::get(['slug' => $cohort['location_slug']]);
+
+        $location = LocationPostType::get(['meta_key' => 'breathecode_location_slug', 'meta_value' => $cohort['location_slug']]);
         if($location){
             $course['location'] = $location->post_title;
         } 
-        else $course['location'] = 'Uknown';
+        else $course['location'] = 'Uknowwn';
         
         return $course;
     }

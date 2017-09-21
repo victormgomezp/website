@@ -80,14 +80,14 @@ $args = wpas_get_view_data();
                   <div class="media-body text-left pb-0">
                     <h3 class="media-heading mt-0"><?php echo $course['name']; ?></h3>
                     <div class="row additional-details">
-                      <div class="col-9 col-sm-4"><span class="imoon icon-location"></span> <?php echo $course['location']; ?></div>
-                      <div class="col-4 d-none d-sm-block">
-                        <span class='d-md-none'>from $240 / m</span>
-                        <span class='d-none d-md-block'>from $240 / month.</span>
+                      <div class="col-9 col-sm-6"><span class="imoon icon-location"></span> <?php echo $course['location']; ?></div>
+                      <div class="col-3  col-sm-4 col-md-3 d-none d-sm-block">
+                        <span class='d-md-none'>from $240 p/m</span>
+                        <span class='d-none d-md-block'>from $240 p/m</span>
                       </div>
-                      <div class="col-3">
+                      <div class="col-3 col-sm-2 col-lg-3">
                         <?php wpas_get_inline_svg('assets/icons/flags/inline',$course['icon'].'.svg'); ?>
-                        <span class='language d-none d-sm-block d-lg-none'><?php echo substr($course['language'],0,3); ?></span>
+                        <span class='language d-none d-md-block d-lg-none'><?php echo substr($course['language'],0,3); ?></span>
                         <span class='language d-none d-lg-block'><?php echo $course['language']; ?></span>
                       </div>
                     </div>
