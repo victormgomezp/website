@@ -10,7 +10,7 @@ import {PieChart} from "./vendor/cakeCharts";
 /**
  * HOME
 **/
-if(WPAS_APP.view.slug === 'home'){
+if(WPAS_APP.view.slug === 'home' || WPAS_APP.view.slug === 'inicio'){
   
   PieChart.createPie(".pieID.legend", ".pieID.pie");
   loadVideo('/wp-content/themes/the-fastest/assets/video/home-dark.mp4');
@@ -21,7 +21,7 @@ if(WPAS_APP.view.slug === 'home'){
  * THE PROGRAM
 **/
 
-if(WPAS_APP.view.slug === 'the-program'){
+if(WPAS_APP.view.slug === 'the-program' || WPAS_APP.view.slug === 'programa'){
   
   $(document).ready(function() {
     // Custom 
@@ -90,7 +90,7 @@ if(WPAS_APP.view.slug === 'the-program'){
  * PRICING
 **/
 
-if(WPAS_APP.view.slug === 'pricing'){
+if(WPAS_APP.view.slug === 'pricing' || WPAS_APP.view.slug === 'precio'){
   
   loadVideo('/wp-content/themes/the-fastest/assets/video/pricing.mp4');
   
@@ -137,7 +137,7 @@ function loadVideo(videoURL){
 }
 
 
-if(WPAS_APP.view.slug === 'calendar'){
+if(WPAS_APP.view.slug === 'calendar' || WPAS_APP.view.slug === 'calendario'){
   
   var baseURL = window.location.href;
   var pieces = baseURL.split('?');
@@ -183,6 +183,8 @@ function getUrlVars(){
         vars[hash[0]] = hash[1];
     }
     return vars;
+    
+
 }
 
 var serialize = function(obj) {
