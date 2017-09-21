@@ -7,7 +7,7 @@ $args = WPAS\Controller\WPASController::getViewData();
 ================================================== -->
 <div class="container">
 	<div class="mainheading">
-		<h1 class="sitetitle">Category <?php echo $args['wp_query']->name; ?></h1>
+		<h1 class="sitetitle">Tagged <?php echo $args['wp_query']->name; ?></h1>
 		<p class="lead">
 			 <?php echo $args['wp_query']->description; ?>
 		</p>

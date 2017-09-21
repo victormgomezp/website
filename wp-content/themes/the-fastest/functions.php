@@ -26,7 +26,8 @@
             "page" =>           ["blog" => 'blog.css', "all" => 'above.css'],
             "custom-post" =>    ["all" => 'above.css'],
             "post" =>           ['all' => 'blog.css'],
-            "category" =>       ['all' => 'blog.css']
+            "category" =>       ['all' => 'blog.css'],
+            "tag" =>            ['all' => 'blog.css']
             ],
         'scripts' => [
             "page" => [
@@ -64,8 +65,12 @@
     $controller->route([ 'slug' => 'precio', 'controller' => 'General:renderPricing']);
     
     $controller->route([ 'slug' => 'blog:blog', 'controller' => 'Blog']);
+    
     $controller->route([ 'slug' => 'Single:post', 'controller' => 'Blog']);
+    
     $controller->route([ 'slug' => 'Category:news', 'controller' => 'Blog']);
+    $controller->route([ 'slug' => 'Tag:all', 'controller' => 'Blog:renderTag']);
+    
     $controller->route([ 'slug' => 'Single:event', 'controller' => 'Event']);
     
     $controller->routeAjax([ 'slug' => 'all', 'controller' => 'General:newsletter_signup' ]);

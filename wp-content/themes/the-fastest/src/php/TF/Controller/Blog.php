@@ -33,7 +33,14 @@ class Blog{
     
     public function renderNews(){
         $args = [];
-        $category = get_queried_object();
+        //$category = get_queried_object();
+        //print_r($args); die();
+        return $args;
+    }
+    
+    public function renderTag(){
+        $args = [];
+        //$category = get_queried_object();
         //print_r($args); die();
         return $args;
     }
