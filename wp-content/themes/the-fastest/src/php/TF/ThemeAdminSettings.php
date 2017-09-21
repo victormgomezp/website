@@ -187,9 +187,9 @@ class ThemeAdminSettings {
             	} 
             }
             
-            
+            //Sort 
 			usort($upcoming, function( $a, $b ) {
-			    return $a["time"] - $b["time"];
+			    return $b["time"] - $a["time"];
 			});
 
             WPASThemeSettingsBuilder::setThemeOption($inputId,$upcoming);
