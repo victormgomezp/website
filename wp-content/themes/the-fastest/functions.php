@@ -35,10 +35,10 @@
                 ],
             "post" => [
                 'all' => ['vendor.js','blog.js']
-                ]
+                ],
             "tag" => [
                 'all' => ['vendor.js','blog.js']
-                ]
+                ],
             "category" => [
                 'all' => ['vendor.js','blog.js']
                 ]
