@@ -80,7 +80,7 @@ $args = wpas_get_view_data();
 
 			<!-- Begin Tags -->
 			<div class="after-post-tags">
-				<?php $tags = get_tags(); ?>
+				<?php $tags = get_the_tags(); ?>
 				<ul class="tags">
 					<?php foreach($tags as $t){ ?>
 					<li><a href="<?php echo get_term_link($t->term_id); ?>"><?php echo $t->name; ?></a></li>
@@ -116,11 +116,11 @@ $args = wpas_get_view_data();
 ================================================== -->
 <div class="alertbar bg-light">
 	<div class="row">
-		<div class="col-xs-6 ml-auto text-center">
+		<div class="col-12 col-sm-7 col-md-6 col-lg-4 col-xl-3 ml-auto text-center">
 			<h5>Intersted in learning to code?</h5>
 			Our next cohort starts on <?php echo $args['upcoming']['date']; ?>
 		</div>
-		<div class="col-xs-2 mr-auto text-center pl-3 pt-2">
+		<div class="col-12 col-sm-2 col-xl-1 mr-auto text-center pl-3 pt-2">
 			<a href="<?php echo get_permalink( get_page_by_path( 'the-program' ) ); ?>" class="btn btn-danger">Learn More</a>
 		</div>
 	</div>
