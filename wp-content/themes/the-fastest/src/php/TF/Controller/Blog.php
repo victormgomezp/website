@@ -18,7 +18,7 @@ class Blog{
         ));
         $args['upcoming'] = $this->getNextCohort();
         $args['posts'] = get_posts(array(
-        	'numberposts'	=> 10,
+        	'numberposts'	=> -1,
         	'meta_key'		=> 'featured_post',
         	'meta_value'	=> 'false'
         ));
