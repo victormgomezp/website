@@ -1,13 +1,13 @@
 <?php $args = wpas_get_view_data(); ?>
     <section class="bg-primary text-center email-newsletter" id="about">
         <div class="container">
-            <h4>Subscribe to our Newsletter!</h4>
+            <h4><?php pll_e('Subscribe to our Newsletter!'); ?></h4>
             <form class="form-inline newsletter-signup">
                 <div class="form-group">
                     <div class="alert alert-danger" style=" width: 100%; display: none;" role="alert"></div>
-                    <label for="staticEmail2" class='text-right'>Get updates right in your inbox. <br/>We promise to not spam you.</label>
+                    <label for="staticEmail2" class='text-right'><?php pll_e('Get updates right in your inbox. <br/>We promise to not spam you'); ?>.</label>
                     <input type="email" class="form-control newsletter-email" id="staticEmail2" placeholder="email@example.com" required>
-                    <button type="submit" class="btn btn-secondary ml-0 ml-sm-3 mt-3 mt-sm-0 form-control">Subscribe</button>
+                    <button type="submit" class="btn btn-secondary ml-0 ml-sm-3 mt-3 mt-sm-0 form-control"><?php pll_e('Subscribe'); ?></button>
                 </div>
             </form>
         </div>
@@ -16,11 +16,11 @@
         <div class='container'>
             <div class='row'>
                 <div class='col-md-3 footer-pad address-section'>
-                    <h3>Contact</h3>
+                    <h3><?php pll_e('Contact'); ?></h3>
                     <hr />
                     <ul class="list-unstyled">
                         <li>
-                            We are available Monday to Friday:<br/>
+                            <?php pll_e('We are available Monday to Friday:'); ?><br/>
                             09:00am - 06:30pm
                         </li>
                         <li>
@@ -35,7 +35,7 @@
                     </ul>
                 </div>
                 <div class='col-md-3'>
-                    <h3>Company</h3>
+                    <h3><?php pll_e('Company'); ?></h3>
                     <hr />
                     <?php
                        wp_nav_menu([
@@ -49,7 +49,7 @@
                     ?>
                 </div>
                 <div class='col-md-3'>
-                    <h3>Locations</h3>
+                    <h3><?php pll_e('Locations'); ?></h3>
                     <hr />
                     <?php
                        wp_nav_menu([
@@ -73,7 +73,7 @@
                     <img style="max-height: 40px;" src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/icon-logo.png"></img>
                 </div>
                 <div class='col-12 col-sm-5 order-4 text-left order-sm-2'>
-                    Copyright © <?php echo get_option('company-name'); ?> 2017. <br/> All rights reserved.
+                    Copyright © <?php echo get_option('company-name'); ?> 2017. <br/> <?php pll_e('All rights reserved'); ?>.
                 </div>
                 <div class='col-10 col-sm-6 text-right order-3'>
                     <ul class="list-unstyled list-inline social-media">
@@ -129,12 +129,12 @@
                             </g></svg>
                         </div>
                         <div class="media-body pl-0 pl-sm-2">
-                            <h4 class='mt-0 mt-sm-2'>Our next cohort starts on <?php echo $args['upcoming']['date']; ?></h4>
+                            <h4 class='mt-0 mt-sm-2'><?php pll_e('Our next cohort starts on'); ?> <?php echo $args['upcoming']['date']; ?></h4>
                             <h5 class=""><?php echo $args['upcoming']['name']; ?></h5>
                         </div>
                         <div class="media-right">
-                            <a href="<?php echo get_permalink( get_page_by_path( 'apply' ) ); ?>" class='btn btn-danger mb-1'>Apply now</a>
-                            <p>or <a href="<?php echo get_permalink( get_page_by_path( 'calendar' ) ); ?>?type=course">review other dates</a></p>
+                            <a href="<?php echo get_permalink( get_page_by_path( 'apply' ) ); ?>" class='btn btn-danger mb-1'><?php pll_e('Apply now'); ?></a>
+                            <p>or <a href="<?php echo get_permalink( get_page_by_path( 'calendar' ) ); ?>?type=course"><?php pll_e('review other dates'); ?></a></p>
                         </div>
                     </div>
                 </div>
@@ -145,13 +145,13 @@
     <div id="syllabusModal" class="modal fade mt-5" tabindex="-1" role="dialog" aria-labelledby="syllabusModalLabel" aria-hidden="true">
       <div class="modal-dialog modal-lg">
         <div class="modal-content p-3 text-center">
-            <h3>Full Stack Web Development Syllabus</h3>
-            <p>Please fill out this form to receive our syllabus and program catalog.</p>
+            <h3><?php pll_e('Full Stack Development Syllabus'); ?></h3>
+            <p><?php pll_e('Please fill out this form to receive our syllabus and program catalog'); ?>.</p>
             <div class="mb-4">
                 <form class="form-inline text-center syllabus-download d-inline">
                     <div class="alert alert-danger" style=" width: 100%; display: none;" role="alert"></div>
                     <input type="email" class="form-control" name="" placeholder="Your email" required/>
-                    <button class="btn btn-secondary form-control ml-3">Download</button>
+                    <button class="btn btn-secondary form-control ml-3"><?php pll_e('Download'); ?></button>
                 </form>
             </div>
         </div>
@@ -161,7 +161,7 @@
     <div id="upcomingEvent" class="modal mt-5" tabindex="-1" role="dialog" aria-labelledby="upcomingEventModalLabel" aria-hidden="true">
       <div class="modal-dialog modal-lg">
         <div class="modal-header">
-            <h2 class="modal-title text-center text-white mt-0">Upcoming event</h2>
+            <h2 class="modal-title text-center text-white mt-0"><?php pll_e('Upcoming event'); ?></h2>
         </div>
         <div class="modal-content">
             <div class="row">
@@ -185,8 +185,8 @@
             </div>
         </div>
         <div class="modal-footer pr-0">
-            <a href="#" class="btn btn-secondary btn-lg" data-dismiss="modal">Close</a>
-            <a target="_blank" href="#" class="btn btn-danger btn-lg">Learn more</a>
+            <a href="#" class="btn btn-secondary btn-lg" data-dismiss="modal"><?php pll_e('Close'); ?></a>
+            <a target="_blank" href="#" class="btn btn-danger btn-lg"><?php pll_e('Learn more'); ?></a>
         </div>
       </div>
     </div>

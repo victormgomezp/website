@@ -9,7 +9,7 @@ $args = wpas_get_view_data();
 	<div class="mainheading">
 		<h1 class="sitetitle">4Geeks Academy Blog</h1>
 		<p class="lead">
-			 Resources, news for potencial and current software builders.
+			 <?php pll_e('Resources, news for potencial and current software builders.'); ?>
 		</p>
 	</div>
 <!-- End Site Title
@@ -19,7 +19,7 @@ $args = wpas_get_view_data();
 	================================================== -->
 	<section class="featured-posts">
 	<div class="section-title">
-		<h2><span>Featured</span></h2>
+		<h2><span><?php pll_e('Featured'); ?></span></h2>
 	</div>
 	<div class="card-columns listfeaturedtag">
 
@@ -65,7 +65,7 @@ $args = wpas_get_view_data();
 	================================================== -->
 	<section class="recent-posts">
 	<div class="section-title">
-		<h2><span>All Stories</span></h2>
+		<h2><span><?php pll_e('All Stories'); ?></span></h2>
 	</div>
 	<div class="card-columns listrecent">
 

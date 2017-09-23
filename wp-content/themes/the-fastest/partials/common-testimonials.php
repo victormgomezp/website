@@ -1,7 +1,7 @@
 <?php if(count($args['testimonials'])>0){ ?>
 <section class="bg-light text-black testimonials">
       <div class="container">
-        <h2 class="text-black text-center">Over 200 students graduated so far</h2>
+        <h2 class="text-black text-center"><?php pll_e('Over 200 students graduated so far'); ?></h2>
         <div class="row">
             <div class="col-md-12">
               <div id="testimonials-carousel" class="carousel carousel-testimonial slide" data-ride="carousel">
@@ -30,11 +30,11 @@
                 <!--Controls-->
                 <a class="carousel-control carousel-control-prev text-black" href="#testimonials-carousel" role="button" data-slide="prev">
                   <span class="imoon icon-arrow-left2"></span>
-                  <span class="sr-only">Previous</span>
+                  <span class="sr-only"><?php pll_e('Previous'); ?></span>
                 </a>
                 <a class="carousel-control carousel-control-next text-black" href="#testimonials-carousel" role="button" data-slide="next">
                   <span class="imoon icon-arrow-right2"></span>
-                  <span class="sr-only">Next</span>
+                  <span class="sr-only"><?php pll_e('Next'); ?></span>
                 </a>
               </div>
             </div>

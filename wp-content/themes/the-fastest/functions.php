@@ -112,5 +112,9 @@
         
     }
     
+    $gfManager = new WPAS\Language\WPASLanguages([
+        'languages-directory' => ABSPATH.'wp-content/themes/the-fastest/src/php/languages/'
+    ]);
+    
     use WPAS\Messaging\WPASAdminNotifier;
     WPASAdminNotifier::loadTransientMessages();

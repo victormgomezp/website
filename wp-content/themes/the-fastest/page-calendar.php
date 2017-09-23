@@ -1,4 +1,6 @@
-<?php get_header(); 
+<?php 
+/* Template Name: Calendar */
+get_header(); 
 $args = wpas_get_view_data();
 ?>
     <header class="masthead">
@@ -13,25 +15,25 @@ $args = wpas_get_view_data();
     <section class="bg-white text-black filters pt-0 pb-0">
       <div class="row filters">
         <div class="col-12 col-sm-10 col-lg-8 col-xl-6 mx-auto">
-          <p class="filter-label d-none d-md-inline">Show</p>
+          <p class="filter-label d-none d-md-inline"><?php pll_e('Show'); ?></p>
           <div class="dropdown type">
             <button id="typeSelector" data-key="type" class="dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              courses
+              <?php pll_e('courses'); ?>
             </button>
             <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-              <a class="dropdown-item type-option" data-value="events" href="#"> events</a>
-              <a class="dropdown-item type-option" data-value="course" href="#"> courses</a>
+              <a class="dropdown-item type-option" data-value="events" href="#"> <?php pll_e('events'); ?></a>
+              <a class="dropdown-item type-option" data-value="course" href="#"> <?php pll_e('courses'); ?></a>
             </div>
           </div>
           <div class="dropdown languages">
             <button id="langSelector" data-key="lang" class="dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <span class='d-inline d-lg-none'>in all langs</span>
-                <span class='d-none d-lg-inline'>in all languages</span>
+                <span class='d-inline d-lg-none'><?php pll_e('in all langs'); ?></span>
+                <span class='d-none d-lg-inline'><?php pll_e('in all languages'); ?></span>
             </button>
             <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
               <a class="dropdown-item lang-option" href="#" data-value="all">
-                <span class='d-inline d-lg-none'>in all langs</span>
-                <span class='d-none d-lg-inline'>in all languages</span>
+                <span class='d-inline d-lg-none'><?php pll_e('in all langs'); ?></span>
+                <span class='d-none d-lg-inline'><?php pll_e('in all languages'); ?></span>
               </a>
               <a class="dropdown-item lang-option" data-value="en" href="#">in english <?php wpas_get_inline_svg('assets/icons/flags/inline','unitedstates.svg'); ?></a>
               <a class="dropdown-item lang-option" data-value="es" href="#">en español <?php wpas_get_inline_svg('assets/icons/flags/inline','spain.svg'); ?></a>
@@ -39,13 +41,13 @@ $args = wpas_get_view_data();
           </div>
           <div class="dropdown cities">
             <button id="locationSelector" data-key="l" class="dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              <span class='d-inline d-lg-none'>& locations</span>
-              <span class='d-none d-lg-inline'>at all locations</span>
+              <span class='d-inline d-lg-none'><?php pll_e('& locations'); ?></span>
+              <span class='d-none d-lg-inline'><?php pll_e('at all locations'); ?></span>
             </button>
             <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
               <a class="dropdown-item location-option" href="#" data-value="all">
-                <span class='d-inline d-lg-none'>& locations</span>
-                <span class='d-none d-lg-inline'>at all locations</span>
+                <span class='d-inline d-lg-none'><?php pll_e('& locations'); ?></span>
+                <span class='d-none d-lg-inline'><?php pll_e('at all locations'); ?></span>
               </a>
               <?php foreach($args['locations'] as $l){ ?>
               <a class="dropdown-item location-option" href="#" data-value="<?php echo $l['bc_location_slug']; ?>">
@@ -82,8 +84,8 @@ $args = wpas_get_view_data();
                     <div class="row additional-details">
                       <div class="col-9 col-sm-6"><span class="imoon icon-location"></span> <?php echo $course['location']; ?></div>
                       <div class="col-3  col-sm-4 col-md-3 d-none d-sm-block">
-                        <span class='d-md-none'>from $240 p/m</span>
-                        <span class='d-none d-md-block'>from $240 p/m</span>
+                        <span class='d-md-none'><?php pll_e('from'); ?> $240 p/m</span>
+                        <span class='d-none d-md-block'><?php pll_e('from'); ?> $240 p/m</span>
                       </div>
                       <div class="col-3 col-sm-2 col-lg-3">
                         <?php wpas_get_inline_svg('assets/icons/flags/inline',$course['icon'].'.svg'); ?>

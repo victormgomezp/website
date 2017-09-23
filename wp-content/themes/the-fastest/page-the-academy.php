@@ -1,11 +1,13 @@
-<?php get_header(); 
+<?php 
+/* Template Name: The Academy */
+get_header(); 
 $args = wpas_get_view_data();
 ?>
     <header class="masthead">
       <div class="container">
         <div class="row">
           <div class="col-sm-8 mr-auto">
-            <h2 class="text-white">Enabling future and current software builders to adapt to the needs of the real world.</h2>
+            <h2 class="text-white"><?php pll_e('Enabling future and current software builders to adapt to the needs of the real world'); ?>.</h2>
             <!-- Breathe Coding is our motto, premium and accessible coding education is our obsession. -->
           </div>
         </div>
@@ -16,19 +18,19 @@ $args = wpas_get_view_data();
         <div class="row">
           <div class="col-3 text-center">
             <h3>2015</h3>
-            Founded
+            <?php pll_e('Founded'); ?>
           </div>
           <div class="col-3 text-center">
             <h3>5</h3>
-            Campuses
+            <?php pll_e('Campuses'); ?>
           </div>
           <div class="col-3 text-center">
             <h3>250+</h3>
-            Graduates
+            <?php pll_e('Graduates'); ?>
           </div>
           <div class="col-3 text-center">
             <h3>100+</h3>
-            Hiring Partners
+            <?php pll_e('Hiring Partners'); ?>
           </div>
         </div>
       </div>
@@ -37,7 +39,7 @@ $args = wpas_get_view_data();
       <div class="container">
         <div class="row">
           <div class="col-md-12">
-            <h2 class="section-heading text-center">Our four cornerstones</h2>
+            <h2 class="section-heading text-center"><?php pll_e('Our four cornerstones'); ?></h2>
           </div>
         </div>
         <div class="row">
@@ -45,26 +47,26 @@ $args = wpas_get_view_data();
             <div class="card-deck">
               <div class="card bg-yellow mb-3 mb-sm-0">
                 <div class="card-body">
-                  <h4 class="card-title">Flipped Classroom</h4>
-                  <p class="card-text">Theory is delivered through video, animation, images, and infographics. Class-time is then used to debate, build projects and mentor over practical exercises.</p>
+                  <h4 class="card-title"><?php pll_e('Flipped Classroom'); ?></h4>
+                  <p class="card-text"><?php pll_e('Theory is delivered through video, animation, images, and infographics. Class-time is then used to debate, build projects and mentor over practical exercises'); ?>.</p>
                 </div>
               </div>
               <div class="card bg-yellow mb-3 mb-sm-0">
                 <div class="card-body">
-                  <h4 class="card-title">1:7 Student Ratio</h4>
-                  <p class="card-text">An intimate setting provides the faculty with the opportunity to adapt to each student’s particular pace.</p>
+                  <h4 class="card-title"><?php pll_e('1:7 Student Ratio'); ?></h4>
+                  <p class="card-text"><?php pll_e('An intimate setting provides the faculty with the opportunity to adapt to each student’s particular pace'); ?>.</p>
                 </div>
               </div>
               <div class="card bg-yellow mb-3 mb-sm-0">
                 <div class="card-body">
-                  <h4 class="card-title">1-1 Mentorship</h4>
-                  <p class="card-text">Every student has the opportunity to have regular conversations with a mentor.</p>
+                  <h4 class="card-title"><?php pll_e('1-1 Mentorship'); ?></h4>
+                  <p class="card-text"><?php pll_e('Every student has the opportunity to have regular conversations with a mentor'); ?>.</p>
                 </div>
               </div>
               <div class="card bg-yellow mb-3 mb-sm-0">
                 <div class="card-body">
-                  <h4 class="card-title">Talent Tree</h4>
-                  <p class="card-text">The syllabus maps out 44 skills, where students earn points towards each skill in a gamified fashion.</p>
+                  <h4 class="card-title"><?php pll_e('Talent Tree'); ?></h4>
+                  <p class="card-text"><?php pll_e('The syllabus maps out 44 skills, where students earn points towards each skill in a gamified fashion'); ?>.</p>
                 </div>
               </div>
             </div>
@@ -76,9 +78,9 @@ $args = wpas_get_view_data();
       <div class="container">
         <div class="row">
           <div class="col-md-12 ml-auto">
-            <h2 class="section-heading text-black mb-3">The Team</h2>
+            <h2 class="section-heading text-black mb-3"><?php pll_e('The Team'); ?></h2>
             <p>
-              Our team is devoted to deliver a premium program. In order to be part of our team, everybody needs to feel the passion for education, coding and helping students develop their skills. At 4Geeks Academy we believe in the power of education and the importance of coding.
+              <?php pll_e('Our team is devoted to deliver a premium program. In order to be part of our team, everybody needs to feel the passion for education, coding and helping students develop their skills. At 4Geeks Academy we believe in the power of education and the importance of coding'); ?>.
             </p>
           </div>
         </div>
@@ -104,12 +106,10 @@ $args = wpas_get_view_data();
             <div class='founders-img' style="width: 100%; background-image: url('<?php echo get_stylesheet_directory_uri(); ?>/assets/img/founders.png');"></div>
           </div>
           <div class="col-md-8 col-xl-6">
-            <h3 class='text-left pl-3 mt-0 mb-3'>Our story...</h3>
+            <h3 class='text-left pl-3 mt-0 mb-3'><?php pll_e('Our story...'); ?></h3>
             <p class="section-message pt-0 mb-0">
-              4Geeks Academy was founded in 2015. What started as an internal project to train more developers has now become our full-time passion.<br/><br/>
-              4Geeks is today a USA based Coding Bootcamp pursuing to build a new framework for Coding Education, because coding is becoming an essential part of our society. <br/><br/>
-              4Geeks Academy has now Locations in 3 cities, 5 on-going campuses, and more than 200 graduates.
-              <a target="_blank" href="https://4geeksacademy.co/en/4geeks-academy-history/" class='btn btn-danger mt-3'>Learn more about 4Geeks Academy</a>
+              <?php the_content(); ?>
+              <a target="_blank" href="https://4geeksacademy.co/en/4geeks-academy-history/" class='btn btn-danger mt-3'><?php pll_e('Learn more about 4Geeks Academy'); ?></a>
             </p>
           </div>
         </div>
