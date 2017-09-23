@@ -78,8 +78,8 @@ $('.syllabus-download').submit(function(event){
    
 });
 
-
-$.ajax({
+$(document).ready(function() {
+   $.ajax({
       url: WPAS_APP.ajax_url,
       dataType: 'JSON',
       method: 'POST',
@@ -99,6 +99,7 @@ $.ajax({
          console.log("Error getting the upcoming event: "+p3);
       }
    });
+});
 
 function promptUpcomingEvent(event){
    
