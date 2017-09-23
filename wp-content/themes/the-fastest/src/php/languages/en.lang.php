@@ -120,7 +120,8 @@ return array(
         "Previous" => "Previous",
         "Next" => "Next"
 //Common: Part-time
-        'Let\'s Part-time' => 'Let\'s Part-time',
+        
+        "Let\'s Part-time" => "Let\'s Part-time",
         "Part-time is more than a schedule. Building a methodology and content for part-time education has made us more flexible, tech-based and efficient." => "Part-time is more than a schedule. Building a methodology and content for part-time education has made us more flexible, tech-based and efficient.",
 
 
@@ -155,10 +156,7 @@ return array(
 
         "All Stories" => "All Stories",
         "Resources, news for potencial and current software builders." => "Resources, news for potencial and current software builders.",
-        "Featured" => "Featured",
-        "" => "",
-        "" => "",
-        "" => "",
+        "Featured" => "Featured"
     ],
     "student" => [
         'student-greeting' => 'You are here to become a %(profile)s, you have accumulated %(acumulated_points)s points during %(days)s days at the academy!'
