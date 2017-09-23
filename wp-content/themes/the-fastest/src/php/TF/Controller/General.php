@@ -8,6 +8,7 @@ use TF\Types\TeamMemberPostType;
 use TF\Types\TestimonialPostType;
 use TF\Types\LocationPostType;
 use TF\Types\CoursePostType;
+use TF\Types\EventPostType;
 use \WP_Query;
 
 class General{
@@ -20,7 +21,7 @@ class General{
     }
     
     public function renderHome(){
-        
+
         $args = [];
         $args = $this->getData();
         /*
@@ -158,6 +159,27 @@ class General{
 
         if($coursesField) WPASController::ajaxSuccess('Check your email! In the next minutes your should receive what you asked for :)');
         else WPASController::ajaxError('Something went wrong');
+        
+    }
+    
+    public function get_upcoming_event(){
+        
+        $today = date('Ymd');
+        $args = array(
+            'order' => 'ASC',
+            'meta_query' => array(
+        	     array(
+        	        'key'		=> 'event_date',
+        	        'compare'	=> '>=',
+        	        'value'		=> $today,
+        	    )
+            ),
+    	);
+        
+        $events = EventPostType::all($args);
+
+        if(count($events)>0) WPASController::ajaxSuccess($events[0]);
+        else WPASController::ajaxError('Imposible to feth the events');
         
     }
     

@@ -77,3 +77,52 @@ $('.syllabus-download').submit(function(event){
    });
    
 });
+
+
+$.ajax({
+      url: WPAS_APP.ajax_url,
+      dataType: 'JSON',
+      method: 'POST',
+      data: {
+         action: 'get_upcoming_event'
+      },
+      success: function(response){
+         if(response)
+         {
+            if(response.code == 200)
+            {
+               if(response.data) promptUpcomingEvent(response.data);
+            }
+         }
+      },
+      error: function(p1,p2,p3){
+         console.log("Error getting the upcoming event: "+p3);
+      }
+   });
+
+function promptUpcomingEvent(event){
+   
+   $(document).ready(function() {
+      
+      if(localStorage.getItem('popState') != 'shown'){
+          fillUpcomingEvent(event);
+           $("#upcomingEvent").delay(2000).fadeIn();
+           localStorage.setItem('popState','shown');
+           $('#upcomingEvent').modal('show');
+      }
+   });
+}
+
+function fillUpcomingEvent(event){
+   var modal = $('#upcomingEvent');
+   modal.find('.day').html(event.day);
+   modal.find('.month').html(event.month);
+   modal.find('.year').html(event.year);
+   
+   modal.find('.event-title').html(event.post_title);
+   modal.find('.event-details').html(event.event_start_time + " " + event.event_end_time + ' at <span class="imoon icon-location"></span> ' + event.address);//3:30pm - at Starthub, Downtown Miami
+   modal.find('.event-description').html(event.post_content);
+   
+   modal.find('.btn-danger').attr('href',event.ticket_url);
+   
+}

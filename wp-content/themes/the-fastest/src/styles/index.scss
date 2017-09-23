@@ -86,6 +86,33 @@ section.instructors{
   display: table;
 }
 
+#upcomingEvent.modal{
+  .modal-title{display: inline-table; margin: auto;}
+  .event-date{
+    margin: 20px;
+    background: #dc3545;
+    padding: 10px;
+    border: 3px solid black;
+    p{
+        margin: 0; font-weight: 900;
+        text-align: center;
+        color: white;
+    }
+    .day{
+        font-size: 40px;
+        line-height: 40px;
+    }
+    .month{
+        font-size: 18px;
+        line-height: 20px;
+    }
+    .year{
+        font-size: 16px;
+        line-height: 15px;
+    }
+  }
+}
+
 
 //Tablets or bigger screens
 @media screen and (min-width: 48em) {

@@ -30,6 +30,13 @@ h6, .h6 { font-size: 0.9rem; margin: 10px 0; font-weight: 700; }
         background: none;
     }
 }
+.modal .modal-content{
+  border-radius: 0;
+}
+
+.modal-backdrop.show{
+    opacity: 0.9;
+}
 
 /* Medium. Above 48em (768px) */
 @media screen and (min-width: 48em) {

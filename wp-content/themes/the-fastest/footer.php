@@ -142,7 +142,7 @@
         </div>
     </div>
     <?php } ?>
-    <div id="syllabusModal" class="modal fade bd-example-modal-lg mt-5" tabindex="-1" role="dialog" aria-labelledby="syllabusModalLabel" aria-hidden="true">
+    <div id="syllabusModal" class="modal fade mt-5" tabindex="-1" role="dialog" aria-labelledby="syllabusModalLabel" aria-hidden="true">
       <div class="modal-dialog modal-lg">
         <div class="modal-content p-3 text-center">
             <h3>Full Stack Web Development Syllabus</h3>
@@ -154,6 +154,39 @@
                     <button class="btn btn-secondary form-control ml-3">Download</button>
                 </form>
             </div>
+        </div>
+      </div>
+    </div>
+    
+    <div id="upcomingEvent" class="modal mt-5" tabindex="-1" role="dialog" aria-labelledby="upcomingEventModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-lg">
+        <div class="modal-header">
+            <h2 class="modal-title text-center text-white mt-0">Upcoming event</h2>
+        </div>
+        <div class="modal-content">
+            <div class="row">
+                <div class="col-3 col-sm-3 col-lg-2 pr-0 pt-2">
+                    <div class="event-date text-center m-1 m-sm-4">
+                        <p class='day'></p>
+                        <p class='month'></p>
+                        <p class='year'></p>
+                    </div>
+                                        
+                </div>
+                <div class="col-9 col-lg-10">
+                    <h3 class='event-title'>Loading...</h3>
+                    <h5 class='event-details'></h5>
+                    <p class='event-description'></p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12 text-right">
+                </div>
+            </div>
+        </div>
+        <div class="modal-footer pr-0">
+            <a href="#" class="btn btn-secondary btn-lg" data-dismiss="modal">Close</a>
+            <a target="_blank" href="#" class="btn btn-danger btn-lg">Learn more</a>
         </div>
       </div>
     </div>
