@@ -77,7 +77,7 @@ $args = wpas_get_view_data();
         -->
         <div class='row'>
           <div class='col-md-12 mx-auto text-center mt-4 mb-4'>
-            <a href="<?php echo get_permalink( get_page_by_path( 'apply' ) ); ?>" class="btn btn-danger btn-lg"><?php pll_e('Apply to the program'); ?></a>
+            <a href="<?php echo get_permalink( get_page_by_path( wpas_pll_get_slug('apply') ) ); ?>" class="btn btn-danger btn-lg"><?php pll_e('Apply to the program'); ?></a>
           </div>
         </div>
       </div>

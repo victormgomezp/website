@@ -133,8 +133,8 @@
                             <h5 class=""><?php echo $args['upcoming']['name']; ?></h5>
                         </div>
                         <div class="media-right">
-                            <a href="<?php echo get_permalink( get_page_by_path( 'apply' ) ); ?>" class='btn btn-danger mb-1'><?php pll_e('Apply now'); ?></a>
-                            <p>or <a href="<?php echo get_permalink( get_page_by_path( 'calendar' ) ); ?>?type=course"><?php pll_e('review other dates'); ?></a></p>
+                            <a href="<?php echo get_permalink( get_page_by_path( wpas_pll_get_slug('apply') ) ); ?>" class='btn btn-danger mb-1'><?php pll_e('Apply now'); ?></a>
+                            <p>or <a href="<?php echo get_permalink( get_page_by_path( wpas_pll_get_slug('calendar') ) ); ?>?type=course"><?php pll_e('review other dates'); ?></a></p>
                         </div>
                     </div>
                 </div>

@@ -36,7 +36,7 @@ $args = wpas_get_view_data();
             <p class="text-faded"><?php pll_e('We never stopped trying until we mastered a real premium but affordable program. Talk to one of our student advisors and make sure you are a good fit for our program'); ?>;</p>
             <form class="form-inline">
               <a href="#syllabusModal"  data-toggle="modal" data-target="#syllabusModal" class='btn btn-lg btn-secondary'><?php pll_e('Request Syllabus'); ?></a>
-              <a href="<?php echo get_permalink( get_page_by_path( 'apply' ) ); ?>" class='btn btn-lg btn-danger'><?php pll_e('Apply Now'); ?></a>
+              <a href="<?php echo get_permalink( get_page_by_path( wpas_pll_get_slug('apply') ) ); ?>" class='btn btn-lg btn-danger'><?php pll_e('Apply Now'); ?></a>
             </form>
           </div>
         </div>
@@ -190,7 +190,7 @@ $args = wpas_get_view_data();
                     <div class="card-body">
                       <h3 class="card-title m-0"><?php pll_e('Extended Plan'); ?></h3>
                       <h4 class="card-text">From $240/month</h4>
-                      <a href="<?php echo get_permalink( get_page_by_path( 'pricing' ) ); ?>">*<?php pll_e('Learn more about our extended plan'); ?></a>
+                      <a href="<?php echo get_permalink( get_page_by_path( wpas_pll_get_slug('pricing') ) ); ?>">*<?php pll_e('Learn more about our extended plan'); ?></a>
                     </div>
                   </div>
                 </div>
@@ -199,7 +199,7 @@ $args = wpas_get_view_data();
                 <div class='col-md-10 mx-auto text-center'>
                   <p class='section-message'><?php pll_e('This was the most challenging part, our program was designed from the ground up aming to make coding education universal'); ?>;</p>
                   <small>
-                    <a href="<?php echo get_permalink( get_page_by_path( 'apply' ) ); ?>" class="btn btn-danger btn-lg"><?php pll_e('Apply to the program'); ?></a>
+                    <a href="<?php echo get_permalink( get_page_by_path( wpas_pll_get_slug('apply') ) ); ?>" class="btn btn-danger btn-lg"><?php pll_e('Apply to the program'); ?></a>
                   </small>
                 </div>
               </div>

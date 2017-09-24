@@ -158,8 +158,31 @@ return array(
         "Resources, news for potencial and current software builders." => "Resources, news for potencial and current software builders.",
         "Featured" => "Featured"
     ],
-    "student" => [
-        'student-greeting' => 'You are here to become a %(profile)s, you have accumulated %(acumulated_points)s points during %(days)s days at the academy!'
+    "slugs" => [
+        'the-program' => [
+            'en'=>'the-program',
+            'es'=>'programa'
+        ],
+        "the-academy" => [
+            'en'=>'the-academy',
+            'es'=>'academia'
+        ],
+        "calendar" => [
+            'en' => 'calendar',
+            'es' => 'calendario'
+        ],
+        "home" => [
+            'en' => 'home',
+            'es' => 'inicio'
+        ],
+        "pricing" => [
+            'en' => 'pricing',
+            'es' => 'precio'
+        ],
+        "apply" => [
+            'en' => 'apply',
+            'es' => 'aplica'
+        ]
     ],
     "activities" => [
         "teacher-points-earned" => [

@@ -17,7 +17,7 @@ $args = wpas_get_view_data();
             </div>
             <form class="form-inline mt-3 mt-sm-0">
               <a href="#syllabusModal"  data-toggle="modal" data-target="#syllabusModal" class='btn btn-lg btn-secondary mr-3'><?php pll_e('Request Syllabus'); ?></a>
-              <a href="<?php echo get_permalink( get_page_by_path( 'apply' ) ); ?>" class='btn btn-lg btn-danger'><?php pll_e('Apply Now'); ?></a>
+              <a href="<?php echo get_permalink( get_page_by_path( wpas_pll_get_slug('apply') ) ); ?>" class='btn btn-lg btn-danger'><?php pll_e('Apply Now'); ?></a>
             </form>
           </div>
         </div>
@@ -53,7 +53,7 @@ $args = wpas_get_view_data();
                 <a class="nav-link disabled" href="#pricing"><?php pll_e('Price & Financing'); ?></a>
               </li>
               <li class="nav-item">
-                <a href="<?php echo get_permalink( get_page_by_path( 'apply' ) ); ?>" class='btn btn-danger'><?php pll_e('Apply Now'); ?></a>
+                <a href="<?php echo get_permalink( get_page_by_path( wpas_pll_get_slug('apply') ) ); ?>" class='btn btn-danger'><?php pll_e('Apply Now'); ?></a>
               </li>
             </ul>
           </div>
@@ -296,7 +296,7 @@ $args = wpas_get_view_data();
               <div class='row'>
                 <div class='col-md-10 mx-auto text-center'>
                   <p class='section-message'><?php pll_e('This was the most challenging part, our program was designed from the ground up aming to make coding education universal'); ?>.</p>
-                  <a href="<?php echo get_permalink( get_page_by_path( 'apply' ) ); ?>" class="btn btn-danger btn-lg"><?php pll_e('Apply to the program'); ?></a>
+                  <a href="<?php echo get_permalink( get_page_by_path( wpas_pll_get_slug('apply') ) ); ?>" class="btn btn-danger btn-lg"><?php pll_e('Apply to the program'); ?></a>
                 </div>
               </div>
           </div>
