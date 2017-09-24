@@ -146,7 +146,6 @@ class General{
     
     public function download_syllabus(){
         
-        echo 'asd'; die();
         $listId = get_option('activecampaign-soft-leads-list-id');
         if(empty($_POST['email'])) WPASController::ajaxError('Invalid Email');
         
