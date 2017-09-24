@@ -118,10 +118,10 @@ return array(
 //Common: Testimonials
         "Over 200 students graduated so far" => "Over 200 students graduated so far",
         "Previous" => "Previous",
-        "Next" => "Next"
+        "Next" => "Next",
 //Common: Part-time
         
-        "Let\'s Part-time" => "Let\'s Part-time",
+        "Let's Part-time" => "Let's Part-time",
         "Part-time is more than a schedule. Building a methodology and content for part-time education has made us more flexible, tech-based and efficient." => "Part-time is more than a schedule. Building a methodology and content for part-time education has made us more flexible, tech-based and efficient.",
 
 
@@ -150,7 +150,7 @@ return array(
         "events" => "events",
         "in all langs" => "in all langs",
         "in all languages" => "in all languages",
-        "& locations" => "& locations"
+        "& locations" => "& locations",
         
 //Blog
 
