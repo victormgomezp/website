@@ -79,9 +79,9 @@
     
     $controller->route([ 'slug' => 'Single:event', 'controller' => 'Event']);
     
-    $controller->routeAjax([ 'slug' => 'all', 'controller' => 'General:newsletter_signup' ]);
-    $controller->routeAjax([ 'slug' => 'all', 'controller' => 'General:download_syllabus' ]);
-    $controller->routeAjax([ 'slug' => 'all', 'controller' => 'General:get_upcoming_event' ]);
+    $controller->routeAjax([ 'slug' => 'all', 'controller' => 'General:newsletter_signup', 'scope' => 'public' ]);
+    $controller->routeAjax([ 'slug' => 'all', 'controller' => 'General:download_syllabus', 'scope' => 'public' ]);
+    $controller->routeAjax([ 'slug' => 'all', 'controller' => 'General:get_upcoming_event', 'scope' => 'public' ]);
     //$controller->routeAjax([ 'slug' => 'apply', 'controller' => 'General:get_incoming_dates' ]);
     
     
