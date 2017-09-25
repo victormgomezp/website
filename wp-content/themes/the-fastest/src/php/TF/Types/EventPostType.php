@@ -15,8 +15,8 @@ class EventPostType extends BasePostType{
         ]);
         
         $query = new WP_Query($args);
-        if($query->posts && count($query->posts)==1){
-            return end($query->posts);
+        if($query->posts && count($query->posts)>=1){
+            return $query->posts[0];
         }else return null;
     }
     

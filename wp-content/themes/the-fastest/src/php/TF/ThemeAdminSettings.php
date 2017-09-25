@@ -189,7 +189,7 @@ class ThemeAdminSettings {
             
             //Sort 
 			usort($upcoming, function( $a, $b ) {
-			    return $b["time"] - $a["time"];
+			    return $a["time"] - $b["time"];
 			});
 
             WPASThemeSettingsBuilder::setThemeOption($inputId,$upcoming);
