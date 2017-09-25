@@ -156,7 +156,12 @@ return array(
 
         "All Stories" => "All Stories",
         "Resources, news for potencial and current software builders." => "Resources, news for potencial and current software builders.",
-        "Featured" => "Featured"
+        "Featured" => "Featured",
+        
+//404
+
+        "It seems we could not found the page that you have requested" => "It seems we could not found the page that you have requested",
+        "Woops! Page not found" => "Woops! Page not found"
     ],
     "slugs" => [
         'the-program' => [
@@ -182,6 +187,10 @@ return array(
         "apply" => [
             'en' => 'apply',
             'es' => 'aplica'
+        ],
+        "blog" => [
+            'es' => 'blog-en-espanol',
+            'en' => 'blog'
         ]
     ],
     "activities" => [

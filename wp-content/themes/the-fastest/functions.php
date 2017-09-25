@@ -20,10 +20,12 @@
         'styles' => [
             "page" => [
                 "all" => 'index.css'
-                ]
+                ],
+            "404" => ["all" => 'index.css']
             ],
         'critical-styles' => [
             "page" =>           ["blog" => 'blog.css', "all" => 'above.css'],
+            "404" =>           ["all" => 'above.css'],
             "custom-post" =>    ["all" => 'above.css'],
             "post" =>           ['all' => 'blog.css'],
             "category" =>       ['all' => 'blog.css'],
