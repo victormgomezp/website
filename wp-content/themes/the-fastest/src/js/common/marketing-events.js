@@ -1,4 +1,7 @@
 
+/**
+ * Tagmanger events
+ **/
 $('.syllabus-download').submit(function(event){
     console.log('syllabus requested');
     dataLayer.push({'event': 'syllabus_download'});
