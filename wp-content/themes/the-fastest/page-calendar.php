@@ -99,7 +99,7 @@ $args = wpas_get_view_data();
                 </div>
               </li>
               <?php } ?>
-              <?php if(count($args['events'])>0) foreach ($args['events'] as $event){ ?>
+              <?php if(!empty($args['events'])) foreach ($args['events'] as $event){ ?>
               <li class="list-group-item">
                 <div class="media">
                   <div class="media-left">
