@@ -133,7 +133,7 @@
                             <h5 class=""><?php echo $args['upcoming']['name']; ?></h5>
                         </div>
                         <div class="media-right">
-                            <a href="<?php echo get_permalink( get_page_by_path( wpas_pll_get_slug('apply') ) ); ?>" class='btn btn-danger mb-1'><?php pll_e('Apply now'); ?></a>
+                            <a href="<?php echo get_permalink( get_page_by_path( wpas_pll_get_slug('apply') ) ); ?>" class='btn btn-danger mb-1 apply-btn'><?php pll_e('Apply now'); ?></a>
                             <p>or <a href="<?php echo get_permalink( get_page_by_path( wpas_pll_get_slug('calendar') ) ); ?>?type=course"><?php pll_e('review other dates'); ?></a></p>
                         </div>
                     </div>
@@ -151,7 +151,7 @@
                 <form class="form-inline text-center syllabus-download d-inline">
                     <div class="alert alert-danger" style=" width: 100%; display: none;" role="alert"></div>
                     <input type="email" class="form-control" name="" placeholder="Your email" required/>
-                    <button class="btn btn-secondary form-control ml-3"><?php pll_e('Download'); ?></button>
+                    <button class="btn btn-secondary form-control ml-md-3 ml-0 mt-3 mt-sm-0"><?php pll_e('Download'); ?></button>
                 </form>
             </div>
         </div>

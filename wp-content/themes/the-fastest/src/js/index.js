@@ -4,6 +4,7 @@ import 'bootstrap/js/dist/util';
 import 'bootstrap/js/dist/collapse';
 import 'bootstrap/js/dist/carousel';
 import './pages/all.js';
+import './common/marketing-events.js';
 import {PieChart} from "./vendor/cakeCharts";
 
 
