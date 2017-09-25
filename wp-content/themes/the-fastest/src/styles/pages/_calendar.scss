@@ -9,6 +9,8 @@
             background: #dc3545;
             padding: 10px;
             border-right: 3px solid black;
+            border-bottom: 3px solid black;
+            
             p{
                 margin: 0; font-weight: 900;
                 text-align: center;
@@ -30,7 +32,7 @@
         .media-body{
             padding: 15px;
             overflow-y: hidden;
-            height: 95px;
+            &.course-body{height: 95px;}
             a{color: black;}
             // Extra small devices (portrait phones, less than 576px)
             @media (max-width: 575px) { .media-heading{font-size: 1rem;} }

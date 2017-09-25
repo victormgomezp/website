@@ -117,7 +117,7 @@ $args = wpas_get_view_data();
 <div class="alertbar bg-light">
 	<div class="row">
 		<div class="col-12 col-sm-7 col-md-6 col-lg-4 col-xl-3 ml-auto text-center">
-			<h5>Intersted in learning to code?</h5>
+			<h5>Interested in learning to code?</h5>
 			Our next cohort starts on <?php echo $args['upcoming']['date']; ?>
 		</div>
 		<div class="col-12 col-sm-2 col-xl-1 mr-auto text-center pl-3 pt-2">

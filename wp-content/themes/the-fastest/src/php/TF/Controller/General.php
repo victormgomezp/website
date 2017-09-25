@@ -85,8 +85,10 @@ class General{
 
         $args = [];
         $args['locations'] = LocationPostType::all();
-        $args['courses'] = CoursePostType::getUpcomingDates();
-        $args['events'] = [];
+        
+        if(empty($_GET['type']) || $_GET['type']=='course' || $_GET['type']=='courses') $args['courses'] = CoursePostType::getUpcomingDates();
+        else $args['events'] = EventPostType::getUpcomingEvents();
+        
         $args['query'] = $this->getCalendarQuery();
         if(count($args['courses'])>0) $args['upcoming'] = $args['courses'][0];
         else $args['upcoming'] = null;
@@ -163,19 +165,7 @@ class General{
     
     public function get_upcoming_event(){
         
-        $today = date('Ymd');
-        $args = array(
-            'order' => 'ASC',
-            'meta_query' => array(
-        	     array(
-        	        'key'		=> 'event_date',
-        	        'compare'	=> '>=',
-        	        'value'		=> $today,
-        	    )
-            ),
-    	);
-        
-        $events = EventPostType::all($args);
+        $events = EventPostType::getUpcomingEvents();
 
         if(count($events)>0) WPASController::ajaxSuccess($events[0]);
         else WPASController::ajaxError('Imposible to feth the events');

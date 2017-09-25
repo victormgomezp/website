@@ -56,4 +56,22 @@ class EventPostType extends BasePostType{
         $arrayObject['post_content'] = get_field( 'event_small_description',$object->ID );
         return $arrayObject;
     }
+    
+    public static function getUpcomingEvents(){
+
+        $today = date('Ymd');
+        $args = array(
+            'order' => 'ASC',
+            'meta_query' => array(
+        	     array(
+        	        'key'		=> 'event_date',
+        	        'compare'	=> '>=',
+        	        'value'		=> $today,
+        	    )
+            ),
+    	);
+        
+        $events = EventPostType::all($args);
+        return $events;
+    }
 }

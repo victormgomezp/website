@@ -35,8 +35,10 @@ $args = wpas_get_view_data();
                 <span class='d-inline d-lg-none'><?php pll_e('in all langs'); ?></span>
                 <span class='d-none d-lg-inline'><?php pll_e('in all languages'); ?></span>
               </a>
+              <?php if(!isset($_GET['type']) || $_GET['type']!='events'){ ?>
               <a class="dropdown-item lang-option" data-value="en" href="#">in english <?php wpas_get_inline_svg('assets/icons/flags/inline','unitedstates.svg'); ?></a>
               <a class="dropdown-item lang-option" data-value="es" href="#">en español <?php wpas_get_inline_svg('assets/icons/flags/inline','spain.svg'); ?></a>
+              <?php } ?>
             </div>
           </div>
           <div class="dropdown cities">
@@ -49,7 +51,7 @@ $args = wpas_get_view_data();
                 <span class='d-inline d-lg-none'><?php pll_e('& locations'); ?></span>
                 <span class='d-none d-lg-inline'><?php pll_e('at all locations'); ?></span>
               </a>
-              <?php foreach($args['locations'] as $l){ ?>
+              <?php if(!isset($_GET['type']) || $_GET['type']!='events') foreach($args['locations'] as $l){ ?>
               <a class="dropdown-item location-option" href="#" data-value="<?php echo $l['bc_location_slug']; ?>">
                 <?php echo $l['short-title']; ?>
                 <?php wpas_get_inline_svg('assets/icons/flags/inline',$l['flag'].'.svg'); ?>
@@ -64,7 +66,7 @@ $args = wpas_get_view_data();
       <div class="container">
         <div class="row">
           <div class="col-12 col-lg-10 col-xl-8 mx-auto">
-            <?php if(count($args['courses'])==0) 
+            <?php if(empty($args['courses']) and empty($args['events'])) 
               echo '<div class="alert alert-warning" role="alert">There are no courses or events with this requierments.</div>';
             ?>
             <div class='loading-animation'>
@@ -79,7 +81,7 @@ $args = wpas_get_view_data();
                     <p class='event-month'><?php echo $course['month']; ?></p>
                     <p class='event-year'><?php echo $course['year']; ?></p>
                   </div>
-                  <div class="media-body text-left pb-0">
+                  <div class="media-body text-left pb-0 course-body">
                     <h3 class="media-heading mt-0"><a href="<?php echo get_permalink( get_page_by_path( wpas_pll_get_slug('the-program') ) ); ?>"><?php echo $course['name']; ?></a></h3>
                     <div class="row additional-details">
                       <div class="col-9 col-sm-6"><span class="imoon icon-location"></span> <?php echo $course['location']; ?></div>
@@ -91,6 +93,30 @@ $args = wpas_get_view_data();
                         <?php wpas_get_inline_svg('assets/icons/flags/inline',$course['icon'].'.svg'); ?>
                         <span class='language d-none d-md-block d-lg-none'><?php echo substr($course['language'],0,3); ?></span>
                         <span class='language d-none d-lg-block'><?php echo $course['language']; ?></span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <?php } ?>
+              <?php if(count($args['events'])>0) foreach ($args['events'] as $event){ ?>
+              <li class="list-group-item">
+                <div class="media">
+                  <div class="media-left">
+                    <p class='event-date'><?php echo $event['day']; ?></p>
+                    <p class='event-month'><?php echo $event['month']; ?></p>
+                    <p class='event-year'><?php echo $event['year']; ?></p>
+                  </div>
+                  <div class="media-body text-left pb-0">
+                    <div class="row">
+                      <div class="col-12 col-sm-8">
+                        <h3 class="media-heading mt-0"><a href="<?php echo $event['ticket_url']; ?>"><?php echo $event['post_title']; ?></a></h3>
+                        <p class='d-block d-sm-inline mb-0'><strong>Starts: <?php echo $event['event_start_time']; ?></strong></p>
+                        <p class='d-block d-sm-inline mt-0'><strong>at <span class="imoon icon-location"></span> <?php echo $event['address']; ?></strong></p> 
+                        <p><?php echo $event['post_content']; ?></p>
+                      </div>
+                      <div class="col-12 col-sm-4 text-right-sm text-center">
+                          <a href="<?php echo $event['ticket_url']; ?>" class="btn btn-secondary mt-3 mb-3 text-white">Learn more</a>
                       </div>
                     </div>
                   </div>
