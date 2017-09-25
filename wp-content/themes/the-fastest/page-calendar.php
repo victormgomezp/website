@@ -73,7 +73,7 @@ $args = wpas_get_view_data();
               <?php wpas_get_inline_svg('assets/icons/inline','loading.svg'); ?>
             </div>
             <ul class="list-group">
-              <?php if(count($args['courses'])>0) foreach ($args['courses'] as $course){ ?>
+              <?php if(!isset($_GET['type']) || $_GET['type']!='events') foreach ($args['courses'] as $course){ ?>
               <li class="list-group-item">
                 <div class="media">
                   <div class="media-left">

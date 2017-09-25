@@ -86,11 +86,11 @@ class General{
         $args = [];
         $args['locations'] = LocationPostType::all();
         
-        if(empty($_GET['type']) || $_GET['type']=='course' || $_GET['type']=='courses') $args['courses'] = CoursePostType::getUpcomingDates();
-        else $args['events'] = EventPostType::getUpcomingEvents();
+        if(!empty($_GET['type']) && $_GET['type']=='events') $args['events'] = EventPostType::getUpcomingEvents();
+        $args['courses'] = CoursePostType::getUpcomingDates();
         
         $args['query'] = $this->getCalendarQuery();
-        if(count($args['courses'])>0) $args['upcoming'] = $args['courses'][0];
+        if(!empty($args['courses'])) $args['upcoming'] = $args['courses'][0];
         else $args['upcoming'] = null;
         return $args;
     }
