@@ -45,11 +45,11 @@ class EventPostType extends BasePostType{
         $arrayObject['event_end_time'] = get_field( 'event_end_time',$object->ID );
         $arrayObject['event_start_time'] = get_field( 'event_start_time',$object->ID );
         $arrayObject['event_date'] = get_field( 'event_date',$object->ID );
-        
-        $arrayObject['day'] = date('d',$arrayObject['event_date']);
-        $arrayObject['month'] = date('M',$arrayObject['event_date']);
-        $arrayObject['year'] = date('Y',$arrayObject['event_date']);
-        $arrayObject['date'] = date('F j, Y',$arrayObject['event_date']);
+
+        $arrayObject['day'] = substr($arrayObject['event_date'],6,2);
+        $arrayObject['month'] = self::getMonthName(substr($arrayObject['event_date'],4,2));
+        $arrayObject['year'] = substr($arrayObject['event_date'],0,4);
+        //print_r($arrayObject); die();
         
         $arrayObject['address'] = get_field( 'event_address',$object->ID );
         $arrayObject['ticket_url'] = get_field( 'event_ticket_url',$object->ID );
@@ -73,5 +73,24 @@ class EventPostType extends BasePostType{
         
         $events = EventPostType::all($args);
         return $events;
+    }
+    
+    private static function getMonthName($month){
+        switch($month){
+            case "01": return 'JAN'; break;
+            case "02": return 'FEB'; break;
+            case "03": return 'MAR'; break;
+            case "04": return 'APR'; break;
+            case "05": return 'MAY'; break;
+            case "06": return 'JUN'; break;
+            case "07": return 'JUL'; break;
+            case "08": return 'AGO'; break;
+            case "09": return 'SEP'; break;
+            case "10": return 'OCT'; break;
+            case "11": return 'NOV'; break;
+            case "12": return 'DEC'; break;
+        }
+        
+        return "";
     }
 }
