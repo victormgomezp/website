@@ -119,7 +119,8 @@ class General{
     
     private function getNextCohort(){
         $cohorts = CoursePostType::getUpcomingDates();
-        return array_pop($cohorts);
+        if(!empty($cohorts)) return $cohorts[0];
+        else return null;
     }
     
     public function get_incoming_dates(){
@@ -169,6 +170,14 @@ class General{
 
         if(count($events)>0) WPASController::ajaxSuccess($events[0]);
         else WPASController::ajaxError('Imposible to feth the events');
+        
+    }
+    
+    public function get_upcoming_course(){
+        
+        $cohorts = CoursePostType::getUpcomingDates();
+        if(!empty($cohorts)) WPASController::ajaxSuccess($cohorts[0]);
+        else WPASController::ajaxError('No upcoming dates');
         
     }
     
