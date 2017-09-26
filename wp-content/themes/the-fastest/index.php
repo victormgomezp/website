@@ -77,7 +77,7 @@ $args = wpas_get_view_data();
 			</a>
 			<div class="card-block">
 				<h2 class="card-title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
-				<h4 class="card-text"><?php echo substr(get_the_excerpt(),0,100); ?></h4>
+				<p class="card-text"><?php echo substr(get_the_excerpt(),0,180); ?></p>
 				<div class="metafooter">
 					<div class="wrapfooter">
 						<span class="meta-footer-thumb">
