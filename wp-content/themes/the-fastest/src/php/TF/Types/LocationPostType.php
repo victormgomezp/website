@@ -49,7 +49,6 @@ class LocationPostType extends BasePostType{
     }
     
     function populate_gf_location_dropdown( $form ) {
-        
         if(!empty($form['fields'])) foreach ( $form['fields'] as &$field ) {
     
             if ( $field->type != 'select' || strpos( $field->cssClass, 'populate-locations' ) === false ) {
@@ -86,7 +85,8 @@ class LocationPostType extends BasePostType{
     
     public static function all($args=null, $hook=null){
         $query = new WP_Query([
-            'post_type' => 'location'
+            'post_type' => 'location',
+            'post_status' => 'publish'
             ]);
         wp_reset_postdata();
         $objectsArray = [];
