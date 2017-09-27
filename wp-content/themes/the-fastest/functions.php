@@ -50,6 +50,7 @@
         'namespace' => 'TF\\Controller\\'
     ]);
     
+    $controller->route([ 'slug' => 'Template:page-landing-maker1.php', 'controller' => 'Landing:renderLanding']);
     $controller->route([ 'slug' => 'home', 'controller' => 'General']);
     $controller->route([ 'slug' => 'inicio', 'controller' => 'General:renderHome']);
     
@@ -79,7 +80,6 @@
     
     $controller->route([ 'slug' => 'Single:event', 'controller' => 'Event']);
     
-    $controller->route([ 'slug' => 'Template:page-landing-maker1.php', 'controller' => 'Landing:renderLanding']);
     
     $controller->routeAjax([ 'slug' => 'all', 'controller' => 'General:newsletter_signup', 'scope' => 'public' ]);
     $controller->routeAjax([ 'slug' => 'all', 'controller' => 'General:download_syllabus', 'scope' => 'public' ]);
