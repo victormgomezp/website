@@ -11,6 +11,7 @@ module.exports = {
     index: pathToTheme+'/src/js/index.js',
     blog: pathToTheme+'/src/js/blog.js',
     above: pathToTheme+'/src/js/above.js',
+    landing: pathToTheme+'/src/js/landing.js',
     vendor: ['jquery','chart.js','jquery-mask-plugin', 'bootstrap/js/dist/util', 'bootstrap/js/dist/dropdown', 'bootstrap/js/dist/collapse', 'bootstrap/js/dist/carousel', 'bootstrap/js/dist/modal', 'bootstrap-slider']
   },
   output: {

@@ -69,7 +69,7 @@ jQuery( document ).ready(function() {
     jQuery( '#footer-thankyou' ).html('Thank you for creating with <a href="https://git.io/vi1Gr" target="_new">WPTS</a>');
   }
 
-  //jQuery( '.wpts_color_field' ).wpColorPicker();
+  jQuery( '.wpts_color_field' ).wpColorPicker();
   jQuery( '.wpts_fa_field' ).wptsFa();
 
   var formfield;
@@ -122,25 +122,6 @@ jQuery('.add-new-option').click(function(e){
       method: "post",
       dataType: 'json',
       data: {action:"ajax_theme_option", target: jQuery(this).data("target"), value: jQuery(this).data("key"), function: "delete"},
-      success: function(data){
-        if(data.code==200) location.reload();
-        else alert('Something went wrong: '+data.message);
-      },
-      error: function(p1,p2,p3){
-        console.log(p3);
-      }
-    });
-    e.preventDefault();
-  });
-  
-  jQuery('.wpas-settings-button').click(function(e){
-    
-    var hookName = jQuery(this).data('hook');
-    jQuery.ajax({
-      url: 'admin-ajax.php',
-      method: "post",
-      dataType: 'json',
-      data: {action:"ajax_theme_option", hook: hookName, function: "wpas_do_action"},
       success: function(data){
         if(data.code==200) location.reload();
         else alert('Something went wrong: '+data.message);

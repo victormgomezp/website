@@ -3,7 +3,7 @@
         <div class="container">
             <h4><?php pll_e('Subscribe to our Newsletter!'); ?></h4>
             <form class="form-inline newsletter-signup">
-                <div class="form-group">
+                <div class="form-group mx-auto">
                     <div class="alert alert-danger" style=" width: 100%; display: none;" role="alert"></div>
                     <label for="staticEmail2" class='text-right'><?php pll_e('Get updates right in your inbox. <br/>We promise to not spam you'); ?>.</label>
                     <input type="email" class="form-control newsletter-email" id="staticEmail2" placeholder="email@example.com" required>

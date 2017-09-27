@@ -1,0 +1,26 @@
+@import "common/custom";
+@import "common/colors";
+@import "common/tech-icons";
+@import "common/footer";
+@import "common/slider";
+@import "common/badges";
+@import "common/testimonial";
+@import "common/icons";
+@import "common/vc";
+
+.vc-composer-page{
+    font-size: 20px;
+    @media screen and (max-width: 48em) { font-size: 16px; }
+    .techico{
+        font-size: 50px;
+    }
+    section{
+        padding: 40px 0px;
+    }
+    .part-time{
+        svg{height: 120px;}
+    }
+    .student-projects{
+        svg{ height: 100px; }
+    }
+}

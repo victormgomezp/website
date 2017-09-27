@@ -1,8 +1,8 @@
-<section class="bg-white text-black text-center part-time" id="about">
+<section class="bg-white text-black text-center why-coding">
       <div class="container">
         <div class="row">
           <div class="col-md-12">
-            <h2 class="section-heading text-black"><?php pll_e('Let\'s Part-time'); ?></h2>
+            <h2 class="section-heading text-black">Why learn to code?</h2>
           </div>
         </div>
         <div class="row">
@@ -11,10 +11,13 @@
           </div>
           <div class="col-8 col-md-6 mr-auto">
             <p class='section-message mt-sm-4'>
-              <?php pll_e('Part-time is more than a schedule. Building a methodology and content for part-time education has made us more flexible, tech-based and efficient.'); ?><br/>
+              <?php pll_e('There are currently '); ?><br/>
               <?php pll_e('All of our courses are part-time, in 3 hour classes 3 times a week'); ?>.
             </p>
           </div>
         </div>
       </div>
-    </section>
+</section>
+<section class="bg-white text-black text-center quote">
+  “If we want America to stay on the cutting edge, we need young Americans like you to master the tools and technology that will change the way we do just about everything.”
+</section>

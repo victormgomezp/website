@@ -18,9 +18,7 @@
         'debug' => WP_DEBUG,
         'minify-html' => !WP_DEBUG,
         'styles' => [
-            "page" => [
-                "all" => 'index.css'
-                ],
+            "page" => [ "all" => 'index.css', "coding-classes" => 'landing.css' ],
             "404" => ["all" => 'index.css']
             ],
         'critical-styles' => [
@@ -80,6 +78,8 @@
     $controller->route([ 'slug' => 'Tag:all', 'controller' => 'Blog:renderTag']);
     
     $controller->route([ 'slug' => 'Single:event', 'controller' => 'Event']);
+    
+    $controller->route([ 'slug' => 'Template:page-landing-maker1.php', 'controller' => 'Landing:renderLanding']);
     
     $controller->routeAjax([ 'slug' => 'all', 'controller' => 'General:newsletter_signup', 'scope' => 'public' ]);
     $controller->routeAjax([ 'slug' => 'all', 'controller' => 'General:download_syllabus', 'scope' => 'public' ]);
