@@ -47,7 +47,8 @@ class Blog{
     
     private function getNextCohort(){
         $cohorts = CoursePostType::getUpcomingDates();
-        return array_pop($cohorts);
+        if(!empty($cohorts)) return $cohorts[0];
+        else return null;
     }
     
 }
