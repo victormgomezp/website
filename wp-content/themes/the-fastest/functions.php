@@ -18,9 +18,9 @@
         'debug' => WP_DEBUG,
         'minify-html' => !WP_DEBUG,
         'styles' => [
-            "page" => [ "all" => 'index.css', "coding-classes" => 'landing.css' ],
+            "page" => [ "all" => 'index.css', "template:page-landing-maker1.php" => 'landing.css' ],
             "404" => ["all" => 'index.css']
-            ],
+        ],
         'critical-styles' => [
             "page" =>           ["blog" => 'blog.css', "all" => 'above.css'],
             "404" =>           ["all" => 'above.css'],
