@@ -8,7 +8,7 @@
         <?php wp_head(); ?>
         <?php wpas_head(); ?>
     </head>
-    <body <?php echo body_class('vc-composer-page'); ?> <?php echo ($args['styles']) ? $args['styles'] : ""; ?>>
+    <body <?php echo body_class('vc-composer-page'); ?> <?php echo (isset($args['styles'])) ? $args['styles'] : ""; ?>>
     <?php get_template_part('partials/script','tagmanagerbody'); ?>
     <div id="bg-sketch"></div>
     <?php wpas_critical_head(); ?>
