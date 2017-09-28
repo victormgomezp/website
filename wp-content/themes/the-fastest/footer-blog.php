@@ -1,15 +1,15 @@
     	<!-- Begin Footer
     	================================================== -->
-    	<div class="footer">
-    		<p class="pull-left">
-    			 Copyright &copy; 2017 <?php echo get_option('company-name'); ?>
-    		</p>
-    		<p class="pull-right">
-    			 
-    		</p>
-    		<div class="clearfix">
+    	<footer class="footer row pl-5 pr-5">
+    		<div class="col-12 col-md-4">
+    			Copyright &copy; 2017 <?php echo get_option('company-name'); ?>
     		</div>
-    	</div>
+    		<div class="col-12 col-md-4">
+    		</div>
+    		<div class="col-12 col-md-4">
+    			 <address>66 W Flagler St #903, Miami, FL 33130</address>
+    		</div>
+    	</footer>
     	<!-- End Footer
     	================================================== -->
     

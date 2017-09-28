@@ -46,7 +46,7 @@ $args = wpas_get_view_data();
 		<!-- End Fixed Left Share -->
 
 		<!-- Begin Post -->
-		<div class="col-md-8 col-md-offset-2 col-xs-12">
+		<article class="col-md-8 col-md-offset-2 col-xs-12">
 			<div class="mainheading">
 				
 <!-- Begin Top Meta -->
@@ -69,7 +69,9 @@ $args = wpas_get_view_data();
 			</div>
 
 			<!-- Begin Featured Image -->
-			<img class="featured-image img-fluid" src="assets/img/demopic/10.jpg" alt="">
+			<figure>
+				<img class="featured-image img-fluid" src="<?php echo the_post_thumbnail_url('full'); ?>" alt="">
+			</figure>
 			<!-- End Featured Image -->
 
 			<!-- Begin Post Content -->
@@ -89,7 +91,7 @@ $args = wpas_get_view_data();
 			</div>
 			<!-- End Tags -->
 
-		</div>
+		</article>
 		<!-- End Post -->
 
 	</div>

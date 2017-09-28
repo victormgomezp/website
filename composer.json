@@ -17,6 +17,7 @@
 		"wpackagist-plugin/redirection": "*",
 		"wpackagist-plugin/polylang": "*",
 		"wpackagist-plugin/duplicator": "*",
+		"wpackagist-plugin/fb-instant-articles": "^4.0",
 		"wpackagist-plugin/simple-custom-post-order": "*",
 		"wpackagist-plugin/duplicate-post": "*",
 		"alesanchezr/wpas-wordpress-dash": "dev-master",
