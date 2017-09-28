@@ -3,6 +3,7 @@
 namespace TF\Controller;
 
 use WPAS\Exception\WPASException;
+use TF\Types\TestimonialPostType;
 use \WP_Query;
 
 class Landing{
@@ -16,6 +17,8 @@ class Landing{
         $args['page']['call-to-action'] = get_field('page_call_to_action', $page->ID);
         //print_r($args['page']['call-to-action']); die();
         $args['styles'] = $this->getBodyStyles($page);
+        
+        $args['testimonials'] = TestimonialPostType::All();
 
         return $args;
     }
