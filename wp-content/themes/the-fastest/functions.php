@@ -95,6 +95,7 @@
         'location:'.$namespace.'LocationPostType',
         'team-member:'.$namespace.'TeamMemberPostType',
         'testimonial:'.$namespace.'TestimonialPostType',
+        'job:'.$namespace.'JobPostType',
         'event:'.$namespace.'EventPostType'
     ]);
     
