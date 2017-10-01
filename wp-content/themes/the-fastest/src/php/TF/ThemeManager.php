@@ -10,6 +10,12 @@ class ThemeManager{
 
         $this->removeDefauls();
         
+        if(!defined('WP_DEBUG') && WP_DEBUG == false)
+        {
+            ini_set('display_errors', false);
+            error_reporting(0);
+        }
+        
         add_action( 'after_setup_theme', [$this,'register_menus'], 10 );
         add_filter( 'walker_nav_menu_start_el', [$this,'prefix_nav_description'], 10, 4 );
         add_filter( 'body_class', [$this,'add_slug_body_class'], 10 );
