@@ -10,7 +10,7 @@ class ThemeManager{
 
         $this->removeDefauls();
         
-        if(!defined('WP_DEBUG') && WP_DEBUG == false)
+        if(!defined('WP_DEBUG') || WP_DEBUG == false)
         {
             ini_set('display_errors', false);
             error_reporting(0);
