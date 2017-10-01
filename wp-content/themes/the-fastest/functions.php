@@ -14,7 +14,7 @@
     
     use WPAS\Performance\WPASAsyncLoader;
     $asyncLoader = new WPASAsyncLoader([
-        'public-url' => get_stylesheet_directory_uri().'/public/',
+        'public-url' => parse_url( get_stylesheet_directory_uri(), PHP_URL_PATH ).'/public/',
         'debug' => WP_DEBUG,
         'minify-html' => !WP_DEBUG,
         'styles' => [
