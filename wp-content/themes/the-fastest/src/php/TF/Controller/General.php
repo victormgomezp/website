@@ -169,7 +169,7 @@ class General{
         $events = EventPostType::getUpcomingEvents();
 
         if(count($events)>0) WPASController::ajaxSuccess($events[0]);
-        else WPASController::ajaxError('Imposible to feth the events');
+        else WPASController::ajaxError('No upcoming events');
         
     }
     

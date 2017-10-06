@@ -103,15 +103,17 @@ $(document).ready(function() {
 
 function promptUpcomingEvent(event){
    
-   $(document).ready(function() {
-      
-      if(localStorage.getItem('popState') != 'shown'){
-          fillUpcomingEvent(event);
-           $("#upcomingEvent").delay(2000).fadeIn();
-           localStorage.setItem('popState','shown');
-           $('#upcomingEvent').modal('show');
-      }
-   });
+   if(localStorage.getItem('popState') != 'shown'){
+      fillUpcomingEvent(event);
+      $("#upcomingEvent").delay(2000).fadeIn();
+      localStorage.setItem('popState','shown');
+      $('#upcomingEvent').modal('show');
+      $("#upcomingEvent").on("hidden.bs.modal", function () {
+          // put your default event here
+          $("#upcomingEvent").remove();
+      });
+
+   }
 }
 
 function fillUpcomingEvent(event){
