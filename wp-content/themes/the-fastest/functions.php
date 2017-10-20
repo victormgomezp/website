@@ -22,6 +22,7 @@
         'minify-html' => !WP_DEBUG,
         'styles' => [
             "page" => [ "all" => 'index.css', "template:page-landing-maker1.php" => 'landing.css' ],
+            "custom-post" => [ "job" => 'index.css' ],
             "404" => ["all" => 'index.css']
         ],
         'critical-styles' => [
@@ -35,6 +36,9 @@
         'scripts' => [
             "page" => [
                 "all" => ['vendor.js','index.js']
+                ],
+            "custom-post" => [
+                'all' => ['vendor.js','blog.js']
                 ],
             "post" => [
                 'all' => ['vendor.js','blog.js']
