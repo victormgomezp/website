@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-lg navbar-dark">
     <div class="container">
-        <a class="navbar-brand js-scroll-trigger" href="<?php echo get_home_url(); ?>">
+        <a class="navbar-brand js-scroll-trigger mx-auto" href="<?php echo get_home_url(); ?>">
             <img class="img-fluid" src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/logo-black.png"></img>
         </a>
 <?php if(!is_page('venezuela')){ ?>

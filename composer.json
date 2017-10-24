@@ -20,6 +20,7 @@
 		"wpackagist-plugin/fb-instant-articles": "^4.0",
 		"wpackagist-plugin/simple-custom-post-order": "*",
 		"wpackagist-plugin/duplicate-post": "*",
+		"wpackagist-plugin/ip2location-redirection": "*",
 		"alesanchezr/wpas-wordpress-dash": "dev-master",
 		"wpackagist-plugin/advanced-custom-fields": "^4.4",
 		"jjgrainger/posttypes": "^1.1",
