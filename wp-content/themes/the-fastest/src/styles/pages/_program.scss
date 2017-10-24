@@ -4,7 +4,7 @@ $gray-base:     #999999;
 $brand-primary: black; //Zen Blue
 
 
-.page-the-program, .page-programa{
+.page-the-program, .page-programa, .page-venezuela{
     
     #flip {
       display: block !important;
@@ -212,7 +212,7 @@ $brand-primary: black; //Zen Blue
 //Tablets or bigger screens
 @media screen and (min-width: 48em) {
 
-    .page-the-program, .page-programa{
+    .page-the-program, .page-programa, .page-venezuela{
         background: #3f3f3f;
         .program-menu{
             margin-top: 30px;

@@ -22,7 +22,7 @@ if(WPAS_APP.view.slug === 'home' || WPAS_APP.view.slug === 'inicio'){
  * THE PROGRAM
 **/
 
-if(WPAS_APP.view.slug === 'the-program' || WPAS_APP.view.slug === 'programa'){
+if(WPAS_APP.view.slug === 'the-program' || WPAS_APP.view.slug === 'programa' || WPAS_APP.view.slug === 'venezuela'){
   
   $(document).ready(function() {
     // Custom 

@@ -71,6 +71,7 @@
     
     $controller->route([ 'slug' => 'the-program', 'controller' => 'General']);
     $controller->route([ 'slug' => 'programa', 'controller' => 'General:renderTheProgram']);
+    $controller->route([ 'slug' => 'venezuela', 'controller' => 'General:renderTheProgram']);
     
     $controller->route([ 'slug' => 'calendar', 'controller' => 'General']);
     $controller->route([ 'slug' => 'calendario', 'controller' => 'General:renderCalendar']);

@@ -3,6 +3,7 @@
         <a class="navbar-brand js-scroll-trigger" href="<?php echo get_home_url(); ?>">
             <img class="img-fluid" src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/logo-black.png"></img>
         </a>
+<?php if(!is_page('venezuela')){ ?>
         <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -20,5 +21,6 @@
          'walker'          => new WPAS\Utils\BS4Navwalker()
        ]);
        ?>
+<?php } ?>
     </div>
 </nav>
