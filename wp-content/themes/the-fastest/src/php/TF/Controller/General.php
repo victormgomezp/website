@@ -150,11 +150,21 @@ class General{
     public function download_syllabus(){
         
         $listId = get_option('activecampaign-soft-leads-list-id');
+        $utmUrlId = get_option('activecampaign-utm-url-field');
+        $utmLanguageId = get_option('activecampaign-utm-language-field');
         if(empty($_POST['email'])) WPASController::ajaxError('Invalid Email');
+        
+        $utmURLValue = 'undefined';
+        if(isset($_POST['utm_url'])) $utmURLValue = $_POST['utm_url'];
+        
+        $utmLanguageValue = 'undefined';
+        if(isset($_POST['utm_language'])) $utmLanguageValue = $_POST['utm_language'];
         
         $contact = array(
     		"email" => $_POST['email'],
     		"tags" => 'download_syllabus',
+    		"field[".$utmUrlId.",0]" => $utmURLValue,
+    		"field[".$utmLanguageId.",0]" => $utmLanguageValue
     	);
         
         $coursesField = \TF\ActiveCampaign\ACAPI::subscribeToList($contact, $listId);

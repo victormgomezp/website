@@ -53,6 +53,14 @@ class ACAPI{
         return (int)$result->subscriber_id;
     }
     
+    public static function getAllCustomFields(){
+        
+        $customFields = self::$connector['old']->api("list/field/view?ids=all");
+        //print_r($customFields); die();
+        // successful request
+        return $customFields;
+    }
+    
     public static function getCustomField($slug, $listIds='1'){
         
         $slug = strtoupper($slug);

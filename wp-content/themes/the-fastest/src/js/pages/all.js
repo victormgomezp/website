@@ -56,7 +56,9 @@ $('.syllabus-download').submit(function(event){
       method: 'POST',
       data: {
          action: 'download_syllabus',
-         email: email
+         email: email,
+         utm_url: WPAS_APP.url,
+         utm_language: WPAS_APP.lang
       },
       success: function(response){
          if(response)

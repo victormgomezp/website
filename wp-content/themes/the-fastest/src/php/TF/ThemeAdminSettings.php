@@ -85,13 +85,41 @@ class ThemeAdminSettings {
 				    'type' => 'text', 
 				    'label' => 'Newletter Signup List',
 				    'name' => 'activecampaign-newsletter-list-id',
-					'description' => 'What is the list you use for the newsletter'
+					'description' => 'What is the list you use for the newsletter?'
 				],
 				[
 				    'type' => 'text', 
 				    'label' => 'Soft Leads List',
 				    'name' => 'activecampaign-soft-leads-list-id',
-					'description' => 'What is the list you use for the soft leads'
+					'description' => 'What is the list you use for the soft leads?'
+				],
+				[
+				    'type' => 'select', 
+				    'label' => 'UTM_URL Field ID',
+				    'name' => 'activecampaign-utm-url-field',
+					'description' => 'What is the field for UTM_URL? This is the field used to store the URL were the lead was taken from',
+					'options' => []
+				],
+				[
+				    'type' => 'select', 
+				    'label' => 'UTM_LOCATION Field ID',
+				    'name' => 'activecampaign-utm-location-field',
+					'description' => 'What is the field for UTM_LOCATION? This field represent the location to which the student is related',
+					'options' => []
+				],
+				[
+				    'type' => 'select', 
+				    'label' => 'UTM_COURSE Field ID',
+				    'name' => 'activecampaign-utm-course-field',
+					'description' => 'What is the field for UTM_COURSE? This field represents the course to which the student is related',
+					'options' => []
+				],
+				[
+				    'type' => 'select', 
+				    'label' => 'UTM_LANGUAGE Field ID',
+				    'name' => 'activecampaign-utm-language-field',
+					'description' => 'What is the field for UTM_LANGUAGE? This field represents the language related to the student',
+					'options' => []
 				]
 			];
 		
@@ -148,6 +176,7 @@ class ThemeAdminSettings {
 		);
 		
 		add_filter('wpas_settings_button_action',array($this,'sync_upcoming_cohorts'),1);
+		add_filter('wpts_tab_activecampaign_before',array($this,'render_activecampaign_tab'));
 		
 		//add_filter('wpts_tab_replit_before',array($this,'render_replit'));
 		//add_action('wpts_tab_replit_table_after',array($this,'insert_another'));
@@ -208,6 +237,52 @@ class ThemeAdminSettings {
 
             WPASThemeSettingsBuilder::setThemeOption($inputId,$upcoming);
         }
+	}
+	
+	function render_activecampaign_tab($tab){
+		
+		$customFields = \TF\ActiveCampaign\ACAPI::getAllCustomFields();
+		$auxFields = [];
+	//	print_r($customFields);
+		foreach($customFields as $cfield){
+			if(isset($cfield->id)) $auxFields[$cfield->id] = $cfield->title;
+		} 
+		
+		$newfields =	[
+							[
+								'name' => 'activecampaign-utm-url-field',
+								'options' => $auxFields
+							],
+							[
+								'name' => 'activecampaign-utm-location-field',
+								'options' => $auxFields
+							],
+							[
+								'name' => 'activecampaign-utm-course-field',
+								'options' => $auxFields
+							],
+							[
+								'name' => 'activecampaign-utm-language-field',
+								'options' => $auxFields
+							]
+						];
+		
+		foreach($newfields as $newfield)
+		{
+			for($i=0; $i<count($tab['tabFields']); $i++)
+			{
+				if($tab['tabFields'][$i]['name']==$newfield['name'])
+				{
+					foreach($newfield as $key => $value){
+						$tab['tabFields'][$i][$key] = $value;
+					}
+				}
+			}
+		}
+		//print_r($tab['tabFields']);
+		//die();
+		
+		return $tab;
 	}
 	
 }
