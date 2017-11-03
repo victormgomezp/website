@@ -152,6 +152,7 @@ class General{
         $listId = get_option('activecampaign-soft-leads-list-id');
         $utmUrlId = get_option('activecampaign-utm-url-field');
         $utmLanguageId = get_option('activecampaign-utm-language-field');
+        $utmCountryId = get_option('activecampaign-utm-country-field');
         if(empty($_POST['email'])) WPASController::ajaxError('Invalid Email');
         
         $utmURLValue = 'undefined';
@@ -160,11 +161,15 @@ class General{
         $utmLanguageValue = 'undefined';
         if(isset($_POST['utm_language'])) $utmLanguageValue = $_POST['utm_language'];
         
+        $utmCountryValue = 'undefined';
+        if(isset($_POST['utm_country'])) $utmCountryValue = $_POST['utm_country'];
+        
         $contact = array(
     		"email" => $_POST['email'],
     		"tags" => 'download_syllabus',
     		"field[".$utmUrlId.",0]" => $utmURLValue,
-    		"field[".$utmLanguageId.",0]" => $utmLanguageValue
+    		"field[".$utmLanguageId.",0]" => $utmLanguageValue,
+    		"field[".$utmCountryId.",0]" => $utmCountryValue
     	);
         
         $coursesField = \TF\ActiveCampaign\ACAPI::subscribeToList($contact, $listId);

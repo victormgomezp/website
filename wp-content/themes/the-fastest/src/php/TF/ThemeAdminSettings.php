@@ -120,6 +120,13 @@ class ThemeAdminSettings {
 				    'name' => 'activecampaign-utm-language-field',
 					'description' => 'What is the field for UTM_LANGUAGE? This field represents the language related to the student',
 					'options' => []
+				],
+				[
+				    'type' => 'select', 
+				    'label' => 'COUNTRY Field ID',
+				    'name' => 'activecampaign-utm-country-field',
+					'description' => 'What is the field for COUNTRY? This field represents the country related to the student (if any)',
+					'options' => []
 				]
 			];
 		
@@ -263,6 +270,10 @@ class ThemeAdminSettings {
 							],
 							[
 								'name' => 'activecampaign-utm-language-field',
+								'options' => $auxFields
+							],
+							[
+								'name' => 'activecampaign-utm-country-field',
 								'options' => $auxFields
 							]
 						];
