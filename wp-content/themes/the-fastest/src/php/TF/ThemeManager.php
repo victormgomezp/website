@@ -23,7 +23,7 @@ class ThemeManager{
 			if(is_page('venezuela')) $data['country'] = 'venezuela';
 			else $data['country'] = 'undefined';
 			return $data;
-		},11,2);
+		},10,2);
     }
     
     function prefix_nav_description( $item_output, $item, $depth, $args ) {
