@@ -84,7 +84,7 @@ $args = wpas_get_view_data();
 			<div class="after-post-tags">
 				<?php $tags = get_the_tags(); ?>
 				<ul class="tags">
-					<?php foreach($tags as $t){ ?>
+					<?php if(count($tags)) foreach($tags as $t){ ?>
 					<li><a href="<?php echo get_term_link($t->term_id); ?>"><?php echo $t->name; ?></a></li>
 					<?php } ?>
 				</ul>
