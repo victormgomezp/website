@@ -155,6 +155,10 @@ class General{
         $utmCountryId = get_option('activecampaign-utm-country-field');
         if(empty($_POST['email'])) WPASController::ajaxError('Invalid Email');
         
+        
+        $fistName = '';
+        if(!empty($_POST['first_name'])) $fistName = $_POST['first_name'];
+        
         $utmURLValue = 'undefined';
         if(isset($_POST['utm_url'])) $utmURLValue = $_POST['utm_url'];
         
@@ -166,6 +170,7 @@ class General{
         
         $contact = array(
     		"email" => $_POST['email'],
+    		"first_name" => $fistName,
     		"tags" => 'download_syllabus',
     		"field[".$utmUrlId.",0]" => $utmURLValue,
     		"field[".$utmLanguageId.",0]" => $utmLanguageValue,

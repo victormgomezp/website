@@ -48,15 +48,24 @@ $('.syllabus-download').submit(function(event){
    
    var formSyllabus = $(this);
    var emailField = formSyllabus.find('input[type=email]');
+   var firstNameField = formSyllabus.find('input[type=text]');
    var email = emailField.val();
+   var firstName = firstNameField.val();
    
-   $.ajax({
+   if(email == '' || firstName =='')
+   {
+      formSyllabus.find('.alert-danger').html('We need your email and first name').css('display','block');
+   }
+   else{
+      formSyllabus.find('.alert-danger').html('').css('display','none');
+      $.ajax({
       url: WPAS_APP.ajax_url,
       dataType: 'JSON',
       method: 'POST',
       data: {
          action: 'download_syllabus',
          email: email,
+         first_name: firstName,
          utm_url: WPAS_APP.url,
          utm_language: (WPAS_APP.lang || 'undefined'),
          utm_country: (WPAS_APP.country || 'undefined')
@@ -78,6 +87,7 @@ $('.syllabus-download').submit(function(event){
          alert(p3);
       }
    });
+   } 
    
 });
 

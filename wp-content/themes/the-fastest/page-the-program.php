@@ -136,12 +136,7 @@ $args = wpas_get_view_data();
       <div class="container">
         <div class="row">
           <div class="col-md-9 ml-auto call-to-action mb-0">
-            <h4><?php pll_e('Download our syllabus PDF to get all the details'); ?></h4>
-             <form class="form-inline text-center syllabus-download">
-              <div class="alert alert-danger" style=" width: 100%; display: none;" role="alert"></div>
-              <input type="email" class="form-control" name="" placeholder="Your email" required/>
-              <button class="btn btn-secondary form-control ml-sm-3 mt-sm-0 mt-3"><?php pll_e('Download'); ?></a>
-            </form>
+              <?php get_template_part( 'partials/common', 'syllabus-download' ); ?>
           </div>
         </div>
       </div>

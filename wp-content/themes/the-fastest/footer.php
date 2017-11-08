@@ -143,53 +143,6 @@
             </div>
         </div>
         <?php } ?>
-        <div id="syllabusModal" class="modal fade mt-5" tabindex="-1" role="dialog" aria-labelledby="syllabusModalLabel" aria-hidden="true">
-          <div class="modal-dialog modal-lg">
-            <div class="modal-content p-3 text-center">
-                <h3><?php pll_e('Full Stack Development Syllabus'); ?></h3>
-                <p><?php pll_e('Please fill out this form to receive our syllabus and program catalog'); ?>.</p>
-                <div class="mb-4">
-                    <form class="form-inline text-center syllabus-download d-inline">
-                        <div class="alert alert-danger" style=" width: 100%; display: none;" role="alert"></div>
-                        <input type="email" class="form-control" name="" placeholder="Your email" required/>
-                        <button class="btn btn-secondary form-control ml-md-3 ml-0 mt-3 mt-sm-0"><?php pll_e('Download'); ?></button>
-                    </form>
-                </div>
-            </div>
-          </div>
-        </div>
-        <div id="upcomingEvent" class="modal mt-5" tabindex="-1" role="dialog" aria-labelledby="upcomingEventModalLabel" aria-hidden="true">
-          <div class="modal-dialog modal-lg">
-            <div class="modal-header">
-                <h2 class="modal-title text-center text-white mt-0"><?php pll_e('Upcoming event'); ?></h2>
-            </div>
-            <div class="modal-content">
-                <div class="row">
-                    <div class="col-3 col-sm-3 col-lg-2 pr-0 pt-2">
-                        <div class="event-date text-center m-1 m-sm-4">
-                            <p class='day'></p>
-                            <p class='month'></p>
-                            <p class='year'></p>
-                        </div>
-                                            
-                    </div>
-                    <div class="col-9 col-lg-10">
-                        <h3 class='event-title'>Loading...</h3>
-                        <h5 class='event-details'></h5>
-                        <p class='event-description'></p>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-12 text-right">
-                    </div>
-                </div>
-            </div>
-            <div class="modal-footer pr-0">
-                <a href="#" class="btn btn-secondary btn-lg" data-dismiss="modal"><?php pll_e('Close'); ?></a>
-                <a target="_blank" href="#" class="btn btn-danger btn-lg"><?php pll_e('Learn more'); ?></a>
-            </div>
-          </div>
-        </div>
     <?php } else { ?>
         <footer>
             <div class='container'>
@@ -248,6 +201,7 @@
                 <div class="mb-4">
                     <form class="form-inline text-center syllabus-download d-inline">
                         <div class="alert alert-danger" style=" width: 100%; display: none;" role="alert"></div>
+                        <input type="text" class="form-control mr-sm-3 mb-1 mb-sm-0" name="" placeholder="Your first name" required/>
                         <input type="email" class="form-control" name="" placeholder="Your email" required/>
                         <button class="btn btn-secondary form-control ml-md-3 ml-0 mt-3 mt-sm-0"><?php pll_e('Download'); ?></button>
                     </form>
