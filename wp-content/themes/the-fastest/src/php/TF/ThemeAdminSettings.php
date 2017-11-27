@@ -142,7 +142,7 @@ class ThemeAdminSettings {
 					    $cohorts = WPASThemeSettingsBuilder::getThemeOption('sync-bc-cohorts-api');
 					    if(empty($cohorts)) echo 'No cohort sync';
 					    else $this->printTableFromArray($cohorts,function($cohort){
-					    	if(empty($cohort['slug'])) return $cohort['date'] .' : <span style="background: #ef7c7c; padding: 2px; color: white; font-size: 80%;">Known location: '.$cohort['bc_location_slug'].'</span> ('.$cohort['name'].', '.$cohort['language'].')';
+					    	if(empty($cohort['location'])) return $cohort['date'] .' : <span style="background: #ef7c7c; padding: 2px; color: white; font-size: 80%;">Known location: '.$cohort['bc_location_slug'].'</span> ('.$cohort['name'].', '.$cohort['language'].')';
 					        return $cohort['date'] .' @ '.$cohort['location'].' ('.$cohort['name'].', '.$cohort['language'].')';
 					    });
 					}
