@@ -19,7 +19,7 @@ class ThemeManager{
         add_action( 'after_setup_theme', [$this,'register_menus'], 10 );
         add_filter( 'walker_nav_menu_start_el', [$this,'prefix_nav_description'], 10, 4 );
         add_filter( 'body_class', [$this,'add_slug_body_class'], 11 );
-        add_filter('wpas_js_global_variables', function($name, $data){
+        add_filter('wpas_js_global_variables', function($data){
 			if(is_page('venezuela')) $data['country'] = 'venezuela';
 			else $data['country'] = 'undefined';
 			return $data;

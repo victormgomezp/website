@@ -1,7 +1,5 @@
 <?php
 
-    if(!defined('BREATHECODE_API')) define('BREATHECODE_API', 'https://api.breatheco.de');
-    
     if(!defined('ABSPATH')) define('ABSPATH', dirname(__FILE__) . '/');
     if(!defined('PUBLICPATH')) define('PUBLICPATH', get_site_url() . '/wp-content/themes/the-fastest/public/');
     require ABSPATH . 'vendor/autoload.php';
@@ -73,8 +71,8 @@
     $controller->route([ 'slug' => 'programa', 'controller' => 'General:renderTheProgram']);
     $controller->route([ 'slug' => 'venezuela', 'controller' => 'General:renderTheProgram']);
     
-    $controller->route([ 'slug' => 'calendar', 'controller' => 'General']);
-    $controller->route([ 'slug' => 'calendario', 'controller' => 'General:renderCalendar']);
+    $controller->route([ 'slug' => 'calendar', 'controller' => 'Calendar']);
+    $controller->route([ 'slug' => 'calendario', 'controller' => 'Calendar:renderCalendar']);
     
     $controller->route([ 'slug' => 'pricing', 'controller' => 'General']);
     $controller->route([ 'slug' => 'precio', 'controller' => 'General:renderPricing']);
@@ -100,6 +98,7 @@
     
     $postTypeManager = new PostTypesManager([
         'course:'.$namespace.'CoursePostType',
+        'workshop:'.$namespace.'WorkshopPostType',
         'location:'.$namespace.'LocationPostType',
         'team-member:'.$namespace.'TeamMemberPostType',
         'testimonial:'.$namespace.'TestimonialPostType',

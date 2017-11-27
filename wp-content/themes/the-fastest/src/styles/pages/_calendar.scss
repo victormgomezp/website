@@ -1,53 +1,39 @@
 .page-calendar, .page-calendario{
+    .masthead{
+        h3{
+            color: white;
+        }
+    }
     .courses{
-        .list-group-item{
+        .course-body, .event-body{
+            svg{ height: 20px; position: relative; top: 3px; }
+            border-bottom: 1px solid #BDBDBD;
+            &:last-child{ border: none;}
+            &:hover{ background: #f7f7f7; 
+                a{ color: $red; }
+            }
+        }
+        h3{ font-size: 25px; 
+            a{ color: black; text-decoration: underline;}
+        }
+        h5{ font-style: italic; font-weight: 100; }
+        .course-info{
+            font-style: italic; font-size: 16px;
+            .icon-calendar{color: $red;}
+            .course-date{ display: inline-block; margin-right: 30px; }
+        }
+        .list-group-item ul{
             padding: 0;
-            border: 3px solid black;
-        }
-        .media-left{
-            width: 75px;
-            background: #dc3545;
-            padding: 10px;
-            border-right: 3px solid black;
-            border-bottom: 3px solid black;
-            
-            p{
-                margin: 0; font-weight: 900;
-                text-align: center;
-                color: white;
+            li{
+                list-style: none;
+                svg{ height: 15px; position: relative; top: 2px; }
             }
-            .event-date{
-                font-size: 45px;
-                line-height: 40px;
-            }
-            .event-month{
-                font-size: 20px;
-                line-height: 20px;
-            }
-            .event-year{
-                font-size: 18px;
-                line-height: 15px;
-            }
-        }
-        .media-body{
-            padding: 15px;
-            overflow-y: hidden;
-            &.course-body{height: 95px;}
-            a{color: black;}
-            // Extra small devices (portrait phones, less than 576px)
-            @media (max-width: 575px) { .media-heading{font-size: 1rem;} }
-            .additional-details{
-                font-size: 12px;
-                svg{height: 20px; width: 25px; margin-right: 10px; float: left;}
-            }
-        }
+        } 
     }
     .filters{
         border-top: 1px solid #ddd;
         border-bottom: 1px solid #ddd;
         .filter-label{
-            display: inline-block;
-            position: relative;
             display: inline-block;
             position: relative;
             top: 0px;
@@ -57,7 +43,11 @@
             @media (max-width: 575px) { font-size: 15px; }
             line-height: 24px;
         }
-        .dropdown{
+        .location-option{
+            font-size: 16px;
+        }
+    }
+    .dropdown{
             display: inline-block;
             margin-left: -5px;
             .dropdown-toggle::after{
@@ -88,17 +78,10 @@
             }
             svg{height: 25px; width: 25px; top: 5px; position: relative;}
         }
-    }
 }
 
 //Tablets or bigger screens
 @media screen and (min-width: 48em) {
     .page-calendar, .page-calendario{
-        .courses{
-            .additional-details{
-                font-size: 15px !important;
-                svg{height: 20px !important;}
-            }
-        }
     }
 }

@@ -35,7 +35,7 @@ class LocationPostType extends BasePostType{
         $field['choices'] = array();
         $field['choices']['0'] = 'Select a slug from breathecode';
 
-        $cohortsJSON = @file_get_contents(BREATHECODE_API.'/locations/');
+        $cohortsJSON = @file_get_contents(BREATHECODE_API_HOST.'/locations/');
         if($cohortsJSON)
         {
             $cohorts = json_decode($cohortsJSON);

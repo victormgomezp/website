@@ -5,6 +5,7 @@ namespace TF;
 use \WPAS\Settings\WPASThemeSettingsBuilder;
 
 use TF\Types\CoursePostType;
+use TF\Types\WorkshopPostType;
 
 class ThemeAdminSettings {
 	
@@ -141,6 +142,7 @@ class ThemeAdminSettings {
 					    $cohorts = WPASThemeSettingsBuilder::getThemeOption('sync-bc-cohorts-api');
 					    if(empty($cohorts)) echo 'No cohort sync';
 					    else $this->printTableFromArray($cohorts,function($cohort){
+					    	if(empty($cohort['slug'])) return $cohort['date'] .' : <span style="background: #ef7c7c; padding: 2px; color: white; font-size: 80%;">Known location: '.$cohort['bc_location_slug'].'</span> ('.$cohort['name'].', '.$cohort['language'].')';
 					        return $cohort['date'] .' @ '.$cohort['location'].' ('.$cohort['name'].', '.$cohort['language'].')';
 					    });
 					}
@@ -153,9 +155,24 @@ class ThemeAdminSettings {
 					'description' => function(){
 					    $profiles = WPASThemeSettingsBuilder::getThemeOption('sync-bc-profiles-api');
 					    
-					    if(empty($profiles)) echo 'No profiles sync';
+					    if(empty($profiles)) echo 'No profiles downloaded';
 					    else $this->printTableFromArray($profiles,function($p){
 					        return $p['name'] .' - ('.$p['slug'].')';
+					    });
+					}
+				],
+				[
+				    'type' => 'button', 
+				    'label' => 'Sync Workshops',
+				    'id' => 'sync-bc-workshops-api',
+				    'name' => 'sync-bc-workshops-api',
+					'description' => function(){
+					    $workshops = WPASThemeSettingsBuilder::getThemeOption('sync-bc-workshops-api');
+					    
+					    if(empty($workshops)) echo 'No workshops downloaded';
+					    else $this->printTableFromArray($workshops,function($wkshp){
+					    	if(empty($wkshp['slug'])) return $wkshp['date'] .' : <span style="background: #ef7c7c; padding: 2px; color: white; font-size: 80%;">Missing Information: '.$wkshp['bc_wtemplate_slug'].'</span>';
+					    	else return $wkshp['date'] .' : '.$wkshp['name'].' @ '.$wkshp['location'].' ('.$wkshp['language'].')';
 					    });
 					}
 				]
@@ -194,6 +211,7 @@ class ThemeAdminSettings {
 	    switch($inputId)
 	    {
             case 'sync-bc-cohorts-api': $this->syncCohorts($inputId); break;
+            case 'sync-bc-workshops-api': $this->syncWorkshops($inputId); break;
             case 'sync-bc-profiles-api': $this->syncProfiles($inputId); break;
 	    }
 	}
@@ -210,19 +228,44 @@ class ThemeAdminSettings {
 	}
 	
 	private function syncCohorts($inputId){
-	    $cohortsJSON = file_get_contents(BREATHECODE_API.'/cohorts/');
+	    $cohortsJSON = file_get_contents(BREATHECODE_API_HOST.'/cohorts/');
         if($cohortsJSON)
         {
             $cohorts = json_decode($cohortsJSON);
+            //print_r($cohorts); die();
             $upcoming = [];
             if($cohorts && $cohorts->code==200){
             	foreach($cohorts->data as $c){
-            		
             		$cohort = CoursePostType::getDateInformation($c);
             		if($cohort['time'] > time()) $upcoming[] = $cohort;
             	} 
             }
             
+            //print_r($cohorts->data); die();
+            //Sort 
+			usort($upcoming, function( $a, $b ) {
+			    return $a["time"] - $b["time"];
+			});
+
+            WPASThemeSettingsBuilder::setThemeOption($inputId,$upcoming);
+        }
+	}
+	
+	private function syncWorkshops($inputId){
+	    $workshopsJSON = file_get_contents(BREATHECODE_API_HOST.'/workshops/');
+        if($workshopsJSON)
+        {
+            $workshops = json_decode($workshopsJSON);
+            //print_r($cohorts); die();
+            $upcoming = [];
+            if($workshops && $workshops->code==200){
+            	foreach($workshops->data as $w){
+            		$workshop = WorkshopPostType::getDateInformation($w);
+            		if($workshop['time'] > time()) $upcoming[] = $workshop;
+            	} 
+            }
+            
+            //print_r($workshops->data); die();
             //Sort 
 			usort($upcoming, function( $a, $b ) {
 			    return $a["time"] - $b["time"];
@@ -233,10 +276,11 @@ class ThemeAdminSettings {
 	}
 	
 	private function syncProfiles($inputId){
-	    $profilesJSON = file_get_contents(BREATHECODE_API.'/profiles/');
+	    $profilesJSON = file_get_contents(BREATHECODE_API_HOST.'/profiles/');
         if($profilesJSON)
         {
             $profiles = json_decode($profilesJSON);
+            //print_r($profiles); die();
             $upcoming = [];
             if($profiles && $profiles->code==200) foreach($profiles->data as $p) {
                 $upcoming[] = (array) $p;

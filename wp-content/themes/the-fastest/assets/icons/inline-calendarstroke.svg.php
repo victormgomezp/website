@@ -24,8 +24,8 @@
 <path style="fill:url(#SVGID_1_);" d="M341.333,448v-64c0-23.531,19.146-42.667,42.667-42.667h64V170.667H21.333L298.667,448
 	H341.333z"/>
 <g>
-<text x="130" y="330" style="font-weight: bold; font-size: 200px;" fill="#303C42">13</text>
-<text x="140" y="420" style="font-weight: bold; font-size: 95px;" fill="#303C42">JUN</text>
+<text x="130" y="330" style="font-weight: bold; font-size: 200px;" fill="#303C42"></text>
+<text x="140" y="420" style="font-weight: bold; font-size: 95px;" fill="#303C42"></text>
 
 </g>
 

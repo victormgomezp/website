@@ -35,7 +35,7 @@ class CoursePostType extends BasePostType{
         $field['choices'] = array();
         $field['choices']['0'] = 'Select a slug from breathecode';
 
-        $cohortsJSON = @file_get_contents(BREATHECODE_API.'/profiles/');
+        $cohortsJSON = @file_get_contents(BREATHECODE_API_HOST.'/profiles/');
         if($cohortsJSON)
         {
             $cohorts = json_decode($cohortsJSON);
@@ -53,7 +53,7 @@ class CoursePostType extends BasePostType{
         $query = self::getCalendarQuery();
         $cohorts = WPASThemeSettingsBuilder::getThemeOption('sync-bc-cohorts-api');
         $upcoming = [];
-        if(!empty($cohorts)) foreach($cohorts as $c) if(self::hasValues($c,$query)) $upcoming[] = $c;
+        if(!empty($cohorts)) foreach($cohorts as $c) if(self::filterQuery($c,$query)) $upcoming[] = $c;
         
         return $upcoming;
     }
@@ -69,13 +69,22 @@ class CoursePostType extends BasePostType{
         $course['month'] = date('M',$time);
         $course['year'] = date('Y',$time);
         $course['date'] = date('F j, Y',$time);
-        $course['name'] = "FS Web Development";
         $course['bc_location_slug'] = $cohort['location_slug'];
+        $course['bc_profile_slug'] = $cohort['profile_slug'];
         $course['status'] = $cohort['status'];
         $course['time'] = $time;
         $course['language'] = ($cohort['language']=='en') ? 'English' : 'Español';
         $course['icon'] = ($cohort['language']=='en') ? 'united-states' : 'spain';
 
+        $courseTemplate = self::get(['meta_key' => 'breathecode_course_slug', 'meta_value' => $course['bc_profile_slug']]);
+        if($courseTemplate){
+            $course['name'] = $courseTemplate->post_title;
+            $course['slug'] = $courseTemplate->post_name;
+            $course['tagline'] = get_field('course_tagline',$courseTemplate->ID);
+            $course['duration'] = get_field('course_duration',$courseTemplate->ID);
+        } 
+        else $course['name'] = "Uknowwn: ".$course['bc_profile_slug'];
+        //print_r($course); die();
         $location = LocationPostType::get(['meta_key' => 'breathecode_location_slug', 'meta_value' => $cohort['location_slug']]);
         if($location){
             $course['location'] = $location->post_title;
@@ -93,7 +102,7 @@ class CoursePostType extends BasePostType{
         return $query;
     }
     
-    private static function hasValues($cohort, $query){
+    private static function filterQuery($cohort, $query){
 
         if(!empty($query['language']) && strtolower(substr($cohort['language'],0,2)) != $query['language']) return false;
         if(!empty($query['location']) && $cohort['bc_location_slug'] != $query['location']) return false;
@@ -103,8 +112,9 @@ class CoursePostType extends BasePostType{
     }
     
     public static function get($args){
-        
-        $query = new WP_Query(['post_type' => 'course', 'slug' => $args['slug']]);
+        //['post_type' => 'course', 'slug' => $args['slug']]
+        $args = array_merge($args, ['post_type' => 'course']);
+        $query = new WP_Query($args);
         if($query->posts && count($query->posts)==1){
             return end($query->posts);
         }else return null;
