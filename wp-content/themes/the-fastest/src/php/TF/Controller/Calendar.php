@@ -20,6 +20,7 @@ class Calendar{
         if(!empty($_GET['type'])){
             if($_GET['type']=='event') $args['events'] = EventPostType::getUpcomingEvents();
             else if($_GET['type']=='workshop') $args['workshops'] = WorkshopPostType::getUpcomingWorkshops();
+            else if($_GET['type']=='course') $args['courses'] = CoursePostType::getUpcomingDates();
         } 
         else $args['courses'] = CoursePostType::getUpcomingDates();
         
