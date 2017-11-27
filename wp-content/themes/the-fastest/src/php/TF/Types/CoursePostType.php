@@ -85,7 +85,7 @@ class CoursePostType extends BasePostType{
         } 
         else $course['name'] = "Uknowwn: ".$course['bc_profile_slug'];
         //print_r($course); die();
-        $location = LocationPostType::get(['meta_key' => 'breathecode_location_slug', 'meta_value' => $cohort['location_slug']]);
+        $location = LocationPostType::get(['meta_key' => 'breathecode_location_slug', 'meta_value' => $cohort['location_slug'], 'lang' => $cohort['language']]);
         if($location){
             $course['location'] = $location->post_title;
         } 
