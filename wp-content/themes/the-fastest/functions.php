@@ -20,7 +20,7 @@
         'minify-html' => !WP_DEBUG,
         'styles' => [
             "page" => [ "all" => 'index.css', "template:page-landing-maker1.php" => 'landing.css' ],
-            "custom-post" => [ "job" => 'index.css' ],
+            "custom-post" => [ "all" => 'index.css' ],
             "404" => ["all" => 'index.css']
         ],
         'critical-styles' => [
@@ -36,7 +36,7 @@
                 "all" => ['vendor.js','index.js']
                 ],
             "custom-post" => [
-                'all' => ['vendor.js','blog.js']
+                'all' => ['vendor.js','index.js']
                 ],
             "post" => [
                 'all' => ['vendor.js','blog.js']
@@ -59,7 +59,6 @@
     $controller->route([ 'slug' => 'home', 'controller' => 'General']);
     $controller->route([ 'slug' => 'inicio', 'controller' => 'General:renderHome']);
     
-    $controller->route([ 'slug' => 'Course', 'controller' => 'Course']);
     
     $controller->route([ 'slug' => 'the-academy', 'controller' => 'General']);
     $controller->route([ 'slug' => 'academia', 'controller' => 'General:renderTheAcademy']);
@@ -69,7 +68,11 @@
     
     $controller->route([ 'slug' => 'the-program', 'controller' => 'General']);
     $controller->route([ 'slug' => 'programa', 'controller' => 'General:renderTheProgram']);
+    $controller->route([ 'slug' => 'Template:single-full-stack.php', 'controller' => 'General:renderTheProgram']);
+    $controller->route([ 'slug' => 'Template:single-web-development.php', 'controller' => 'General:renderTheProgram']);
     $controller->route([ 'slug' => 'venezuela', 'controller' => 'General:renderTheProgram']);
+    
+    $controller->route([ 'slug' => 'Course', 'controller' => 'Course']);
     
     $controller->route([ 'slug' => 'calendar', 'controller' => 'Calendar']);
     $controller->route([ 'slug' => 'calendario', 'controller' => 'Calendar:renderCalendar']);

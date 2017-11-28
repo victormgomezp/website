@@ -80,6 +80,7 @@ class CoursePostType extends BasePostType{
         if($courseTemplate){
             $course['name'] = $courseTemplate->post_title;
             $course['slug'] = $courseTemplate->post_name;
+            $course['id'] = $courseTemplate->ID;
             $course['short_description'] = get_field('course_short_description',$courseTemplate->ID);
             $course['hr_duration'] = get_field('course_hr_duration',$courseTemplate->ID);
             $course['week_duration'] = get_field('course_week_duration',$courseTemplate->ID);

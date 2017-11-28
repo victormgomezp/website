@@ -67,7 +67,7 @@ $args = wpas_get_view_data();
     <section class="bg-white text-black courses pt-5 pb-5">
       <div class="container">
         <div class="row">
-          <div class="col-12 col-lg-10 col-xl-8 mx-auto">
+          <div class="col-12 col-lg-10 col-xl-10 mx-auto">
             <?php if(empty($args['courses']) and empty($args['events']) and empty($args['workshops'])) 
               echo '<div class="alert alert-warning" role="alert">It seems we could not found any results.</div>';
             ?>
@@ -81,29 +81,33 @@ $args = wpas_get_view_data();
                **/
               if($args['selected_type']=='course' && !empty($args['courses'])) foreach($args['courses'] as $course){ ?>
               <li class="list-group-item course-body text-left">
-                <div class="row">
-                  <div class="col-8">
-                    <h3 class="media-heading mt-0"><a href="<?php echo get_permalink( get_page_by_path( wpas_pll_get_slug('the-program') ) ); ?>"><?php echo $course['name']; ?></a></h3>
+                <div class="row mb-4 mb-md-0">
+                  <div class="col-md-8">
+                    <h3 class="media-heading mt-0"><a href="<?php echo get_permalink($course['id']); ?>"><?php echo $course['name']; ?></a></h3>
                     <p><?php echo $course['short_description']; ?></p>
-                    <p class='course-info'>
-                      <span class="course-date">
-                        <?php wpas_get_inline_svg('assets/icons/inline','calendarstroke.svg'); ?> 
-                        <?php echo $course['day']; ?> <?php echo $course['month']; ?>, <?php echo $course['year']; ?>
-                      </span>
-                      <span class="imoon icon-location"></span> <?php echo $course['location']; ?>
-                    </p>
                   </div>
-                  <div class="col-4 text-left">
+                  <div class="col-md-4 text-left">
                     <h5>Additional Info</h5>
                     <ul>
                       <li>
-                          Duration: <?php echo $course['hr_duration']; ?>hrs (<?php echo $course['week_duration']; ?> wks)
+                          Duration: <?php echo $course['hr_duration']; ?> hrs (<?php echo $course['week_duration']; ?> wks)
                       </li>
                       <li>
                         <?php wpas_get_inline_svg('assets/icons/flags/inline',$course['icon'].'.svg'); ?>
                         <span class='language'><?php echo $course['language']; ?></span>
                       </li>
                     </ul>
+                  </div>
+                </div>
+                <div class="row course-info">
+                  <div class="col-5 col-md-3">
+                    <span class="course-date">
+                      <?php wpas_get_inline_svg('assets/icons/inline','calendarstroke.svg'); ?> 
+                      <?php echo $course['day']; ?> <?php echo $course['month']; ?>, <?php echo $course['year']; ?>
+                    </span>
+                  </div>
+                  <div class="col-7 col-md-9">
+                      <span class="imoon icon-location"></span> <?php echo $course['location']; ?>
                   </div>
                 </div>
               </li>
