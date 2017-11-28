@@ -76,7 +76,7 @@ class CoursePostType extends BasePostType{
         $course['language'] = ($cohort['language']=='en') ? 'English' : 'Español';
         $course['icon'] = ($cohort['language']=='en') ? 'united-states' : 'spain';
 
-        $courseTemplate = self::get(['meta_key' => 'breathecode_course_slug', 'meta_value' => $course['bc_profile_slug']]);
+        $courseTemplate = self::get(['meta_key' => 'breathecode_course_slug', 'meta_value' => $course['bc_profile_slug'], 'lang' => $cohort['language']]);
         if($courseTemplate){
             $course['name'] = $courseTemplate->post_title;
             $course['slug'] = $courseTemplate->post_name;
@@ -86,7 +86,7 @@ class CoursePostType extends BasePostType{
         } 
         else $course['name'] = "Uknowwn: ".$course['bc_profile_slug'];
         //print_r($course); die();
-        $location = LocationPostType::get(['meta_key' => 'breathecode_location_slug', 'meta_value' => $cohort['location_slug']]);
+        $location = LocationPostType::get(['meta_key' => 'breathecode_location_slug', 'meta_value' => $course['bc_location_slug'], 'lang' => $cohort['language']]);
         if($location){
             $course['location'] = $location->post_title;
         } 

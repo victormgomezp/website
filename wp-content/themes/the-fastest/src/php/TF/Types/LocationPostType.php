@@ -73,7 +73,7 @@ class LocationPostType extends BasePostType{
         return $form;
     }
     
-    public static function get($args=null){
+    public static function get($args=[]){
         
         $args['post_type'] = 'location';
         $query = new WP_Query($args);

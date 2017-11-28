@@ -142,8 +142,15 @@ class ThemeAdminSettings {
 					    $cohorts = WPASThemeSettingsBuilder::getThemeOption('sync-bc-cohorts-api');
 					    if(empty($cohorts)) echo 'No cohort sync';
 					    else $this->printTableFromArray($cohorts,function($cohort){
-					    	if(empty($cohort['location']) or $cohort['location']=='Uknowwn') return $cohort['date'] .' : <span style="background: #ef7c7c; padding: 2px; color: white; font-size: 80%;">Known location: '.$cohort['bc_location_slug'].'</span> ('.$cohort['name'].', '.$cohort['language'].')';
-					        return $cohort['date'] .' @ '.$cohort['location'].' ('.$cohort['name'].', '.$cohort['language'].')';
+					    	$content = $cohort['date'];
+					    	if(empty($cohort['location']) or $cohort['location']=='Uknowwn') $content .= '@ <span style="background: #ef7c7c; padding: 2px; color: white; font-size: 80%;">Uknown location: '.$cohort['bc_location_slug'].'</span>';
+					        else  $content .= ' @ '.$cohort['location'];
+					        
+					        if(empty($cohort['slug']))  $content .= ' (<span style="background: #ef7c7c; padding: 2px; color: white; font-size: 80%;">Uknown course: '.$cohort['bc_profile_slug'].'</span>';
+					        else  $content .= ' ('.$cohort['name'];
+					        
+					        $content .= ', '.$cohort['language'].')';
+					        return $content;
 					    });
 					}
 				],
