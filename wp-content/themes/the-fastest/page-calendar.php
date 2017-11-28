@@ -84,7 +84,7 @@ $args = wpas_get_view_data();
                 <div class="row">
                   <div class="col-8">
                     <h3 class="media-heading mt-0"><a href="<?php echo get_permalink( get_page_by_path( wpas_pll_get_slug('the-program') ) ); ?>"><?php echo $course['name']; ?></a></h3>
-                    <p><?php echo $course['tagline']; ?></p>
+                    <p><?php echo $course['short_description']; ?></p>
                     <p class='course-info'>
                       <span class="course-date">
                         <?php wpas_get_inline_svg('assets/icons/inline','calendarstroke.svg'); ?> 
