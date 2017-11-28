@@ -48,9 +48,11 @@ class CoursePostType extends BasePostType{
         
     }
     
-    public static function getUpcomingDates(){
+    public static function getUpcomingDates($params=null){
         
-        $query = self::getCalendarQuery();
+        $query = $params;
+        if(!$params) $query = self::getCalendarQuery();
+        
         $cohorts = WPASThemeSettingsBuilder::getThemeOption('sync-bc-cohorts-api');
         $upcoming = [];
         if(!empty($cohorts)) foreach($cohorts as $c) if(self::filterQuery($c,$query)) $upcoming[] = $c;
@@ -108,6 +110,7 @@ class CoursePostType extends BasePostType{
 
         if(!empty($query['language']) && strtolower(substr($cohort['language'],0,2)) != $query['language']) return false;
         if(!empty($query['location']) && $cohort['bc_location_slug'] != $query['location']) return false;
+        if(!empty($query['profile']) && $cohort['bc_profile_slug'] != $query['profile']) return false;
         if(new DateTime() > new DateTime(date('Y-m-d',$cohort['time']))) return false;
         
         return true;

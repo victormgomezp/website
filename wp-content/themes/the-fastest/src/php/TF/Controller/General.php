@@ -90,7 +90,15 @@ class General{
     }
 
     private function getNextCohort(){
-        $cohorts = CoursePostType::getUpcomingDates();
+        
+        $query = [];
+        if(get_post_type() == 'course') 
+        {
+            $query['profile'] = get_field('breathecode_course_slug',get_the_ID());
+        }
+        else $query = null;
+        
+        $cohorts = CoursePostType::getUpcomingDates($query);
         if(!empty($cohorts)) return $cohorts[0];
         else return null;
     }

@@ -13,26 +13,29 @@
     	padding: 0px 5px 5px 5px;
     	color: black;
     }
+    .underline:after {
+        content: '';
+        z-index: -1;
+        display: block;
+        position: absolute;
+        border: solid 6px #007bff;
+        border-radius: 100% 0% 100% 2%;
+        
+        right: 0px;
+        top: 40px;
+        width: 460px;
+    }
 }
 
-.underline:after {
-    content: '';
-    z-index: -1;
-    display: block;
-    position: absolute;
-    border: solid 6px #007bff;
-    border-radius: 100% 0% 100% 2%;
-    
-    right: 0px;
-    top: 40px;
-    width: 460px;
-}
 
 /* Medium. Above 48em (768px) */
 @media screen and (min-width: 48em) {
-    .underline:after {
-        top: 50px;
-        right: 50px;
-        width: 500px;
+    
+    .page-pricing, .page-precio{
+        .underline:after {
+            top: 50px;
+            right: 50px;
+            width: 500px;
+        }
     }
 }

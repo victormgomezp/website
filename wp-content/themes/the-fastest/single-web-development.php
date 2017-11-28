@@ -9,19 +9,17 @@ $args = wpas_get_view_data();
     <header class="masthead">
       <div class="header-content">
         <div class="row heading-row">
-          <div class="col-sm-10 mx-auto text-left text-black">
-            <h1><?php pll_e('Become a Web Developer'); ?></h1>
-            <div id=flip>
-              <div><div><?php pll_e('and increase your income significantly'); ?></div></div>
-              <div><div><?php pll_e('and join the workforce of the future'); ?></div></div>
-              <div><div><?php pll_e('and re-launch your career'); ?></div></div>
-              <div><div><?php pll_e('build your own Tech Startup'); ?></div></div>
-              <div><div><?php pll_e('and join the Tech community'); ?></div></div>
-            </div>
-            <form class="form-inline mt-3 mt-sm-0">
+          <div class="col-sm-10 mx-auto text-center text-white">
+            <h1 class="underline"><?php pll_e('Learn To Code'); ?></h1>
+            <h3>With the biggest college in the country</h3>
+            <div class="mt-3 mt-sm-4 mx-auto">
               <a href="#syllabusModal"  data-toggle="modal" data-target="#syllabusModal" class='btn btn-lg btn-secondary mr-3'><?php pll_e('Request Syllabus'); ?></a>
               <a href="<?php echo get_permalink( get_page_by_path( wpas_pll_get_slug('apply') ) ); ?>" class='btn btn-lg btn-danger'><?php pll_e('Apply Now'); ?></a>
-            </form>
+            </div>
+            <div class="partnership mt-5">
+              <p>In partnership with</p>
+              <?php wpas_get_inline_svg('assets/icons/inline','mdc.svg'); ?>
+            </div>
           </div>
         </div>
         <div class="row">
@@ -61,9 +59,9 @@ $args = wpas_get_view_data();
             </ul>
           </div>
           <div id="program-details" class="col-md-9 ml-auto">
-            <h2 class="section-heading text-black mb-2"><?php pll_e('A Premium Program designed to'); ?><br /> <?php pll_e('launch your web developer career'); ?></h2>
+            <h2 class="section-heading text-black mb-2"><?php pll_e('Learn to code and build'); ?><br /> <?php pll_e('websites faster than anyone'); ?></h2>
             <h5 class="mb-4">
-              <span class="text-orange">[ </span><span class="text-blue"><?php pll_e('300+ hrs of lessons, 3 times a week during 16 weeks'); ?>.</span> <span class="text-orange">]</span>
+              <span class="text-orange">[ </span><span class="text-blue"><?php pll_e('230+ hrs of lessons, 3 times a week during 14 weeks'); ?>.</span> <span class="text-orange">]</span>
             </h5>
             <div class="row">
               <div class='col-sm-8 mb-3'>
@@ -71,8 +69,8 @@ $args = wpas_get_view_data();
                 <?php pll_e('All of our staff has 10+ years coding and holds senior possitions in Miami\'s tech industry'); ?>.
               </div>
               <div class='col-sm-8 mb-3'>
-                <h4><?php pll_e('Top notch technology stack'); ?></h4>
-                <?php pll_e('Coding is changing a lot RIGHT NOW, learn the newest and most needed languages and frameworks in the market. Your potencial employeers will love it'); ?>.
+                <h4><?php pll_e('Industry standard technologies'); ?></h4>
+                <?php pll_e('99% of websites use Javascript an 30% of the Web is built on top of WordPress. Become a master in all the technologies required to build amazing websites using all the best practices and most effective techniques.'); ?>.
               </div>
               <div class='col-sm-8 mb-3'>
                 <h4><?php pll_e('Really Part-time'); ?></h4>
@@ -89,7 +87,7 @@ $args = wpas_get_view_data();
         <div class="row">
           <div class="col-md-9 ml-auto">
             <h2 class="steps-header text-center"><?php pll_e('Course Structure'); ?></h2>
-            <div class="steps-timeline">
+            <div class="steps-timeline steps3">
               <div class="steps">
                 <div class="steps-img"></div>
                 <h3 class="steps-name"><?php pll_e('Prework'); ?></h3>
@@ -112,22 +110,12 @@ $args = wpas_get_view_data();
               </div>
               <div class="steps">
                 <div class="steps-img"></div>
-                <h3 class="steps-name"><?php pll_e('Junior Applications'); ?></h3>
+                <h3 class="steps-name"><?php pll_e('Build Professional Websites'); ?></h3>
                 <div class="steps-description">
-                   <h5><?php pll_e('Duration: 6 wks'); ?></h5>
-                   <?php pll_e('Create your first ReactJS application, MVC Pattern, JS Modules, Bundling, BabelJS, The DOM, Events, AJAX'); ?>.
+                   <h5><?php pll_e('Duration: 10 wks'); ?></h5>
+                   <?php pll_e('Create WordPress projects: Themes and Plugins, develop front-end modules using React.js, integrate your website with APIs, etc.'); ?>.
                   <h5><?php pll_e('Possible projects'); ?></h5>
-                   <?php pll_e('Coursera Clone, AirBNB Clone, Instagram Clone, YouTube Clone, etc'); ?>.
-                </div>
-              </div>
-              <div class="steps">
-                <div class="steps-img"></div>
-                <h3 class="steps-name"><?php pll_e('Advanced Applications'); ?></h3>
-                <div class="steps-description">
-                  <h5><?php pll_e('Duration: 6 wks'); ?></h5>
-                  <?php pll_e('Python, Django, REST API\'s, Databases, MongoDB, MVC Pattern, Publishing your webiste, etc.'); ?>
-                  <h5><?php pll_e('Possible projects'); ?></h5>
-                  <?php pll_e('During this phase you will have to design, code, test and publish your own entire web application'); ?>.
+                   <?php pll_e('eCommerce (like ThinkGeek.com), eLearning (like Coursera.com), Listing sites, etc.'); ?>.
                 </div>
               </div>
             </div>
@@ -187,11 +175,11 @@ $args = wpas_get_view_data();
                   <li class="list-group-item">
                     <div class="media">
                       <div class="media-left">
-                        <?php wpas_get_inline_svg('assets/icons/inline','webarchitect.svg'); ?>
+                        <?php wpas_get_inline_svg('assets/icons/inline','wordpress.svg'); ?>
                       </div>
                       <div class="media-body">
-                        <h5 class="media-heading"><?php pll_e(''); ?>Web Architect</h5>
-                        <?php pll_e('When people search for Senior Developers they are really looking for Web Architects: Understand HTTP properly, AJAX, APIs, POST, GET, HTTPS, Client vs Server, etc'); ?>.
+                        <h5 class="media-heading"><?php pll_e(''); ?>WordPress Architect</h5>
+                        <?php pll_e('Learn the WordPress architecture, develop your own themes and plugins, use the WordPress Rest API and integratied with any other services.'); ?>.
                       </div>
                     </div>
                   </li>
@@ -203,17 +191,6 @@ $args = wpas_get_view_data();
                       <div class="media-body">
                         <h5 class="media-heading"><?php pll_e('Dynamic Websties'); ?></h5>
                         <?php pll_e('HTML5 and CSS are only the top of the iceberg, todays websites use JS, React, Webpack, Python, django, Mongo and hundreds of technologies'); ?>.
-                      </div>
-                    </div>
-                  </li>
-                  <li class="list-group-item">
-                    <div class="media">
-                      <div class="media-left">
-                        <?php wpas_get_inline_svg('assets/icons/inline','datamaster.svg'); ?>
-                      </div>
-                      <div class="media-body">
-                        <h5 class="media-heading"><?php pll_e('Data Master'); ?></h5>
-                        <?php pll_e('There is more data and information every day, being able to manipulate that data its mandatory to create today\'s products.'); ?>.
                       </div>
                     </div>
                   </li>
@@ -254,11 +231,10 @@ $args = wpas_get_view_data();
                 </h5>
                 <div class="tech-icons">
                   <em class="techico icon-js"></em>
-                  <em class="techico icon-python"></em>
+                  <em class="techico icon-wordpress"></em>
                   <em class="techico icon-react"></em>
                   <em class="techico icon-git-squared"></em>
                   <em class="techico icon-database"></em>
-                  <em class="techico icon-mongodb"></em>
                   <em class="techico icon-babel"></em>
                   <em class="techico icon-sass"></em>
                 </div>
@@ -278,7 +254,7 @@ $args = wpas_get_view_data();
                   <div class="card card-block card-primary card-inverse bg-light">
                     <div class="card-body">
                       <h4 class="card-title m-0"><?php pll_e('Upfront'); ?></h4>
-                      <h3 class="card-text">$6,000</h3>
+                      <h3 class="card-text">$3,405</h3>
                     </div>
                   </div>
                 </div>
@@ -286,14 +262,14 @@ $args = wpas_get_view_data();
                   <div class="card card-block card-primary card-inverse bg-light">
                     <div class="card-body">
                       <h4 class="card-title m-0"><?php pll_e('Payment Plan'); ?></h4>
-                      <h3 class="card-text"><?php pll_e('From'); ?>$240/month</h3>
+                      <h5 class="card-text"><?php pll_e('Split your balance in two separate payments'); ?></h5>
                     </div>
                   </div>
                 </div>
               </div>
               <div class='row'>
                 <div class='col-md-10 mx-auto text-center'>
-                  <p class='section-message'><?php pll_e('This was the most challenging part, our program was designed from the ground up aming to make coding education universal'); ?>.</p>
+                  <p class='section-message'><?php pll_e('We are working hard on developing new payment options and we have several types of scolarships available for this program.'); ?>.</p>
                   <a href="<?php echo get_permalink( get_page_by_path( wpas_pll_get_slug('apply') ) ); ?>" class="btn btn-danger btn-lg"><?php pll_e('Apply to the program'); ?></a>
                 </div>
               </div>

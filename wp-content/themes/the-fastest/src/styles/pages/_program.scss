@@ -6,86 +6,6 @@ $brand-primary: black; //Zen Blue
 
 .page-the-program, .single-full-stack, .single-web-development, .page-venezuela{
     
-    #flip {
-      display: block !important;
-      overflow:hidden;
-      font-size: 20px;
-      height:60px;
-      font-weight: 900;
-      @media screen and (min-width: $break-point) {
-        height:80px;
-        font-size: 40px;
-      }
-    }
-    #flip > div > div {
-      color:#fff;
-      padding: 0px 15px;
-      margin-bottom:30px;
-      display:inline-block;
-    }
-    
-    #flip div:first-child {
-      @media screen and (max-width: $break-point) {
-        animation: show-mobile 8s linear infinite;
-      }
-      @media screen and (min-width: $break-point) {
-        animation: show-desktop 8s linear infinite;
-      }
-    }
-    
-    #flip div div {
-      background:#42c58a;
-    }
-    #flip div:first-child div {
-      background:#4ec7f3;
-    }
-    #flip div:last-child div {
-      background:#DC143C;
-    }
-    
-    @keyframes show-mobile {
-      0% {margin-top: 0px;} 
-      17% {margin-top: 0px;} 
-      20% {margin-top:-30px;}
-      37% {margin-top:-30px;}
-      40% {margin-top:-120px;}
-      57% {margin-top:-120px;}
-      60% {margin-top:-180px;}
-      77% {margin-top:-180px;}
-      80% {margin-top:-240px;}
-      97% {margin-top:-240px;}
-      100% {margin-top:0px;} 
-    }
-    
-    @keyframes show-desktop {
-        0% {margin-top: 0px;} 
-        17% {margin-top: 0px;} 
-        20% {margin-top: -90px;}
-        37% {margin-top: -90px;}
-        40% {margin-top: -180px;} 
-        57% {margin-top: -180px;} 
-        60% {margin-top: -270px;} 
-        77% {margin-top: -270px;} 
-        80% {margin-top: -360px;} 
-        97% {margin-top: -360px;} 
-        100% {margin-top: 0px;}
-    }
-    
-    @keyframes bg {
-      0% {background: #ff0075;}
-      3% {background: #0094ff;}
-      20% {background: #0094ff;}
-      23% {background: #b200ff;}
-      40% {background: #b200ff;}
-      43% {background: #8BC34A;}
-      60% {background: #8BC34A;}
-      63% {background: #F44336;}
-      80% {background: #F44336;}
-      83% {background: #F44336;}
-      100% {background: #F44336;}
-    }
-  
-    animation:bg 20s linear infinite;
     section{ padding: 20px 0;}
     .program-menu{ display: none; }
     .tech-icons{font-size: 60px;}
@@ -110,13 +30,11 @@ $brand-primary: black; //Zen Blue
         margin-right: 20px;
       }
     }
-
     .section-header {
       color: $brand-primary;
       font-weight: 400;
       font-size: 1.4em;
     }
-    
     .steps-timeline {
       outline: 1px dashed rgba(red, $outline-width);
       
@@ -148,9 +66,19 @@ $brand-primary: black; //Zen Blue
       
       @media screen and (min-width: $break-point) {
         float: left;
+        margin-top: -50px;
+      }
+    }
+    .steps-timeline.steps3 .steps{
+      @media screen and (min-width: $break-point) {
+        width: 36%;  
+        margin-right: 12%;
+      }
+    }
+    .steps-timeline.steps4 .steps{
+      @media screen and (min-width: $break-point) {
         width: 31%;  
         margin-right: 2%;
-        margin-top: -50px;
       }
     }
     .steps-timeline .steps:first-child {
@@ -167,7 +95,6 @@ $brand-primary: black; //Zen Blue
         margin-right: -16.65%;
       }
     }
-    
     .steps-img {
       display: block;
       margin: auto;
@@ -181,7 +108,6 @@ $brand-primary: black; //Zen Blue
         margin-left: 12px;
       }
     }
-    
     .steps-name{
       margin: 20px 0;
     }
@@ -209,11 +135,114 @@ $brand-primary: black; //Zen Blue
     
 }
 
+.page-the-program, .single-full-stack, .page-venezuela{
+    
+    #flip {
+      display: block !important;
+      overflow:hidden;
+      font-size: 20px;
+      height:60px;
+      font-weight: 900;
+      @media screen and (min-width: $break-point) {
+        height:80px;
+        font-size: 40px;
+      }
+    }
+    #flip > div > div {
+      color:#fff;
+      padding: 0px 15px;
+      margin-bottom:30px;
+      display:inline-block;
+    }
+    #flip div:first-child {
+      @media screen and (max-width: $break-point) {
+        animation: show-mobile 8s linear infinite;
+      }
+      @media screen and (min-width: $break-point) {
+        animation: show-desktop 8s linear infinite;
+      }
+    }
+    #flip div div {
+      background:#42c58a;
+    }
+    #flip div:first-child div {
+      background:#4ec7f3;
+    }
+    #flip div:last-child div {
+      background:#DC143C;
+    }
+    @keyframes show-mobile {
+      0% {margin-top: 0px;} 
+      17% {margin-top: 0px;} 
+      20% {margin-top:-30px;}
+      37% {margin-top:-30px;}
+      40% {margin-top:-120px;}
+      57% {margin-top:-120px;}
+      60% {margin-top:-180px;}
+      77% {margin-top:-180px;}
+      80% {margin-top:-240px;}
+      97% {margin-top:-240px;}
+      100% {margin-top:0px;} 
+    }
+    @keyframes show-desktop {
+        0% {margin-top: 0px;} 
+        17% {margin-top: 0px;} 
+        20% {margin-top: -90px;}
+        37% {margin-top: -90px;}
+        40% {margin-top: -180px;} 
+        57% {margin-top: -180px;} 
+        60% {margin-top: -270px;} 
+        77% {margin-top: -270px;} 
+        80% {margin-top: -360px;} 
+        97% {margin-top: -360px;} 
+        100% {margin-top: 0px;}
+    }
+    @keyframes bg {
+      0% {background: #ff0075;}
+      3% {background: #0094ff;}
+      20% {background: #0094ff;}
+      23% {background: #b200ff;}
+      40% {background: #b200ff;}
+      43% {background: #8BC34A;}
+      60% {background: #8BC34A;}
+      63% {background: #F44336;}
+      80% {background: #F44336;}
+      83% {background: #F44336;}
+      100% {background: #F44336;}
+    }
+    animation:bg 20s linear infinite;
+}
+
+.single-web-development{
+  background: url('../../assets/img/black-bg.jpg');
+  .masthead{
+    .underline:after {
+          content: '';
+          z-index: -1;
+          display: block;
+          position: relative;
+          border: solid 6px #007bff;
+          border-radius: 100% 0% 100% 2%;
+          margin: auto;
+          top: -10px;
+          right: -55px;
+          width: 160px;
+      }
+    .partnership{
+      color: #BDBDBD;
+      svg{height: 40px;}
+      display: block;
+    }
+  }
+}
+
 //Tablets or bigger screens
 @media screen and (min-width: 48em) {
 
-    .page-the-program, .single-full-stack, .single-web-development, .page-venezuela{
+    .page-the-program, .single-full-stack, .page-venezuela{
         background: #3f3f3f;
+    }
+    .page-the-program, .single-full-stack, .single-web-development, .page-venezuela{
         .program-menu{
             margin-top: 30px;
             display: block;
@@ -234,6 +263,11 @@ $brand-primary: black; //Zen Blue
         margin-left: 0px;
       }
     }
-
+    .single-web-development{
+      .underline:after {
+          right: -80px !important;
+          width: 235px !important;
+      }
+    }
     
 }
