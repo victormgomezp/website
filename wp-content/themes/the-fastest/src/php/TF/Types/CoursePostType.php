@@ -81,11 +81,12 @@ class CoursePostType extends BasePostType{
             $course['name'] = $courseTemplate->post_title;
             $course['slug'] = $courseTemplate->post_name;
             $course['tagline'] = get_field('course_tagline',$courseTemplate->ID);
-            $course['duration'] = get_field('course_duration',$courseTemplate->ID);
+            $course['hr_duration'] = get_field('course_hr_duration',$courseTemplate->ID);
+            $course['week_duration'] = get_field('course_week_duration',$courseTemplate->ID);
         } 
         else $course['name'] = "Uknowwn: ".$course['bc_profile_slug'];
         //print_r($course); die();
-        $location = LocationPostType::get(['meta_key' => 'breathecode_location_slug', 'meta_value' => $cohort['location_slug'], 'lang' => $cohort['language']]);
+        $location = LocationPostType::get(['meta_key' => 'breathecode_location_slug', 'meta_value' => $cohort['location_slug']]);
         if($location){
             $course['location'] = $location->post_title;
         } 

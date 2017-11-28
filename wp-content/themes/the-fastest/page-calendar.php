@@ -79,7 +79,7 @@ $args = wpas_get_view_data();
               /**
                * Render the courses
                **/
-              if(!isset($_GET['type']) || $_GET['type']!='events') if(!empty($args['courses'])) foreach($args['courses'] as $course){ ?>
+              if($args['selected_type']=='course' && !empty($args['courses'])) foreach($args['courses'] as $course){ ?>
               <li class="list-group-item course-body text-left">
                 <div class="row">
                   <div class="col-8">
@@ -97,7 +97,7 @@ $args = wpas_get_view_data();
                     <h5>Additional Info</h5>
                     <ul>
                       <li>
-                          <?php echo $course['duration']; ?> duration
+                          Duration: <?php echo $course['hr_duration']; ?>hrs (<?php echo $course['week_duration']; ?> wks)
                       </li>
                       <li>
                         <?php wpas_get_inline_svg('assets/icons/flags/inline',$course['icon'].'.svg'); ?>
