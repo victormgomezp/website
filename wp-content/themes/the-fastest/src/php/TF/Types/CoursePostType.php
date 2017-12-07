@@ -86,6 +86,7 @@ class CoursePostType extends BasePostType{
             $course['short_description'] = get_field('course_short_description',$courseTemplate->ID);
             $course['hr_duration'] = get_field('course_hr_duration',$courseTemplate->ID);
             $course['week_duration'] = get_field('course_week_duration',$courseTemplate->ID);
+            $course['featured_image'] = get_field('course_featured_image',$courseTemplate->ID,'thumbnail');
         } 
         else $course['name'] = "Uknowwn: ".$course['bc_profile_slug'];
         //print_r($course); die();

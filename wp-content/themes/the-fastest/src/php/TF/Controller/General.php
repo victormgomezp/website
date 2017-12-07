@@ -94,6 +94,7 @@ class General{
             "message" => "No upcoming dates scheduled for this location",
             "btn-message" => "Other dates & locations"
         ];
+        $args['testimonials'] = TestimonialPostType::All();
         
         //print_r($args['upcoming']); die();
         return $args;

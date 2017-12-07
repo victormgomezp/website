@@ -81,9 +81,9 @@ $args = wpas_get_view_data();
             <?php } ?>
               <div class="row">
                 <?php if(!empty($args['upcoming-cohorts'])) foreach($args['upcoming-cohorts'] as $course){ ?>
-  							<div class="col-12 col-md-6">
+  							<div class="col-12 col-md-6 mx-auto">
   							  <div class="media">
-                      <img class="media-left" alt="Image" src="http://via.placeholder.com/160x100">
+                      <img class="media-left" alt="Image" src="<?php echo $course['featured_image']; ?>">
                       <div class="media-body text-left">
                         <h4 class="card-title">
                           <a href="<?php echo get_permalink($course['id']); ?>">
@@ -129,7 +129,7 @@ $args = wpas_get_view_data();
             <?php } ?>
               <div class="row">
                 <?php if(!empty($args['events'])) foreach($args['events'] as $event){ ?>
-  							<div class="col-12 col-md-6">
+  							<div class="col-12 col-md-6 mx-auto">
   							  <div class="media">
                       <img class="media-left" alt="Image" src="http://via.placeholder.com/160x100">
                       <div class="media-body text-left">
@@ -148,75 +148,5 @@ $args = wpas_get_view_data();
         </div>
       </div>
     </section>
-    <section class="bg-white text-black testimonials pt-2">
-      <div class="container">
-        <h2 class="text-black text-center">Over 300 students graduated</h2>
-        <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
-          <div class="carousel-inner">
-            <div class="carousel-item active">
-              <div class='row'>
-                <div class='col-11 col-sm-10 mx-auto'>
-                  <blockquote class="blockquote">
-                    <div class='circle-img float-left mr-3' style="background-image: url('<?php echo get_stylesheet_directory_uri(); ?>/assets/img/marlon.png');"></div>
-                    <p>
-                      "The instructors and students were the lifeblood of this course, well beyond the actual programming and studying. They made everything easy to digest and quite fun to take in.
-                    </p>
-                    <p class="mb-0">
-                      Give this course a go and I would assure you that you won't regret it as long as you put in the work!"
-                    </p>
-                    <footer class="blockquote-footer">
-                      Marlon - August 24th 2016 via <cite title="Source Title">Course Report</cite>
-                      <p class="ml-4">
-                        <span class="imoon icon-star-full"></span>
-                        <span class="imoon icon-star-full"></span>
-                        <span class="imoon icon-star-full"></span>
-                        <span class="imoon icon-star-full"></span>
-                        <span class="imoon icon-star-full"></span>
-                      </p>
-                    </footer>
-                  </blockquote>
-                </div>
-              </div>
-            </div>
-            <div class="carousel-item">
-              <div class='row'>
-                <div class='col-sm-3 mr-auto'>
-                  <div class='circle-img float-right' style="background-image: url('<?php echo get_stylesheet_directory_uri(); ?>/assets/img/marlon.png');"></div>
-
-                </div>
-                <div class='col-sm-8 mr-auto'>
-                  <blockquote class="blockquote">
-                    <p>
-                      The instructors and students were the lifeblood of this course, well beyond the actual programming and studying. They made everything easy to digest and quite fun to take in.
-                    </p>
-                    <p class="mb-0">
-                      Give this course a go and I would assure you that you won't regret it as long as you put in the work!
-                    </p>
-                    <footer class="blockquote-footer">Marlon - August 24th 2016 via <cite title="Source Title">Course Report</cite></footer>
-                  </blockquote>
-                </div>
-              </div>
-            </div>
-            <div class="carousel-item">
-              <div class='row'>
-                <div class='col-sm-3'>
-                  <div class='circle-img float-right' style="background-image: url('<?php echo get_stylesheet_directory_uri(); ?>/assets/img/marlon.png');"></div>
-                </div>
-                <div class='col-sm-8'>
-                  <blockquote class="blockquote">
-                    <p>
-                      The instructors and students were the lifeblood of this course, well beyond the actual programming and studying. They made everything easy to digest and quite fun to take in.
-                    </p>
-                    <p class="mb-0">
-                      Give this course a go and I would assure you that you won't regret it as long as you put in the work!
-                    </p>
-                    <footer class="blockquote-footer">Marlon - August 24th 2016 via <cite title="Source Title">Course Report</cite></footer>
-                  </blockquote>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
+    <?php include(locate_template('partials/common-testimonials.php')); ?>
   <?php get_footer(); ?>
