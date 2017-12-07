@@ -13,7 +13,7 @@ $args = wpas_get_view_data();
         </div>
       </div>
     </header>
-    <section class="bg-white text-black">
+    <section class="bg-white text-black pt-5 pb-5">
       <div class="container">
         <div class="row">
           <div class="col-3 text-center">
@@ -35,7 +35,7 @@ $args = wpas_get_view_data();
         </div>
       </div>
     </section>
-    <section class="bg-light text-black">
+    <section class="bg-light text-black pt-5 pb-5">
       <div class="container">
         <div class="row">
           <div class="col-md-12">
@@ -74,7 +74,7 @@ $args = wpas_get_view_data();
         </div>
       </div>
     </section>
-    <section class="bg-white text-black text-left instructors">
+    <section class="bg-white text-black text-left instructors pt-5 pb-5">
       <div class="container">
         <div class="row">
           <div class="col-md-12 ml-auto">
@@ -99,7 +99,7 @@ $args = wpas_get_view_data();
         </div>
       </div>
     </section>
-    <section class="bg-light text-black pb-0 founders">
+    <section class="bg-light text-black pb-0 founders pt-5">
       <div class="container">
         <div class="row">
           <div class="col-md-4 col-xl-6">

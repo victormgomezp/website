@@ -1,5 +1,5 @@
 <?php if(isset($args['testimonials']) && count($args['testimonials'])>0){ ?>
-<section class="bg-light text-black testimonials">
+<section class="bg-light text-black testimonials pt-5 pb-5">
       <div class="container">
         <h2 class="text-black text-center"><?php pll_e('Over 200 students graduated so far'); ?></h2>
         <div class="row">

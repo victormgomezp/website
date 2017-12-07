@@ -1,4 +1,4 @@
-<section class="bg-white text-black text-center part-time" id="about">
+<section class="bg-white text-black text-center part-time pt-5 pb-5" id="about">
       <div class="container">
         <div class="row">
           <div class="col-md-12">

@@ -9,7 +9,7 @@ import {MakeSticky} from './common/sticky-toggle.js';
 import {SmartFilters} from './common/smart-filters.js';
 import {PieChart} from "./vendor/cakeCharts";
 
-
+console.log(WPAS_APP);
 /**
  * HOME
 **/
@@ -29,7 +29,9 @@ if(['page-the-program','single-full-stack','single-web-development'].indexOf(WPA
   var maxStickPosition = $('#pricing').offset().top - 20;
   MakeSticky.init('[data-toggle="sticky-onscroll"]', maxStickPosition);
   
-  require('./pages/program.js');
+  
+  var TheProgram = require('./pages/program.js').default;
+  TheProgram.init();
   
 }
 
@@ -87,6 +89,10 @@ function loadVideo(videoURL){
 }
 
 
+/**
+ * CALENDAR
+**/
+
 if(WPAS_APP.view.slug === 'calendar' || WPAS_APP.view.slug === 'calendario'){
   
   SmartFilters.init({
@@ -102,4 +108,12 @@ if(WPAS_APP.view.slug === 'calendar' || WPAS_APP.view.slug === 'calendario'){
   
   MakeSticky.init('[data-toggle="sticky-onscroll"]', 4000);
     
+}
+
+/**
+ * LOCATION
+**/
+
+if(['single-location'].indexOf(WPAS_APP.view.template) != -1){
+  require('./pages/location.js');
 }

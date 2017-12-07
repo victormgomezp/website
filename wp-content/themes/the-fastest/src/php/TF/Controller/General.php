@@ -75,6 +75,30 @@ class General{
         return $args;
     }
     
+    public function renderLocation(){
+
+        $args = [];
+        
+        $args['current-location'] = (array) get_queried_object();
+        $args['current-location']['bc_location_slug'] = get_field('breathecode_location_slug', $args['current-location']['ID']);
+        $args['current-location']['map'] = get_field('location_map', $args['current-location']['ID']);
+        $args['current-location']['phone'] = get_field('location_phone_number', $args['current-location']['ID']);
+        $args['current-location']['email'] = get_field('location_email', $args['current-location']['ID']);
+        $args['current-location']['office_image'] = get_field('location_office_image', $args['current-location']['ID']);
+        
+        $args['locations'] = LocationPostType::all();
+        $args['styles'] = UtilsController::getBodyStyles($args['current-location']["ID"]);
+        $args['upcoming-cohorts'] = CoursePostType::getUpcomingDates(['location' => $args['current-location']['bc_location_slug']]);;
+        if(count($args['upcoming-cohorts'])>0) $args['upcoming'] = $args['upcoming-cohorts'][0];
+        else $args['upcoming-message'] = [
+            "message" => "No upcoming dates scheduled for this location",
+            "btn-message" => "Other dates & locations"
+        ];
+        
+        //print_r($args['upcoming']); die();
+        return $args;
+    }
+    
     public function renderApply(){
         $args = [];
         $args['upcoming'] = $this->getNextCohort();

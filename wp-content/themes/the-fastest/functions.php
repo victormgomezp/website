@@ -89,6 +89,8 @@
     
     $controller->route([ 'slug' => 'Single:event', 'controller' => 'Event']);
     
+    $controller->route([ 'slug' => 'Single:location', 'controller' => 'General:renderLocation']);
+    
     
     $controller->routeAjax([ 'slug' => 'all', 'controller' => 'General:newsletter_signup', 'scope' => 'public' ]);
     $controller->routeAjax([ 'slug' => 'all', 'controller' => 'General:download_syllabus', 'scope' => 'public' ]);

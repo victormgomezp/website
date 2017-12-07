@@ -63,6 +63,15 @@
                            ]);
                         ?>
                     </div>
+                    <div class='col-md-3 text-center'>
+                        <h5 class="mt-3 mb-3"><?php pll_e('Certified by'); ?> </h5>
+                        <a target="_blank" rel="nofollow" href="http://www.fldoe.org/">
+                          <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/florida.png"></img>
+                        </a>
+                        <h5 class="mt-5 mb-3"><?php pll_e('We accept'); ?></h5>
+                        <?php wpas_get_inline_svg('assets/icons/inline','bitcoin.svg'); ?>
+                        <?php wpas_get_inline_svg('assets/icons/inline','ethereum.svg'); ?>
+                    </div>
                 </div>
                 <div class='row'>
                     <div class='col-12'>
@@ -88,11 +97,11 @@
                 </div>
             </div>
         </footer>
-        <?php if(!empty($args['upcoming'])){ ?>
         <div class="footer-bar fixed-bottom">
             <div class="container">
                 <div class="row">
                     <div class="col-12 col-sm-10 col-md-12 col-lg-9 mx-auto">
+                        <?php if(!empty($args['upcoming'])){ ?>
                         <div class="media">
                             <div class="media-left">
                                 
@@ -138,11 +147,20 @@
                                 <p>or <a href="<?php echo get_permalink( get_page_by_path( wpas_pll_get_slug('calendar') ) ); ?>?type=course"><?php pll_e('review other dates'); ?></a></p>
                             </div>
                         </div>
+                        <?php } else { ?>
+                        <div class="media">
+                            <div class="media-body pl-0 pl-sm-2 mt-sm-1">
+                                <h4 class='mt-0 mt-sm-2'><?php echo (!empty($args['upcoming-message']) && !empty($args['upcoming-message']["message"])) ? $args['upcoming-message']["message"] : 'No upcoming dates scheduled for this course'; ?></h4>
+                            </div>
+                            <div class="media-right">
+                                <a href="<?php echo get_permalink( get_page_by_path( wpas_pll_get_slug('calendar') ) ); ?>?type=course" class='btn btn-danger mt-1 apply-btn'><?php echo (!empty($args['upcoming-message']) && !empty($args['upcoming-message']["btn-message"])) ? $args['upcoming-message']["btn-message"] : pll('Review other courses'); ?></a>
+                            </div>
+                        </div>
+                        <?php } ?>
                     </div>
                 </div>
             </div>
         </div>
-        <?php } ?>
     <?php } else { ?>
         <footer>
             <div class='container'>
@@ -163,9 +181,12 @@
                             </li>
                         </ul>
                     </div>
+                    <div class='col-md-3'></div>
+                    <div class='col-md-3'></div>
                     <div class='col-md-3'>
-                    </div>
-                    <div class='col-md-3'>
+                        <h5 class="mt-5 mb-3"><?php pll_e('We accept'); ?></h5>
+                        <?php wpas_get_inline_svg('assets/icons/inline','bitcoin.svg'); ?>
+                        <?php wpas_get_inline_svg('assets/icons/inline','ethereum.svg'); ?>
                     </div>
                 </div>
                 <div class='row'>
@@ -196,7 +217,7 @@
         <div id="syllabusModal" class="modal fade mt-5" tabindex="-1" role="dialog" aria-labelledby="syllabusModalLabel" aria-hidden="true">
           <div class="modal-dialog modal-lg">
             <div class="modal-content p-3 text-center">
-                <h3><?php pll_e('Full Stack Development Syllabus'); ?></h3>
+                <h3><?php pll_e('Request syllabus'); ?></h3>
                 <p><?php pll_e('Please fill out this form to receive our syllabus and program catalog'); ?>.</p>
                 <div class="mb-4">
                     <form class="form-inline text-center syllabus-download d-inline">
@@ -205,6 +226,26 @@
                         <input type="email" class="form-control" name="" placeholder="Your email" required/>
                         <button class="btn btn-secondary form-control ml-md-3 ml-0 mt-3 mt-sm-0"><?php pll_e('Download'); ?></button>
                     </form>
+                </div>
+            </div>
+          </div>
+        </div>
+        <div id="tourModal" class="modal fade mt-5" tabindex="-1" role="dialog" aria-labelledby="tourModalLabel" aria-hidden="true">
+          <div class="modal-dialog modal-lg">
+            <div class="modal-content p-3 text-center">
+                <h4><?php pll_e('Please select the location you want to the tour'); ?>.</h4>
+                <div class="dropdown cities dropdown-selector">
+                    <button id="locationSelector" data-key="l" class="dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <span>Select a location</span>
+                    </button>
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                        <?php foreach($args['locations'] as $l){ ?>
+                            <a class="dropdown-item location-option" href="<?php echo get_permalink($l['ID']); ?>" data-value="<?php echo $l['bc_location_slug']; ?>">
+                            <?php echo $l['post_title']; ?>
+                            <?php wpas_get_inline_svg('assets/icons/flags/inline',$l['flag'].'.svg'); ?>
+                            </a>
+                        <?php } ?>
+                    </div>
                 </div>
             </div>
           </div>

@@ -9,7 +9,7 @@ $args = wpas_get_view_data();
           <div class="col-md-10 mx-auto">
             <h3>
               Select a location: 
-              <div class="dropdown cities">
+              <div class="dropdown cities dropdown-selector">
                 <button id="locationSelector" data-key="l" class="dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                   <span><?php pll_e('all locations'); ?></span>
                 </button>
@@ -35,7 +35,7 @@ $args = wpas_get_view_data();
       <div class="row filters">
         <div class="col-12 col-sm-10 col-lg-8 col-xl-6 mx-auto">
           <p class="filter-label d-none d-md-inline"><?php pll_e('Showing'); ?></p>
-          <div class="dropdown type">
+          <div class="dropdown type dropdown-selector">
             <button id="typeSelector" data-key="type" class="dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
               <?php pll_e('courses'); ?>
             </button>
@@ -45,7 +45,7 @@ $args = wpas_get_view_data();
               <a class="dropdown-item type-option" data-value="workshop" href="#"> <?php pll_e('workshops'); ?></a>
             </div>
           </div>
-          <div class="dropdown languages">
+          <div class="dropdown languages dropdown-selector">
             <button id="langSelector" data-key="lang" class="dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 <span class='d-inline d-lg-none'><?php pll_e('in all langs'); ?></span>
                 <span class='d-none d-lg-inline'><?php pll_e('in all languages'); ?></span>
@@ -107,7 +107,8 @@ $args = wpas_get_view_data();
                     </span>
                   </div>
                   <div class="col-7 col-md-9">
-                      <span class="imoon icon-location"></span> <?php echo $course['location']; ?>
+                      <span class="imoon icon-location"></span>
+                      <a href="<?php echo get_permalink($course['location_id']); ?>"><?php echo $course['location']; ?></a>
                   </div>
                 </div>
               </li>
@@ -123,7 +124,12 @@ $args = wpas_get_view_data();
                     <div class="col-12 col-sm-8">
                       <h3 class="media-heading mt-0"><a href="<?php echo $event['ticket_url']; ?>"><?php echo $event['post_title']; ?></a></h3>
                       <p class='d-block d-sm-inline mb-0'><strong>Starts: <?php echo $event['event_start_time']; ?></strong></p>
-                      <p class='d-block d-sm-inline mt-0'><strong>at <span class="imoon icon-location"></span> <?php echo $event['address']; ?></strong></p> 
+                      <p class='d-block d-sm-inline mt-0'>
+                          <strong>
+                            at <span class="imoon icon-location"></span> 
+                            <a href="<?php echo get_permalink($course['location_id']); ?>"><?php echo $event['address']; ?></a>
+                          </strong>
+                      </p> 
                       <p><?php echo $event['post_content']; ?></p>
                     </div>
                     <div class="col-12 col-sm-4 text-right-sm text-center">
@@ -152,7 +158,8 @@ $args = wpas_get_view_data();
                         <?php wpas_get_inline_svg('assets/icons/inline','calendarstroke.svg'); ?> 
                         <?php echo $workshop['day']; ?> <?php echo $workshop['month']; ?>, <?php echo $workshop['year']; ?>
                       </span>
-                      <span class="imoon icon-location"></span> <?php echo $workshop['location']; ?>
+                      <span class="imoon icon-location"></span>
+                      <a href="<?php echo get_permalink($course['location_id']); ?>"><?php echo $workshop['location']; ?></a>
                     </p>
                   </div>
                   <div class="col-4 text-left">

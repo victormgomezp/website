@@ -1,0 +1,38 @@
+.single-location{
+    background-position: center top;
+    background-color: white;
+    .masthead{
+        h1{font-size: 25px;}
+    } 
+    section.contact{
+        address{
+            font-size: 16px;
+            padding: 20px;
+            h4{
+                font-size: 22px;
+            }
+        }
+    }
+    section.upcoming-courses,section.upcoming-events{
+        .media{
+            background: white;
+            padding: 5px;
+            box-shadow: 0 2px 15px 0 rgba(0,0,0,.1);
+            margin-bottom: 15px;
+            svg{ height: 18px; }
+            .media-body{
+                padding: 5px;
+                h4{ font-size: 18px; margin-top: 0;}
+                p{padding: 2px; margin: 0;}
+            }
+        }
+    }
+    section.location-showcase .center-box{
+        background-size: cover;
+        background-position: center;
+        .location-description{
+            background: rgba(255,255,255,0.8);
+        }
+    }
+}
+

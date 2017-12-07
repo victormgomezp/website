@@ -92,14 +92,16 @@ class CoursePostType extends BasePostType{
         $location = LocationPostType::get(['meta_key' => 'breathecode_location_slug', 'meta_value' => $course['bc_location_slug'], 'lang' => $cohort['language']]);
         if($location){
             $course['location'] = $location->post_title;
+            $course['location_id'] = $location->ID;
         } 
         else $course['location'] = 'Uknowwn';
         
         return $course;
     }
     
-    public static function getCalendarQuery(){
+    public static function getCalendarQuery($args=null){
         $query = [];
+        
         if(!empty($_REQUEST['lang'])) $query['language'] = $_REQUEST['lang'];
         if(!empty($_REQUEST['l'])) $query['location'] = $_REQUEST['l'];
         

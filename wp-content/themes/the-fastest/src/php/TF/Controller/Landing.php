@@ -16,26 +16,11 @@ class Landing{
         $args['page']['heading2'] = get_field('page_heading_2', $page->ID);
         $args['page']['call-to-action'] = get_field('page_call_to_action', $page->ID);
         //print_r($args['page']['call-to-action']); die();
-        $args['styles'] = $this->getBodyStyles($page);
+        $args['styles'] = UtilsController::getBodyStyles($page->ID);
         
         $args['testimonials'] = TestimonialPostType::All();
 
         return $args;
-    }
-    
-    private function getBodyStyles($page){
-        
-        $styles = 'style="';
-        
-        $backgroundColor = get_field('body_background_color', $page->ID);
-        if($backgroundColor) $styles .= 'background-color: '.$backgroundColor.';';
-        
-        $backgroundImage = get_field('body_background_image', $page->ID);
-        if($backgroundImage) $styles .= "background-image: url('".$backgroundImage."');";
-        
-        $styles .= '"';
-        
-        return $styles;
     }
     
 }

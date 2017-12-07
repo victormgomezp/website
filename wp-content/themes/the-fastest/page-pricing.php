@@ -13,7 +13,7 @@ $args = wpas_get_view_data();
         </div>
       </div>
     </header>
-    <section class="bg-white text-black">
+    <section class="bg-white text-black pt-5">
       <div class="container">
         <div class="row">
           <div class="col-sm-12 col-md-5 col-lg-3 mx-auto order-2 order-md-1">
@@ -35,7 +35,7 @@ $args = wpas_get_view_data();
         </div>
       </div>
     </section>
-    <section class="bg-white text-black">
+    <section class="bg-white text-black pt-md-5 pb-5">
       <div class="container">
         <div class="row mb-4">
           <div class="col-md-6 mx-auto">

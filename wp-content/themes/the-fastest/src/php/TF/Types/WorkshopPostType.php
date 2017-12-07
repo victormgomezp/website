@@ -111,6 +111,7 @@ class WorkshopPostType extends BasePostType{
         $location = LocationPostType::get(['meta_key' => 'breathecode_location_slug', 'meta_value' => $workshop['location_slug']]);
         if($location){
             $wkshp['location'] = $location->post_title;
+            $course['location_id'] = $location->ID;
         } 
         else $wkshp['location'] = 'Uknowwn';
         
