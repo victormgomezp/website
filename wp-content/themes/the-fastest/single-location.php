@@ -107,12 +107,7 @@ $args = wpas_get_view_data();
           <div class="row">
             <div class=" col-md-8 mx-auto location-description">
                 <h4 class="section-heading text-black text-center">The best enviroment to learn</h4>
-                <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit,
-                sed diam nonummy nibh euismod tincidunt ut laoreet dolore
-                magna aliquam erat volutpat. Ut wisi enim ad minim veniam,
-                quis nostrud exerci tation ullamcorper suscipit lobortis nisl
-                ut aliquip ex ea commodo consequat. Duis autem vel eum iriure
-                in futurum.</p>
+                <p><?php echo $args['current-location']['post_content']; ?></p>
             </div>
         </div>
         </div>
