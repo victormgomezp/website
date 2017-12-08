@@ -153,7 +153,7 @@
                                 <h4 class='mt-0 mt-sm-2'><?php echo (!empty($args['upcoming-message']) && !empty($args['upcoming-message']["message"])) ? $args['upcoming-message']["message"] : 'No upcoming dates scheduled for this course'; ?></h4>
                             </div>
                             <div class="media-right">
-                                <a href="<?php echo get_permalink( get_page_by_path( wpas_pll_get_slug('calendar') ) ); ?>?type=course" class='btn btn-danger mt-1 apply-btn'><?php echo (!empty($args['upcoming-message']) && !empty($args['upcoming-message']["btn-message"])) ? $args['upcoming-message']["btn-message"] : pll('Review other courses'); ?></a>
+                                <a href="<?php echo get_permalink( get_page_by_path( wpas_pll_get_slug('calendar') ) ); ?>?type=course" class='btn btn-danger mt-1 apply-btn'><?php echo (!empty($args['upcoming-message']) && !empty($args['upcoming-message']["btn-message"])) ? $args['upcoming-message']["btn-message"] : pll__('Review other courses'); ?></a>
                             </div>
                         </div>
                         <?php } ?>

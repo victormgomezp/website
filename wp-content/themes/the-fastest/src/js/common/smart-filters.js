@@ -12,6 +12,8 @@ export var SmartFilters = (function(){
     plugin.init = function(settings){
         $.extend( config, settings );
         
+        console.log('Initializing the SmartFilters');
+        
         var urlVars = getUrlVars();
         setFiltersDefaultStates(urlVars);
         
@@ -38,7 +40,7 @@ export var SmartFilters = (function(){
     }
     
     function setFiltersDefaultStates(urlVars){
-        console.log(urlVars);
+        console.log('Setting filter values', urlVars);
         
         config.filters.forEach(function(filter){
             console.log(filter.urlKey);
