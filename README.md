@@ -27,13 +27,11 @@ $ wp core config --dbname={yourdatabase} --dbuser={yourusername} --dbpass={YOUR 
 
 ```php
 
-$_SERVER["HTTP_HOST"] = $_SERVER["SERVER_NAME"];
-
-define('ASSETS_URL', 'https://assets.breatheco.de/');
-define('PROJECTS_URL', 'https://projects.breatheco.de/');
 define('BREATHECODE_API_HOST', 'https://talenttree-alesanchezr.c9users.io/');
-define('BREATHECODE_CLIENT_ID', '');
-define('BREATHECODE_CLIENT_SECRET', '');
+
+define('WP_DEBUG', true);
+define('WP_DEBUG_LOG', false);
+define('UGLIFY_HTML', false);
 
 ```
 
