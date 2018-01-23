@@ -2,10 +2,10 @@
 
 ## Installing the LMS
 
-0) **Clone this repository and then change the remote to your own repository**
+0) **Clone this repository and get into the website2 directory**
 ```sh
 $ git clone git@bitbucket.org:codingacademy/website2.git
-
+$ cd website2
 ```
 
 1) **Install WP-CLI by going to the following website: [http://wp-cli.org](http://wp-cli.org/#installing)**
