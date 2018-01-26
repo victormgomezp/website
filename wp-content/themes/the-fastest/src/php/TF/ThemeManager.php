@@ -19,6 +19,10 @@ class ThemeManager{
         add_action( 'after_setup_theme', [$this,'register_menus'], 10 );
         add_filter( 'walker_nav_menu_start_el', [$this,'prefix_nav_description'], 10, 4 );
         add_filter( 'body_class', [$this,'add_slug_body_class'], 11 );
+        
+        //advanced custome fields configuration
+        add_filter('acf/settings/save_json', [$this,'my_acf_json_save_point']);
+        
         add_filter('wpas_js_global_variables', function($data){
 			if(is_page('venezuela')) $data['country'] = 'venezuela';
 			else $data['country'] = 'undefined';
@@ -79,6 +83,15 @@ class ThemeManager{
     
     function is_login_page() {
         return in_array($GLOBALS['pagenow'], array('wp-login.php', 'wp-register.php'));
-    }   
+    }  
+    
+    function my_acf_json_save_point( $path ) {
+        //print_r('asdasd'); die();
+        // update path
+        $path = ABSPATH . '/src/php/vendor/acf';
+        // return
+        return $path;
+        
+    }
     
 }
