@@ -56,7 +56,7 @@
   var particles = [];
   var pool = [];
   
-  var Sketch = require("../vendor/sketch");
+  var Sketch = require("../lib/sketch");
   var canvasBg = document.querySelector( '#bg-sketch' );
   canvasBg.style.display = "block";
   var pricingSketch = Sketch.create({

@@ -7,7 +7,7 @@ import './pages/all.js';
 import './common/marketing-events.js';
 import {MakeSticky} from './common/sticky-toggle.js';
 import {SmartFilters} from './common/smart-filters.js';
-import {PieChart} from "./vendor/cakeCharts";
+import {PieChart} from "./lib/cakeCharts";
 
 console.log(WPAS_APP);
 /**
