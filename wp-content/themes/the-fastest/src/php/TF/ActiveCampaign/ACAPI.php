@@ -1,7 +1,7 @@
 <?php
 
 namespace TF\ActiveCampaign;
-require_once(dirname(__FILE__)."/../../vendor/activecampaign/includes/ActiveCampaign.class.php");
+require_once(dirname(__FILE__)."/../../libraries/activecampaign/includes/ActiveCampaign.class.php");
 
 class ACAPI{
     
