@@ -25,10 +25,10 @@ class TestimonialPostType extends BasePostType{
         
     }
     
-    public static function all(){
-        $query = new WP_Query([
+    public static function all($args = [], $hook = NULL){
+        $query = new WP_Query(array_merge([
             'post_type' => 'testimonial'
-            ]);
+            ],$args));
             
         $testimonialsArray = [];
         foreach($query->posts as $testimonial) $testimonialsArray[] = self::fillMember($testimonial);
