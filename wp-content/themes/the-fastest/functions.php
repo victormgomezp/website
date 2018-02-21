@@ -120,6 +120,7 @@
         $gfManager = new WPASGravityForm([
             'submit-button-class' => true,
             'populate-current-language' => true,
+            'populate-adwords-gclid' => true,
             'fields' => [
                 ['type' => 'button-group', 'label' => 'Button Group']
             ]

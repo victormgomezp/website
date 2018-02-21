@@ -65,10 +65,7 @@ $('.syllabus-download').submit(function(event){
       data: {
          action: 'download_syllabus',
          email: email,
-         first_name: firstName,
-         utm_url: WPAS_APP.url,
-         utm_language: (WPAS_APP.lang || 'undefined'),
-         utm_country: (WPAS_APP.country || 'undefined')
+         first_name: firstName
       },
       success: function(response){
          if(response)

@@ -141,8 +141,14 @@ class General{
         
         if(empty($_POST['email'])) WPASController::ajaxError('Invalid Email');
         
+        //get WPAS_APP values
+        $globalContext = wpas_get_global_context();
+        $gclidValue = 'undefined';
+        if(isset($globalContext['gclid'])) $gclidValue = $globalContext['gclid'];
+        
         $contact = array(
     		"email" => $_POST['email'],
+    		"field[".$gclid.",0]" => $gclidValue
     	);
         
         $coursesField = \TF\ActiveCampaign\ACAPI::subscribeToList($contact, $listId);
@@ -158,20 +164,27 @@ class General{
         $utmUrlId = get_option('activecampaign-utm-url-field');
         $utmLanguageId = get_option('activecampaign-utm-language-field');
         $utmCountryId = get_option('activecampaign-utm-country-field');
+        $gclid = get_option('activecampaign-gclid-field');
         if(empty($_POST['email'])) WPASController::ajaxError('Invalid Email');
         
         
         $fistName = '';
         if(!empty($_POST['first_name'])) $fistName = $_POST['first_name'];
         
+        //get WPAS_APP values
+        $globalContext = wpas_get_global_context();
+        
         $utmURLValue = 'undefined';
-        if(isset($_POST['utm_url'])) $utmURLValue = $_POST['utm_url'];
+        if(isset($globalContext['url'])) $utmURLValue = $globalContext['url'];
         
         $utmLanguageValue = 'undefined';
-        if(isset($_POST['utm_language'])) $utmLanguageValue = $_POST['utm_language'];
+        if(isset($globalContext['lang'])) $utmLanguageValue = $globalContext['lang'];
         
         $utmCountryValue = 'undefined';
-        if(isset($_POST['utm_country'])) $utmCountryValue = $_POST['utm_country'];
+        if(isset($globalContext['country'])) $utmCountryValue = $globalContext['country'];
+        
+        $gclidValue = 'undefined';
+        if(isset($globalContext['gclid'])) $gclidValue = $globalContext['gclid'];
         
         $contact = array(
     		"email" => $_POST['email'],
@@ -179,7 +192,8 @@ class General{
     		"tags" => 'download_syllabus',
     		"field[".$utmUrlId.",0]" => $utmURLValue,
     		"field[".$utmLanguageId.",0]" => $utmLanguageValue,
-    		"field[".$utmCountryId.",0]" => $utmCountryValue
+    		"field[".$utmCountryId.",0]" => $utmCountryValue,
+    		"field[".$gclid.",0]" => $gclidValue
     	);
         
         $coursesField = \TF\ActiveCampaign\ACAPI::subscribeToList($contact, $listId);

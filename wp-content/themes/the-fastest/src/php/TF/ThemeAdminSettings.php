@@ -326,6 +326,10 @@ class ThemeAdminSettings {
 							[
 								'name' => 'activecampaign-utm-country-field',
 								'options' => $auxFields
+							],
+							[
+								'name' => 'activecampaign-gclid-field',
+								'options' => $auxFields
 							]
 						];
 		
