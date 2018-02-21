@@ -10,7 +10,7 @@ use WP_Query;
 class LocationPostType extends BasePostType{
     
     function populate_fields(){
-        
+
         add_filter('acf/load_field/name=active_campaign_location_slug', [$this,'populate_active_campaign_slug']);
         add_filter('acf/load_field/name=breathecode_location_slug', [$this,'populate_breathecode_slug']);
         
@@ -42,13 +42,14 @@ class LocationPostType extends BasePostType{
             if($cohorts && $cohorts->code==200) foreach($cohorts->data as $opt) $field['choices'][$opt->slug] = $opt->name.' ('.$opt->slug.')';
         
             
-        }else WPASAdminNotifier::addTransientMessage(WPASAdminNotifier::ERROR,'Error getting the BreatheCode Location Slugs');
+        }else WPASAdminNotifier::addTransientMessage(WPASAdminNotifier::ERROR,'Error getting the BreatheCode Location Slugs: '.BREATHECODE_API_HOST.'/locations/');
         
         return $field;
         
     }
     
     function populate_gf_location_dropdown( $form ) {
+
         if(!empty($form['fields'])) foreach ( $form['fields'] as &$field ) {
     
             if ( $field->type != 'select' || strpos( $field->cssClass, 'populate-locations' ) === false ) {
@@ -58,7 +59,7 @@ class LocationPostType extends BasePostType{
             // you can add additional parameters here to alter the posts that are retrieved
             // more info: [http://codex.wordpress.org/Template_Tags/get_posts](http://codex.wordpress.org/Template_Tags/get_posts)
             $locations = LocationPostType::all();
-    
+
             $choices = array();
             foreach ( $locations as $l ) {
                 $choices[] = array( 'text' => $l['post_title'], 'value' => $l['ac_location_slug'] );

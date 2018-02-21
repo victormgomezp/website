@@ -99,17 +99,17 @@
     
     
     use \WPAS\Types\PostTypesManager;
-    $namespace = '\TF\Types\\';
     
     $postTypeManager = new PostTypesManager([
-        'course:'.$namespace.'CoursePostType',
-        'workshop:'.$namespace.'WorkshopPostType',
-        'location:'.$namespace.'LocationPostType',
-        'team-member:'.$namespace.'TeamMemberPostType',
-        'testimonial:'.$namespace.'TestimonialPostType',
-        'job:'.$namespace.'JobPostType',
-        'event:'.$namespace.'EventPostType'
-    ]);
+        'namespace'=>'\TF\Types\\'
+        ]);
+    $postTypeManager->newType(['type'=>'course', 'class' => 'CoursePostType'])->register();
+    $postTypeManager->newType(['type'=>'workshop', 'class' => 'WorkshopPostType'])->register();
+    $postTypeManager->newType(['type'=>'location', 'class' => 'LocationPostType'])->register();
+    $postTypeManager->newType(['type'=>'team-member', 'class' => 'TeamMemberPostType'])->register();
+    $postTypeManager->newType(['type'=>'testimonial', 'class' => 'TestimonialPostType'])->register();
+    $postTypeManager->newType(['type'=>'job', 'class' => 'JobPostType'])->register();
+    $postTypeManager->newType(['type'=>'event', 'class' => 'EventPostType'])->register();
     
     use TF\ActiveCampaign\ACAPI;
     ACAPI::start();

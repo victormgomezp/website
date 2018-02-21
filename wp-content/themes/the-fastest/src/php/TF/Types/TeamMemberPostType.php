@@ -25,7 +25,7 @@ class TeamMemberPostType extends BasePostType{
         
     }
     
-    public static function all($args = []){
+    public static function all($args = [], $hook=null){
         
         $args = array_merge($args,[
             'post_type' => 'team-member'
