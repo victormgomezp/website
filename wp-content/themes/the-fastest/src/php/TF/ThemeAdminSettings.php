@@ -128,6 +128,13 @@ class ThemeAdminSettings {
 				    'name' => 'activecampaign-utm-country-field',
 					'description' => 'What is the field for COUNTRY? This field represents the country related to the student (if any)',
 					'options' => []
+				],
+				[
+				    'type' => 'select', 
+				    'label' => 'gclid Field ID',
+				    'name' => 'activecampaign-gclid-field',
+					'description' => 'Used for adwords offline convertions attribution',
+					'options' => []
 				]
 			];
 		

@@ -27,9 +27,6 @@ class ThemeManager{
 			if(is_page('venezuela')) $data['country'] = 'venezuela';
 			else $data['country'] = 'undefined';
 			
-			//storing the google adwords gclid on the session
-			if(isset($_GET['gclid'])) $data['gclid'] = $_GET['gclid'];
-			
 			return $data;
 		},10,2);
     }

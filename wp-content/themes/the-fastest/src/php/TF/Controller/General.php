@@ -165,6 +165,7 @@ class General{
         $utmLanguageId = get_option('activecampaign-utm-language-field');
         $utmCountryId = get_option('activecampaign-utm-country-field');
         $gclid = get_option('activecampaign-gclid-field');
+
         if(empty($_POST['email'])) WPASController::ajaxError('Invalid Email');
         
         
@@ -173,7 +174,7 @@ class General{
         
         //get WPAS_APP values
         $globalContext = wpas_get_global_context();
-        
+
         $utmURLValue = 'undefined';
         if(isset($globalContext['url'])) $utmURLValue = $globalContext['url'];
         
@@ -184,7 +185,8 @@ class General{
         if(isset($globalContext['country'])) $utmCountryValue = $globalContext['country'];
         
         $gclidValue = 'undefined';
-        if(isset($globalContext['gclid'])) $gclidValue = $globalContext['gclid'];
+        if(isset($_GET['gclid'])) $gclidValue = $_GET['gclid'];
+        else if(isset($globalContext['gclid'])) $gclidValue = $globalContext['gclid'];
         
         $contact = array(
     		"email" => $_POST['email'],
@@ -195,7 +197,7 @@ class General{
     		"field[".$utmCountryId.",0]" => $utmCountryValue,
     		"field[".$gclid.",0]" => $gclidValue
     	);
-        
+
         $coursesField = \TF\ActiveCampaign\ACAPI::subscribeToList($contact, $listId);
 
         if($coursesField) WPASController::ajaxSuccess('Check your email! In the next minutes your should receive what you asked for :)');
