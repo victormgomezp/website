@@ -193,5 +193,4 @@ $args = wpas_get_view_data();
       </div>
     </section>
     <?php include(locate_template('partials/common-testimonials.php')); ?>
-    <?php echo (isset($args['page']['script'])) ? '<script type="text/javascript" src="'.$args['page']['script'].'"></script>' : ''; ?>
   <?php get_footer(); ?>

@@ -20,6 +20,7 @@ class LocationPostType extends BasePostType{
     function populate_active_campaign_slug( $field ) {
         
         $coursesField = \TF\ActiveCampaign\ACAPI::getCustomField('utm_location');
+        
         // reset choices
         $field['choices'] = array();
         $field['choices']['0'] = 'Select a slug from active campaign';

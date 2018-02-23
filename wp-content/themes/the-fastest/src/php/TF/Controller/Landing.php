@@ -17,6 +17,8 @@ class Landing{
         $args['page']['call-to-action'] = get_field('page_call_to_action', $page->ID);
         //print_r($args['page']['call-to-action']); die();
         $args['styles'] = UtilsController::getBodyStyles($page->ID);
+        $args['page']['styles'] = get_field('landing_extra_styles', $page->ID);
+        $args['page']['script'] = get_field('landing_extra_script', $page->ID);
         
         $args['testimonials'] = TestimonialPostType::All();
 

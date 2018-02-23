@@ -21,11 +21,19 @@ class ThemeManager{
         add_filter( 'body_class', [$this,'add_slug_body_class'], 11 );
         
         //advanced custome fields configuration
-        add_filter('acf/settings/save_json', [$this,'my_acf_json_save_point']);
+        $this->advancedCustomFieldsSync();
         
-        add_filter('wpas_js_global_variables', function($data){
-			if(is_page('venezuela')) $data['country'] = 'venezuela';
-			else $data['country'] = 'undefined';
+        add_filter('wpas_fill_content', function($data){
+			
+			//if its not already set
+			if(!isset($data['country']) || $data['country']=='undefined')
+			{
+    			if(is_page('venezuela')) $data['country'] = 'venezuela';
+    			else $data['country'] = 'undefined';
+			}
+			
+			//if its not already set
+			if(isset($_GET['referral_key'])) $data['referral_key'] = $_GET['referral_key'];
 			
 			return $data;
 		},10,2);
@@ -84,15 +92,23 @@ class ThemeManager{
     
     function is_login_page() {
         return in_array($GLOBALS['pagenow'], array('wp-login.php', 'wp-register.php'));
-    }  
+    } 
     
-    function my_acf_json_save_point( $path ) {
-        //print_r('asdasd'); die();
-        // update path
-        $path = ABSPATH . '/src/php/vendor/acf';
-        // return
-        return $path;
+    function advancedCustomFieldsSync(){
+        add_filter('acf/settings/save_json', function() {
+        	return get_stylesheet_directory() . '/acf-json';
+        });
         
+        add_filter('acf/settings/load_json', function($paths) {
+        	$paths = array(get_template_directory() . '/acf-json');
+        
+        	if(is_child_theme())
+        	{
+        		$paths[] = get_stylesheet_directory() . '/acf-json';
+        	}
+        
+        	return $paths;
+        });
     }
     
 }

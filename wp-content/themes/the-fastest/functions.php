@@ -56,9 +56,10 @@
     ]);
     
     $controller->route([ 'slug' => 'Template:page-landing-maker1.php', 'controller' => 'Landing:renderLanding']);
+    $controller->route([ 'slug' => 'Single:landing', 'controller' => 'Landing:renderLanding']);
+    
     $controller->route([ 'slug' => 'home', 'controller' => 'General']);
     $controller->route([ 'slug' => 'inicio', 'controller' => 'General:renderHome']);
-    
     
     $controller->route([ 'slug' => 'the-academy', 'controller' => 'General']);
     $controller->route([ 'slug' => 'academia', 'controller' => 'General:renderTheAcademy']);
@@ -110,6 +111,7 @@
     $postTypeManager->newType(['type'=>'testimonial', 'class' => 'TestimonialPostType'])->register();
     $postTypeManager->newType(['type'=>'job', 'class' => 'JobPostType'])->register();
     $postTypeManager->newType(['type'=>'event', 'class' => 'EventPostType'])->register();
+    $postTypeManager->newType(['type'=>'landing', 'class' => 'LandingPostType'])->register();
     
     use TF\ActiveCampaign\ACAPI;
     ACAPI::start();

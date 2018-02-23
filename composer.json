@@ -21,6 +21,7 @@
 		"wpackagist-plugin/simple-custom-post-order": "*",
 		"wpackagist-plugin/duplicate-post": "*",
 		"wpackagist-plugin/ip2location-redirection": "*",
+		"wpackagist-plugin/acf-code-field": "*",
 		"alesanchezr/wpas-wordpress-dash": "dev-master",
 		"wpackagist-plugin/advanced-custom-fields": "^4.4",
 		"jjgrainger/posttypes": "^2.0",

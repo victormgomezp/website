@@ -165,6 +165,7 @@ class General{
         $utmLanguageId = get_option('activecampaign-utm-language-field');
         $utmCountryId = get_option('activecampaign-utm-country-field');
         $gclid = get_option('activecampaign-gclid-field');
+        $referralId = get_option('activecampaign-referral-key-field');
 
         if(empty($_POST['email'])) WPASController::ajaxError('Invalid Email');
         
@@ -188,6 +189,10 @@ class General{
         if(isset($_GET['gclid'])) $gclidValue = $_GET['gclid'];
         else if(isset($globalContext['gclid'])) $gclidValue = $globalContext['gclid'];
         
+        $referralValue = 'undefined';
+        if(isset($_GET['referral_key'])) $referralValue = $_GET['referral_key'];
+        else if(isset($globalContext['referral_key'])) $referralValue = $globalContext['referral_key'];
+        
         $contact = array(
     		"email" => $_POST['email'],
     		"first_name" => $fistName,
@@ -195,7 +200,8 @@ class General{
     		"field[".$utmUrlId.",0]" => $utmURLValue,
     		"field[".$utmLanguageId.",0]" => $utmLanguageValue,
     		"field[".$utmCountryId.",0]" => $utmCountryValue,
-    		"field[".$gclid.",0]" => $gclidValue
+    		"field[".$gclid.",0]" => $gclidValue,
+    		"field[".$referralId.",0]" => $referralValue
     	);
 
         $coursesField = \TF\ActiveCampaign\ACAPI::subscribeToList($contact, $listId);
