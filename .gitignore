@@ -83,6 +83,7 @@ wp-content/*
 wp-content/plugins/*
 !wp-content/plugins/js_composer
 !wp-content/plugins/gravityforms
+!wp-content/plugins/advanced-custom-fields-pro
 
 
 !wp-content/themes/
