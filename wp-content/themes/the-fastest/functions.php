@@ -16,8 +16,8 @@
     
     $asyncLoader = new WPASAsyncLoader([
         'public-url' => $publicPath.'/public/',
-        'debug' => WP_DEBUG,
-        'minify-html' => !WP_DEBUG,
+        'debug' => WP_ASYNC_LOADING,
+        'minify-html' => UGLIFY_HTML,
         'styles' => [
             "page" => [ "all" => 'index.css', "template:page-landing-maker1.php" => 'landing.css' ],
             "custom-post" => [ "all" => 'index.css' ],
