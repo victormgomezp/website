@@ -9,6 +9,10 @@
             padding-left: 5px;
             color: #8c8c8c;
         }
+            &.gfield_error .wpas-button-group{
+                border: 1px #f5c6cb solid;
+                border-radius: 5px 5px 0 0;
+            }
             .wpas-button-group{
                 .wpas-button-group-btn{
                     background: #f1f1f1;
