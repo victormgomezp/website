@@ -239,7 +239,7 @@
                         <span>Select a location</span>
                     </button>
                     <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                        <?php foreach($args['locations'] as $l){ ?>
+                        <?php if(!empty($args['locations']) && is_array($args['locations'])) foreach($args['locations'] as $l){ ?>
                             <a class="dropdown-item location-option" href="<?php echo get_permalink($l['ID']); ?>" data-value="<?php echo $l['bc_location_slug']; ?>">
                             <?php echo $l['post_title']; ?>
                             <?php wpas_get_inline_svg('assets/icons/flags/inline',$l['flag'].'.svg'); ?>

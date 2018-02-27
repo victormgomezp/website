@@ -61,9 +61,15 @@ class LocationPostType extends BasePostType{
             // more info: [http://codex.wordpress.org/Template_Tags/get_posts](http://codex.wordpress.org/Template_Tags/get_posts)
             $locations = LocationPostType::all();
 
+            $countryNamesAdded = [];
             $choices = array();
             foreach ( $locations as $l ) {
-                $choices[] = array( 'text' => $l['post_title'], 'value' => $l['ac_location_slug'] );
+                $country = get_field('country',$l['ID']);
+                if(!in_array($country, $countryNamesAdded))
+                {
+                    $countryNamesAdded[] = $country;
+                    $choices[] = array( 'text' => $country, 'value' => $l['ac_location_slug'] );
+                }
             }
     
             // update 'Select a Post' to whatever you'd like the instructive option to be
