@@ -31,8 +31,7 @@
 		"wpackagist-plugin/advanced-custom-fields": "^4.4",
 		"jjgrainger/posttypes": "^2.0",
 		"wpackagist-plugin/tiny-compress-images": "^2.2",
-		"guzzlehttp/guzzle": "~6.0",
-		"matthiasmullie/minify": "^1.3"
+		"guzzlehttp/guzzle": "~6.0"
 	},
 	"require-dev": {
         "wpackagist-plugin/transients-manager": "*",
