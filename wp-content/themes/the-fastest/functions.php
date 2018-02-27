@@ -124,7 +124,8 @@
             'populate-current-language' => true,
             'populate-adwords-gclid' => true,
             'fields' => [
-                ['type' => 'button-group', 'label' => 'Button Group']
+                ['type' => 'button-group', 'label' => 'Button Group'],
+                ['type' => 'alert-message', 'label' => 'Alert Message']
             ]
         ]);
         

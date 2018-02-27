@@ -7,6 +7,10 @@
         {
             "type": "vcs",
             "url": "https://github.com/alesanchezr/wpas-wordpress-dash"
+        },
+        {
+            "type": "vcs",
+            "url": "https://github.com/alesanchezr/vc_dash_components"
         }
 	],
 	"require": {
@@ -23,6 +27,7 @@
 		"wpackagist-plugin/ip2location-redirection": "*",
 		"wpackagist-plugin/acf-code-field": "*",
 		"alesanchezr/wpas-wordpress-dash": "dev-master",
+		"alesanchezr/vc_dash_components": "dev-master",
 		"wpackagist-plugin/advanced-custom-fields": "^4.4",
 		"jjgrainger/posttypes": "^2.0",
 		"wpackagist-plugin/tiny-compress-images": "^2.2",

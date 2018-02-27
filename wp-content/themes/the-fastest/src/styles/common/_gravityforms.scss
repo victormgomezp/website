@@ -4,6 +4,29 @@
         .gfield{
             margin: 10px 0;
             list-style: none;
+            .gfield_description{
+            font-size: 14px;
+            padding-left: 5px;
+            color: #8c8c8c;
+        }
+            .wpas-button-group{
+                .wpas-button-group-btn{
+                    background: #f1f1f1;
+                    border-radius: 5px;
+                    text-align: center;
+                    height: 70px;
+                    line-height: 70px;
+                    cursor: pointer;
+                    font-size: 18px;
+                    &:hover{
+                        background: #BDBDBD;
+                    }
+                    &.card-inverse{
+                        background: #565656;
+                        color: white;
+                    }
+                }
+            }
             input, select, textarea{
                 display: block;
                 width: 100%;

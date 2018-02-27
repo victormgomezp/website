@@ -107,7 +107,8 @@ class GF_Field_Select extends GF_Field {
 
 	public function get_value_entry_detail( $value, $currency = '', $use_text = false, $format = 'html', $media = 'screen' ) {
 		$return = esc_html( $value );
-		return GFCommon::selection_display( $return, $this, $currency, $use_text );
+		$selection = GFCommon::selection_display( $return, $this, $currency, $use_text );
+		return $selection;
 	}
 
 	public function get_value_export( $entry, $input_id = '', $use_text = false, $is_csv = false ) {

@@ -53,7 +53,7 @@ class LocationPostType extends BasePostType{
 
         if(!empty($form['fields'])) foreach ( $form['fields'] as &$field ) {
     
-            if ( $field->type != 'select' || strpos( $field->cssClass, 'populate-locations' ) === false ) {
+            if ( ($field->type != 'select' && $field->type != 'button-group') || strpos( $field->cssClass, 'populate-locations' ) === false ) {
                 continue;
             }
     
