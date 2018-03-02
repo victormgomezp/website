@@ -3,7 +3,7 @@
 get_header(); 
 $args = wpas_get_view_data();
 ?>
-    <header class="masthead">
+    <header class="masthead pb-0">
       <div class="header-content">
         <div class="row heading-row">
           <div class="col-sm-10 col-md-10 col-lg-9 col-xl-7 mx-auto">
@@ -25,10 +25,7 @@ $args = wpas_get_view_data();
           </div>
         </div>
       </div>
-    </header>
-    <!--
-      -->
-    <section class="bg-light text-black call-to-action" id="about">
+      <section class="bg-light text-black call-to-action" id="about">
       <div class="container">
         <div class="row">
           <div class="col-11 mx-auto">
@@ -42,6 +39,9 @@ $args = wpas_get_view_data();
         </div>
       </div>
     </section>
+    </header>
+    <!--
+      -->
     <?php get_template_part('partials/common','partners'); ?>
     <?php get_template_part('partials/common','parttime'); ?>
     <section class="bg-white text-black text-center pb-5">

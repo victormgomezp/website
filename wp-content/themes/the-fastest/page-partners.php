@@ -7,8 +7,22 @@ $args = wpas_get_view_data();
       <div class="container">
         <div class="row">
           <div class="col-sm-8 mx-auto">
-            <h2 class="text-white text-center"><?php pll_e('Why companies trust us and hire our students'); ?>.</h2>
+            <h2 class="text-center"><?php pll_e('Why companies trust us, and hire our students'); ?>.</h2>
             <!-- Breathe Coding is our motto, premium and accessible coding education is our obsession. -->
+            <div class="row">
+            <?php foreach ($args['partners'] as $p) { if($p['partner_type']!='hiring_partner') continue; ?>
+                <div class="col-6 col-xs-6 col-sm-4 col-sm-3">
+                  <div class="card partner-card">
+                    <img class="card-img-top" src="<?php echo $p['image']['url']; ?>" alt="Card image cap">
+                  </div>
+                </div>
+            <?php } ?>
+            </div>
+            <div class="row mt-5">
+              <div class="col-12 text-center">
+                <button class="btn btn-danger">Become a hiring partner</button>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -16,8 +30,18 @@ $args = wpas_get_view_data();
     <section class="bg-white text-black pt-5 pb-5">
       <div class="container">
         <div class="row">
-          <div class="col-sm-8 mx-auto">
-            <h2 class="text-center"><?php pll_e('Proudly partnering with the biggest actors to help build Miami\'s Coding Ecosystem'); ?>.</h2>
+          <div class="col-sm-10 mx-auto">
+            <h2 class="text-center"><?php pll_e('Immersed in Miami\'s Coding Ecosystem'); ?></h2>
+            <h5 class="text-center mb-5"><?php pll_e('Working together to make it the tech hub it deserves to be'); ?>.</h5>
+            <div class="row">
+            <?php foreach ($args['partners'] as $p) { if($p['partner_type']=='hiring_partner') continue; ?>
+                <div class="col-6 col-xs-6 col-sm-3 col-sm-3">
+                  <div class="card partner-card">
+                    <img class="card-img-top" src="<?php echo $p['image']['url']; ?>" alt="Card image cap">
+                  </div>
+                </div>
+            <?php } ?>
+            </div>
           </div>
         </div>
       </div>

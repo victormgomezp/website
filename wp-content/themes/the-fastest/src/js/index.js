@@ -8,8 +8,10 @@ import './common/marketing-events.js';
 import {MakeSticky} from './common/sticky-toggle.js';
 import {SmartFilters} from './common/smart-filters.js';
 import {PieChart} from "./lib/cakeCharts";
+import loadVideo from "./common/responsive-video";
 
 console.log(WPAS_APP);
+WPAS_APP.loadVideo = loadVideo;
 /**
  * HOME
 **/
@@ -74,22 +76,6 @@ if(WPAS_APP.view.slug === 'pricing' || WPAS_APP.view.slug === 'precio'){
 
 }
 
-var loadVideo = function(videoURL){
-  var video = document.createElement('video');
-  video.src = videoURL;
-  video.autoPlay = true;
-  video.loop = true;
-  video.muted = true;
-  video.classList.add('video-background');
-  var s = document.body.firstChild;
-  s.parentNode.insertBefore(video, s);
-  video.addEventListener('loadeddata',function(){
-    video.play();
-  });
-}
-WPAS_APP.loadVideo = loadVideo;
-
-
 /**
  * CALENDAR
 **/
@@ -117,4 +103,13 @@ if(WPAS_APP.view.slug === 'calendar' || WPAS_APP.view.slug === 'calendario'){
 
 if(['single-location'].indexOf(WPAS_APP.view.template) != -1){
   require('./pages/location.js');
+}
+
+/**
+ * PARTNERS
+**/
+
+if(WPAS_APP.view.slug === 'partners' || WPAS_APP.view.slug === 'socios'){
+  
+  loadVideo('/wp-content/themes/the-fastest/assets/video/office.mp4',{overlay: 'black'});
 }

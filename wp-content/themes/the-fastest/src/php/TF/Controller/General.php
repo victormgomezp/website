@@ -9,6 +9,7 @@ use TF\Types\TestimonialPostType;
 use TF\Types\LocationPostType;
 use TF\Types\CoursePostType;
 use TF\Types\EventPostType;
+use TF\Types\PartnerPostType;
 use \WP_Query;
 
 class General{
@@ -97,6 +98,18 @@ class General{
         $args['testimonials'] = TestimonialPostType::All();
         
         //print_r($args['upcoming']); die();
+        return $args;
+    }
+    
+    public function renderPartners(){
+
+        $args = [];
+        
+        $query = PartnerPostType::all();
+        $args['partners'] = array_map(function($post){
+            return PartnerPostType::fill($post);
+        },$query->posts);
+        
         return $args;
     }
     

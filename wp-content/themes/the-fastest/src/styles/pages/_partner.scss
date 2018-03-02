@@ -1,0 +1,33 @@
+.page-template-page-partners{
+    background: white;
+    .navbar-brand img{
+        filter: invert(0%);
+    }
+    .navbar-dark .navbar-nav .nav-link{
+        color: $gray-800;
+        &:hover{
+            color: black;
+        }
+    }
+    .card.partner-card{
+        text-align: center;
+        box-shadow: 0 2px 15px 0 rgba(0, 0, 0, 0.1);
+        padding: 5px;
+        height: 130px;
+        margin-bottom: 20px;
+        img{
+            margin: auto;
+            width: inherit;
+            max-height: 100%;
+            max-width: 100%;
+        }
+        .card-body{
+            padding: 2px;
+        }
+    }
+}
+
+
+/* Medium. Above 48em (768px) */
+@media screen and (min-width: 48em) {
+}
