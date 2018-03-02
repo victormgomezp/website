@@ -74,7 +74,7 @@ if(WPAS_APP.view.slug === 'pricing' || WPAS_APP.view.slug === 'precio'){
 
 }
 
-function loadVideo(videoURL){
+var loadVideo = function(videoURL){
   var video = document.createElement('video');
   video.src = videoURL;
   video.autoPlay = true;
@@ -87,6 +87,7 @@ function loadVideo(videoURL){
     video.play();
   });
 }
+WPAS_APP.loadVideo = loadVideo;
 
 
 /**

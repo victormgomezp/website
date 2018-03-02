@@ -1,5 +1,5 @@
 <?php 
-    /* Template Name: Visual Composer Ready */
+    /* Template Name: Single Job */
     get_header('visualcomposer'); 
     $args = wpas_get_view_data();
 ?>

@@ -42,6 +42,7 @@ $args = wpas_get_view_data();
         </div>
       </div>
     </section>
+    <?php get_template_part('partials/common','partners'); ?>
     <?php get_template_part('partials/common','parttime'); ?>
     <section class="bg-white text-black text-center pb-5">
       <div class="container">

@@ -16,7 +16,7 @@
     
     $asyncLoader = new WPASAsyncLoader([
         'public-url' => $publicPath.'/public/',
-        'debug' => WP_ASYNC_LOADING,
+        'debug' => !WP_ASYNC_LOADING,
         'force-jquery' => true,
         'minify-html' => UGLIFY_HTML,
         'styles' => [
@@ -93,6 +93,7 @@
     
     $controller->route([ 'slug' => 'Single:location', 'controller' => 'General:renderLocation']);
     
+    $controller->route([ 'slug' => 'Template:page.php', 'controller' => 'Landing:renderLanding']);
     
     $controller->routeAjax([ 'slug' => 'all', 'controller' => 'General:newsletter_signup', 'scope' => 'public' ]);
     $controller->routeAjax([ 'slug' => 'all', 'controller' => 'General:download_syllabus', 'scope' => 'public' ]);

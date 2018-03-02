@@ -18,6 +18,30 @@
             "default_value": ""
         },
         {
+            "key": "field_5a98af43c4052",
+            "label": "Body Background Image",
+            "name": "body_background_image",
+            "type": "image",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "array",
+            "preview_size": "thumbnail",
+            "library": "all",
+            "min_width": "",
+            "min_height": "",
+            "min_size": "",
+            "max_width": "",
+            "max_height": "",
+            "max_size": "",
+            "mime_types": ""
+        },
+        {
             "key": "field_5a8f4e4bbc111",
             "label": "Landing Extra Styles",
             "name": "landing_extra_styles",
@@ -56,6 +80,22 @@
                 "0": "Select a script",
                 "https:\/\/academy-web-alesanchezr.c9users.io\/wp-content\/themes\/the-fastest\/src\/js\/scripts\/referral-program.js": "referral-program.js"
             }
+        },
+        {
+            "key": "field_5a98b3f34eb8a",
+            "label": "Background Video URL",
+            "name": "background_video_url",
+            "type": "url",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "https:\/\/www.youtube.com\/watch?v=eGChOUgnpis"
         }
     ],
     "location": [
@@ -71,6 +111,13 @@
                 "param": "post_type",
                 "operator": "==",
                 "value": "landing"
+            }
+        ],
+        [
+            {
+                "param": "post_template",
+                "operator": "==",
+                "value": "page.php"
             }
         ]
     ],
@@ -95,5 +142,5 @@
     ],
     "active": 1,
     "description": "",
-    "modified": 1519773755
+    "modified": 1519957056
 }

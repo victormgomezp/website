@@ -60,10 +60,10 @@ $args = wpas_get_view_data();
             <div class="card card-block card-primary card-inverse bg-yellow payment-plan">
               <div class="card-body">
                 <h5 class="card-title m-0 text-center"><?php pll_e('Or Extended Payment Plan'); ?></h5>
-                <h4 id="price-label" class="card-text text-center">$1000 deposit + $867 / month</h4>
+                <h4 id="price-label" class="card-text text-center">$1000 deposit + $240 / month</h4>
               </div>
               <div class="card-footer">
-                <input id="pricing-slider" data-slider-value="0" data-slider-id='pricing-slider-instance' data-slider-ticks-snap-bounds="100" type="text" data-slider-ticks="[0, 1, 3]" data-slider-ticks-labels='["6 months", "12 Months", "24 Months"]' ticks_positions="[0, 25, 100]" />
+                <input id="pricing-slider" data-slider-value="3" data-slider-id='pricing-slider-instance' data-slider-ticks-snap-bounds="100" type="text" data-slider-ticks="[0, 1, 3]" data-slider-ticks-labels='["6 months", "12 Months", "24 Months"]' ticks_positions="[0, 25, 100]" />
               </div>
             </div>
           </div>
