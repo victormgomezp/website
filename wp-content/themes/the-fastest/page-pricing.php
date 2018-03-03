@@ -26,11 +26,10 @@ $args = wpas_get_view_data();
               <text x="110" y="185" fill="white"><?php pll_e(''); ?>Placement</text>
             </svg>
           </div>
-          <div class="col-md-7 mr-auto order-1 order-md-2">
-            <h4 class='text-center mt-5'><?php pll_e(''); ?>There is no need to pay more to get premium</h4>
-            <p class='section-message pb-1 text-center'>
-              <?php pll_e(''); ?>We hit the price mark by developing a premium content, with a unique methodology, and building -from the ground up- the best possible technology to teach coding;
-            </p>
+          <div class="col-md-7 mr-auto order-1 order-md-2 pt-2">
+            <h4 class='section-message pb-1 text-center mt-5'>
+              <?php pll_e('Using technology and building -from the ground up- our entire program we have managed to deliver a more affordable program'); ?>
+            </h4>
           </div>
         </div>
       </div>
@@ -75,6 +74,20 @@ $args = wpas_get_view_data();
           </div>
         </div>
         -->
+        <div class='row'>
+          <div class='col-md-8'>
+            <div class="card card-block card-primary bg-light mb-3">
+              <div class="card-body">
+                <h5>Thanks to our partnership with Skillfund we have managed to create a new special payment plant <span class="text-warning">starting at $135/mo</span></h5>
+              </div>
+            </div>
+          </div>
+          <div class='col-md-4'>
+            <div class="card card-block bg-light mb-3 p-2 text-center" style="height: 95px;">
+                <img style="max-width: 180px; margin-left: auto; margin-right: auto;" class="card-img-top mt-4" src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/skillsfund.png">
+            </div>
+          </div>
+        </div>
         <div class='row'>
           <div class='col-md-12 mx-auto text-center mt-4 mb-4'>
             <a href="<?php echo get_permalink( get_page_by_path( wpas_pll_get_slug('apply') ) ); ?>" class="btn btn-danger btn-lg"><?php pll_e('Apply to the program'); ?></a>
