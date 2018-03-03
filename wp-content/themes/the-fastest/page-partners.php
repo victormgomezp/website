@@ -59,6 +59,11 @@ $args = wpas_get_view_data();
                 </div>
             <?php } ?>
             </div>
+            <div class="row mt-5">
+              <div class="col-12 text-center">
+                <button class="btn btn-danger btn-lg">Become a hiring partner</button>
+              </div>
+            </div>
           </div>
         </div>
       </div>
