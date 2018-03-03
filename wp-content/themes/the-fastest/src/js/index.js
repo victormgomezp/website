@@ -3,6 +3,7 @@ require('../styles/index.scss');
 import 'bootstrap/js/dist/util';
 import 'bootstrap/js/dist/collapse';
 import 'bootstrap/js/dist/carousel';
+import 'bootstrap/js/dist/tooltip';
 import './pages/all.js';
 import './common/marketing-events.js';
 import {MakeSticky} from './common/sticky-toggle.js';
@@ -17,9 +18,13 @@ WPAS_APP.loadVideo = loadVideo;
 **/
 if(WPAS_APP.view.slug === 'home' || WPAS_APP.view.slug === 'inicio'){
   
-  PieChart.createPie(".pieID.legend", ".pieID.pie");
   loadVideo('/wp-content/themes/the-fastest/assets/video/home-dark.mp4');
-  
+  jQuery('[data-toggle="tooltip"]').tooltip();
+  $('.value').each(function() {
+  	var text = $(this).text();
+  	$(this).parent().css('width', text);
+  });
+  $('.block').tooltip();
 }
 
 /**
@@ -111,5 +116,6 @@ if(['single-location'].indexOf(WPAS_APP.view.template) != -1){
 
 if(WPAS_APP.view.slug === 'partners' || WPAS_APP.view.slug === 'socios'){
   
+  jQuery('[data-toggle="tooltip"]').tooltip();
   loadVideo('/wp-content/themes/the-fastest/assets/video/office.mp4',{overlay: 'black'});
 }

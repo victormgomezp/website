@@ -1,87 +1,100 @@
-
-@keyframes bake-pie {
-  from {
-    transform: rotate(0deg) translate3d(0,0,0);
+figure.programming-langs{
+	margin: 0 auto;
+	max-width: 1100px;
+	position: relative;
+  .graphic {
+  	padding-left: 30px;
+  }
+  .row {
+  	margin-bottom: 1.5em;
+  }
+  @keyframes expand {
+  	from {width: 0%;}
+  	to {width: 100%;}
+  }
+  @media screen and (min-width: 768px) {
+  	@keyframes expand {
+  		from {width: 0%;}
+  		to {width: calc(100% - 75px);}
+  	}
+  }
+  .chart {
+  	overflow: hidden;
+  	width: 0%;
+  	animation: expand 1.5s ease forwards;
+  }
+  .row + .row .chart {
+  	animation-delay: .2s;
+  }
+  .row + .row + .row .chart {
+  	animation-delay: .4s;
+  }
+  .block {
+  	display: block;
+  	height: 100px;
+  	color: #fff;
+  	font-size: .75em;
+  	float: left;
+  	background-color: #334D5C;
+  	position: relative;
+  	overflow: hidden;
+  	opacity: 1;
+  	transition: opacity, .3s ease;
+  	cursor: pointer;
+  }
+  .block:nth-of-type(2),
+  .legend li:nth-of-type(2):before {
+  	background-color: #45B29D;
+  }
+  .block:nth-of-type(3),
+  .legend li:nth-of-type(3):before {
+  	background-color: #EFC94C;
+  }
+  .block:nth-of-type(4),
+  .legend li:nth-of-type(4):before {
+  	background-color: #E27A3F;
+  }
+  .block:hover {
+  	opacity: .65;
+  }
+  .value {
+  	display: block;
+  	line-height: 1em;
+  	position: absolute;
+  	top: 50%;
+  	left: 50%;
+  	transform: translate(-50%);
+  }
+  .x-axis {
+      text-align: center;
+  	padding: .5em 0 2em;
+  }
+  .y-axis {
+  	height: 20px;
+      transform: translate(-32px,170px) rotate(270deg);
+      position: absolute;
+      left: 0;
+  }
+  .legend {
+      margin: 0 auto;
+      padding: 0;
+  	font-size: .9em;
+  }
+  .legend li {
+      display: inline-block;
+      padding: .25em 1em;
+      line-height: 1em;
+  }
+  .legend li:before {
+      content: "";
+      margin-right: .5em;
+      display: inline-block;
+      width: 8px;
+      height: 8px;
+  	background-color: #334D5C;
+  }
+  @media screen and (min-width: 768px) {
+  	.block { font-size: 1em; }
+  	.legend { width: 50%; }
   }
 }
-
-$chartSize: 150px;
-.chart-wrapper {
-    width: 400px;
-    margin: 30px auto;
-    .pieID {
-      display: inline-block;
-      vertical-align: top;
-    }
-    .pie {
-      height: $chartSize - 20px;
-      width: $chartSize;
-      position: relative;
-      margin: 0 20px 30px -105px;
-    }
-    .pie::before {
-      content: "";
-      display: block;
-      position: absolute;
-      z-index: 1;
-      width: ($chartSize/2);
-      height: ($chartSize/2);
-      background: #EEE;
-      border-radius: 50%;
-      top: ($chartSize/4);
-      left: ($chartSize/4);
-    }
-    .pie::after {
-      content: "";
-      display: block;
-      width: 120px;
-      height: 2px;
-      background: rgba(0,0,0,0.1);
-      border-radius: 50%;
-      box-shadow: 0 0 3px 4px rgba(0,0,0,0.1);
-      margin: ($chartSize+20px) auto;
-      
-    }
-    .slice {
-      position: absolute;
-      width: $chartSize;
-      height: $chartSize;
-      clip: rect(0px, $chartSize, $chartSize, ($chartSize/2));
-      animation: bake-pie 1s;
-    }
-    .slice span {
-      display: block;
-      position: absolute;
-      top: 0;
-      left: 0;
-      background-color: black;
-      width: $chartSize;
-      height: $chartSize;
-      border-radius: 50%;
-      clip: rect(0px, $chartSize, $chartSize, ($chartSize/2));
-    }
-    .legend {
-      list-style-type: none;
-      padding: 0;
-      margin: 0;
-      background: #FFF;
-      padding: 15px;
-      font-size: 13px;
-      box-shadow: 1px 1px 0 #DDD,
-                  2px 2px 0 #BBB;
-    }
-    .legend li {
-      width: 120px;
-      height: 1.25em;
-      margin-bottom: 0.7em;
-      padding-left: 0;
-      border-left: 1.25em solid black;
-    }
-    .legend em {
-      font-style: normal;
-    }
-    .legend span {
-      float: right;
-    }
-}
-

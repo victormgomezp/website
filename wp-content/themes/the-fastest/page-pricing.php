@@ -4,8 +4,8 @@ get_header();
 $args = wpas_get_view_data();
 ?>
     <header class="masthead">
-      <div class="container">
-        <div class="row">
+      <div class="container mb-5">
+        <div class="row text-white">
           <div class="col-md-10 mx-auto">
             <h1 class="text-center text-white">Celebrate the <span class="underline">best price in town</span></h1>
             <h4 class="text-center text-white">We didn't stop trying until we have mastered a real premium and affordable program.</h4>

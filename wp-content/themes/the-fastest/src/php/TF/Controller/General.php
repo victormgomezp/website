@@ -25,6 +25,10 @@ class General{
 
         $args = [];
         $args = $this->getData();
+        $query = PartnerPostType::all(['meta_key' => 'partner_type', 'meta_value' => 'coding_related','posts_per_page' => 4]);
+        $args['partners'] = array_map(function($post){
+            return PartnerPostType::fill($post);
+        },$query->posts);
         /*
         $profilesJSON = @file_get_contents(BREATHECODE_API_HOST.'/specialties/');
         if($profilesJSON)
@@ -104,11 +108,19 @@ class General{
     public function renderPartners(){
 
         $args = [];
+
+        $query1 = PartnerPostType::all(['meta_key' => 'partner_type', 'meta_value' => 'hiring_partner', 'posts_per_page' => 4]);
+        $args['h-partners'] = array_map(function($post){ return PartnerPostType::fill($post); },$query1->posts);
         
-        $query = PartnerPostType::all();
-        $args['partners'] = array_map(function($post){
-            return PartnerPostType::fill($post);
-        },$query->posts);
+        $query2 = PartnerPostType::all([
+            'posts_per_page' => 9,
+            array(
+            'meta_key' => 'partner_type',
+            'meta_value' => 'hiring_partners', // or whatever it is you're using here
+            'meta_compare' => '!='
+            )
+        ]);
+        $args['o-partners'] = array_map(function($post){ return PartnerPostType::fill($post); },$query2->posts);
         
         return $args;
     }

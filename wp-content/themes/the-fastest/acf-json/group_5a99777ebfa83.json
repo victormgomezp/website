@@ -20,7 +20,9 @@
                 "government_institution": "government_institution",
                 "university": "university",
                 "high_school": "high_school",
-                "coding_related": "coding_related"
+                "coding_related": "coding_related",
+                "student_support": "student_support",
+                "other": "other"
             },
             "default_value": [
 
@@ -93,5 +95,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1520008186
+    "modified": 1520055006
 }

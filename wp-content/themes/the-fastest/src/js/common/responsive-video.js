@@ -30,6 +30,7 @@ var loadVideo = function(videoURL, settings={}){
       var scale_v = target_heigh / vid_h_orig;
       var scale = scale_h > scale_v ? scale_h : scale_v;
   
+      
       if (scale * vid_w_orig < min_w) scale = min_w / vid_w_orig;
       
       var newViewWidth = scale * vid_w_orig;
@@ -50,12 +51,12 @@ var loadVideo = function(videoURL, settings={}){
   });
   $(window).trigger('resize');
   
-  if(typeof settings.overlay != 'undefined')
-  {
+  if(typeof settings.overlay != 'undefined'){
+    
     var overlay  = document.createElement('div');
     overlay.style.display = "absolute";
     overlay.style.background = settings.overlay;
-    overlay.style.opacity = "0.3";
+    overlay.style.opacity = "0.4";
     overlay.style.width = "100vw";
     overlay.style.height = "100vh";
     overlay.style.position = "absolute";

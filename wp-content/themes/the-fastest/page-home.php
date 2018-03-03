@@ -42,7 +42,6 @@ $args = wpas_get_view_data();
     </header>
     <!--
       -->
-    <?php get_template_part('partials/common','partners'); ?>
     <?php get_template_part('partials/common','parttime'); ?>
     <section class="bg-white text-black text-center pb-5">
       <div class="container">
@@ -73,47 +72,51 @@ $args = wpas_get_view_data();
           <div class="col-md-6 ">
             <p class='section-message pb-1'>
               <?php pll_e('Learn an advanced stack of technologies, what companies are looking for.'); ?>
-              <div class="tech-icons">
-                <em class="techico icon-js"></em>
-                <em class="techico icon-python"></em>
-                <em class="techico icon-react"></em>
-                <em class="techico icon-git-squared"></em>
-                <em class="techico icon-database"></em>
-                <em class="techico icon-mongodb"></em>
-                <em class="techico icon-sass"></em>
+              <div class="tech-icons bg-white">
+                <em class="techico icon-js" data-toggle="tooltip" data-placement="top" title="Javascript"></em>
+                <em class="techico icon-python" data-toggle="tooltip" data-placement="top" title="Python"></em>
+                <em class="techico icon-react" data-toggle="tooltip" data-placement="top" title="React JS"></em>
+                <em class="techico icon-git-squared" data-toggle="tooltip" data-placement="top" title="GIT"></em>
+                <em class="techico icon-database" data-toggle="tooltip" data-placement="top" title="SQL"></em>
+                <em class="techico icon-mongodb" data-toggle="tooltip" data-placement="top" title="Mongo DB (NoSQL)"></em>
+                <em class="techico icon-sass" data-toggle="tooltip" data-placement="top" title="SASS"></em>
               </div>
             </p>
           </div>
         </div>
         <div class="row">
-          <div class="col-md-6 ml-auto">
+          <div class="col-md-12 mx-auto">
             <p class='section-message'>
               <h3><?php pll_e('Why do we teach this technologies?'); ?></h3>
-              <p class='text-left'>
+              <p class='text-center'>
               <?php pll_e('<strong>Javascript</strong> has 26x more job vacancys than <strong>Ruby On Rails</strong>. <strong>Python</strong> has 14x more job vacancys than <strong>Ruby On Rails</strong>'); ?>.
               <a target="_blank" href="https://www.linkedin.com/jobs/search?keywords=javascript&location=florida&trk=jobs_jserp_search_button_execute&orig=JSERP&applyLogin=&locationId="><?php pll_e('Click here to check it out!'); ?></a>
               </p>
-              
+              <figure class='programming-langs'>
+                <div class="graphic">
+                  <div class="row">
+                    <div class="chart">
+                      <span class="block" title="Javascript">
+                         <span class="value">60%</span>
+                      </span>
+                      <span class="block" title="Python">
+                         <span class="value">27%</span>
+                      </span>
+                      <span class="block" title="Ruby">
+                         <span class="value">13%</span>
+                      </span>
+                    </div>
+                  </div>
+                </div>
+                <div class="x-axis">
+                  <ul class="legend">
+                    <li>Javascript</li>
+                    <li>Python</li>
+                    <li>Ruby</li>
+                  </ul>
+                </div>
+              </figure>
             </p>
-          </div>
-          <div class="col-md-4 mr-auto">
-            <div class='chart-wrapper'>
-                <div class="pieID pie"></div>
-                <ul class="pieID legend">
-                  <li>
-                    <em>Javascript:</em>
-                    <span>1348</span>
-                  </li>
-                  <li>
-                    <em>Python:</em>
-                    <span>746</span>
-                  </li>
-                  <li>
-                    <em>Ruby:</em>
-                    <span>51</span>
-                  </li>
-                </ul>
-            </div>
           </div>
         </div>
       </div>
@@ -127,13 +130,32 @@ $args = wpas_get_view_data();
         </div>
       </div>
     </section>
-    <section class="bg-white">
+    <section class="bg-white text-black pt-5 pb-5">
       <div class="container">
         <div class="row">
+          <div class="col-sm-10 mx-auto">
+            <h2 class="text-center"><?php pll_e('Get immersed in Miami\'s Coding Ecosystem'); ?></h2>
+            <h5 class="text-center mb-5"><?php pll_e('4Geeks Academy and its students actively participates Miami\'s top coding initiatives'); ?>.</h5>
+            <div class="row">
+            <?php foreach ($args['partners'] as $p) { ?>
+                <div class="col-6 col-sm-3">
+                  <div class="card partner-card" data-toggle="tooltip" data-placement="top" title="<?php echo $p['post_title']; ?>">
+                    <img class="card-img-top" src="<?php echo $p['image']['url']; ?>">
+                  </div>
+                </div>
+            <?php } ?>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="bg-white">
+      <div class="container text-center">
+        <div class="row">
           <div class="col-12">
-            <h2 class="section-heading text-black text-center"><?php pll_e('Ace any job interview or code for your self'); ?></h2>
+            <h2 class="section-heading text-black"><?php pll_e('Ace any job interview or code for your self'); ?></h2>
             <p class='section-message pb-1'>
-              <?php pll_e('We know how typical coding interviews are, and what they will ask you to code (testing your skills). We\'ve created and improved a series of in-class exercises and projects tailored to ace those tests. Here you can have a taste of the projects built by some of our students:'); ?>
+              <?php pll_e('We\'ve created exercises and projects tailored to ace interview tests. <br /> Here you can have a taste of the projects built by some of our students:'); ?>
             </p>
           </div>
         </div>
