@@ -26,9 +26,14 @@ class General{
         $args = [];
         $args = $this->getData();
         $query = PartnerPostType::all(['meta_key' => 'partner_type', 'meta_value' => 'coding_related','posts_per_page' => 4]);
-        $args['partners'] = array_map(function($post){
+        $args['c-partners'] = array_map(function($post){
             return PartnerPostType::fill($post);
         },$query->posts);
+        
+        $query2 = PartnerPostType::all(['meta_key' => 'partner_type', 'meta_value' => 'hiring_partner','posts_per_page' => 4]);
+        $args['h-partners'] = array_map(function($post){
+            return PartnerPostType::fill($post);
+        },$query2->posts);
         /*
         $profilesJSON = @file_get_contents(BREATHECODE_API_HOST.'/specialties/');
         if($profilesJSON)
@@ -113,15 +118,23 @@ class General{
         $args['h-partners'] = array_map(function($post){ return PartnerPostType::fill($post); },$query1->posts);
         
         $query2 = PartnerPostType::all([
-            'posts_per_page' => 9,
-            array(
+            'posts_per_page' => 4,
             'meta_key' => 'partner_type',
-            'meta_value' => 'hiring_partners', // or whatever it is you're using here
-            'meta_compare' => '!='
+            'meta_value' => 'coding_related' // or whatever it is you're using here
+        ]);
+        $args['code-partners'] = array_map(function($post){ return PartnerPostType::fill($post); },$query2->posts);
+        
+        $query3 = PartnerPostType::all([
+            'posts_per_page' => 8,
+            'meta_query' => array(
+                'relation' => 'OR',
+                array('key' => 'partner_type', 'value' => 'government_institution'),
+                array('key' => 'partner_type', 'value' => 'university'),
+                array('key' => 'partner_type','value' => 'student_support'),
+                array('key' => 'partner_type','value'=> 'other')
             )
         ]);
-        $args['o-partners'] = array_map(function($post){ return PartnerPostType::fill($post); },$query2->posts);
-        
+        $args['city-partners'] = array_map(function($post){ return PartnerPostType::fill($post); },$query3->posts);
         return $args;
     }
     

@@ -25,6 +25,15 @@
         top: 40px;
         width: 460px;
     }
+    #financing-logo{
+        max-width: 180px;
+        margin-left: auto;
+        margin-right: auto;
+        top: 50%;
+        /* left: 50%; */
+        position: relative;
+        transform: translateY(-50%);
+    }
 }
 
 

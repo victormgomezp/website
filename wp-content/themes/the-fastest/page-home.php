@@ -8,7 +8,7 @@ $args = wpas_get_view_data();
         <div class="row heading-row">
           <div class="col-sm-10 col-md-10 col-lg-9 col-xl-7 mx-auto">
             <h1 id="homeHeading" class="text-white">&#x3C;/ Breathe Coding &#x3E;</h1>
-            <h3 class='text-white'><span class="text-orange">[ </span><span class="text-blue"><?php pll_e('Premium coding education'); ?></span>, <span class="text-blue"><?php pll_e('part-time'); ?></span> & <span class="text-blue"> <?php pll_e('from'); ?> $240/month.</span> <span class="text-orange">] </span></h3>
+            <h3 class='text-white'><span class="text-orange">[ </span><span class="text-blue"><?php pll_e('Premium coding education'); ?></span>, <span class="text-blue"><?php pll_e('part-time'); ?></span> & <span class="text-blue"> <?php pll_e('from'); ?> $135/month.</span> <span class="text-orange">] </span></h3>
           </div>
         </div>
         <div class="row certified">
@@ -47,44 +47,53 @@ $args = wpas_get_view_data();
       <div class="container">
         <div class="row">
           <div class="col-12 ">
-            <h2 class="section-heading text-black"><?php pll_e('Gamified training focused on'); ?> <br/><?php pll_e('skills & modern technologies'); ?></h2>
+            <h2 class="section-heading text-black"><?php pll_e('Gamified and focused on'); ?> <br/><?php pll_e('skills with modern technologies'); ?></h2>
           </div>
         </div>
-        <div class="row">
-          <div class="col-md-6">
-            <p class='section-message pb-1'>
-              <?php pll_e('Complete challenges, projects and quizes to gain all the skills from our'); ?> <a href="#"><?php pll_e('Talent Tree'); ?></a>.
-              <img style="max-height: 150px;" src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/specialties.png"></img>
-              <!--
-              <ul class="list-inline h-scroll">
-                <?php if(!empty($args['profiles'])) foreach($args['profiles'] as $profile){ ?>
-                <li class="list-inline-item">
-                  <div class="card card-block card-primary card-inverse specialty">
-                    <img src="<?php echo BREATHECODE_API.$profile->image_url; ?>"></img>
-                    <a href="#"><?php echo $profile->name; ?></a>
-                  </div>
-                </li>
-                <?php } ?>
-              </ul>
-              -->
-            </p>
-          </div>
-          <div class="col-md-6 ">
-            <p class='section-message pb-1'>
-              <?php pll_e('Learn an advanced stack of technologies, what companies are looking for.'); ?>
-              <div class="tech-icons bg-white">
-                <em class="techico icon-js" data-toggle="tooltip" data-placement="top" title="Javascript"></em>
-                <em class="techico icon-python" data-toggle="tooltip" data-placement="top" title="Python"></em>
-                <em class="techico icon-react" data-toggle="tooltip" data-placement="top" title="React JS"></em>
-                <em class="techico icon-git-squared" data-toggle="tooltip" data-placement="top" title="GIT"></em>
-                <em class="techico icon-database" data-toggle="tooltip" data-placement="top" title="SQL"></em>
-                <em class="techico icon-mongodb" data-toggle="tooltip" data-placement="top" title="Mongo DB (NoSQL)"></em>
-                <em class="techico icon-sass" data-toggle="tooltip" data-placement="top" title="SASS"></em>
-              </div>
-            </p>
-          </div>
+        <div class="row no-gutters">
+            <div class="col-12">
+                <div class="card-deck">
+                    <div class="card">
+                        <div class="card-body section-message bg-light">
+                            <?php pll_e('Complete challenges, projects and quizes to gain all the skills from our'); ?> <a href="https://www.4geeksacademy.co/the-talent-tree/"><?php pll_e('Talent Tree'); ?></a>.
+                            <img style="max-height: 150px;" src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/specialties.png"></img>
+                            <!--
+                            <ul class="list-inline h-scroll">
+                            <?php if(!empty($args['profiles'])) foreach($args['profiles'] as $profile){ ?>
+                            <li class="list-inline-item">
+                              <div class="card card-block card-primary card-inverse specialty">
+                                <img src="<?php echo BREATHECODE_API.$profile->image_url; ?>"></img>
+                                <a href="#"><?php echo $profile->name; ?></a>
+                              </div>
+                            </li>
+                            <?php } ?>
+                            </ul>
+                            -->
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-body section-message bg-light">
+                            <?php pll_e('Learn an advanced stack of technologies, what companies are looking for.'); ?>
+                            <div class="tech-icons">
+                                <em class="techico icon-js" data-toggle="tooltip" data-placement="top" title="Javascript"></em>
+                                <em class="techico icon-babel" data-toggle="tooltip" data-placement="top" title="Babel JS"></em>
+                                <em class="techico icon-webpack" data-toggle="tooltip" data-placement="top" title="Webpack"></em>
+                                <em class="techico icon-react" data-toggle="tooltip" data-placement="top" title="React JS"></em>
+                                <em class="techico icon-python" data-toggle="tooltip" data-placement="top" title="Python"></em>
+                                <em class="techico icon-django" data-toggle="tooltip" data-placement="top" title="Django"></em>
+                                <em class="techico icon-git-squared" data-toggle="tooltip" data-placement="top" title="GIT"></em>
+                                <em class="techico icon-database" data-toggle="tooltip" data-placement="top" title="SQL"></em>
+                                <em class="techico icon-mysql" data-toggle="tooltip" data-placement="top" title="MySQL (SQL)"></em>
+                                <em class="techico icon-mongodb" data-toggle="tooltip" data-placement="top" title="Mongo DB (NoSQL)"></em>
+                                <em class="techico icon-sass" data-toggle="tooltip" data-placement="top" title="SASS"></em>
+                                <em class="techico icon-html5" data-toggle="tooltip" data-placement="top" title="HTML5"></em>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div class="row">
+        <div class="row no-gutters">
           <div class="col-md-12 mx-auto">
             <p class='section-message'>
               <h3><?php pll_e('Why do we teach this technologies?'); ?></h3>
@@ -94,26 +103,20 @@ $args = wpas_get_view_data();
               </p>
               <figure class='programming-langs'>
                 <div class="graphic">
-                  <div class="row">
                     <div class="chart">
                       <span class="block" title="Javascript">
+                         <span class="legend">Javascript</span>
                          <span class="value">60%</span>
                       </span>
                       <span class="block" title="Python">
+                         <span class="legend">Python</span>
                          <span class="value">27%</span>
                       </span>
                       <span class="block" title="Ruby">
+                         <span class="legend">Ruby</span>
                          <span class="value">13%</span>
                       </span>
                     </div>
-                  </div>
-                </div>
-                <div class="x-axis">
-                  <ul class="legend">
-                    <li>Javascript</li>
-                    <li>Python</li>
-                    <li>Ruby</li>
-                  </ul>
                 </div>
               </figure>
             </p>
@@ -137,7 +140,7 @@ $args = wpas_get_view_data();
             <h2 class="text-center"><?php pll_e('Get immersed in Miami\'s Coding Ecosystem'); ?></h2>
             <h5 class="text-center mb-5"><?php pll_e('4Geeks Academy and its students actively participates Miami\'s top coding initiatives'); ?>.</h5>
             <div class="row">
-            <?php foreach ($args['partners'] as $p) { ?>
+            <?php foreach ($args['c-partners'] as $p) { ?>
                 <div class="col-6 col-sm-3">
                   <div class="card partner-card" data-toggle="tooltip" data-placement="top" title="<?php echo $p['post_title']; ?>">
                     <img class="card-img-top" src="<?php echo $p['image']['url']; ?>">
@@ -154,38 +157,53 @@ $args = wpas_get_view_data();
         <div class="row">
           <div class="col-12">
             <h2 class="section-heading text-black"><?php pll_e('Ace any job interview or code for your self'); ?></h2>
-            <p class='section-message pb-1'>
-              <?php pll_e('We\'ve created exercises and projects tailored to ace interview tests. <br /> Here you can have a taste of the projects built by some of our students:'); ?>
-            </p>
           </div>
         </div>
-        <div class="row student-projects">
-          <ul class="list-inline h-scroll">
-            <li class="list-inline-item">
-              <div class="card card-block card-primary card-inverse">
-                <?php wpas_get_inline_svg('assets/icons/inline','airbnb.svg'); ?>
-                <p class="text-center mt-2"><?php pll_e('Airbnb Clone'); ?></p>
-              </div>
-            </li>
-            <li class="list-inline-item">
-              <div class="card card-block card-primary card-inverse">
-                <?php wpas_get_inline_svg('assets/icons/inline','instagram.svg'); ?>
-                <p class="text-center mt-2"><?php pll_e('Instagram Clone'); ?></p>
-              </div>
-            </li>
-            <li class="list-inline-item">
-              <div class="card card-block card-primary card-inverse">
-                <?php wpas_get_inline_svg('assets/icons/inline','slack.svg'); ?>
-                <p  class="text-center mt-2"><?php pll_e('Slack.com Clone'); ?></p>
-              </div>
-            </li>
-            <li class="list-inline-item">
-              <div class="card card-block card-primary card-inverse">
-                <?php wpas_get_inline_svg('assets/icons/inline','coursera.svg'); ?>
-                <p class="text-center mt-2"><?php pll_e('Coursera Clone'); ?></p>
-              </div>
-            </li>
-          </ul>
+        <div class="row">
+          <div class="col-6 student-projects">
+            <p class='section-message pb-1'>
+              <?php pll_e('As a student, you will develop real-life projects similar to the most popular website out there:'); ?>
+            </p>
+            <ul class="list-inline h-scroll">
+              <li class="list-inline-item">
+                <div class="card card-block card-primary card-inverse">
+                  <?php wpas_get_inline_svg('assets/icons/inline','airbnb.svg'); ?>
+                  <p class="text-center mt-2"><?php pll_e('Airbnb'); ?></p>
+                </div>
+              </li>
+              <li class="list-inline-item">
+                <div class="card card-block card-primary card-inverse">
+                  <?php wpas_get_inline_svg('assets/icons/inline','instagram.svg'); ?>
+                  <p class="text-center mt-2"><?php pll_e('Instagram'); ?></p>
+                </div>
+              </li>
+              <li class="list-inline-item">
+                <div class="card card-block card-primary card-inverse">
+                  <?php wpas_get_inline_svg('assets/icons/inline','slack.svg'); ?>
+                  <p  class="text-center mt-2"><?php pll_e('Slack.com'); ?></p>
+                </div>
+              </li>
+              <li class="list-inline-item">
+                <div class="card card-block card-primary card-inverse">
+                  <?php wpas_get_inline_svg('assets/icons/inline','coursera.svg'); ?>
+                  <p class="text-center mt-2"><?php pll_e('Coursera'); ?></p>
+                </div>
+              </li>
+            </ul>
+          </div>
+          <div class="col-6 h-partners">
+            <p class='section-message pb-1 mt-4'>
+              <?php pll_e('And get prepared with all the skills that our network of hiring partners is craving for:'); ?>
+            </p>
+            <div class="card-deck">
+            <?php foreach ($args['h-partners'] as $p) { ?>
+                <div class="card partner-card" data-toggle="tooltip" data-placement="top" title="" data-original-title="WordCamp Miami">
+                    <img class="card-img-top" src="<?php echo $p['image']['url']; ?>">
+                </div>
+            <?php } ?>
+            </div>
+            <p><a href="<?php echo get_permalink( get_page_by_path('partners') ); ?>">Check out more about our partnerships</a></p>
+          </div>
         </div>
       </div>
     </section>
@@ -207,8 +225,8 @@ $args = wpas_get_view_data();
                   <div class="card card-block card-primary card-inverse">
                     <div class="card-body">
                       <h3 class="card-title m-0"><?php pll_e('Extended Plan'); ?></h3>
-                      <h4 class="card-text">From $240/month</h4>
-                      <a href="<?php echo get_permalink( get_page_by_path( wpas_pll_get_slug('pricing') ) ); ?>">*<?php pll_e('Learn more about our extended plan'); ?></a>
+                      <h4 class="card-text">From $135/month</h4>
+                      <a href="<?php echo get_permalink( get_page_by_path( wpas_pll_get_slug('pricing') ) ); ?>">*<?php pll_e('Learn more about our payment plans'); ?></a>
                     </div>
                   </div>
                 </div>
