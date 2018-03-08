@@ -15,7 +15,7 @@ $args = wpas_get_view_data();
             <!-- Breathe Coding is our motto, premium and accessible coding education is our obsession. -->
             <div class="row mt-5">
               <div class="col-12 text-center">
-                <a class="btn btn-danger btn-lg" href="<?php echo get_permalink( get_page_by_path( 'hiring-partner-application' ) ); ?>">Become a hiring partner</a>
+                <a class="btn btn-danger btn-lg" href="/landings/hiring-partner-application">Become a hiring partner</a>
               </div>
             </div>
           </div>
@@ -61,7 +61,7 @@ $args = wpas_get_view_data();
             </div>
             <div class="row mt-5">
               <div class="col-12 text-center">
-                <a class="btn btn-danger btn-lg" href="<?php echo get_permalink( get_page_by_path('hiring-partner-application')); ?>">Become a hiring partner</a>
+                <a class="btn btn-danger btn-lg" href="/landings/hiring-partner-application">Become a hiring partner</a>
               </div>
             </div>
           </div>
