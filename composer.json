@@ -18,6 +18,7 @@
 		"wpackagist-plugin/w3-total-cache": "*",
 		"wpackagist-plugin/wordpress-seo": "*",
 		"wpackagist-plugin/amp": "*",
+		"wpackagist-plugin/activecampaign-subscription-forms": "*",
 		"wpackagist-plugin/redirection": "*",
 		"wpackagist-plugin/polylang": "*",
 		"wpackagist-plugin/duplicator": "*",

@@ -16,7 +16,7 @@
     
     $asyncLoader = new WPASAsyncLoader([
         'public-url' => $publicPath.'/public/',
-        'debug' => WP_ASYNC_LOADING,
+        'debug' => !WP_ASYNC_LOADING,
         'force-jquery' => true,
         'minify-html' => UGLIFY_HTML,
         'styles' => [
@@ -62,6 +62,7 @@
     $controller->route([ 'slug' => 'home', 'controller' => 'General']);
     $controller->route([ 'slug' => 'inicio', 'controller' => 'General:renderHome']);
     
+    
     $controller->route([ 'slug' => 'the-academy', 'controller' => 'General']);
     $controller->route([ 'slug' => 'academia', 'controller' => 'General:renderTheAcademy']);
     
@@ -74,6 +75,8 @@
     $controller->route([ 'slug' => 'Template:single-web-development.php', 'controller' => 'General:renderTheProgram']);
     $controller->route([ 'slug' => 'venezuela', 'controller' => 'General:renderTheProgram']);
     
+    $controller->route([ 'slug' => 'partners', 'controller' => 'General:renderPartners']);
+
     $controller->route([ 'slug' => 'Course', 'controller' => 'Course']);
     
     $controller->route([ 'slug' => 'calendar', 'controller' => 'Calendar']);
@@ -93,6 +96,7 @@
     
     $controller->route([ 'slug' => 'Single:location', 'controller' => 'General:renderLocation']);
     
+    $controller->route([ 'slug' => 'Template:page.php', 'controller' => 'Landing:renderLanding']);
     
     $controller->routeAjax([ 'slug' => 'all', 'controller' => 'General:newsletter_signup', 'scope' => 'public' ]);
     $controller->routeAjax([ 'slug' => 'all', 'controller' => 'General:download_syllabus', 'scope' => 'public' ]);
@@ -113,6 +117,7 @@
     $postTypeManager->newType(['type'=>'job', 'class' => 'JobPostType'])->register();
     $postTypeManager->newType(['type'=>'event', 'class' => 'EventPostType'])->register();
     $postTypeManager->newType(['type'=>'landing', 'class' => 'LandingPostType'])->register();
+    $postTypeManager->newType(['type'=>'partner', 'class' => 'PartnerPostType'])->register();
     
     use TF\ActiveCampaign\ACAPI;
     ACAPI::start();

@@ -86,3 +86,9 @@ onPageView("/apply-thank-you",function(){
     //Code goes here
     triggerTagManagerEvent('student_application'); 
 });
+$('#financing_guide_download').click(function(event){ 
+    event.preventDefault();
+    triggerTagManagerEvent('financing_guide_download'); 
+    window.location.href = event.target.href;
+    return false;
+});

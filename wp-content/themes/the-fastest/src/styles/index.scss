@@ -32,6 +32,7 @@ Use it to make something cool, have fun, and share what you've learned with othe
 @import "pages/apply";
 @import "pages/calendar";
 @import "pages/location";
+@import "pages/partner";
 
 .circle-img{
     background-size: cover;
@@ -116,6 +117,23 @@ section.instructors{
     }
   }
 }
+
+.card.partner-card{
+        text-align: center;
+        box-shadow: 0 2px 15px 0 rgba(0, 0, 0, 0.1);
+        padding: 20px;
+        height: 130px;
+        margin-bottom: 20px;
+        img{
+            margin: auto;
+            width: inherit;
+            max-height: 100%;
+            max-width: 100%;
+        }
+        .card-body{
+            padding: 2px;
+        }
+    }
 
 
 //Tablets or bigger screens

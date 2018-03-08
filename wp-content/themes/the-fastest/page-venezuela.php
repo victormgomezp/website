@@ -86,7 +86,7 @@ $args = wpas_get_view_data();
         <div class="row">
           <div class="col-md-9 ml-auto">
             <h2 class="steps-header text-center"><?php pll_e('Course Structure'); ?></h2>
-            <div class="steps-timeline">
+            <div class="steps-timeline steps4">
               <div class="steps">
                 <div class="steps-img"></div>
                 <h3 class="steps-name"><?php pll_e('Prework'); ?></h3>
@@ -293,4 +293,4 @@ $args = wpas_get_view_data();
       </div>
     </section>
     <?php include(locate_template('partials/common-testimonials.php')); ?>
-  <?php get_footer(); ?>
+  <?php get_footer('venezuela'); ?>
