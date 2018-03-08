@@ -30,9 +30,7 @@
                 "mdc-little-havana": "mdc-little-havana",
                 "MDC": "MDC"
             },
-            "default_value": [
-
-            ],
+            "default_value": [],
             "allow_null": 0,
             "multiple": 0,
             "ui": 0,
@@ -60,9 +58,7 @@
                 "chile": "Chile",
                 "spain": "Spain"
             },
-            "default_value": [
-
-            ],
+            "default_value": [],
             "allow_null": 0,
             "multiple": 0,
             "ui": 0,
@@ -83,12 +79,17 @@
                 "class": "",
                 "id": ""
             },
-            "choices": [
-                "Select a slug from breathecode"
-            ],
-            "default_value": [
-
-            ],
+            "choices": {
+                "0": "Select a slug from breathecode",
+                "impact-hub": "Impact Hub (impact-hub)",
+                "maracaibo": "Maracaibo (maracaibo)",
+                "el-nacional": "El Nacional (el-nacional)",
+                "mdc": "MDC (mdc)",
+                "black-belt-coding": "Black Belt Coding (black-belt-coding)",
+                "el-rosal": "El Rosal (el-rosal)",
+                "downtown-miami": "Downtown Miami (downtown-miami)"
+            },
+            "default_value": [],
             "allow_null": 0,
             "multiple": 0,
             "ui": 0,
@@ -193,13 +194,11 @@
                 "id": ""
             },
             "choices": {
-                "Caracas": "Caracas",
-                "Miami": "Miami",
-                "Maracaibo": "Maracaibo"
+                "Caracas, Vzla": "Caracas, Vzla",
+                "Miami, USA": "Miami, USA",
+                "Maracaibo, Vzla": "Maracaibo, Vzla"
             },
-            "default_value": [
-
-            ],
+            "default_value": [],
             "allow_null": 0,
             "multiple": 0,
             "ui": 0,
@@ -239,5 +238,5 @@
     ],
     "active": 1,
     "description": "",
-    "modified": 1519771510
+    "modified": 1519775743
 }

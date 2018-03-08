@@ -1,13 +1,13 @@
 {
-    "key": "group_5a8f4df360c75",
-    "title": "Testimonial Fields",
+    "key": "group_5a909070ec6a6",
+    "title": "Team Members Fields",
     "fields": false,
     "location": [
         [
             {
                 "param": "post_type",
                 "operator": "==",
-                "value": "testimonial"
+                "value": "team-member"
             }
         ]
     ],
@@ -16,17 +16,8 @@
     "style": "seamless",
     "label_placement": "top",
     "instruction_placement": "label",
-    "hide_on_screen": [
-        "excerpt",
-        "discussion",
-        "comments",
-        "revisions",
-        "author",
-        "format",
-        "featured_image",
-        "send-trackbacks"
-    ],
+    "hide_on_screen": [],
     "active": 1,
     "description": "",
-    "modified": 1519341043
+    "modified": 1519423600
 }

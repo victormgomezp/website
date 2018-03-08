@@ -1,13 +1,13 @@
 {
-    "key": "group_5a8f4df1c97dc",
-    "title": "Event Fields",
+    "key": "group_5a909070f3bd6",
+    "title": "Testimonial Fields",
     "fields": false,
     "location": [
         [
             {
                 "param": "post_type",
                 "operator": "==",
-                "value": "event"
+                "value": "testimonial"
             }
         ]
     ],
@@ -17,17 +17,16 @@
     "label_placement": "top",
     "instruction_placement": "label",
     "hide_on_screen": [
-        "the_content",
+        "excerpt",
         "discussion",
         "comments",
         "revisions",
         "author",
         "format",
-        "categories",
-        "tags",
+        "featured_image",
         "send-trackbacks"
     ],
     "active": 1,
     "description": "",
-    "modified": 1519341041
+    "modified": 1519423600
 }
