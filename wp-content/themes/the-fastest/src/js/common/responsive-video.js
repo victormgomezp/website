@@ -1,4 +1,5 @@
-var loadVideo = function(videoURL, settings={}){
+var loadVideo = function(videoURL, settings){
+  if(typeof settings == 'undefined') settings = {};
   var s = document.body.firstChild;
   
   var videoViewport = document.createElement('div');
@@ -11,11 +12,11 @@ var loadVideo = function(videoURL, settings={}){
   video.classList.add('video-background');
   videoViewport.appendChild(video);
   
-  video.addEventListener('loadeddata',() => video.play());
+  video.addEventListener('loadeddata',function(){ video.play(); });
   var vid_w_orig = parseInt($(window).width());
   var vid_h_orig = parseInt($(video).height());
   var min_w = 400;
-  window.addEventListener('resize',() => {
+  window.addEventListener('resize',function(){
       var sourceVideoWidth = video.videoWidth;
       var sourceVideoHeight = video.videoHeight;
       //if(vid_w_orig <= 0 || vid_w_orig == Infinity) vid_w_orig = parseInt($(video).width());
