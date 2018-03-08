@@ -133,6 +133,25 @@ $args = wpas_get_view_data();
         </div>
       </div>
     </section>
+    <section class="bg-white text-black pt-5 pb-5">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-10 mx-auto">
+            <h2 class="text-center"><?php pll_e('Get immersed in Miami\'s Coding Ecosystem'); ?></h2>
+            <h5 class="text-center mb-5"><?php pll_e('4Geeks Academy and its students actively participates Miami\'s top coding initiatives'); ?>.</h5>
+            <div class="row">
+            <?php foreach ($args['c-partners'] as $p) { ?>
+                <div class="col-6 col-sm-3">
+                  <div class="card partner-card" data-toggle="tooltip" data-placement="top" title="<?php echo $p['post_title']; ?>">
+                    <img class="card-img-top" src="<?php echo $p['image']['url']; ?>">
+                  </div>
+                </div>
+            <?php } ?>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
     <section class="bg-white">
       <div class="container text-center">
         <div class="row">
@@ -141,7 +160,7 @@ $args = wpas_get_view_data();
           </div>
         </div>
         <div class="row">
-          <div class="col-12 student-projects">
+          <div class="col-6 student-projects">
             <p class='section-message pb-1'>
               <?php pll_e('As a student, you will develop real-life projects similar to the most popular website out there:'); ?>
             </p>
@@ -171,6 +190,19 @@ $args = wpas_get_view_data();
                 </div>
               </li>
             </ul>
+          </div>
+          <div class="col-6 h-partners">
+            <p class='section-message pb-1 mt-4'>
+              <?php pll_e('And get prepared with all the skills that our network of hiring partners is craving for:'); ?>
+            </p>
+            <div class="card-deck">
+            <?php foreach ($args['h-partners'] as $p) { ?>
+                <div class="card partner-card" data-toggle="tooltip" data-placement="top" title="" data-original-title="<?php echo $p['post_title']; ?>">
+                    <img class="card-img-top" src="<?php echo $p['image']['url']; ?>">
+                </div>
+            <?php } ?>
+            </div>
+            <p><a href="<?php echo get_permalink( get_page_by_path('partners') ); ?>">Check out more about our partnerships</a></p>
           </div>
         </div>
       </div>
