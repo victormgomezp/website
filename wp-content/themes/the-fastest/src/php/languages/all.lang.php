@@ -43,14 +43,14 @@ return array(
     	"Top notch technology stack" => "Top notch technology stack",
     	"Coding is changing a lot RIGHT NOW, learn the newest and most needed languages and frameworks in the market. Your potencial employeers will love it" => "Coding is changing a lot RIGHT NOW, learn the newest and most needed languages and frameworks in the market. Your potencial employeers will love it",
     	"Really Part-time" => "Really Part-time",
-    	"It is not about teaching on after-hours, it requires much more! This course is meant for employed professionals, we have designed the perfect method for flexible and blended learning." => "It is not about teaching on after-hours, it requires much more! This course is meant for employed professionals, we have designed the perfect method for flexible and blended learning.",
+    	"It is not about teaching on after-hours, it requires much more! This course is meant for employed professionals, we have designed the perfect method for flexible and blended learning" => "It is not about teaching on after-hours, it requires much more! This course is meant for employed professionals, we have designed the perfect method for flexible and blended learning",
     	"Course Structure" => "Course Structure",
     	"Prework" => "Prework",
     	"Duration: 2 wks" => "Duration: 2 wks",
     	"Starting with the basics: HTML5 + CSS3 + Javascript. We review the basics of coding and make sure we are all on the same page" => "Starting with the basics: HTML5 + CSS3 + Javascript. We review the basics of coding and make sure we are all on the same page",
     	"Become a Full-Stack Web Developer" => "Become a Full-Stack Web Developer",
     	"Data Master" => "Data Master",
-    	"There is more data and information every day, being able to manipulate that data its mandatory to create today\'s products" => "There is more data and information every day, being able to manipulate that data its mandatory to create today\'s products",
+    	"There is more data and information every day, being able to manipulate that data its mandatory to create today's products" => "There is more data and information every day, being able to manipulate that data its mandatory to create today's products",
     	"Logical Thinker" => "Logical Thinker",
     	"Think like a computer and create top-quality algorithms: Loops, conditionals, functions, variables, etc" => "Think like a computer and create top-quality algorithms: Loops, conditionals, functions, variables, etc",
     	"Search and Research" => "Search and Research",
@@ -68,7 +68,7 @@ return array(
     	"When people search for Senior Developers they are really looking for Web Architects: Understand HTTP properly, AJAX, APIs, POST, GET, HTTPS, Client vs Server, etc" => "When people search for Senior Developers they are really looking for Web Architects: Understand HTTP properly, AJAX, APIs, POST, GET, HTTPS, Client vs Server, etc",
     	"Develop the skills senior developers need to be successfull like the following" => "Develop the skills senior developers need to be successfull like the following",
     	"Skills: Be prepared for the next decade" => "Skills: Be prepared for the next decade",
-    	"Meet our team of highly trained developers, that currenlty hold senior positions in Miami's top tech industry companies" => "Meet our team of highly trained developers, that currenlty hold senior positions in Miami's top tech industry companies",
+    	"Meet our team of highly trained developers, that currenlty hold senior positions at the City's tech industry" => "Meet our team of highly trained developers, that currenlty hold senior positions at the City's tech industry",
     	"Receive training from Senior-only mentors" => "Receive training from Senior-only mentors",
     	"Download our syllabus PDF to get all the details" => "Download our syllabus PDF to get all the details",
     	"During this phase you will have to design, code, test and publish your own entire web application" => "During this phase you will have to design, code, test and publish your own entire web application",
@@ -96,8 +96,13 @@ return array(
     	
 //	Pricing
     	"Or Extended Payment Plan" => "Or Extended Payment Plan",
+    	"Using technology and building -from the ground up- our entire program we have managed to deliver a more affordable program" => "Using technology and building -from the ground up- our entire program we have managed to deliver a more affordable program",
     	"Yes, we know... The best price in town" => "Yes, we know... The best price in town",
-    	"Pick your payment plan, no extra fees or hidden costs, everything is included:" => "Pick your payment plan, no extra fees or hidden costs, everything is included:",
+    	"Pick your payment plan, no extra fees or hidden costs, everything is included" => "Pick your payment plan, no extra fees or hidden costs, everything is included",
+    	"Enjoy the best price in town" => 'Enjoy the best price in town',
+    	"Pay upfront now with no extra or hidden fees" => 'Pay upfront now with no extra or hidden fees',
+    	"Any questions on the financing or extended payment?" => "Any questions on the financing or extended payment?",
+    	"Click here to review our Payment Guidebook" => "Click here to review our Payment Guidebook",
 //	The Academy
 
         "Enabling future and current software builders to adapt to the needs of the real world" => "Enabling future and current software builders to adapt to the needs of the real world",
@@ -117,6 +122,15 @@ return array(
         "Our team is devoted to deliver a premium program. In order to be part of our team, everybody needs to feel the passion for education, coding and helping students develop their skills. At 4Geeks Academy we believe in the power of education and the importance of coding" => "Our team is devoted to deliver a premium program. In order to be part of our team, everybody needs to feel the passion for education, coding and helping students develop their skills. At 4Geeks Academy we believe in the power of education and the importance of coding",
         "Learn more about 4Geeks Academy" => "Learn more about 4Geeks Academy",
 
+//	Partners
+        "Become a hiring partner" => "Become a hiring partner",
+        "Companies trust us and hire our students" => "Companies trust us and hire our students",
+        "Some of our partners and employers" => "Some of our partners and employers",
+        "To assure students get hired, we work closely with our hiring partners and industry leaders refreshing and optimizing the program and syllabus" => "To assure students get hired, we work closely with our hiring partners and industry leaders refreshing and optimizing the program and syllabus",
+        "Immersed in Miami's Coding Ecosystem" => "Immersed in Miami's Coding Ecosystem",
+        "Working together to make it the tech hub it deserves to be" => "Working together to make it the tech hub it deserves to be",
+        "In partnership with the biggest city influencers" => "In partnership with the biggest city influencers",
+        "We actively organize and/or participate in the city's biggest coding innitiatives" => "We actively organize and/or participate in the city's biggest coding innitiatives",
 //Common: Testimonials
         "Over 200 students graduated so far" => "Over 200 students graduated so far",
         "Previous" => "Previous",

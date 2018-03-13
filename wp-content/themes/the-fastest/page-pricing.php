@@ -38,7 +38,7 @@ $args = wpas_get_view_data();
       <div class="container">
         <div class="row mb-4">
           <div class="col-md-6 mx-auto">
-            <h4 class='text-center'><?php pll_e('Pick your payment plan, no extra fees or hidden costs, everything is included:'); ?></h4>
+            <h4 class='text-center'><?php pll_e('Pick your payment plan, no extra fees or hidden costs, everything is included'); ?>:</h4>
           </div>
         </div>
         <div class='row'>
@@ -57,7 +57,7 @@ $args = wpas_get_view_data();
                   <div class='col-sm-12'>
                     <div class="card card-block card-primary bg-light mb-3">
                       <div class="card-body text-center">
-                        <p><?php pll_e('Enjoy the best price in town <br /> Pay upfront now with no extra or hidden fees'); ?></p>
+                        <p><?php pll_e('Enjoy the best price in town'); echo '<br />'; pll_e('Pay upfront now with no extra or hidden fees'); ?></p>
                       </div>
                     </div>
                   </div>
@@ -109,8 +109,8 @@ $args = wpas_get_view_data();
       <div class="container">
         <div class="row">
           <div class="col-sm-8 mx-auto text-center">
-            <h4>Any questions on the financing or extended payment?</h4> 
-            <h5><a id="financing_guide_download" href='<?php echo content_url(); ?>/uploads/2017/10/4GA-Payment-Guidebook.pdf'>Click here to review our Payment Guidebook.</a></h5>
+            <h4><?php pll_e('Any questions on the financing or extended payment?'); ?></h4> 
+            <h5><a id="financing_guide_download" href='<?php echo content_url(); ?>/uploads/2017/10/4GA-Payment-Guidebook.pdf'><?php pll_e('Click here to review our Payment Guidebook'); ?>.</a></h5>
           </div>
         </div>
       </div>
