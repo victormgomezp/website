@@ -15,7 +15,7 @@ $args = wpas_get_view_data();
             <!-- Breathe Coding is our motto, premium and accessible coding education is our obsession. -->
             <div class="row mt-5">
               <div class="col-12 text-center">
-                <a class="btn btn-danger btn-lg" href="/landings/hiring-partner-application">Become a hiring partner</a>
+                <a class="btn btn-danger btn-lg" href="/landings/hiring-partner-application"><?php pll_e('Become a hiring partner'); ?></a>
               </div>
             </div>
           </div>
@@ -49,7 +49,7 @@ $args = wpas_get_view_data();
         <div class="row text-center">
           <div class="col-sm-10 mx-auto">
             <h2><?php pll_e('Some of our partners and employers'); ?></h2>
-            <h5>To assure students get hired, we work closely with our hiring partners and industry leaders refreshing and optimizing the program and syllabus.</h5>
+            <h5><?php pll_e('To assure students get hired, we work closely with our hiring partners and industry leaders refreshing and optimizing the program and syllabus'); ?>.</h5>
             <div class="row">
             <?php foreach ($args['h-partners'] as $p) { if($p['partner_type']!='hiring_partner') continue; ?>
                 <div class="col-6 col-xs-6 col-sm-3">
@@ -61,7 +61,7 @@ $args = wpas_get_view_data();
             </div>
             <div class="row mt-5">
               <div class="col-12 text-center">
-                <a class="btn btn-danger btn-lg" href="/landings/hiring-partner-application">Become a hiring partner</a>
+                <a class="btn btn-danger btn-lg" href="/landings/hiring-partner-application"><?php pll_e('Become a hiring partner'); ?></a>
               </div>
             </div>
           </div>
@@ -72,8 +72,8 @@ $args = wpas_get_view_data();
       <div class="container">
         <div class="row">
           <div class="col-sm-10 mx-auto">
-            <h2 class="text-center"><?php pll_e('Immersed in Miami\'s Coding Ecosystem'); ?></h2>
-            <h5 class="text-center mb-5"><?php pll_e('Working together to make it the tech hub it deserves to be'); ?>.</h5>
+            <h2 class="text-center"><?php pll_e("Immersed in Miami's Coding Ecosystem"); ?></h2>
+            <h5 class="text-center mb-5"><?php pll_e("We actively organize and/or participate in the city's biggest coding innitiatives"); ?>.</h5>
             <div class="row">
             <?php foreach ($args['code-partners'] as $p) { ?>
                 <div class="col-6 col-xs-6 col-sm-3">

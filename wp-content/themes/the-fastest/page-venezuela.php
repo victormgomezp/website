@@ -154,7 +154,7 @@ $args = wpas_get_view_data();
             <div class="row">
               <div class='col-sm-12 col-md-10 mb-3'>
                 <p>
-                  <?php pll_e('Meet our team of highly trained developers, that currenlty hold senior positions at the City\'s tech industry'); ?>.
+                  <?php pll_e("Meet our team of highly trained developers, that currenlty hold senior positions at the City's tech industry"); ?>.
                 </p>
               </div>
             </div>
@@ -215,7 +215,7 @@ $args = wpas_get_view_data();
                       </div>
                       <div class="media-body">
                         <h5 class="media-heading"><?php pll_e('Data Master'); ?></h5>
-                        <?php pll_e('There is more data and information every day, being able to manipulate that data its mandatory to create today\'s products.'); ?>.
+                        <?php pll_e("There is more data and information every day, being able to manipulate that data its mandatory to create today's products"); ?>.
                       </div>
                     </div>
                   </li>
@@ -252,7 +252,7 @@ $args = wpas_get_view_data();
             <div class="row">
               <div class='col-sm-8 mb-3'>
                 <h5>
-                  <?php pll_e('Be proud, our graduates are capable of building incredible things in the most modern technologies.'); ?>
+                  <?php pll_e('Be proud, our graduates are capable of building incredible things in the most modern technologies'); ?>.
                 </h5>
                 <div class="tech-icons">
                   <em class="techico icon-js"></em>
