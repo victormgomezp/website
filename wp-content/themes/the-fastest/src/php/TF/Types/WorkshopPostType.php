@@ -46,7 +46,7 @@ class WorkshopPostType extends BasePostType{
         }else return null;
     }
     
-    public static function all($args=null, $hook=null){
+    public static function all($args=[], $hook=null){
         
         $args = array_merge($args,[
             'post_type' => 'workshop'

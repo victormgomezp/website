@@ -127,6 +127,9 @@ class CoursePostType extends BasePostType{
             return end($query->posts);
         }else return null;
     }
+    public static function getAllCourses($args){
+        return CoursePostType::all()->posts;
+    }
     
     private static function fillMember($object){
         
