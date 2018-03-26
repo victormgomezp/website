@@ -103,6 +103,17 @@
     $controller->routeAjax([ 'slug' => 'all', 'controller' => 'General:get_upcoming_event', 'scope' => 'public' ]);
     //$controller->routeAjax([ 'slug' => 'apply', 'controller' => 'General:get_incoming_dates' ]);
     
+    use \WPAS\Controller\WPASAPIController;
+    $api = new WPASAPIController([
+        'namespace' => 'TF\\Controller\\',
+        'application_name' => '4g',
+        'version' => 1
+    ]);
+    
+    $api->get(['path' => '/events', 'controller' => 'APIController:getAllEvents']);
+    $api->get(['path' => '/courses', 'controller' => 'APIController:getAllCourses']);
+    $api->get(['path' => '/workshops', 'controller' => 'APIController:getAllWorkshops']);
+    
     
     use \WPAS\Types\PostTypesManager;
     
