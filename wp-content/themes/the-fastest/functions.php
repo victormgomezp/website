@@ -107,7 +107,8 @@
     $api = new WPASAPIController([
         'namespace' => 'TF\\Controller\\',
         'application_name' => '4g',
-        'version' => 1
+        'version' => 1,
+        'allow-origin' => '*'
     ]);
     
     $api->get(['path' => '/events', 'controller' => 'APIController:getAllEvents']);
