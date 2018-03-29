@@ -11,14 +11,17 @@ use \WP_Query;
 class APIController{
     
     public function getAllEvents(){
+        header( 'Access-Control-Allow-Origin: *' );
         return EventPostType::all();
     }
     
     public function getAllWorkshops(){
+        header( 'Access-Control-Allow-Origin: *' );
         return WorkshopPostType::all();
     }
     
     public function getAllCourses(){
+        header( 'Access-Control-Allow-Origin: *' );
         return CoursePostType::all()->posts;
     }
     
