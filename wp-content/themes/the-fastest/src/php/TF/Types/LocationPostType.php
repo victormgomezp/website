@@ -91,7 +91,7 @@ class LocationPostType extends BasePostType{
         }else return null;
     }
     
-    public static function all($args=null, $hook=null){
+    public static function all($args=[], $hook=null){
         $query = new WP_Query([
             'post_type' => 'location',
             'post_status' => 'publish'
@@ -102,7 +102,6 @@ class LocationPostType extends BasePostType{
             if($hook) $objectsArray[] = $hook($object);
             else $objectsArray[] = self::fillMember($object);
         } 
-        
         return $objectsArray;
     }
     

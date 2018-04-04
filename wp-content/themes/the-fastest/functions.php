@@ -112,6 +112,7 @@
     ]);
     
     $api->get(['path' => '/events', 'controller' => 'APIController:getAllEvents']);
+    $api->get(['path' => '/locations', 'controller' => 'APIController:getAllLocations']);
     $api->get(['path' => '/courses', 'controller' => 'APIController:getAllCourses']);
     $api->get(['path' => '/workshops', 'controller' => 'APIController:getAllWorkshops']);
     
