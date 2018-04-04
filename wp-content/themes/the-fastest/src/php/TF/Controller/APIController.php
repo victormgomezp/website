@@ -20,7 +20,7 @@ class APIController{
     }
     
     public function getAllCourses(){
-        return CoursePostType::all()->posts;
+        return CoursePostType::getUpcomingDates(true);
     }
     
     public function getAllLocations(){
