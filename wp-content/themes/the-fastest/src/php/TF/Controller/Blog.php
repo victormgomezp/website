@@ -11,7 +11,7 @@ class Blog{
     
     public function renderBlog(){
         $args = [];
-        $args['featured'] = PostPostType::All(array(
+        $args['featured'] = PostPostType::all(array(
         	'numberposts'	=> 4,
         	'meta_key'		=> 'featured_post',
         	'meta_value'	=> 'true'

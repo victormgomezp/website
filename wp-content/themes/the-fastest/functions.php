@@ -59,8 +59,7 @@
     $controller->route([ 'slug' => 'Template:page-landing-maker1.php', 'controller' => 'Landing:renderLanding']);
     $controller->route([ 'slug' => 'Single:landing', 'controller' => 'Landing:renderLanding']);
     
-    $controller->route([ 'slug' => 'home', 'controller' => 'General']);
-    $controller->route([ 'slug' => 'inicio', 'controller' => 'General:renderHome']);
+    $controller->route([ 'slug' => 'blog:blog', 'controller' => 'Blog']);
     
     
     $controller->route([ 'slug' => 'the-academy', 'controller' => 'General']);
@@ -85,7 +84,6 @@
     $controller->route([ 'slug' => 'pricing', 'controller' => 'General']);
     $controller->route([ 'slug' => 'precio', 'controller' => 'General:renderPricing']);
     
-    $controller->route([ 'slug' => 'blog:blog', 'controller' => 'Blog']);
     
     $controller->route([ 'slug' => 'Single:post', 'controller' => 'Blog']);
     
@@ -95,6 +93,9 @@
     $controller->route([ 'slug' => 'Single:event', 'controller' => 'Event']);
     
     $controller->route([ 'slug' => 'Single:location', 'controller' => 'General:renderLocation']);
+    
+    $controller->route([ 'slug' => 'home', 'controller' => 'General']);
+    $controller->route([ 'slug' => 'inicio', 'controller' => 'General:renderHome']);
     
     $controller->route([ 'slug' => 'Template:page.php', 'controller' => 'Landing:renderLanding']);
     
