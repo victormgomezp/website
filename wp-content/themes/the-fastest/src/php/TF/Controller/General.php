@@ -64,7 +64,7 @@ class General{
     
     public function renderTheAcademy(){
         $args = $this->getData();
-        $args['members'] = TeamMemberPostType::All(array(
+        $args['members'] = TeamMemberPostType::all(array(
         	'numberposts'	=> 8,
         	'meta_key'		=> 'member_type',
         	'meta_value'	=> 'staff'
