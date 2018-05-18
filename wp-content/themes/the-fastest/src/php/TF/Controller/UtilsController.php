@@ -15,7 +15,7 @@ class UtilsController{
         if($backgroundColor) $styles .= 'background-color: '.$backgroundColor.';';
         
         $backgroundImage = get_field('body_background_image', $postId);
-        if($backgroundImage) $styles .= "background-image: url('".$backgroundImage[0]."');";
+        if($backgroundImage) $styles .= "background-image: url('".$backgroundImage['url']."');";
         
         $styles .= '"';
         
