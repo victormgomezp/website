@@ -11,9 +11,7 @@ use DateTime;
 class WorkshopPostType extends BasePostType{
     
     function populate_fields(){
-        
-        add_filter('acf/load_field/name=breathecode_workshop_slug', [$this,'populate_breathecode_slug']);
-        
+        //add_filter('acf/load_field/name=breathecode_workshop_slug', [$this,'populate_breathecode_slug']);
     }
     
     function populate_breathecode_slug( $field ) {
