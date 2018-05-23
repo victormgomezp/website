@@ -1,6 +1,4 @@
 <?php 
-    /* Template Name: Visual Composer Ready */
-    /* Template Post Type: landing, page */
     get_header('visualcomposer'); 
     $args = wpas_get_view_data();
 ?>

@@ -20,8 +20,14 @@
         'force-jquery' => true,
         'minify-html' => UGLIFY_HTML,
         'styles' => [
-            "page" => [ "all" => 'index.css', "template:page-landing-maker1.php" => 'landing.css' ],
-            "custom-post" => [ "all" => 'index.css' ],
+            "page" => [ 
+                "template:page-landing-maker1.php" => 'landing.css',
+                "all" => 'index.css'
+            ],
+            "custom-post" => [ 
+                "template:page-landing-vc.php" => 'landing.css',
+                "all" => 'index.css' 
+            ],
             "404" => ["all" => 'index.css']
         ],
         'critical-styles' => [
@@ -37,6 +43,7 @@
                 "all" => ['vendor.js','index.js']
                 ],
             "custom-post" => [
+                "template:page-landing-vc.php" => ['vendor.js','landing.js'],
                 'all' => ['vendor.js','index.js']
                 ],
             "post" => [
