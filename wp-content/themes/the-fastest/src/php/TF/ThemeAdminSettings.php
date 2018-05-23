@@ -135,6 +135,13 @@ class ThemeAdminSettings {
 				    'name' => 'activecampaign-gclid-field',
 					'description' => 'Used for adwords offline convertions attribution',
 					'options' => []
+				],
+				[
+				    'type' => 'select', 
+				    'label' => 'Referral key field',
+				    'name' => 'activecampaign-referral-key-field',
+					'description' => 'Used for the referral program',
+					'options' => []
 				]
 			];
 		
@@ -336,6 +343,10 @@ class ThemeAdminSettings {
 							],
 							[
 								'name' => 'activecampaign-gclid-field',
+								'options' => $auxFields
+							],
+							[
+								'name' => 'activecampaign-referral-key-field',
 								'options' => $auxFields
 							]
 						];
