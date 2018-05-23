@@ -70,7 +70,7 @@ class EventPostType extends BasePostType{
         	    )
             ),
     	);
-        
+
         $events = EventPostType::all($args);
         return $events;
     }

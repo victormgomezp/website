@@ -63,8 +63,8 @@ class CoursePostType extends BasePostType{
     public static function getDateInformation($cohort){
         
         $cohort = (array) $cohort;
-        
-        $time = strtotime($cohort['kickoff-date']);
+
+        $time = strtotime($cohort['kickoff_date']);
         
         $course = [];
         $course['day'] = date('d',$time);
