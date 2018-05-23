@@ -9,4 +9,33 @@
     .student-projects{
         svg{ height: 100px; }
     }
+    #bg-sketch{
+        width: 100vw;
+        height: 100vh;
+        overflow: hidden;
+        position: absolute;
+        background-position: top;
+        background-size: cover;
+        z-index: -1;
+        display: inline-block;
+        top: 0;
+        left: 0;
+    }
+    .call-to-action-nav.navbar{
+        margin-top: 0;
+        background: rgba(255,255,255,0.9) !important;
+        img{max-width: 90px;}
+        .dropdown-menu{
+            border-radius: 0;
+            background: rgba(255,255,255,0.9) !important;
+            margin-top: 10px;
+            .menu-item-description{
+                display: none;
+            }
+            ul{
+                padding: 0;
+                li{ list-style: none; }
+            }
+        }
+    }
 }

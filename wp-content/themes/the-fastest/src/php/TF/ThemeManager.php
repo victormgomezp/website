@@ -61,6 +61,7 @@ class ThemeManager{
             'header' => 'Header menu', 
             'blog-header' => 'Blog Header menu', 
             'footer-company' => 'Footer menu',
+            'landing-vc' => 'Visual Composer Landing', 
             'footer-locations' => 'Footer Locations' 
         ));
     }
