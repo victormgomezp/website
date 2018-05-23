@@ -207,7 +207,6 @@ class General{
 
         if(empty($_POST['email'])) WPASController::ajaxError('Invalid Email');
         
-        
         $fistName = '';
         if(!empty($_POST['first_name'])) $fistName = $_POST['first_name'];
         
@@ -230,7 +229,7 @@ class General{
         $referralValue = 'undefined';
         if(isset($_GET['referral_key'])) $referralValue = $_GET['referral_key'];
         else if(isset($globalContext['referral_key'])) $referralValue = $globalContext['referral_key'];
-        
+
         $contact = array(
     		"email" => $_POST['email'],
     		"first_name" => $fistName,
@@ -239,8 +238,8 @@ class General{
     		"field[".$utmLanguageId.",0]" => $utmLanguageValue,
     		"field[".$utmCountryId.",0]" => $utmCountryValue,
     		"field[".$gclid.",0]" => $gclidValue,
-    		"field[".$referralId.",0]" => $referralValue
     	);
+    	if(!empty($referralId)) $contact["field[".$referralId.",0]"] = $referralValue;
 
         $coursesField = \TF\ActiveCampaign\ACAPI::subscribeToList($contact, $listId);
 
