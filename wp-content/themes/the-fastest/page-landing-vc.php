@@ -6,7 +6,7 @@
 ?>
 <nav class="call-to-action-nav navbar navbar-expand-lg fixed-top navbar-light bg-light">
     <a class="navbar-brand" href="#"><img class="img-fluid" src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/logo-white.png"></img></a>
-    <ul class="navbar-nav ml-auto">
+    <ul class="navbar-nav ml-auto d-none d-sm-inline-block">
         <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 About The Academy 
