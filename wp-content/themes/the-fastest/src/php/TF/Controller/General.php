@@ -148,24 +148,10 @@ class General{
         $args = [];
         $args['testimonials'] = TestimonialPostType::All();
         //$args['locations'] = LocationPostType::All();
-        $args['upcoming'] = $this->getNextCohort();
+        $args['upcoming'] = CoursePostType::getNextCohort();
         return $args;
     }
 
-    private function getNextCohort(){
-        
-        $query = [];
-        if(get_post_type() == 'course') 
-        {
-            $query['profile'] = get_field('breathecode_course_slug',get_the_ID());
-        }
-        else $query = null;
-        
-        $cohorts = CoursePostType::getUpcomingDates($query);
-        if(!empty($cohorts)) return $cohorts[0];
-        else return null;
-    }
-    
     public function get_incoming_dates(){
         
         $cohorts = CoursePostType::getUpcomingDates();

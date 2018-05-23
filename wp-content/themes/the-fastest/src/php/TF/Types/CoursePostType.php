@@ -52,6 +52,7 @@ class CoursePostType extends BasePostType{
         
         $query = $params;
         if(!$params) $query = self::getCalendarQuery();
+        //debug($params);
         
         $cohorts = WPASThemeSettingsBuilder::getThemeOption('sync-bc-cohorts-api');
         $upcoming = [];
@@ -139,6 +140,20 @@ class CoursePostType extends BasePostType{
         $arrayObject['financed_deposit'] = get_field('financed_deposit',$object->ID);
         $arrayObject['full_price'] = get_field('full_price',$object->ID);
         return $arrayObject;
+    }
+    
+    public static function getNextCohort(){
+        
+        $query = [];
+        if(get_post_type() == 'course') 
+        {
+            $query['profile'] = get_field('breathecode_course_slug',get_the_ID());
+        }
+        else $query = null;
+        
+        $cohorts = self::getUpcomingDates($query);
+        if(!empty($cohorts)) return $cohorts[0];
+        else return null;
     }
     
 }
