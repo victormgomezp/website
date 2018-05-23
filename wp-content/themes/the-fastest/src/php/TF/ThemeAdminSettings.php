@@ -253,12 +253,16 @@ class ThemeAdminSettings {
         if($cohortsJSON)
         {
             $cohorts = json_decode($cohortsJSON);
-            //print_r($cohorts); die();
             $upcoming = [];
             if($cohorts && $cohorts->code==200){
             	foreach($cohorts->data as $c){
-            		$cohort = CoursePostType::getDateInformation($c);
-            		if($cohort['time'] > time()) $upcoming[] = $cohort;
+            		if($c->stage == 'not-started'){
+	            		$cohort = CoursePostType::getDateInformation($c);
+
+	            		if($cohort['time'] > time()){
+	            			$upcoming[] = $cohort;
+	            		} 
+            		}
             	} 
             }
             
