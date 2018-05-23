@@ -4,6 +4,7 @@ namespace TF\Controller;
 
 use WPAS\Exception\WPASException;
 use TF\Types\TestimonialPostType;
+use TF\Types\CoursePostType;
 use \WP_Query;
 
 class Landing{
@@ -21,7 +22,7 @@ class Landing{
         $args['page']['script'] = get_field('landing_extra_script', $page->ID);
         
         $args['testimonials'] = TestimonialPostType::All();
-
+        $args['upcoming'] = CoursePostType::getNextCohort();
         return $args;
     }
     
