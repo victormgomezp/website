@@ -140,7 +140,7 @@ class General{
     
     public function renderApply(){
         $args = [];
-        $args['upcoming'] = $this->getNextCohort();
+        $args['upcoming'] = CoursePostType::getNextCohort();
         return $args;
     }
 
