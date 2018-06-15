@@ -30,7 +30,7 @@ if(WPAS_APP.view.slug === 'home' || WPAS_APP.view.slug === 'inicio'){
  * THE PROGRAM
 **/
 
-if(['page-the-program','single-full-stack','single-web-development'].indexOf(WPAS_APP.view.template)!=-1 || WPAS_APP.view.slug === 'venezuela'){
+if(['page-the-program','single-full-stack','single-web-development','single-coding-intro'].indexOf(WPAS_APP.view.template)!=-1 || WPAS_APP.view.slug === 'venezuela'){
   
   var maxStickPosition = $('#pricing').offset().top - 20;
   MakeSticky.init('[data-toggle="sticky-onscroll"]', maxStickPosition);

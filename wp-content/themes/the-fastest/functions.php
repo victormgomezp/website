@@ -77,8 +77,9 @@
     
     $controller->route([ 'slug' => 'the-program', 'controller' => 'General']);
     $controller->route([ 'slug' => 'programa', 'controller' => 'General:renderTheProgram']);
-    $controller->route([ 'slug' => 'Template:single-full-stack.php', 'controller' => 'General:renderTheProgram']);
-    $controller->route([ 'slug' => 'Template:single-web-development.php', 'controller' => 'General:renderTheProgram']);
+
+    $controller->route([ 'slug' => 'Single:course', 'controller' => 'General:renderTheProgram']);
+
     $controller->route([ 'slug' => 'venezuela', 'controller' => 'General:renderTheProgram']);
     
     $controller->route([ 'slug' => 'partners', 'controller' => 'General:renderPartners']);
