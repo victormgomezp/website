@@ -39,10 +39,10 @@ $args = wpas_get_view_data();
                 <a class="nav-link" href="#program-details"><?php pll_e('Why take this course'); ?></a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#course-modules"><?php pll_e('What you will learn'); ?></a>
+                <a class="nav-link" href="#course-modules"><?php pll_e('What you\'ll learn'); ?></a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#instructors"><?php pll_e('Student will all Benefits'); ?></a>
+                <a class="nav-link" href="#instructors"><?php pll_e('Student Benefits'); ?></a>
               </li>
               <li class="nav-item">
                 <a class="nav-link disabled" href="#skills"><?php pll_e('Starting every 8 weeks'); ?></a>
@@ -59,16 +59,13 @@ $args = wpas_get_view_data();
             <h2 class="section-heading text-black mb-2"><?php pll_e("Whom should take this course?"); ?></h2>
             <div class="row">
               <div class='col-sm-8 mb-3'>
-                <?php pll_e("Someone with little or no coding skills, it's the ideal introduction for doing web development, allowing students to create small websites and start mastering real coding skills like looping, conditionals, etc."); ?>.
+                <?php pll_e("Someone with little or no coding skills, it's the ideal introduction for doing web development, allowing students to create small websites and earn their first coding skills"); ?>.
               </div>
               <div class='col-sm-8 mb-3'>
                 <h4>Segue to full-stack</h4>
-                <?php pll_e("By the end of this small course you will be already making your first real websites and ready to jump to the more complete full-stack web development course."); ?>.
+                <?php pll_e("By the end of this course you will be already making real websites and ready to start our full-stack web development course."); ?>.
               </div>
             </div>
-            <h5 class="mb-4">
-              <span class="text-orange">[ </span><span class="text-blue"><?php pll_e('230+ hrs of lessons, 3 times a week during 14 weeks'); ?>.</span> <span class="text-orange">]</span>
-            </h5>
           </div>
         </div>
       </div>
@@ -79,6 +76,9 @@ $args = wpas_get_view_data();
         <div class="row">
           <div class="col-md-9 ml-auto">
             <h2 class="steps-header text-center"><?php pll_e('What you will learn'); ?></h2>
+            <h5 class="mb-4 text-center">
+              <span class="text-orange">[ </span><span class="text-blue"><?php pll_e('40+ hrs of lessons, videos, exercises and projects'); ?>.</span> <span class="text-orange">]</span>
+            </h5>
             <div class="steps-timeline steps2">
               <div class="steps">
                 <div class="steps-img"></div>
@@ -118,18 +118,18 @@ $args = wpas_get_view_data();
       <div class="container">
         <div class="row">
           <div class="col-md-9 ml-auto">
-            <h2 class="section-heading text-black mb-3"><?php pll_e('A real 4Geeks Academy student'); ?></h2>
+            <h2 class="section-heading text-black mb-3"><?php pll_e('All the benefits'); ?></h2>
             <div class="row">
               <div class='col-sm-12 col-md-10 mb-3'>
                 <p>
-                  <?php pll_e('4Geeks Academy students receive a lot of benefits, and even though the course is designed to be 99% online, you will also have the following student benefits while taking the course:'); ?>.
+                  <?php pll_e('4Geeks Academy students receive a lot of benefits, and even though this course is designed to be 99% online, you will also have the following student benefits while taking the course:'); ?>.
                 </p>
-                <ul>
-                  <li><?php pll_e('24hr access to our location'); ?></li>
-                  <li><?php pll_e('free access to most of the academy events'); ?></li>
-                  <li><?php pll_e('full access to the "Coding Weekends'); ?></li>
-                  <li><?php pll_e('the academy slack'); ?></li>
-                  <li><?php pll_e('event free personal mentorships from any of the academy instructors during the weekends'); ?></li>
+                <ul class="benefits">
+                  <li><?php pll_e('Office schedule access to our location'); ?></li>
+                  <li><?php pll_e('Free access to most of the'); ?> <a href="/calendar/?type=event">academy events</a></li>
+                  <li><?php pll_e('Full access to the '); ?> <a href="/the-coding-weekends">The Coding Weekends</a> <?php pll_e('with mentors, talks, workshops and more.'); ?></li>
+                  <li><?php pll_e('The academy communication channels for questions and help'); ?></li>
+                  <li><?php pll_e('Event free personal mentorships from any of the academy instructors during the weekends'); ?></li>
                 </ul>
               </div>
             </div>
@@ -141,24 +141,13 @@ $args = wpas_get_view_data();
       <div class="container">
         <div id="skills" class="row">
           <div class="col-md-9 ml-auto">
-            <h2 class="section-heading text-black mb-3"><?php pll_e('Skills: Be prepared for the next decade'); ?></h2>
+            <h2 class="section-heading text-black mb-3"><?php pll_e('Skills: Be prepared to start coding'); ?></h2>
             <div class="row">
               <div class='col-sm-8 mb-3'>
                 <h5>
                   <?php pll_e('Develop the skills senior developers need to be successfull like the following'); ?>.
                 </h5>
                 <ul class="list-group">
-                  <li class="list-group-item">
-                    <div class="media">
-                      <div class="media-left">
-                        <?php wpas_get_inline_svg('assets/icons/inline','wordpress.svg'); ?>
-                      </div>
-                      <div class="media-body">
-                        <h5 class="media-heading"><?php pll_e(''); ?>WordPress Architect</h5>
-                        <?php pll_e('Learn the WordPress architecture, develop your own themes and plugins, use the WordPress Rest API and integratied with any other services.'); ?>.
-                      </div>
-                    </div>
-                  </li>
                   <li class="list-group-item">
                     <div class="media">
                       <div class="media-left">
@@ -178,17 +167,6 @@ $args = wpas_get_view_data();
                       <div class="media-body">
                         <h5 class="media-heading"><?php pll_e('Logical Thinker'); ?></h5>
                         <?php pll_e('Think like a computer and create top-quality algorithms: Loops, conditionals, functions, variables, etc'); ?>.
-                      </div>
-                    </div>
-                  </li>
-                  <li class="list-group-item">
-                    <div class="media">
-                      <div class="media-left">
-                        <?php wpas_get_inline_svg('assets/icons/inline','research.svg'); ?>
-                      </div>
-                      <div class="media-body">
-                        <h5 class="media-heading"><?php pll_e('Search and Research'); ?></h5>
-                        <?php pll_e('Most of the specs are poor and lack details. Sometimes the best developers are those that find examples faster than anyone. Learning to search key to success!'); ?>
                       </div>
                     </div>
                   </li>
@@ -224,28 +202,27 @@ $args = wpas_get_view_data();
       <div class="container">
         <div class="row">
           <div class="col-md-9 ml-auto">
-            <h2 class="section-heading text-black"><?php pll_e('Pricing & Financing'); ?></h2>
+            <h2 class="section-heading text-black"><?php pll_e('Pricing'); ?></h2>
               <div class='row'>
                 <div class='col-6 ml-auto upfront'>
                   <div class="card card-block card-primary card-inverse bg-light">
                     <div class="card-body">
-                      <h4 class="card-title m-0"><?php pll_e('Upfront'); ?></h4>
-                      <h3 class="card-text">$3,405</h3>
+                      <h4 class="card-title m-0"><?php pll_e('100% online'); ?></h4>
+                      <h3 class="card-text">$400</h3>
                     </div>
                   </div>
                 </div>
                 <div class='col-6 mr-auto'>
                   <div class="card card-block card-primary card-inverse bg-light">
                     <div class="card-body">
-                      <h4 class="card-title m-0"><?php pll_e('Payment Plan'); ?></h4>
-                      <h5 class="card-text"><?php pll_e('Split your balance in two separate payments'); ?></h5>
+                      <h4 class="card-title m-0"><?php pll_e('Every 8 weeks'); ?></h4>
+                      <h5 class="card-text">For FREE</h5>
                     </div>
                   </div>
                 </div>
               </div>
-              <div class='row'>
+              <div class='row mt-5'>
                 <div class='col-md-10 mx-auto text-center'>
-                  <p class='section-message'><?php pll_e('We are working hard on developing new payment options and we have several types of scolarships available for this program.'); ?>.</p>
                   <a href="<?php echo get_permalink( get_page_by_path( wpas_pll_get_slug('apply') ) ); ?>" class="btn btn-danger btn-lg"><?php pll_e('Apply to the program'); ?></a>
                 </div>
               </div>
