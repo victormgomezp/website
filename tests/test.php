@@ -8,7 +8,7 @@
     use ZendDiagnostics\Runner\Reporter\BasicConsole;
 
     
-    $publicURL = 'http://www.4geeksacademy.com';
+    $publicURL = 'https://www.4geeksacademy.com';
     // Create Runner instance
     $runner = new Runner();
     
