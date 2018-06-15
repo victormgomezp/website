@@ -4,10 +4,9 @@ $gray-base:     #999999;
 $brand-primary: black; //Zen Blue
 
 
-.page-the-program, .single-full-stack, .single-web-development, .page-venezuela{
-    
+.program-menu{display: none}
+.page-the-program, .single-full-stack, .single-coding-intro, .single-web-development, .page-venezuela{
     section{ padding: 20px 0;}
-    .program-menu{ display: none; }
     .tech-icons{font-size: 60px;}
     section.instructors{
         .card-deck{
@@ -56,6 +55,9 @@ $brand-primary: black; //Zen Blue
         display: table;
         clear: both;
       }
+      &.steps2{
+        
+      }
     }
     .steps{
       outline: 1px dashed rgba(green, $outline-width);
@@ -67,6 +69,13 @@ $brand-primary: black; //Zen Blue
       @media screen and (min-width: $break-point) {
         float: left;
         margin-top: -50px;
+      }
+    }
+    .steps-timeline.steps2 .steps{
+      @media screen and (min-width: $break-point) {
+        width: 40%;  
+        margin-right: 15%;
+        margin-left: 0 !important;
       }
     }
     .steps-timeline.steps3 .steps{
@@ -242,26 +251,24 @@ $brand-primary: black; //Zen Blue
     .page-the-program, .single-full-stack, .page-venezuela{
         background: #3f3f3f;
     }
-    .page-the-program, .single-full-stack, .single-web-development, .page-venezuela{
-        .program-menu{
-            margin-top: 30px;
-            display: block;
-            //background: #2c2c35;
-            //a{color: white;}
-            a:not(.btn){color: black;}
-            background: #e8e8e8;
-            border-left: 5px solid orange;
-            font-size: 15px;
-            text-align: right;
-            font-weight: 900;
-            .nav-link{ padding-right: 0; padding-left: 0;}
-            li{padding-right: 10px;}
-            li.active{background: #ccc;}
-            li:last-child{padding-bottom: 10px;}
-        }
-      .steps .steps-description {
-        margin-left: 0px;
-      }
+    .program-menu{
+        margin-top: 30px;
+        display: block;
+        //background: #2c2c35;
+        //a{color: white;}
+        a:not(.btn){color: black;}
+        background: #e8e8e8;
+        border-left: 5px solid orange;
+        font-size: 15px;
+        text-align: right;
+        font-weight: 900;
+        .nav-link{ padding-right: 0; padding-left: 0;}
+        li{padding-right: 10px;}
+        li.active{background: #ccc;}
+        li:last-child{padding-bottom: 10px;}
+    }
+    .steps .steps-description {
+      margin-left: 0px;
     }
     .single-web-development{
       .underline:after {
