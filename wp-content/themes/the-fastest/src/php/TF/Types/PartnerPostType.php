@@ -12,6 +12,17 @@ class PartnerPostType extends BasePostType{
 
     }
     
+    protected static $post_type = 'partner';
+    
+    public static function all($args=[], $hook=null){
+        $args = array_merge([
+            'post_type' => self::$post_type
+            ],$args);
+        
+        $query = new WP_Query($args);
+        return $query;
+    }
+    
     public static function fill($post){
         
         return array_merge((array) $post, [

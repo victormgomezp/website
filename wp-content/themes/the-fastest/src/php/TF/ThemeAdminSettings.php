@@ -277,7 +277,7 @@ class ThemeAdminSettings {
 	}
 	
 	private function syncWorkshops($inputId){
-	    $workshopsJSON = file_get_contents(BREATHECODE_API_HOST.'/workshops/');
+	    $workshopsJSON = file_get_contents(BREATHECODE_ASSETS_HOST.'/events/');
         if($workshopsJSON)
         {
             $workshops = json_decode($workshopsJSON);
