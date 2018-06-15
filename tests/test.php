@@ -22,12 +22,12 @@
     $runner->addCheck(checkURL($publicURL.'/partners', 'To assure students get hired, we work closely with our hiring partners and industry leaders refreshing and optimizing the program and syllabus'));
 
     $runner->addCheck(checkURL($publicURL.'/location/downtown-miami/', 'Starthub. 66 W Flaggle, #900. 33130, Miami, Florida.'));
-    $runner->addCheck(checkURL($publicURL.'/location/maracaibo-venezuela/', 'Av. 5 de julio. Maracaibo, Venezuela.'));
-    $runner->addCheck(checkURL($publicURL.'/location/el-nacional-caracas-venezuela/', 'Sede Principal de El Nacional. Los Cortijos de Lourdes, Caracas.'));
-    $runner->addCheck(checkURL($publicURL.'/location/impact-hub-caracas/', 'Av. Francisco de Miranda, Torre HP, piso 17'));
+    $runner->addCheck(checkURL($publicURL.'/es/location/maracaibo-venezuela/', 'Av. 5 de julio. Maracaibo, Venezuela.'));
+    $runner->addCheck(checkURL($publicURL.'/es/location/el-nacional-caracas-venezuela/', 'Sede Principal de El Nacional. Los Cortijos de Lourdes, Caracas.'));
+    $runner->addCheck(checkURL($publicURL.'/es/location/impact-hub-caracas/', 'Av. Francisco de Miranda, Torre HP, piso 17'));
     
-    $runner->addCheck(checkURL($publicURL.'/course/full-stack-development/', 'A Premium Program designed to launch your web developer career'));
-    $runner->addCheck(checkURL($publicURL.'/course/web-development/', 'Learn to code and build websites faster than anyone'));
+    $runner->addCheck(checkURL($publicURL.'/course/full-stack-development/', 'A Premium Program designed'));
+    $runner->addCheck(checkURL($publicURL.'/course/web-development/', 'websites faster than anyone'));
     //$runner->addCheck(checkURL($publicURL.'/course/coding-introduction/', 'acelerar tu carrera como programador'));
     
     // TODO: check the website forms
