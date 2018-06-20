@@ -12,10 +12,10 @@
     // Create Runner instance
     $runner = new Runner();
     
-    $runner->addCheck(checkURL($publicURL.'/apply', 'If you were referred by any current or past student use your referral code for extra credit or discounts.'));
+    $runner->addCheck(checkURL($publicURL.'/apply', 'Once you click on Apply, you will'));
     $runner->addCheck(checkURL($publicURL.'/home', 'Breathe Coding'));
     $runner->addCheck(checkURL($publicURL.'/the-program', 'A Premium Program designed to'));
-    $runner->addCheck(checkURL($publicURL.'/pricing', 'Pick your payment plan, no extra fees or hidden costs'));
+    $runner->addCheck(checkURL($publicURL.'/pricing', 'Our program was specifically built to efficiently'));
     $runner->addCheck(checkURL($publicURL.'/the-academy', 'Theory is delivered through video, animation, images, '));
     $runner->addCheck(checkURL($publicURL.'/calendar', 'to discover our available courses, workshops and events.'));
     $runner->addCheck(checkURL($publicURL.'/venezuela', 'acelerar tu carrera como programador'));
