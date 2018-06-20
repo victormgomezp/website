@@ -9,7 +9,7 @@ $args = wpas_get_view_data();
 	<div class="mainheading">
 		<h1 class="sitetitle">4Geeks Academy Blog</h1>
 		<p class="lead">
-			 <?php pll_e('Resources, news for potencial and current software builders.'); ?>
+			 <?php pll_e('Resources and news for both potential and current software builders'); ?>.
 		</p>
 	</div>
 <!-- End Site Title

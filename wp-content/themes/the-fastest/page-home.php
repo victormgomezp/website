@@ -30,7 +30,7 @@ $args = wpas_get_view_data();
         <div class="row">
           <div class="col-11 mx-auto">
             <h4 class="section-heading text-black"><?php pll_e('Finally an affordable & premium course in Miami'); ?></h4>
-            <p class="text-faded"><?php pll_e('We never stopped trying until we mastered a real premium but affordable program. Talk to one of our student advisors and make sure you are a good fit for our program'); ?>;</p>
+            <p class="text-faded"><?php pll_e('We never stopped trying until we mastered a real premium but affordable program. Talk to one of our student advisors and make sure you are a good fit for our program'); ?></p>
             <form class="form-inline">
               <a href="#syllabusModal"  data-toggle="modal" data-target="#syllabusModal" class='btn btn-lg btn-secondary'><?php pll_e('Request Syllabus'); ?></a>
               <a href="<?php echo get_permalink( get_page_by_path( wpas_pll_get_slug('apply') ) ); ?>" class='btn btn-lg btn-danger'><?php pll_e('Apply Now'); ?></a>
@@ -73,7 +73,7 @@ $args = wpas_get_view_data();
                     </div>
                     <div class="card">
                         <div class="card-body section-message bg-light">
-                            <?php pll_e('Learn an advanced stack of technologies, what companies are looking for.'); ?>
+                            <?php pll_e('Learn an advanced stack of technologies to meet the demands that companies seek'); ?>
                             <div class="tech-icons">
                                 <em class="techico icon-js" data-toggle="tooltip" data-placement="top" title="Javascript"></em>
                                 <em class="techico icon-babel" data-toggle="tooltip" data-placement="top" title="Babel JS"></em>
@@ -105,7 +105,7 @@ $args = wpas_get_view_data();
                 <div class="graphic">
                     <div class="chart">
                       <span class="block" title="Javascript">
-                         <span class="legend">Javascript</span>
+                         <span class="legend">JavaScript</span>
                          <span class="value">60%</span>
                       </span>
                       <span class="block" title="Python">
@@ -138,7 +138,7 @@ $args = wpas_get_view_data();
         <div class="row">
           <div class="col-sm-10 mx-auto">
             <h2 class="text-center"><?php pll_e('Get immersed in Miami\'s Coding Ecosystem'); ?></h2>
-            <h5 class="text-center mb-5"><?php pll_e('4Geeks Academy and its students actively participates Miami\'s top coding initiatives'); ?>.</h5>
+            <h5 class="text-center mb-5"><?php pll_e('4Geeks Academy and our students actively participate in Miami\'s top coding initiatives'); ?>.</h5>
             <div class="row">
             <?php foreach ($args['c-partners'] as $p) { ?>
                 <div class="col-6 col-sm-3">
@@ -162,7 +162,7 @@ $args = wpas_get_view_data();
         <div class="row">
           <div class="col-6 student-projects">
             <p class='section-message pb-1'>
-              <?php pll_e('As a student, you will develop real-life projects similar to the most popular website out there:'); ?>
+              <?php pll_e('As a student, you will develop real-life projects similar to the most popular websites out there:'); ?>
             </p>
             <ul class="list-inline h-scroll">
               <li class="list-inline-item">
@@ -193,7 +193,7 @@ $args = wpas_get_view_data();
           </div>
           <div class="col-6 h-partners">
             <p class='section-message pb-1 mt-4'>
-              <?php pll_e('And get prepared with all the skills that our network of hiring partners is craving for:'); ?>
+              <?php pll_e('Become prepared with all the desired skills and tools that our network of hiring partners is craving for:'); ?>
             </p>
             <div class="card-deck">
             <?php foreach ($args['h-partners'] as $p) { ?>
@@ -233,7 +233,7 @@ $args = wpas_get_view_data();
               </div>
               <div class='row'>
                 <div class='col-md-10 mx-auto text-center'>
-                  <p class='section-message'><?php pll_e('This was the most challenging part, our program was designed from the ground up aming to make coding education universal'); ?>;</p>
+                  <p class='section-message'><?php pll_e('This was the most challenging part, our program was designed from the ground up aming to make coding education universal'); ?>.</p>
                   <small>
                     <a href="<?php echo get_permalink( get_page_by_path( wpas_pll_get_slug('apply') ) ); ?>" class="btn btn-danger btn-lg"><?php pll_e('Apply to the program'); ?></a>
                   </small>

@@ -12,7 +12,7 @@ $args = wpas_get_view_data();
               <div><div><?php pll_e('and increase your income significantly'); ?></div></div>
               <div><div><?php pll_e('and join the workforce of the future'); ?></div></div>
               <div><div><?php pll_e('and re-launch your career'); ?></div></div>
-              <div><div><?php pll_e('build your own Tech Startup'); ?></div></div>
+              <div><div><?php pll_e('and build your own Tech Startup'); ?></div></div>
               <div><div><?php pll_e('and join the Tech community'); ?></div></div>
             </div>
             <form class="form-inline mt-3 mt-sm-0">
@@ -65,7 +65,7 @@ $args = wpas_get_view_data();
             <div class="row">
               <div class='col-sm-8 mb-3'>
                 <h4><?php pll_e('Really senior mentoring'); ?></h4>
-                <?php pll_e('All of our staff has 10+ years coding and holds senior possitions in Miami\'s tech industry'); ?>.
+                <?php pll_e('Each member of our teaching staff has over 10 years of coding experience and holds a \'Senior\' position in Miami\'s tech industry'); ?>.
               </div>
               <div class='col-sm-8 mb-3'>
                 <h4><?php pll_e('Top notch technology stack'); ?></h4>
@@ -93,7 +93,7 @@ $args = wpas_get_view_data();
                 <div class="steps-description">
                   <h5><?php pll_e('Duration: 2 wks'); ?></h5>
                   <?php pll_e('Starting with the basics: HTML5 + CSS3 + Javascript. We review the basics of coding and make sure we are all on the same page'); ?>.
-                  <h5><?php pll_e('Possible projects'); ?></h5>
+                  <h5><?php pll_e('Possible Projects'); ?></h5>
                   <?php pll_e('CSS Postcard, Minimal Instagram Version, etc.'); ?>
                 </div>
               </div>
@@ -103,7 +103,7 @@ $args = wpas_get_view_data();
                 <div class="steps-description">
                   <h5><?php pll_e('Duration: 2 wks'); ?></h5>
                   <?php pll_e('Think like a computer: Control the flow of your code, code algorithms, loop, use conditionals, webpack, the command line, SASS transpile, GIT, etc'); ?>.
-                  <h5><?php pll_e('Possible projects'); ?></h5>
+                  <h5><?php pll_e('Possible Projects'); ?></h5>
                   <?php pll_e('Instagram Application, Memory Card Game, Tic Tac Toe, Flapy Bird, etc.'); ?>
                 </div>
               </div>
@@ -149,7 +149,7 @@ $args = wpas_get_view_data();
             <div class="row">
               <div class='col-sm-12 col-md-10 mb-3'>
                 <p>
-                  <?php pll_e('Meet our team of highly trained developers, that currenlty hold senior positions in Miami\'s top tech industry companies'); ?>.
+                  <?php pll_e('Meet our team of highly trained developers – each of whom holds a Senior position at one of Miami\'s top tech industry companies'); ?>.
                 </p>
               </div>
             </div>
@@ -188,7 +188,7 @@ $args = wpas_get_view_data();
                       </div>
                       <div class="media-body">
                         <h5 class="media-heading"><?php pll_e(''); ?>Web Architect</h5>
-                        <?php pll_e('When people search for Senior Developers they are really looking for Web Architects: Understand HTTP properly, AJAX, APIs, POST, GET, HTTPS, Client vs Server, etc'); ?>.
+                        <?php pll_e('When companies seek Senior Developers, they are really looking for Web Architects: Understanding HTTP properly, AJAX, APIs, GET, Client vs Server, etc'); ?>.
                       </div>
                     </div>
                   </li>
@@ -210,7 +210,7 @@ $args = wpas_get_view_data();
                       </div>
                       <div class="media-body">
                         <h5 class="media-heading"><?php pll_e('Data Master'); ?></h5>
-                        <?php pll_e('There is more data and information every day, being able to manipulate that data its mandatory to create today\'s products.'); ?>.
+                        <?php pll_e('There is more data and information every day - being able to manipulate that data is mandatory to create products FOR TODAY'); ?>.
                       </div>
                     </div>
                   </li>
@@ -247,7 +247,7 @@ $args = wpas_get_view_data();
             <div class="row">
               <div class='col-sm-8 mb-3'>
                 <h5>
-                  <?php pll_e('Be proud, our graduates are capable of building incredible things in the most modern technologies.'); ?>
+                  <?php pll_e('Be proud! Our graduates are capable of realizing incredible ideas using the most modern technologies'); ?>.
                 </h5>
                 <div class="tech-icons">
                   <em class="techico icon-js"></em>

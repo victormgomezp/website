@@ -12,7 +12,7 @@
           <div class="col-8 col-md-6 mr-auto">
             <p class='section-message mt-sm-4 mt-md-0'>
               <?php pll_e('Part-time is more than a schedule. Building a methodology and content for part-time education has made us more flexible, tech-based and efficient.'); ?><br/>
-              <?php pll_e('All of our courses are part-time, in 3 hour classes 3 times a week'); ?>.
+              <?php pll_e('All of our courses are part-time, in 3-hour classes, 3 times a week'); ?>.
             </p>
           </div>
         </div>
