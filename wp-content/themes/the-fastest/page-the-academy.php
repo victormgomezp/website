@@ -25,7 +25,7 @@ $args = wpas_get_view_data();
             <?php pll_e('Campuses'); ?>
           </div>
           <div class="col-3 text-center">
-            <h3>250+</h3>
+            <h3>300+</h3>
             <?php pll_e('Graduates'); ?>
           </div>
           <div class="col-3 text-center">

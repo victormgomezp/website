@@ -7,8 +7,8 @@ $args = wpas_get_view_data();
       <div class="container mb-5">
         <div class="row text-white">
           <div class="col-md-10 mx-auto">
-            <h1 class="text-center text-white">Celebrate the <span class="underline">best price in town</span></h1>
-            <h4 class="text-center text-white">We didn't stop trying until we have mastered a real premium and affordable program.</h4>
+            <h1 class="text-center text-white"><?php pll_e('Celebrate the <span class="underline">best price in town</span>!'); ?></h1>
+            <h4 class="text-center text-white"><?php pll_e('We never stopped trying until we mastered a real premium but affordable program. Our philosophy is rooted in making coding education available to EVERYONE'); ?>.</h4>
           </div>
         </div>
       </div>
@@ -38,7 +38,7 @@ $args = wpas_get_view_data();
       <div class="container">
         <div class="row mb-4">
           <div class="col-md-6 mx-auto">
-            <h4 class='text-center'><?php pll_e('Pick your payment plan, no extra fees or hidden costs, everything is included'); ?>:</h4>
+            <h4 class='text-center'><?php pll_e('Pick your payment plan, no extra fees or hidden costs, everything is included'); ?></h4>
           </div>
         </div>
         <div class='row'>
@@ -86,7 +86,7 @@ $args = wpas_get_view_data();
                   <div class='col-12 mt-2'>
                     <div class="card card-block card-primary bg-light mb-3">
                   <div class="card-body">
-                    <p id="financing-details">Thanks to our partnership with Skillfund we have managed to create a new special payment plant <strong>starting at $135/mo</strong></p>
+                    <p id="financing-details"><?php pll_e('Thanks to our partnership with Skillfund we have managed to create a new special payment plant <strong>starting at $135/mo</strong>'); ?></p>
                   </div>
                 </div>
                   </div>

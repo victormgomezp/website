@@ -15,10 +15,13 @@ return array(
         "skills & modern technologies" => "skills & modern technologies",
         "Talent Tree" => "Talent Tree",
         "Complete challenges, projects and quizes to gain all the skills from our" => "Complete challenges, projects and quizes to gain all the skills from our",
-        "Learn an advanced stack of technologies, what companies are looking for" => "Learn an advanced stack of technologies, what companies are looking for",
+        "Learn an advanced stack of technologies to meet the demands that companies seek" => "Learn an advanced stack of technologies to meet the demands that companies seek",
         "Why do we teach this technologies?" => "Why do we teach this technologies?",
         "<strong>Javascript</strong> has 26x more job vacancys than <strong>Ruby On Rails</strong>. <strong>Python</strong> has 14x more job vacancys than <strong>Ruby On Rails</strong>" => "<strong>Javascript</strong> has 26x more job vacancys than <strong>Ruby On Rails</strong>. <strong>Python</strong> has 14x more job vacancys than <strong>Ruby On Rails</strong>",
+        "As a student, you will develop real-life projects similar to the most popular websites out there:" => "As a student, you will develop real-life projects similar to the most popular websites out there:",
         "Click here to check it out!" => "Click here to check it out!",
+        "4Geeks Academy and our students actively participate in Miami\'s top coding initiatives" => "4Geeks Academy and our students actively participate in Miami\'s top coding initiatives",
+        "Become prepared with all the desired skills and tools that our network of hiring partners is craving for:" => "Become prepared with all the desired skills and tools that our network of hiring partners is craving for:",
         "Download our Syllabus (PDF) and get all the details" => "Download our Syllabus (PDF) and get all the details",
         "Ace any job interview or code for your self" => "Ace any job interview or code for your self",
         "We know how typical coding interviews are, and what they will ask you to code (testing your skills). We've created and improved a series of in-class exercises and projects tailored to ace those tests. Here you can have a taste of the projects built by some of our students:" => "We know how typical coding interviews are, and what they will ask you to code (testing your skills). We've created and improved a series of in-class exercises and projects tailored to ace those tests. Here you can have a taste of the projects built by some of our students:",
@@ -50,13 +53,13 @@ return array(
     	"Starting with the basics: HTML5 + CSS3 + Javascript. We review the basics of coding and make sure we are all on the same page" => "Starting with the basics: HTML5 + CSS3 + Javascript. We review the basics of coding and make sure we are all on the same page",
     	"Become a Full-Stack Web Developer" => "Become a Full-Stack Web Developer",
     	"Data Master" => "Data Master",
-    	"There is more data and information every day, being able to manipulate that data its mandatory to create today's products" => "There is more data and information every day, being able to manipulate that data its mandatory to create today's products",
+    	"There is more data and information every day - being able to manipulate that data is mandatory to create products FOR TODAY" => "There is more data and information every day - being able to manipulate that data is mandatory to create products FOR TODAY",
     	"Logical Thinker" => "Logical Thinker",
     	"Think like a computer and create top-quality algorithms: Loops, conditionals, functions, variables, etc" => "Think like a computer and create top-quality algorithms: Loops, conditionals, functions, variables, etc",
     	"Search and Research" => "Search and Research",
     	"Most of the specs are poor and lack details. Sometimes the best developers are those that find examples faster than anyone. Learning to search key to success!" => "Most of the specs are poor and lack details. Sometimes the best developers are those that find examples faster than anyone. Learning to search key to success!",
     	"Technologies: Current and future most needed technolgies" => "Technologies: Current and future most needed technolgies",
-    	"Be proud, our graduates are capable of building incredible things in the most modern technologies" => "Be proud, our graduates are capable of building incredible things in the most modern technologies",
+    	"Be proud!  Our graduates are capable of realizing incredible ideas using the most modern technologies" => "Be proud!  Our graduates are capable of realizing incredible ideas using the most modern technologies",
     	"Pricing & Financing" => "Pricing & Financing",
     	"Upfront" => "Upfront",
     	"Payment Plan" => "Payment Plan",
@@ -68,7 +71,7 @@ return array(
     	"When people search for Senior Developers they are really looking for Web Architects: Understand HTTP properly, AJAX, APIs, POST, GET, HTTPS, Client vs Server, etc" => "When people search for Senior Developers they are really looking for Web Architects: Understand HTTP properly, AJAX, APIs, POST, GET, HTTPS, Client vs Server, etc",
     	"Develop the skills senior developers need to be successfull like the following" => "Develop the skills senior developers need to be successfull like the following",
     	"Skills: Be prepared for the next decade" => "Skills: Be prepared for the next decade",
-    	"Meet our team of highly trained developers, that currenlty hold senior positions at the City's tech industry" => "Meet our team of highly trained developers, that currenlty hold senior positions at the City's tech industry",
+    	"Meet our team of highly trained developers – each of whom holds a Senior position at one of Miami\'s top tech industry companies" => "Meet our team of highly trained developers – each of whom holds a Senior position at one of Miami\'s top tech industry companies",
     	"Receive training from Senior-only mentors" => "Receive training from Senior-only mentors",
     	"Download our syllabus PDF to get all the details" => "Download our syllabus PDF to get all the details",
     	"During this phase you will have to design, code, test and publish your own entire web application" => "During this phase you will have to design, code, test and publish your own entire web application",
@@ -81,28 +84,30 @@ return array(
     	"Create your first ReactJS|VUE|Angular application, MVC Pattern, JS Modules, Bundling, Webpack, The DOM, Events, AJAX" => "Create your first ReactJS application, MVC Pattern, JS Modules, Bundling, BabelJS, The DOM, Events, AJAX",
     	"Junior Applications" => "Junior Applications",
     	"Instagram Application, Memory Card Game, Tic Tac Toe, Flapy Bird, etc." => "Instagram Application, Memory Card Game, Tic Tac Toe, Flapy Bird, etc.",
-    	"Possible projects" => "Possible projects",
+    	"Possible Projects" => "Possible Projects",
     	"Think like a computer: Control the flow of your code, code algorithms, loop, use conditionals, webpack, the command line, SASS transpile, GIT, etc" => "Think like a computer: Control the flow of your code, code algorithms, loop, use conditionals, webpack, the command line, SASS transpile, GIT, etc",
     	"Duration: 2 wks" => "Duration: 2 wks",
+    	"Each member of our teaching staff has over 10 years of coding experience and holds a \'Senior\' position in Miami\'s tech industry" => 'Each member of our teaching staff has over 10 years of coding experience and holds a \'Senior\' position in Miami\'s tech industry',
     	"Learn To Code" => "Learn To Code",
     	"and increase your income significantly" => "and increase your income significantly",
     	"and join the workforce of the future" => "and join the workforce of the future",
     	"and re-launch your career" => "and re-launch your career",
-    	"build your own Tech Startup" => "build your own Tech Startup",
+    	"and build your own Tech Startup" => "and build your own Tech Startup",
     	"and join the Tech community" => "and join the Tech community",
     	"Request Syllabus" => "Request Syllabus",
     	"Coursera Clone, AirBNB Clone, Instagram Clone, YouTube Clone, etc" => "Coursera Clone, AirBNB Clone, Instagram Clone, YouTube Clone, etc",
-    	
+    	"When companies seek Senior Developers, they are really looking for Web Architects: Understanding HTTP properly, AJAX, APIs, GET, Client vs Server, etc" => "When companies seek Senior Developers, they are really looking for Web Architects: Understanding HTTP properly, AJAX, APIs, GET, Client vs Server, etc",
     	
 //	Pricing
     	"Or Extended Payment Plan" => "Or Extended Payment Plan",
     	"Using technology and building -from the ground up- our entire program we have managed to deliver a more affordable program" => "Using technology and building -from the ground up- our entire program we have managed to deliver a more affordable program",
-    	"Yes, we know... The best price in town" => "Yes, we know... The best price in town",
+    	"We never stopped trying until we mastered a real premium but affordable program. Our philosophy is rooted in making coding education available to EVERYONE" => "We never stopped trying until we mastered a real premium but affordable program. Our philosophy is rooted in making coding education available to EVERYONE",
     	"Pick your payment plan, no extra fees or hidden costs, everything is included" => "Pick your payment plan, no extra fees or hidden costs, everything is included",
     	"Enjoy the best price in town" => 'Enjoy the best price in town',
     	"Pay upfront now with no extra or hidden fees" => 'Pay upfront now with no extra or hidden fees',
     	"Any questions on the financing or extended payment?" => "Any questions on the financing or extended payment?",
     	"Click here to review our Payment Guidebook" => "Click here to review our Payment Guidebook",
+    	'Thanks to our partnership with Skillfund we have managed to create a new special payment plant <strong>starting at $135/mo</strong>' => 'Thanks to our partnership with Skillfund we have managed to create a new special payment plant <strong>starting at $135/mo</strong>',
 //	The Academy
 
         "Enabling future and current software builders to adapt to the needs of the real world" => "Enabling future and current software builders to adapt to the needs of the real world",
@@ -139,7 +144,7 @@ return array(
         
         "Let's Part-time" => "Let's Part-time",
         "Part-time is more than a schedule. Building a methodology and content for part-time education has made us more flexible, tech-based and efficient." => "Part-time is more than a schedule. Building a methodology and content for part-time education has made us more flexible, tech-based and efficient.",
-
+        "All of our courses are part-time, in 3-hour classes, 3 times a week" => "All of our courses are part-time, in 3-hour classes, 3 times a week",
 
 //Footer
         "Learn more" => "Learn more",
@@ -171,7 +176,7 @@ return array(
 //Blog
 
         "All Stories" => "All Stories",
-        "Resources, news for potencial and current software builders." => "Resources, news for potencial and current software builders.",
+        "Resources and news for both potential and current software builders" => "Resources and news for both potential and current software builders",
         "Featured" => "Featured",
         
 //404
