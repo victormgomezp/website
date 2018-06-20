@@ -13,7 +13,7 @@ $args = wpas_get_view_data();
             <h1 class="underline"><?php pll_e('Coding Introduction Course'); ?></h1>
             <h3>From nothing to real coding in just 2 weeks</h3>
             <div class="mt-3 mt-sm-4 mx-auto">
-              <a href="#syllabusModal"  data-toggle="modal" data-target="#syllabusModal" class='btn btn-lg btn-secondary mr-3'><?php pll_e('Request Syllabus'); ?></a>
+              <!--<a href="#syllabusModal"  data-toggle="modal" data-target="#syllabusModal" class='btn btn-lg btn-secondary mr-3'><?php pll_e('Request Syllabus'); ?></a>-->
               <a href="<?php echo get_permalink( get_page_by_path( wpas_pll_get_slug('apply') ) ); ?>" class='btn btn-lg btn-danger'><?php pll_e('Apply Now'); ?></a>
             </div>
             <!--<div class="partnership mt-5">-->
