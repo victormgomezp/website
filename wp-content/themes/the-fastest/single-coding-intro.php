@@ -145,7 +145,7 @@ $args = wpas_get_view_data();
             <div class="row">
               <div class='col-sm-8 mb-3'>
                 <h5>
-                  <?php pll_e('Develop the skills senior developers need to be successfull like the following'); ?>.
+                  <?php pll_e('The course focuses in the 2 most important skills to start coding:'); ?>.
                 </h5>
                 <ul class="list-group">
                   <li class="list-group-item">
@@ -154,8 +154,8 @@ $args = wpas_get_view_data();
                         <?php wpas_get_inline_svg('assets/icons/inline','dynamicwebsites.svg'); ?>
                       </div>
                       <div class="media-body">
-                        <h5 class="media-heading"><?php pll_e('Dynamic Websties'); ?></h5>
-                        <?php pll_e('HTML5 and CSS are only the top of the iceberg, todays websites use JS, React, Webpack, Python, django, Mongo and hundreds of technologies'); ?>.
+                        <h5 class="media-heading"><?php pll_e('Build Websties with HTML and CSS'); ?></h5>
+                        <?php pll_e('In web development, everything start on HTML and CSS, learn how to create static websites with these two technologies'); ?>.
                       </div>
                     </div>
                   </li>
@@ -166,7 +166,7 @@ $args = wpas_get_view_data();
                       </div>
                       <div class="media-body">
                         <h5 class="media-heading"><?php pll_e('Logical Thinker'); ?></h5>
-                        <?php pll_e('Think like a computer and create top-quality algorithms: Loops, conditionals, functions, variables, etc'); ?>.
+                        <?php pll_e('Think like a computer and create top-quality algorithms: Loops, conditionals, functions, variables, etc. Create algorithms to generate dynamic HTML & CSS'); ?>.
                       </div>
                     </div>
                   </li>
@@ -175,25 +175,34 @@ $args = wpas_get_view_data();
             </div>
           </div>
         </div>
-        <div id="technologies" class="row">
-          <div class="col-md-9 ml-auto">
-            <h2 class="section-heading text-black mb-3"><?php pll_e('Technologies: Current and future most needed technolgies'); ?>.</h2>
-            <div class="row">
-              <div class='col-sm-8 mb-3'>
-                <h5>
-                  <?php pll_e('Be proud, our graduates are capable of building incredible things in the most modern technologies.'); ?>
-                </h5>
-                <div class="tech-icons">
-                  <em class="techico icon-js"></em>
-                  <em class="techico icon-wordpress"></em>
-                  <em class="techico icon-react"></em>
-                  <em class="techico icon-git-squared"></em>
-                  <em class="techico icon-database"></em>
-                  <em class="techico icon-babel"></em>
-                  <em class="techico icon-sass"></em>
-                </div>
-              </div>
-            </div>
+      </div>
+    </section>
+    <section class="bg-light text-black upcoming-courses pt-5 pb-5">
+      <div class="container">
+        <div class="row">
+          <div class="col-12">
+              <div class="row">
+                <div class="col-md-9 ml-auto">
+                  <h2 class="section-heading text-black mb-4 mt-2"><?php pll_e('Calendar: A new cohort starts every 8 weeks'); ?></h2>
+                  <?php pll_e('Pick the date that most acomodates to your schedule and start your career with a very small investment or even for free!'); ?>
+  						  </div>
+  						</div>
+              <div class="row">
+                <?php if(!empty($args['upcoming-cohorts'])) foreach($args['upcoming-cohorts'] as $course){ ?>
+  							<div class="col-md-9 ml-auto">
+  							  <div class="media">
+                      <div class="media-body text-left">
+                        <h4 class="card-title">
+                          <a href="<?php echo get_permalink($course['id']); ?>">
+                            <?php echo $course['name']; ?>
+                          </a>
+                        </h4>
+                        <p class="card-text"><?php wpas_get_inline_svg('assets/icons/inline','calendarstroke.svg'); ?> <?php echo $course['day']; ?> <?php echo $course['month']; ?>, <?php echo $course['year']; ?> <span class="imoon icon-location"></span> <?php echo $course['location']; ?></p>
+                      </div>
+                  </div>
+  							</div>
+                <?php } ?>
+  						</div>
           </div>
         </div>
       </div>
@@ -207,23 +216,23 @@ $args = wpas_get_view_data();
                 <div class='col-6 ml-auto upfront'>
                   <div class="card card-block card-primary card-inverse bg-light">
                     <div class="card-body">
-                      <h4 class="card-title m-0"><?php pll_e('Upfront'); ?></h4>
-                      <h3 class="card-text">$3,405</h3>
+                      <h4 class="card-title m-0"><?php pll_e('Right now'); ?></h4>
+                      <h3 class="card-text">$400</h3>
                     </div>
                   </div>
                 </div>
                 <div class='col-6 mr-auto'>
                   <div class="card card-block card-primary card-inverse bg-light">
                     <div class="card-body">
-                      <h4 class="card-title m-0"><?php pll_e('Payment Plan'); ?></h4>
-                      <h5 class="card-text"><?php pll_e('Split your balance in two separate payments'); ?></h5>
+                      <h4 class="card-title m-0"><?php pll_e('Every 8 Weeks'); ?></h4>
+                      <h3 class="card-text">FREE</h3>
                     </div>
                   </div>
                 </div>
               </div>
               <div class='row'>
                 <div class='col-md-10 mx-auto text-center'>
-                  <p class='section-message'><?php pll_e('We are working hard on developing new payment options and we have several types of scolarships available for this program.'); ?>.</p>
+                  <p class='section-message'><?php pll_e('You can sign up'); ?>.</p>
                   <a href="<?php echo get_permalink( get_page_by_path( wpas_pll_get_slug('apply') ) ); ?>" class="btn btn-danger btn-lg"><?php pll_e('Apply to the program'); ?></a>
                 </div>
               </div>

@@ -24,7 +24,6 @@
                 "maracaibo-venezuela": "maracaibo-venezuela",
                 "el-rosal-caracas": "el-rosal-caracas",
                 "downtown-miami": "downtown-miami",
-                "": "",
                 "bbc-lincoln-road-miami-beach": "bbc-lincoln-road-miami-beach",
                 "bbc-brickell-miami": "bbc-brickell-miami",
                 "mdc-little-havana": "mdc-little-havana",
@@ -83,9 +82,16 @@
                 "class": "",
                 "id": ""
             },
-            "choices": [
-                "Select a slug from breathecode"
-            ],
+            "choices": {
+                "0": "Select a slug from breathecode",
+                "impact-hub": "Impact Hub (impact-hub)",
+                "maracaibo": "Maracaibo (maracaibo)",
+                "el-nacional": "El Nacional (el-nacional)",
+                "mdc": "MDC (mdc)",
+                "black-belt-coding": "Black Belt Coding (black-belt-coding)",
+                "el-rosal": "El Rosal (el-rosal)",
+                "downtown-miami": "Downtown Miami (downtown-miami)"
+            },
             "default_value": [
 
             ],
@@ -102,7 +108,7 @@
             "name": "location_map",
             "type": "textarea",
             "instructions": "Insert your iframe tag, for exampe: <iframe width=\"600\" height=\"450\" frameborder=\"0\" style=\"border:0\"\r\nsrc=\"https:\/\/www.google.com\/maps\/embed\/v1\/place?q=place_id:ChIJTaQ625u22YgREyc1xz2XXGc&key=...\" allowfullscreen><\/iframe>",
-            "required": 1,
+            "required": 0,
             "conditional_logic": 0,
             "wrapper": {
                 "width": "",
@@ -239,5 +245,5 @@
     ],
     "active": 1,
     "description": "",
-    "modified": 1519771510
+    "modified": 1529527856
 }

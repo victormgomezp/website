@@ -253,12 +253,15 @@ class ThemeAdminSettings {
         if($cohortsJSON)
         {
             $cohorts = json_decode($cohortsJSON);
+            
             $upcoming = [];
             if($cohorts && $cohorts->code==200){
             	foreach($cohorts->data as $c){
             		if($c->stage == 'not-started'){
 	            		$cohort = CoursePostType::getDateInformation($c);
-
+						// if($c->slug == 'mia-prework-i'){
+						// 	print_r($cohort);die();
+						// }
 	            		if($cohort['time'] > time()){
 	            			$upcoming[] = $cohort;
 	            		} 
