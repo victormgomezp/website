@@ -1,7 +1,7 @@
 <?php
 
     require_once './vendor/autoload.php';
-    require_once './tests/utils.php';
+    require_once './hooks/utils.php';
     
     use ZendDiagnostics\Check;
     use ZendDiagnostics\Runner\Runner;
