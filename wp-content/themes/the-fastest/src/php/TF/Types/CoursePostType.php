@@ -74,7 +74,7 @@ class CoursePostType extends BasePostType{
         $course['date'] = date('F j, Y',$time);
         $course['bc_location_slug'] = $cohort['location_slug'];
         $course['bc_profile_slug'] = $cohort['profile_slug'];
-        $course['status'] = $cohort['status'];
+        $course['status'] = $cohort['stage'];
         $course['time'] = $time;
         $course['language'] = ($cohort['language']=='en') ? 'English' : 'Español';
         $course['icon'] = ($cohort['language']=='en') ? 'united-states' : 'spain';
@@ -159,6 +159,38 @@ class CoursePostType extends BasePostType{
         $cohorts = self::getUpcomingDates($query);
         if(!empty($cohorts)) return $cohorts[0];
         else return null;
+    }
+    
+    public static function getCohortsFromAPI(){
+	    $cohortsJSON = file_get_contents(BREATHECODE_API_HOST.'/cohorts/');
+        if($cohortsJSON)
+        {
+            $cohorts = json_decode($cohortsJSON);
+            
+            $upcoming = [];
+            if($cohorts && $cohorts->code==200){
+            	foreach($cohorts->data as $c){
+            		if($c->stage == 'not-started'){
+	            		$cohort = CoursePostType::getDateInformation($c);
+						// if($c->slug == 'mia-prework-i'){
+						// 	print_r($cohort);die();
+						// }
+	            		if($cohort['time'] > time()){
+	            			$upcoming[] = $cohort;
+	            		} 
+            		}
+            	} 
+            }
+            
+            //print_r($cohorts->data); die();
+            //Sort 
+			usort($upcoming, function( $a, $b ) {
+			    return $a["time"] - $b["time"];
+			});
+
+            return $upcoming;
+        }
+        return null;
     }
     
 }

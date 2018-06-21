@@ -249,60 +249,15 @@ class ThemeAdminSettings {
 	}
 	
 	private function syncCohorts($inputId){
-	    $cohortsJSON = file_get_contents(BREATHECODE_API_HOST.'/cohorts/');
-        if($cohortsJSON)
-        {
-            $cohorts = json_decode($cohortsJSON);
-            
-            $upcoming = [];
-            if($cohorts && $cohorts->code==200){
-            	foreach($cohorts->data as $c){
-            		if($c->stage == 'not-started'){
-	            		$cohort = CoursePostType::getDateInformation($c);
-						// if($c->slug == 'mia-prework-i'){
-						// 	print_r($cohort);die();
-						// }
-	            		if($cohort['time'] > time()){
-	            			$upcoming[] = $cohort;
-	            		} 
-            		}
-            	} 
-            }
-            
-            //print_r($cohorts->data); die();
-            //Sort 
-			usort($upcoming, function( $a, $b ) {
-			    return $a["time"] - $b["time"];
-			});
-
-            WPASThemeSettingsBuilder::setThemeOption($inputId,$upcoming);
-        }
+        $upcoming = CoursePostType::getCohortsFromAPI();
+		if($upcoming) WPASThemeSettingsBuilder::setThemeOption($inputId,$upcoming);
+        WPASThemeSettingsBuilder::setThemeOption($inputId,$upcoming);
 	}
 	
 	private function syncEvents($inputId){
-	    $eventsJSON = file_get_contents(BREATHECODE_ASSETS_HOST.'/apis/event/all');
-        if($eventsJSON)
-        {
-            $events = json_decode($eventsJSON);
-
-            //print_r($events); die();
-
-            $upcoming = [];
-            if($events){
-            	foreach($events as $w){
-            		$event = EventPostType::getDateInformation($w);
-            		if($event['time'] > time()) $upcoming[] = $event;
-            	} 
-            }
-            
-            //print_r($events); die();
-            //Sort 
-			usort($upcoming, function( $a, $b ) {
-			    return $a["time"] - $b["time"];
-			});
-
-            WPASThemeSettingsBuilder::setThemeOption($inputId,$upcoming);
-        }
+        $upcoming = EventPostType::getEventsFromAPI();
+		if($upcoming) WPASThemeSettingsBuilder::setThemeOption($inputId,$upcoming);
+		else echo "Error when trying to sync the events";
 	}
 	
 	private function syncProfiles($inputId){

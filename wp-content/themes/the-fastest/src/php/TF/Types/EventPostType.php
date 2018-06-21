@@ -191,4 +191,32 @@ class EventPostType extends BasePostType{
         
         return "";
     }
+    
+    public static function getEventsFromAPI(){
+	    $eventsJSON = file_get_contents(BREATHECODE_ASSETS_HOST.'/apis/event/all');
+        if($eventsJSON)
+        {
+            $events = json_decode($eventsJSON);
+
+            //print_r($events); die();
+
+            $upcoming = [];
+            if($events){
+            	foreach($events as $w){
+            		$event = self::getDateInformation($w);
+            		if($event['time'] > time()) $upcoming[] = $event;
+            	} 
+            }
+            
+            //print_r($events); die();
+            //Sort 
+			usort($upcoming, function( $a, $b ) {
+			    return $a["time"] - $b["time"];
+			});
+
+            return $upcoming;
+        }
+        
+        return null;
+    }
 }

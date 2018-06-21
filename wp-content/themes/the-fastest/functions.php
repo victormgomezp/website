@@ -123,7 +123,8 @@
     $api->get(['path' => '/events', 'controller' => 'APIController:getAllEvents']);
     $api->get(['path' => '/locations', 'controller' => 'APIController:getAllLocations']);
     $api->get(['path' => '/courses', 'controller' => 'APIController:getAllCourses']);
-    $api->get(['path' => '/workshops', 'controller' => 'APIController:getAllWorkshops']);
+    $api->get(['path' => '/hook/sync_events', 'controller' => 'APIController:syncEvents']);
+    $api->get(['path' => '/hook/sync_cohorts', 'controller' => 'APIController:syncCohorts']);
     
     
     use \WPAS\Types\PostTypesManager;
