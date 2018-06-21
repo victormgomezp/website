@@ -5,7 +5,7 @@ namespace TF;
 use \WPAS\Settings\WPASThemeSettingsBuilder;
 
 use TF\Types\CoursePostType;
-use TF\Types\WorkshopPostType;
+use TF\Types\EventPostType;
 
 class ThemeAdminSettings {
 	
@@ -184,16 +184,16 @@ class ThemeAdminSettings {
 				],
 				[
 				    'type' => 'button', 
-				    'label' => 'Sync Workshops',
-				    'id' => 'sync-bc-workshops-api',
-				    'name' => 'sync-bc-workshops-api',
+				    'label' => 'Sync Events',
+				    'id' => 'sync-bc-events-api',
+				    'name' => 'sync-bc-events-api',
 					'description' => function(){
-					    $workshops = WPASThemeSettingsBuilder::getThemeOption('sync-bc-workshops-api');
+					    $events = WPASThemeSettingsBuilder::getThemeOption('sync-bc-events-api');
 					    
-					    if(empty($workshops)) echo 'No workshops downloaded';
-					    else $this->printTableFromArray($workshops,function($wkshp){
-					    	if(empty($wkshp['slug'])) return $wkshp['date'] .' : <span style="background: #ef7c7c; padding: 2px; color: white; font-size: 80%;">Missing Information: '.$wkshp['bc_wtemplate_slug'].'</span>';
-					    	else return $wkshp['date'] .' : '.$wkshp['name'].' @ '.$wkshp['location'].' ('.$wkshp['language'].')';
+					    if(empty($events)) echo 'No events downloaded';
+					    else $this->printTableFromArray($events,function($wkshp){
+					    	if(empty($wkshp['type'])) return $wkshp['date'] .' : <span style="background: #ef7c7c; padding: 2px; color: white; font-size: 80%;">Missing Information: '.$wkshp['type'].'</span>';
+					    	else return "- ".$wkshp['date'] .' : '.$wkshp['name'].' @ '.$wkshp['location'].' ('.$wkshp['language'].')';
 					    });
 					}
 				]
@@ -232,7 +232,7 @@ class ThemeAdminSettings {
 	    switch($inputId)
 	    {
             case 'sync-bc-cohorts-api': $this->syncCohorts($inputId); break;
-            case 'sync-bc-workshops-api': $this->syncWorkshops($inputId); break;
+            case 'sync-bc-events-api': $this->syncEvents($inputId); break;
             case 'sync-bc-profiles-api': $this->syncProfiles($inputId); break;
 	    }
 	}
@@ -253,12 +253,15 @@ class ThemeAdminSettings {
         if($cohortsJSON)
         {
             $cohorts = json_decode($cohortsJSON);
+            
             $upcoming = [];
             if($cohorts && $cohorts->code==200){
             	foreach($cohorts->data as $c){
             		if($c->stage == 'not-started'){
 	            		$cohort = CoursePostType::getDateInformation($c);
-
+						// if($c->slug == 'mia-prework-i'){
+						// 	print_r($cohort);die();
+						// }
 	            		if($cohort['time'] > time()){
 	            			$upcoming[] = $cohort;
 	            		} 
@@ -276,21 +279,23 @@ class ThemeAdminSettings {
         }
 	}
 	
-	private function syncWorkshops($inputId){
-	    $workshopsJSON = file_get_contents(BREATHECODE_ASSETS_HOST.'/events/');
-        if($workshopsJSON)
+	private function syncEvents($inputId){
+	    $eventsJSON = file_get_contents(BREATHECODE_ASSETS_HOST.'/apis/event/all');
+        if($eventsJSON)
         {
-            $workshops = json_decode($workshopsJSON);
-            //print_r($cohorts); die();
+            $events = json_decode($eventsJSON);
+
+            //print_r($events); die();
+
             $upcoming = [];
-            if($workshops && $workshops->code==200){
-            	foreach($workshops->data as $w){
-            		$workshop = WorkshopPostType::getDateInformation($w);
-            		if($workshop['time'] > time()) $upcoming[] = $workshop;
+            if($events){
+            	foreach($events as $w){
+            		$event = EventPostType::getDateInformation($w);
+            		if($event['time'] > time()) $upcoming[] = $event;
             	} 
             }
             
-            //print_r($workshops->data); die();
+            //print_r($events); die();
             //Sort 
 			usort($upcoming, function( $a, $b ) {
 			    return $a["time"] - $b["time"];

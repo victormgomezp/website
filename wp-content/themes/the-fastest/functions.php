@@ -132,12 +132,11 @@
         'namespace'=>'\TF\Types\\'
         ]);
     $postTypeManager->newType(['type'=>'course', 'class' => 'CoursePostType'])->register();
-    $postTypeManager->newType(['type'=>'workshop', 'class' => 'WorkshopPostType'])->register();
     $postTypeManager->newType(['type'=>'location', 'class' => 'LocationPostType'])->register();
     $postTypeManager->newType(['type'=>'team-member', 'class' => 'TeamMemberPostType'])->register();
     $postTypeManager->newType(['type'=>'testimonial', 'class' => 'TestimonialPostType'])->register();
     $postTypeManager->newType(['type'=>'job', 'class' => 'JobPostType'])->register();
-    $postTypeManager->newType(['type'=>'event', 'class' => 'EventPostType'])->register();
+//    $postTypeManager->newType(['type'=>'event', 'class' => 'EventPostType'])->register();
     $postTypeManager->newType(['type'=>'landing', 'class' => 'LandingPostType'])->register();
     $postTypeManager->newType(['type'=>'partner', 'class' => 'PartnerPostType'])->register();
     

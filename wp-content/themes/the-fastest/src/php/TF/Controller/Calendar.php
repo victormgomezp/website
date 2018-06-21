@@ -18,18 +18,14 @@ class Calendar{
         $args['locations'] = LocationPostType::all();
         
         if(!empty($_GET['type'])){
-            if($_GET['type']=='event'){
-                $args['selected_type'] = 'event';
-                $args['events'] = EventPostType::getUpcomingEvents();
-            } 
-            else if($_GET['type']=='workshop'){
-                $args['selected_type'] = 'workshop';
-                $args['workshops'] = WorkshopPostType::getUpcomingWorkshops();
-            } 
-            else if($_GET['type']=='course'){
+            if($_GET['type']=='course'){
                 $args['selected_type'] = 'course';
                 $args['courses'] = CoursePostType::getUpcomingDates();
-            } 
+            }
+            else{
+                $args['selected_type'] = $_GET['type'];
+                $args['events'] = EventPostType::getUpcomingEvents();
+            }
         } 
         else{
             $args['selected_type'] = 'course';
@@ -50,7 +46,7 @@ class Calendar{
         $query = [];
         if(!empty($_GET['type']))
         {
-            if($_GET['type'] == 'event') $query = CoursePostType::getCalendarQuery();
+            if($_GET['type'] != 'course') $query = EventPostType::getCalendarQuery();
             else  $query = CoursePostType::getCalendarQuery();
             $query['type'] = $_GET['type'];
         }
