@@ -132,10 +132,15 @@ function fillUpcomingEvent(event){
    modal.find('.month').html(event.month);
    modal.find('.year').html(event.year);
    
-   modal.find('.event-title').html(event.post_title);
-   modal.find('.event-details').html(event.event_start_time + " " + event.event_end_time + ' at <span class="imoon icon-location"></span> ' + event.address);//3:30pm - at Starthub, Downtown Miami
-   modal.find('.event-description').html(event.post_content);
+   modal.find('.event-title').html(event.name);
+   modal.find('.event-details').html('<span class="imoon icon-location"></span>' + event.address);//3:30pm - at Starthub, Downtown Miami
    
-   modal.find('.btn-danger').attr('href',event.ticket_url);
+   
+   var maxLength = 350; // maximum number of characters to extract
+   var trimmedString = event.description.substr(0, maxLength);//trim the string to the maximum length
+   trimmedString = trimmedString.substr(0, Math.min(trimmedString.length, trimmedString.lastIndexOf(".")));//re-trim if we are in the middle of a word
+   modal.find('.event-description').html(trimmedString+'.');
+   
+   modal.find('.btn-danger').attr('href',event.url);
    
 }

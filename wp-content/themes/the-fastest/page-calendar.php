@@ -122,22 +122,22 @@ $args = wpas_get_view_data();
                 <div class="text-left pb-0">
                   <div class="row">
                     <div class="col-12 col-sm-8">
-                      <h3 class="media-heading mt-0"><a href="<?php echo $event['ticket_url']; ?>"><?php echo $event['post_title']; ?></a></h3>
-                      <p class='d-block d-sm-inline mb-0'><strong>Starts: <?php echo $event['event_start_time']; ?></strong></p>
+                      <h3 class="media-heading mt-0"><a href="<?php echo $event['url']; ?>"><?php echo $event['name']; ?></a></h3>
+                      <!--<p class='d-block d-sm-inline mb-0'><strong>Starts: <?php echo $event['event_start_time']; ?></strong></p>-->
                       <p class='d-block d-sm-inline mt-0'>
                           <strong>
                             at <span class="imoon icon-location"></span> 
                             <a href="<?php echo get_permalink($course['location_id']); ?>"><?php echo $event['address']; ?></a>
                           </strong>
                       </p> 
-                      <p><?php echo $event['post_content']; ?></p>
+                      <p><?php echo $event['excerpt']; ?></p>
                     </div>
                     <div class="col-12 col-sm-4 text-right-sm text-center">
                         <span class="course-date">
                           <?php wpas_get_inline_svg('assets/icons/inline','calendarstroke.svg'); ?> 
                           <?php echo $event['day']; ?> <?php echo $event['month']; ?>, <?php echo $event['year']; ?>
                         </span>
-                        <a href="<?php echo $event['ticket_url']; ?>" class="btn btn-secondary mt-3 mb-3 text-white">Learn more</a>
+                        <a href="<?php echo $event['url']; ?>" class="btn btn-secondary mt-3 mb-3 text-white">Learn more</a>
                     </div>
                   </div>
                 </div>

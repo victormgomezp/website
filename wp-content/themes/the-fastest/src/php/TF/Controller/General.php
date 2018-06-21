@@ -246,7 +246,7 @@ class General{
     public function get_upcoming_event(){
         
         $events = EventPostType::getUpcomingEvents();
-
+        //debug($events);
         if(count($events)>0) WPASController::ajaxSuccess($events[0]);
         else WPASController::ajaxError('No upcoming events');
         

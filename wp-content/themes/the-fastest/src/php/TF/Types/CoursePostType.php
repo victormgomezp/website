@@ -112,6 +112,7 @@ class CoursePostType extends BasePostType{
     
     private static function filterQuery($cohort, $query){
 
+        if($cohort['bc_profile_slug'] == 'coding-introduction') return false;
         if(!empty($query['language']) && strtolower(substr($cohort['language'],0,2)) != $query['language']) return false;
         if(!empty($query['location']) && $cohort['bc_location_slug'] != $query['location']) return false;
         if(!empty($query['profile']) && $cohort['bc_profile_slug'] != $query['profile']) return false;
@@ -148,6 +149,10 @@ class CoursePostType extends BasePostType{
         if(get_post_type() == 'course') 
         {
             $query['profile'] = get_field('breathecode_course_slug',get_the_ID());
+        }
+        else if(get_post_type() == 'location') 
+        {
+            $query['location'] = get_field('breathecode_location_slug',get_the_ID());
         }
         else $query = null;
         

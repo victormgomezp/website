@@ -268,7 +268,7 @@
                     <div class="col-9 col-lg-10">
                         <h3 class='event-title'>Loading...</h3>
                         <h5 class='event-details'></h5>
-                        <p class='event-description'></p>
+                        <p class='event-description pr-3'></p>
                     </div>
                 </div>
                 <div class="row">
