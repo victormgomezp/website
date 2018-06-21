@@ -104,4 +104,4 @@ node_modules/
 !package.json
 !webpack.production.js
 !webpack.development.js
-!tests/
+!hooks/
