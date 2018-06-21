@@ -125,6 +125,7 @@
     $api->get(['path' => '/courses', 'controller' => 'APIController:getAllCourses']);
     $api->get(['path' => '/hook/sync_events', 'controller' => 'APIController:syncEvents']);
     $api->get(['path' => '/hook/sync_cohorts', 'controller' => 'APIController:syncCohorts']);
+    $api->get(['path' => '/hook/sync_profiles', 'controller' => 'APIController:syncProfiles']);
     
     
     use \WPAS\Types\PostTypesManager;

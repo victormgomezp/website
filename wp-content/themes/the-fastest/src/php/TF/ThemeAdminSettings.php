@@ -261,18 +261,9 @@ class ThemeAdminSettings {
 	}
 	
 	private function syncProfiles($inputId){
-	    $profilesJSON = file_get_contents(BREATHECODE_API_HOST.'/profiles/');
-        if($profilesJSON)
-        {
-            $profiles = json_decode($profilesJSON);
-            //print_r($profiles); die();
-            $upcoming = [];
-            if($profiles && $profiles->code==200) foreach($profiles->data as $p) {
-                $upcoming[] = (array) $p;
-            }
-
-            WPASThemeSettingsBuilder::setThemeOption($inputId,$upcoming);
-        }
+        $upcoming = CoursePostType::getProfilesFromAPI();
+		if($upcoming) WPASThemeSettingsBuilder::setThemeOption($inputId,$upcoming);
+        WPASThemeSettingsBuilder::setThemeOption($inputId,$upcoming);
 	}
 	
 	function render_activecampaign_tab($tab){

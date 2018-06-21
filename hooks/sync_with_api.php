@@ -14,6 +14,7 @@
     
     $runner->addCheck(checkURL($publicURL.'/wp-json/4g/v1/hook/sync_events', '"status":"ok","code":200'));
     $runner->addCheck(checkURL($publicURL.'/wp-json/4g/v1/hook/sync_cohorts', '"status":"ok","code":200'));
+    $runner->addCheck(checkURL($publicURL.'/wp-json/4g/v1/hook/sync_profiles', '"status":"ok","code":200'));
     //$runner->addCheck(checkURL($publicURL.'/course/coding-introduction/', 'acelerar tu carrera como programador'));
     
     // TODO: check the website forms

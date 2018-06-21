@@ -193,4 +193,20 @@ class CoursePostType extends BasePostType{
         return null;
     }
     
+    public static function getProfilesFromAPI(){
+	    $profilesJSON = file_get_contents(BREATHECODE_API_HOST.'/profiles/');
+        if($profilesJSON)
+        {
+            $profiles = json_decode($profilesJSON);
+            //print_r($profiles); die();
+            $upcoming = [];
+            if($profiles && $profiles->code==200) foreach($profiles->data as $p) {
+                $upcoming[] = (array) $p;
+            }
+
+            return $upcoming;
+        }
+        return null;
+    }
+    
 }

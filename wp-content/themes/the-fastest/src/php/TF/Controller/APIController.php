@@ -43,4 +43,14 @@ class APIController{
         ];
     }
     
+    public function syncProfiles(){
+        $upcoming = CoursePostType::getProfilesFromAPI();
+        WPASThemeSettingsBuilder::setThemeOption('sync-bc-profiles-api',$upcoming);
+        return [
+            "status" => "ok",
+            "code" => 200,
+            "data" => $upcoming
+        ];
+    }
+    
 }
