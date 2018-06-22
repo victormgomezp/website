@@ -62,7 +62,7 @@ class ThemeAdminSettings {
 					'description' => 'Full URL'
 				]
 			];
-
+		
 		$activeCampaignFields = [
 				[
 				    'type' => 'text', 

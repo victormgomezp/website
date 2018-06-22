@@ -11,10 +11,10 @@ $args = wpas_get_view_data();
         <div class="row heading-row">
           <div class="col-sm-10 mx-auto text-center text-white">
             <h1 class="underline"><?php pll_e('Coding Introduction Course'); ?></h1>
-            <h3>From nothing to real coding in just 2 weeks</h3>
+            <h3><?php pll_e('From nothing to real coding in just 2 weeks'); ?></h3>
             <div class="mt-3 mt-sm-4 mx-auto">
-              <a href="<?php echo get_permalink( get_page_by_path( wpas_pll_get_slug('coding-introduction-signup') ) ); ?>" class='btn btn-lg btn-danger'><?php pll_e('Sign Up Now'); ?></a>
-              or <a href="#freeCodingIntroModal"  data-toggle="modal" data-target="#freeCodingIntroModal" class='btn btn-lg btn-secondary mr-3'><?php pll_e('Apply for free access'); ?></a>
+              <a href="<?php echo get_permalink( get_page_by_path( wpas_pll_get_slug('coding-introduction-signup') ) ); ?>" class='btn btn-lg btn-danger'><?php pll_e('Sign Up'); ?></a>
+              <!--or <a href="#freeCodingIntroModal"  data-toggle="modal" data-target="#freeCodingIntroModal" class='btn btn-lg btn-secondary mr-3'><?php //pll_e('Apply for free access'); ?></a>-->
             </div>
             <!--<div class="partnership mt-5">-->
             <!--  <p>In partnership with</p>-->
@@ -54,23 +54,23 @@ $args = wpas_get_view_data();
                 <a class="nav-link disabled" href="#pricing"><?php pll_e('Pricing'); ?></a>
               </li>
               <li class="nav-item">
-                <a href="<?php echo get_permalink( get_page_by_path( wpas_pll_get_slug('apply') ) ); ?>" class='btn btn-danger'><?php pll_e('Apply Now'); ?></a>
+                <a href="<?php echo get_permalink( get_page_by_path( wpas_pll_get_slug('coding-introduction-signup') ) ); ?>" class='btn btn-danger'><?php pll_e('Sign Up'); ?></a>
               </li>
             </ul>
           </div>
           <div id="program-details" class="col-md-9 ml-auto">
-            <h2 class="section-heading text-black mb-2"><?php pll_e("Whom should take this course?"); ?></h2>
+            <h2 class="section-heading text-black mb-2"><?php pll_e("Who should take this course?"); ?></h2>
             <div class="row">
               <div class='col-sm-8 mb-3'>
                 <?php pll_e("Someone with little or no coding skills, it's the ideal introduction for doing web development, allowing students to create small websites and start mastering real coding skills like looping, conditionals, etc."); ?>.
               </div>
               <div class='col-sm-8 mb-3'>
-                <h4>Segue to full-stack</h4>
-                <?php pll_e("By the end of this small course you will be already making your first real websites and ready to jump to the more complete full-stack web development course."); ?>.
+                <h4><?php pll_e("Segue to full-stack"); ?></h4>
+                <?php pll_e("By the end of this small course you will be already making your first real websites and ready to jump to the more complete full-stack web development course"); ?>.
               </div>
             </div>
             <h5 class="mb-4">
-              <span class="text-orange">[ </span><span class="text-blue"><?php pll_e('230+ hrs of lessons, 3 times a week during 14 weeks'); ?>.</span> <span class="text-orange">]</span>
+              <span class="text-orange">[ </span><span class="text-blue"><?php pll_e('150+ hrs of lessons, 1 class per week during up to 4 weeks'); ?>.</span> <span class="text-orange">]</span>
             </h5>
           </div>
         </div>
@@ -88,9 +88,9 @@ $args = wpas_get_view_data();
                 <h3 class="steps-name"><?php pll_e('Your first website'); ?></h3>
                 <div class="steps-description">
                   <h5><?php pll_e('Duration: 1 week'); ?></h5>
-                  <?php pll_e('Start coding since the first minute, use HTML&CSS to build a couple of small website including an instagram simulation '); ?>.
+                  <?php pll_e('Start coding since the first minute, use HTML&CSS to build a couple of small website including an instagram simulation'); ?>.
                   <h5><?php pll_e(''); ?></h5>
-                  <?php pll_e('Understand the workflow of coding websites, learn best practices and master the most important Layout, CSS and HTML Skills.'); ?>
+                  <?php pll_e('Understand the workflow of coding websites, learn best practices and master the most important Layout, CSS and HTML Skills'); ?>.
                 </div>
               </div>
               <div class="steps">
@@ -100,7 +100,7 @@ $args = wpas_get_view_data();
                   <h5><?php pll_e('Duration: 1 week'); ?></h5>
                   <?php pll_e('Think like a computer: Control the flow of your code, code algorithms, loop, use conditionals, and combin Javascript with HTML&CSS to create your first interactive websites'); ?>.
                   <h5><?php pll_e('Possible projects'); ?></h5>
-                  <?php pll_e('TicTactToe, Random Card Generator, Landing Page, etc.'); ?>
+                  <?php pll_e('Small interactive websites and games'); ?>
                 </div>
               </div>
             </div>
@@ -128,11 +128,12 @@ $args = wpas_get_view_data();
                   <?php pll_e('4Geeks Academy students receive a lot of benefits, and even though the course is designed to be 99% online, you will also have the following student benefits while taking the course:'); ?>.
                 </p>
                 <ul>
-                  <li><?php pll_e('Free access to most of the academy events, talks and workshops'); ?></li>
-                  <li><?php pll_e('Office hour access to our co-working location to work on the assignments, projects, etc.'); ?></li>
-                  <li><?php pll_e('Full access to the Coding Weekends'); ?></li>
-                  <li><?php pll_e('The academy slack'); ?></li>
-                  <li><?php pll_e('Event free personal mentorships from any of the academy instructors during the weekends'); ?></li>
+                  <li><?php pll_e('Access to the online platform with hundreds of online learning lessons and materials'); ?>.</li>
+                  <li><?php pll_e('Free access to most of the academy events, talks and workshops'); ?>.</li>
+                  <li><?php pll_e('Office hour access to our co-working location to work on the assignments, projects, etc'); ?>.</li>
+                  <li><?php pll_e('Gather together and share with other students during the Coding Weekends with live mentoring and other fun activities'); ?>.</li>
+                  <li><?php pll_e('Full access to our student and alumni network, online communication chanels and free tickets to sponsored events'); ?>.</li>
+                  <li><?php pll_e('Schedule 1-on-1 mentoring sessions with our Senior Instructors'); ?>.</li>
                 </ul>
               </div>
             </div>
@@ -186,7 +187,7 @@ $args = wpas_get_view_data();
           <div class="col-12">
               <div class="row">
                 <div class="col-md-9 ml-auto">
-                  <h2 class="section-heading text-black mb-4 mt-2"><?php pll_e('Calendar: A new cohort starts every 8 weeks'); ?></h2>
+                  <h2 class="section-heading text-black mb-4 mt-2"><?php pll_e('Calendar: A new cohort starts every 4 weeks'); ?></h2>
                   <?php pll_e('Pick the date that most acomodates to your schedule and start your career with a very small investment or even for free!'); ?>
   						  </div>
   						</div>
@@ -198,8 +199,7 @@ $args = wpas_get_view_data();
                       <?php echo $course['day']; ?> <?php echo $course['month']; ?>, <?php echo $course['year']; ?> 
                       <span class="ml-5 imoon icon-location"></span> <?php echo $course['location']; ?>
                       <div class="button-bar">
-    							     <button class="btn btn-danger btn-sm">Signup now</button> or
-    							     <button class="btn btn-secondary btn-sm" data-target="#freeCodingIntroModal">Request free access</button>
+    							     <button class="btn btn-danger btn-sm">Sign Up</button>
                       </div>
                     </h5>
                   </div>
@@ -213,12 +213,12 @@ $args = wpas_get_view_data();
       <div class="container">
         <div class="row">
           <div class="col-md-9 ml-auto">
-            <h2 class="section-heading text-black"><?php pll_e('Pricing & Financing'); ?></h2>
+            <h2 class="section-heading text-black"><?php pll_e('Pricing'); ?></h2>
               <div class='row'>
                 <div class='col-6 ml-auto upfront'>
                   <div class="card card-block card-primary card-inverse bg-light">
                     <div class="card-body">
-                      <h4 class="card-title m-0"><?php pll_e('Right now'); ?></h4>
+                      <h4 class="card-title m-0"><?php pll_e('Upfront'); ?></h4>
                       <h3 class="card-text">$400</h3>
                     </div>
                   </div>
@@ -226,16 +226,9 @@ $args = wpas_get_view_data();
                 <div class='col-6 mr-auto'>
                   <div class="card card-block card-primary card-inverse bg-light">
                     <div class="card-body">
-                      <h4 class="card-title m-0"><?php pll_e('Every 8 Weeks'); ?></h4>
-                      <h3 class="card-text">FREE</h3>
+                      <p class="card-title m-0"><?php pll_e('Come to any of our 4Geek Nights events and you could earn free access to this course and become an official 4Geeks Academy student!'); ?></p>
                     </div>
                   </div>
-                </div>
-              </div>
-              <div class='row'>
-                <div class='col-md-10 mx-auto text-center'>
-                  <p class='section-message p-3'><?php pll_e('Come to any of our geek nights events receive free access to this course and become an official 4Geeks Academy student!'); ?></p>
-                  <a href="<?php echo get_permalink( get_page_by_path( wpas_pll_get_slug('apply') ) ); ?>" class="btn btn-danger btn-lg"><?php pll_e('Apply to the program'); ?></a>
                 </div>
               </div>
           </div>

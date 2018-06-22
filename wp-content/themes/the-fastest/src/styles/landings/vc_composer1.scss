@@ -10,16 +10,7 @@
         svg{ height: 100px; }
     }
     #bg-sketch{
-        width: 100vw;
-        height: 100vh;
-        overflow: hidden;
-        position: absolute;
-        background-position: top;
-        background-size: cover;
-        z-index: -1;
         display: inline-block;
-        top: 0;
-        left: 0;
     }
     .call-to-action-nav.navbar{
         margin-top: 0;

@@ -2,7 +2,7 @@
     <div class="modal-dialog modal-lg">
         <div class="modal-content p-3 text-center">
             <h3><?php pll_e('Gain free access!'); ?></h3>
-            <h5><?php pll_e('Every 8 weeks we are giving away free access to our two weeks Coding Introduction course'); ?>.</h5>
+            <h5><?php pll_e('Every 4 weeks we are giving away free access to our two weeks Coding Introduction course'); ?>.</h5>
             <p><?php pll_e('Come to our next 4Geek Night event and receive an introductory class,<br /> meet our team and get access to premium coding eduction'); ?>.</p>
             <div class="row">
                 <div class="col-md-9 mx-auto">

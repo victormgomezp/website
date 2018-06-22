@@ -9,7 +9,7 @@ $args = wpas_get_view_data();
           <div class="col-sm-10 mx-auto text-center">
             <h2><?php pll_e('Companies trust us and hire our students'); ?>.</h2>
             <blockquote>
-              <h4 class="mb-3">"I'm impressed with the level of understanding 4Geek's students have, my hiring ended up being a team leader"</h4>
+              <h4 class="mb-3">"I'm impressed with the level of understanding 4Geeks students have, my hire ended becoming a team leader"</h4>
               <h5 class="mb-3">CuevaSocial Marketing Agency</h5>
             </blockquote>
             <!-- Breathe Coding is our motto, premium and accessible coding education is our obsession. -->
@@ -48,7 +48,7 @@ $args = wpas_get_view_data();
       <div class="container">
         <div class="row text-center">
           <div class="col-sm-10 mx-auto">
-            <h2><?php pll_e('Some of our partners and employers'); ?></h2>
+            <h2><?php pll_e('Some of our Partners and Employers'); ?></h2>
             <h5><?php pll_e('To assure students get hired, we work closely with our hiring partners and industry leaders refreshing and optimizing the program and syllabus'); ?>.</h5>
             <div class="row">
             <?php foreach ($args['h-partners'] as $p) { if($p['partner_type']!='hiring_partner') continue; ?>
