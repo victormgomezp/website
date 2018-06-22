@@ -95,13 +95,16 @@ $('.syllabus-download').submit(function(event){
       a.style.display = "none";
    });
    else dismissedAlerts = [];
-   document.querySelector('button[data-dismiss=alert]').addEventListener("click", function(){
-   	console.log(this.parentNode);
-      if(typeof this.parentNode.id == 'undefined') 
-         console.error('You need to specify an id for all the dismisable alerts');
-   	dismissedAlerts.push(this.parentNode.id);
-   	localStorage.setItem('dismissed_alerts',dismissedAlerts.join(','));
-   	this.parentNode.style.display = "none";
+   var closeAlertButtons = document.querySelectorAll('button[data-dismiss=alert]');
+   closeAlertButtons.forEach(function(btn){
+      btn.addEventListener("click", function(){
+      	console.log(this.parentNode);
+         if(typeof this.parentNode.id == 'undefined') 
+            console.error('You need to specify an id for all the dismisable alerts');
+      	dismissedAlerts.push(this.parentNode.id);
+      	localStorage.setItem('dismissed_alerts',dismissedAlerts.join(','));
+      	this.parentNode.style.display = "none";
+      });
    });
 })();
 
