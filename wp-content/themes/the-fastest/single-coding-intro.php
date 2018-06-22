@@ -199,7 +199,7 @@ $args = wpas_get_view_data();
                       <?php echo $course['day']; ?> <?php echo $course['month']; ?>, <?php echo $course['year']; ?> 
                       <span class="ml-5 imoon icon-location"></span> <?php echo $course['location']; ?>
                       <div class="button-bar">
-    							     <button class="btn btn-danger btn-sm">Sign Up</button>
+    							     <a href="<?php echo get_permalink( get_page_by_path( wpas_pll_get_slug('coding-introduction-signup') ) ); ?>" class="btn btn-danger btn-sm">Sign Up</a>
                       </div>
                     </h5>
                   </div>

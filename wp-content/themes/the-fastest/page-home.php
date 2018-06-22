@@ -202,7 +202,7 @@ $args = wpas_get_view_data();
                 </div>
             <?php } ?>
             </div>
-            <p><a href="<?php echo get_permalink( get_page_by_path('partners') ); ?>">Check out more about our partnerships</a></p>
+            <p><a href="<?php echo get_permalink( get_page_by_path(wpas_pll_get_slug('partners')) ); ?>">Check out more about our partnerships</a></p>
           </div>
         </div>
       </div>

@@ -247,12 +247,16 @@ return array(
             'es' => 'aplica'
         ],
         "blog" => [
+            'en' => 'blog',
             'es' => 'blog-en-espanol',
-            'en' => 'blog'
         ],
         "coding-introduction-signup" => [
-            'es' => 'coding-introduction-signup',
-            'en' => 'coding-introduction-registro'
+            'en' => 'coding-introduction-registro',
+            'es' => 'coding-introduction-signup'
+        ],
+        "partners" => [
+            'en' => 'partners',
+            'es' => 'aliados'
         ]
     ],
     "activities" => [
