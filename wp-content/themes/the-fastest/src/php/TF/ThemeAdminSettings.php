@@ -65,7 +65,7 @@ class ThemeAdminSettings {
 		
 		$marketingFields = [
 				[
-				    'type' => 'textarea', 
+				    'type' => 'textarea_html', 
 				    'label' => 'Top Bar: Message',
 				    'name' => 'top-bar-message',
 					'description' => 'Message that will show on the top bar (leave blank to hide the bar)'
