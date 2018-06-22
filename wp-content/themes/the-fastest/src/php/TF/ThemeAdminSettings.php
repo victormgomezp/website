@@ -74,7 +74,7 @@ class ThemeAdminSettings {
 				    'type' => 'text', 
 				    'label' => 'Top Bar: CSS Classes',
 				    'name' => 'top-bar-classes',
-					'description' => 'You can add several css classes separated by space'
+					'description' => 'You can add several css classes separated by space: [alert-danger, alert-warning, alert-warning-dark, alert-success]'
 				],
 				[
 				    'type' => 'select', 

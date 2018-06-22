@@ -90,11 +90,17 @@ $('.syllabus-download').submit(function(event){
 
 (function loadAlerts(){
    var dismissedAlerts = localStorage.getItem('dismissed_alerts');
-   if(dismissedAlerts) dismissedAlerts.split(',').forEach(function(id){
-      var a = document.querySelector('#'+id);
-      a.style.display = "none";
-   });
+   
+   if(dismissedAlerts) dismissedAlerts = dismissedAlerts.split(",");
    else dismissedAlerts = [];
+   
+   var allAlerts = document.querySelectorAll('.alert-dismissible');
+   allAlerts.forEach(function(a){
+      if(dismissedAlerts.indexOf(a.id) == -1){
+         var alertToDismiss = document.querySelector('#'+a.id);
+         alertToDismiss.style.display = "block";
+      }
+   });
    var closeAlertButtons = document.querySelectorAll('button[data-dismiss=alert]');
    closeAlertButtons.forEach(function(btn){
       btn.addEventListener("click", function(){
