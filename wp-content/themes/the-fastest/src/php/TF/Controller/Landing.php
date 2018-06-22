@@ -22,6 +22,7 @@ class Landing{
         
         $args['testimonials'] = TestimonialPostType::All();
         $args['upcoming'] = CoursePostType::getNextCohort();
+        
         return $args;
     }
     

@@ -63,6 +63,28 @@ class ThemeAdminSettings {
 				]
 			];
 		
+		$marketingFields = [
+				[
+				    'type' => 'textarea', 
+				    'label' => 'Top Bar: Message',
+				    'name' => 'top-bar-message',
+					'description' => 'Message that will show on the top bar (leave blank to hide the bar)'
+				],
+				[
+				    'type' => 'text', 
+				    'label' => 'Top Bar: CSS Classes',
+				    'name' => 'top-bar-classes',
+					'description' => 'You can add several css classes separated by space'
+				],
+				[
+				    'type' => 'select', 
+				    'options' => [ "active" => "Active", "inactive" => "Inactive"],
+				    'label' => 'Top Bar: Close button',
+				    'name' => 'top-bar-close-btn',
+					'description' => 'If the alert can be closed or not'
+				]
+		];
+		
 		$activeCampaignFields = [
 				[
 				    'type' => 'text', 
@@ -207,7 +229,7 @@ class ThemeAdminSettings {
 				'general' => array(
 					'description' => '4Geeks Academy Theme Options',
 					'menu_slug' => 'tf_theme_options',
-					'menu_title' => 'TF Theme Settings'
+					'menu_title' => '4Geeks Theme Settings'
 				),
 				'settingsID' => 'wp_theme_settings',
 				'settingFields' => array('wp_theme_settings_title'), 
@@ -215,7 +237,7 @@ class ThemeAdminSettings {
 					'general' => array('text' => 'General', 'dashicon' => 'dashicons-admin-page', 'tabFields' => $generalFields),
 					'api' => array('text' => 'BreatheCode API', 'dashicon' => 'dashicons-admin-page', 'tabFields' => $apiFields),
 					'activecampaign' => array('text' => 'ActiveCampaign API', 'dashicon' => 'dashicons-admin-page', 'tabFields' => $activeCampaignFields),
-					'buttons' => array('text' => 'Buttons')
+					'marketing' => array('text' => 'Marketing Extras', 'dashicon' => 'dashicons-admin-page', 'tabFields' => $marketingFields)
 				),
 			)
 		);

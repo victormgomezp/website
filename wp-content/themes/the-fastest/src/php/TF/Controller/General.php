@@ -74,7 +74,6 @@ class General{
     }
     
     public function renderTheProgram(){
-        
         $args = $this->getData();
         $args['members'] = TeamMemberPostType::All(array(
         	'numberposts'	=> 6,
@@ -84,13 +83,13 @@ class General{
         
         $args['course'] = (array) get_queried_object();
         $args['course']['slug'] = get_field('breathecode_course_slug', $args['course']['ID']);
+
         $args['upcoming-cohorts'] = CoursePostType::getUpcomingDates(['profile' => $args['course']['slug']]);
         if(count($args['upcoming-cohorts'])>0) $args['upcoming'] = $args['upcoming-cohorts'][0];
         else $args['upcoming-message'] = [
             "message" => "No upcoming dates scheduled for this curse",
             "btn-message" => "Other dates & locations"
         ];
-        //print_r($args['testimonials']); die();
         return $args;
     }
     

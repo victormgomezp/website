@@ -88,6 +88,23 @@ $('.syllabus-download').submit(function(event){
    
 });
 
+(function loadAlerts(){
+   var dismissedAlerts = localStorage.getItem('dismissed_alerts');
+   if(dismissedAlerts) dismissedAlerts.split(',').forEach(function(id){
+      let a = document.querySelector('#'+id);
+      a.style.display = "none";
+   });
+   else dismissedAlerts = [];
+   document.querySelector('button[data-dismiss=alert]').addEventListener("click", function(){
+   	console.log(this.parentNode);
+      if(typeof this.parentNode.id == 'undefined') 
+         throw new Error('You need to specify an id for all the dismisable alerts');
+   	dismissedAlerts.push(this.parentNode.id);
+   	localStorage.setItem('dismissed_alerts',dismissedAlerts.join(','));
+   	this.parentNode.style.display = "none";
+   });
+})();
+
 $(document).ready(function() {
    $.ajax({
       url: WPAS_APP.ajax_url,

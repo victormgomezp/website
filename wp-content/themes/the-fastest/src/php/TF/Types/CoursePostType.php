@@ -52,7 +52,8 @@ class CoursePostType extends BasePostType{
         
         $query = $params;
         if(!$params) $query = self::getCalendarQuery();
-        //debug($params);
+
+        if(empty($query['profile'])) $query['profile'] = 'full-stack';
         
         $cohorts = WPASThemeSettingsBuilder::getThemeOption('sync-bc-cohorts-api');
         $upcoming = [];
@@ -111,11 +112,16 @@ class CoursePostType extends BasePostType{
     }
     
     private static function filterQuery($cohort, $query){
+        //if($cohort['bc_profile_slug'] == 'coding-introduction') return false;
+        //else{
+            if( 
+                !empty($query['profile']) && $cohort['bc_profile_slug'] != $query['profile'] 
+                //&& $query['profile'] != 'coding-introduction'
+            ) return false;
+        //}
 
-        if($cohort['bc_profile_slug'] == 'coding-introduction') return false;
         if(!empty($query['language']) && strtolower(substr($cohort['language'],0,2)) != $query['language']) return false;
         if(!empty($query['location']) && $cohort['bc_location_slug'] != $query['location']) return false;
-        if(!empty($query['profile']) && $cohort['bc_profile_slug'] != $query['profile']) return false;
         if(new DateTime() > new DateTime(date('Y-m-d',$cohort['time']))) return false;
         
         return true;

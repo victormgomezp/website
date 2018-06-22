@@ -70,7 +70,6 @@
     
     $controller->route([ 'slug' => 'blog:blog', 'controller' => 'Blog']);
     
-    
     $controller->route([ 'slug' => 'the-academy', 'controller' => 'General']);
     $controller->route([ 'slug' => 'academia', 'controller' => 'General:renderTheAcademy']);
     
