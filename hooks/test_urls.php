@@ -19,7 +19,7 @@
     $runner->addCheck(checkURL($publicURL.'/the-academy', 'Theory is delivered through video, animation, images, '));
     $runner->addCheck(checkURL($publicURL.'/calendar', 'to discover our available courses, workshops and events.'));
     $runner->addCheck(checkURL($publicURL.'/venezuela', 'acelerar tu carrera como programador'));
-    $runner->addCheck(checkURL($publicURL.'/partners', 'To assure students get hired, we work closely with our hiring partners and industry leaders refreshing and optimizing the program and syllabus'));
+    $runner->addCheck(checkURL($publicURL.'/partners', 'To assure that our students are getting hired'));
 
     $runner->addCheck(checkURL($publicURL.'/location/downtown-miami/', 'Starthub. 66 W Flaggle, #900. 33130, Miami, Florida.'));
     $runner->addCheck(checkURL($publicURL.'/es/location/maracaibo-venezuela/', 'Av. 5 de julio. Maracaibo, Venezuela.'));
@@ -28,7 +28,7 @@
     
     $runner->addCheck(checkURL($publicURL.'/course/full-stack-development/', 'A Premium Program designed'));
     $runner->addCheck(checkURL($publicURL.'/course/web-development/', 'websites faster than anyone'));
-    //$runner->addCheck(checkURL($publicURL.'/course/coding-introduction/', 'acelerar tu carrera como programador'));
+    $runner->addCheck(checkURL($publicURL.'/course/coding-introduction/', 'Someone with little or no coding skills'));
     
     // TODO: check the website forms
 

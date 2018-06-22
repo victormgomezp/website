@@ -121,7 +121,7 @@ class General{
     public function renderPartners(){
 
         $args = [];
-
+        $args = $this->getData();
         $query1 = PartnerPostType::all(['meta_key' => 'partner_type', 'meta_value' => 'hiring_partner', 'posts_per_page' => 4]);
         $args['h-partners'] = array_map(function($post){ return PartnerPostType::fill($post); },$query1->posts);
         

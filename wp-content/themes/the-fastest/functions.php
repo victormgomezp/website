@@ -69,6 +69,7 @@
     $controller->route([ 'slug' => 'Single:landing', 'controller' => 'Landing:renderLanding']);
     
     $controller->route([ 'slug' => 'blog:blog', 'controller' => 'Blog']);
+    $controller->route([ 'slug' => 'blog:blog-en-espanol', 'controller' => 'Blog']);
     
     $controller->route([ 'slug' => 'the-academy', 'controller' => 'General']);
     $controller->route([ 'slug' => 'academia', 'controller' => 'General:renderTheAcademy']);
@@ -84,6 +85,7 @@
     $controller->route([ 'slug' => 'venezuela', 'controller' => 'General:renderTheProgram']);
     
     $controller->route([ 'slug' => 'partners', 'controller' => 'General:renderPartners']);
+    $controller->route([ 'slug' => 'aliados', 'controller' => 'General:renderPartners']);
 
     $controller->route([ 'slug' => 'Course', 'controller' => 'Course']);
     

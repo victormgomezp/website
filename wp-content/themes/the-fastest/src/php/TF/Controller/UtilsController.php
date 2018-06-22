@@ -15,8 +15,10 @@ class UtilsController{
         if($backgroundColor) $styles .= 'background-color: '.$backgroundColor.';';
         
         $backgroundImage = get_field('body_background_image', $postId);
-        if($backgroundImage){
-            $styles .= "background-image: url('".$backgroundImage['url']."');";
+        //debug(wp_get_attachment_url($backgroundImage));
+        if(isset($backgroundImage)){
+            if(isset($backgroundImage['url'])) $styles .= "background-image: url('".$backgroundImage['url']."');";
+            else $styles .= "background-image: url('".wp_get_attachment_url($backgroundImage)."');";
         } 
         
         $styles .= '"';
