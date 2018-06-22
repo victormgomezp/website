@@ -103,21 +103,21 @@
             {
                 "param": "page_template",
                 "operator": "==",
-                "value": "default"
-            }
-        ],
-        [
-            {
-                "param": "post_type",
-                "operator": "==",
-                "value": "landing"
+                "value": "page-landing-maker1.php"
             }
         ],
         [
             {
                 "param": "post_template",
                 "operator": "==",
-                "value": "page.php"
+                "value": "page-default.php"
+            }
+        ],
+        [
+            {
+                "param": "post_template",
+                "operator": "==",
+                "value": "page-landing-vc.php"
             }
         ]
     ],
@@ -142,5 +142,5 @@
     ],
     "active": 1,
     "description": "",
-    "modified": 1519957056
+    "modified": 1529632340
 }

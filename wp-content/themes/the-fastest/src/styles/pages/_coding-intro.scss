@@ -18,6 +18,17 @@
             top: 20px;
         }
     }
+    .upcoming-intro-to-coding{
+        padding: 15px;
+        box-shadow: 0 2px 15px 0 rgba(0,0,0,.1);
+        margin-bottom: 15px;
+        svg{ height: 18px; }
+        .button-bar{
+            position: absolute;
+            right: 25px;
+            top: 20px;
+        }
+    }
     @media screen and (min-width: 60em) {
         .masthead{
             .heading-row{

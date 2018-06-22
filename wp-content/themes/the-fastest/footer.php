@@ -214,6 +214,7 @@
             </div>
         </footer>
     <?php } ?>
+        <?php get_template_part('partials/modal','free-coding-intro'); ?>
         <div id="syllabusModal" class="modal fade mt-5" tabindex="-1" role="dialog" aria-labelledby="syllabusModalLabel" aria-hidden="true">
           <div class="modal-dialog modal-lg">
             <div class="modal-content p-3 text-center">

@@ -64,6 +64,8 @@
     ]);
     
     $controller->route([ 'slug' => 'Template:page-landing-maker1.php', 'controller' => 'Landing:renderLanding']);
+    $controller->route([ 'slug' => 'Template:page-landing-vc.php', 'controller' => 'Landing:renderLanding']);
+    $controller->route([ 'slug' => 'Template:page-default.php', 'controller' => 'Landing:renderLanding']);
     $controller->route([ 'slug' => 'Single:landing', 'controller' => 'Landing:renderLanding']);
     
     $controller->route([ 'slug' => 'blog:blog', 'controller' => 'Blog']);

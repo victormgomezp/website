@@ -13,8 +13,8 @@ $args = wpas_get_view_data();
             <h1 class="underline"><?php pll_e('Coding Introduction Course'); ?></h1>
             <h3>From nothing to real coding in just 2 weeks</h3>
             <div class="mt-3 mt-sm-4 mx-auto">
-              <a href="<?php echo get_permalink( get_page_by_path( wpas_pll_get_slug('apply') ) ); ?>" class='btn btn-lg btn-danger'><?php pll_e('Signup Now'); ?></a>
-              or <a href="#syllabusModal"  data-toggle="modal" data-target="#syllabusModal" class='btn btn-lg btn-secondary mr-3'><?php pll_e('Apply for free access'); ?></a>
+              <a href="<?php echo get_permalink( get_page_by_path( wpas_pll_get_slug('coding-introduction-signup') ) ); ?>" class='btn btn-lg btn-danger'><?php pll_e('Sign Up Now'); ?></a>
+              or <a href="#freeCodingIntroModal"  data-toggle="modal" data-target="#freeCodingIntroModal" class='btn btn-lg btn-secondary mr-3'><?php pll_e('Apply for free access'); ?></a>
             </div>
             <!--<div class="partnership mt-5">-->
             <!--  <p>In partnership with</p>-->
@@ -42,10 +42,13 @@ $args = wpas_get_view_data();
                 <a class="nav-link" href="#course-modules"><?php pll_e('What you will learn'); ?></a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#instructors"><?php pll_e('Student will all Benefits'); ?></a>
+                <a class="nav-link" href="#instructors"><?php pll_e('Benefits'); ?></a>
               </li>
               <li class="nav-item">
                 <a class="nav-link disabled" href="#skills"><?php pll_e('Starting every 8 weeks'); ?></a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link disabled" href="#calendar"><?php pll_e('Upcoming dates'); ?></a>
               </li>
               <li class="nav-item">
                 <a class="nav-link disabled" href="#pricing"><?php pll_e('Pricing'); ?></a>
@@ -177,7 +180,7 @@ $args = wpas_get_view_data();
         </div>
       </div>
     </section>
-    <section class="bg-light text-black upcoming-courses pt-5 pb-5">
+    <section id="calendar" class="bg-light text-black upcoming-courses pt-5 pb-5">
       <div class="container">
         <div class="row">
           <div class="col-12">
@@ -196,7 +199,7 @@ $args = wpas_get_view_data();
                       <span class="ml-5 imoon icon-location"></span> <?php echo $course['location']; ?>
                       <div class="button-bar">
     							     <button class="btn btn-danger btn-sm">Signup now</button> or
-    							     <button class="btn btn-secondary btn-sm">Request free access</button>
+    							     <button class="btn btn-secondary btn-sm" data-target="#freeCodingIntroModal">Request free access</button>
                       </div>
                     </h5>
                   </div>

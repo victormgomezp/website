@@ -20,7 +20,6 @@ class UtilsController{
         } 
         
         $styles .= '"';
-        
         return $styles;
     }
     

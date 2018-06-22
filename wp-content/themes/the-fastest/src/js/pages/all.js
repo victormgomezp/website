@@ -109,6 +109,27 @@ $(document).ready(function() {
          console.log("Error getting the upcoming event: "+p3);
       }
    });
+   $.ajax({
+      url: WPAS_APP.ajax_url,
+      dataType: 'JSON',
+      method: 'POST',
+      data: {
+         action: 'get_upcoming_event',
+         type: 'intro_to_coding'
+      },
+      success: function(response){
+         if(response)
+         {
+            if(response.code == 200)
+            {
+               if(response.data) fillUpcomingIntroToCoding(response.data);
+            }
+         }
+      },
+      error: function(p1,p2,p3){
+         console.log("Error getting the upcoming event: "+p3);
+      }
+   });
 });
 
 function promptUpcomingEvent(event){
@@ -126,6 +147,13 @@ function promptUpcomingEvent(event){
    }
 }
 
+function fillUpcomingIntroToCoding(event){
+   var modal = $('#freeCodingIntroModal');
+   modal.find('.date').html(event.day+' '+event.month+' '+event.year);
+   modal.find('.location').html(event.address);
+   modal.find('.btn-danger').attr('href',event.url);
+   
+}
 function fillUpcomingEvent(event){
    var modal = $('#upcomingEvent');
    modal.find('.day').html(event.day);

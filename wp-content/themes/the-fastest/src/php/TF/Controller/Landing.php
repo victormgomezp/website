@@ -10,7 +10,6 @@ use \WP_Query;
 class Landing{
     
     public function renderLanding(){
-        
         $page = get_queried_object();
         $args = [];
         $args['page']['heading1'] = get_field('page_heading_1', $page->ID);

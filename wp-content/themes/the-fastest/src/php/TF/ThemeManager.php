@@ -20,6 +20,10 @@ class ThemeManager{
         add_filter( 'walker_nav_menu_start_el', [$this,'prefix_nav_description'], 10, 4 );
         add_filter( 'body_class', [$this,'add_slug_body_class'], 11 );
         
+        //customize the page clumnos to add the template
+		add_filter( 'manage_pages_columns', [$this,'pages_columns_header'] ) ;
+		add_action( 'manage_pages_custom_column', [$this,'pages_columns_content'], 10, 2 );
+        
         //advanced custome fields configuration
         $this->advancedCustomFieldsSync();
         
@@ -38,6 +42,26 @@ class ThemeManager{
 			return $data;
 		},10,2);
     }
+    
+	function pages_columns_header( $columns ) {
+		$columns = array_merge($columns, [
+			'template' => 'Template',
+		]);
+		
+    	unset(
+    		$columns['author'],
+    		$columns['comments']
+    	);
+	
+		return $columns;
+	}
+	
+	
+	function pages_columns_content($column_name, $post_ID) {
+	    if ($column_name == 'template') {
+	        echo get_page_template_slug($post_ID);
+	    }
+	}
     
     function prefix_nav_description( $item_output, $item, $depth, $args ) {
         if ( !empty( $item->description ) ) {

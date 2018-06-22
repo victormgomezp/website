@@ -212,6 +212,10 @@ return array(
         "blog" => [
             'es' => 'blog-en-espanol',
             'en' => 'blog'
+        ],
+        "coding-introduction-signup" => [
+            'es' => 'coding-introduction-signup',
+            'en' => 'coding-introduction-registro'
         ]
     ],
     "activities" => [
