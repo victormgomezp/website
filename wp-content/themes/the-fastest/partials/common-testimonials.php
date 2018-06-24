@@ -7,9 +7,9 @@
               <div id="testimonials-carousel" class="carousel carousel-testimonial slide" data-ride="carousel">
                 <div class="carousel-inner" role="listbox">
                     <?php 
-                    $count = 0;
-                    foreach($args['testimonials'] as $testi){ ?>
-                    <div class="carousel-item <?php if($count++==0) echo 'active'; ?>">
+                    $count = -1;
+                    foreach($args['testimonials'] as $testi){ $count++; ?>
+                    <div class="carousel-item <?php if($count==0) echo 'active'; ?>">
                         <div class="testimonial">
                             <div class="avatar">
                                 <div style="background-image: url('<?php echo $testi['student_thumb']['url']; ?>');" class="rounded-circle img-fluid"></div>
@@ -22,7 +22,7 @@
                             <h4><?php echo $testi['student_name']; ?></h4>
                             <!--
                             <h6>Founder at ET Company</h6>
-                            ->
+                            -->
                             <?php while(!empty($testi['stars']) and $testi['stars']>0){ ?>
                             <span class="imoon icon-star-full"></span>
                             <?php $testi['stars']--; ?>
