@@ -14,7 +14,11 @@
                             <div class="avatar">
                                 <div style="background-image: url('<?php echo $testi['student_thumb']['url']; ?>');" class="rounded-circle img-fluid"></div>
                             </div>
-                            <p><span class="imoon icon-quotes-left"></span> <?php echo $testi['post_content']; ?></p>
+                            <p>
+                              <span class="imoon icon-quotes-left"></span> 
+                              <?php echo $testi['post_content']; ?>
+                              <span class="imoon icon-quotes-right"></span> 
+                            </p>
                             <h4><?php echo $testi['student_name']; ?></h4>
                             <!--
                             <h6>Founder at ET Company</h6>
