@@ -8,8 +8,9 @@
                 <div class="carousel-inner" role="listbox">
                     <?php 
                     $count = -1;
+                    $activePosition = rand(0,count($args['testimonials'])-1);
                     foreach($args['testimonials'] as $testi){ $count++; ?>
-                    <div class="carousel-item <?php if($count==0) echo 'active'; ?>">
+                    <div class="carousel-item <?php if($activePosition==$count) echo 'active'; ?>">
                         <div class="testimonial">
                             <div class="avatar">
                                 <div style="background-image: url('<?php echo $testi['student_thumb']['url']; ?>');" class="rounded-circle img-fluid"></div>
