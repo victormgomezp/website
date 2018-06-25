@@ -96,7 +96,7 @@ $args = wpas_get_view_data();
                       <img id="financing-logo" class="card-img-top" data-templateurl="<?php echo get_stylesheet_directory_uri(); ?>" src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/skillsfund.png">
                   </div>
                   <div class='col-sm-6'>
-                      <a id="financing-btn" data-applylink="<?php echo get_permalink( get_page_by_path( wpas_pll_get_slug('apply') ) ); ?>" href="http://4geeksacademy.skills.fund" class="btn btn-danger btn-lg"><?php pll_e('Apply to financing'); ?></a>
+                      <a id="financing-btn" data-applylink="<?php echo get_permalink( get_page_by_path( wpas_pll_get_slug('apply') ) ); ?>" href="http://4geeksacademy.skills.fund" class="btn btn-danger btn-lg"><?php pll_e('Apply to Financing'); ?></a>
                   </div>
                 </div>
               </div>

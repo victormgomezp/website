@@ -63,6 +63,7 @@ return array(
     	"Pricing & Financing" => "Pricing & Financing",
     	"Up-Front" => "Up-Front",
     	"Payment Plan" => "Payment Plan",
+    	"Apply to Financing" => "Apply to Financing",
     	"From" => "From",
     	"This was the most challenging part, our program was designed from the ground up aming to make coding education universal" => "This was the most challenging part, our program was designed from the ground up aming to make coding education universal",
     	"Apply to the program" => "Apply to the program",
