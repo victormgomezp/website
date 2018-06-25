@@ -125,7 +125,7 @@ $args = wpas_get_view_data();
             <div class="row">
               <div class='col-sm-12 col-md-10 mb-3'>
                 <p>
-                  <?php pll_e('4Geeks Academy students receive a lot of benefits, and even though the course is designed to be 99% online, you will also have the following student benefits while taking the course:'); ?>.
+                  <?php pll_e('4Geeks Academy students receive a lot of benefits, and even though the course is designed to be 99% online, you will also have the following student benefits while taking this course:'); ?>.
                 </p>
                 <ul>
                   <li><?php pll_e('Access to the online platform with hundreds of online learning lessons and materials'); ?>.</li>

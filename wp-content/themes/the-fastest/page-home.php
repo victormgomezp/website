@@ -13,7 +13,7 @@ $args = wpas_get_view_data();
         </div>
         <div class="row certified">
           <div class="col-sm-12 col-md-5 col-lg-4 col-xl-3 ml-auto florida">
-            <?php pll_e('Certified by'); ?> 
+            <?php pll_e('licensed by'); ?> 
             <a target="_blank" rel="nofollow" href="http://www.fldoe.org/">
               <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/florida.png"></img>
             </a>

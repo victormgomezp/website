@@ -64,7 +64,7 @@
                         ?>
                     </div>
                     <div class='col-md-3 text-center'>
-                        <h5 class="mt-3 mb-3"><?php pll_e('Certified by'); ?> </h5>
+                        <h5 class="mt-3 mb-3"><?php pll_e('licensed by'); ?> </h5>
                         <a target="_blank" rel="nofollow" href="http://www.fldoe.org/">
                           <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/florida.png"></img>
                         </a>

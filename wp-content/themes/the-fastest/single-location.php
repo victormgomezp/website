@@ -34,7 +34,7 @@ $args = wpas_get_view_data();
         </div>
         <div class="row certified">
           <div class="col-sm-12 col-md-5 col-lg-4 col-xl-3 ml-auto florida">
-            Certified by 
+            licensed by 
             <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/florida.png"></img>
           </div>
           <div class="col-sm-12 col-md-5 col-lg-4 col-xl-3 mr-auto">

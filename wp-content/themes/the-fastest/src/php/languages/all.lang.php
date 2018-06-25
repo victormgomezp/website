@@ -6,7 +6,7 @@ return array(
 //Home
         "Premium coding education" => "Premium coding education",
         "part-time" => "part-time",
-        "Certified by" => "Certified by",
+        "licensed by" => "licensed by",
         "Finally an affordable & premium course in Miami" => "Finally an affordable & premium course in Miami",
         "We never stopped trying until we mastered a real premium but affordable program. Talk to one of our student advisors and make sure you are a good fit for our program" => "We never stopped trying until we mastered a real premium but affordable program. Talk to one of our student advisors and make sure you are a good fit for our program",
         "Request Syllabus" => "Request Syllabus",
@@ -147,6 +147,7 @@ return array(
         "Think like a computer: Control the flow of your code, code algorithms, loop, use conditionals, and combin Javascript with HTML&CSS to create your first interactive websites" => "Think like a computer: Control the flow of your code, code algorithms, loop, use conditionals, and combin Javascript with HTML&CSS to create your first interactive websites",
         "Small interactive websites and games" => "Small interactive websites and games",
         "A real 4Geeks Academy student" => "A real 4Geeks Academy student",
+        "4Geeks Academy students receive a lot of benefits, and even though the course is designed to be 99% online, you will also have the following student benefits while taking this course:" => "4Geeks Academy students receive a lot of benefits, and even though the course is designed to be 99% online, you will also have the following student benefits while taking this course:",
         "Access to the online platform with hundreds of online learning lessons and materials" => "Access to the online platform with hundreds of online learning lessons and materials",
         "Free access to most of the academy events, talks and workshops" => "Free access to most of the academy events, talks and workshops",
         "Office hour access to our co-working location to work on the assignments, projects, etc" => "Office hour access to our co-working location to work on the assignments, projects, etc",
