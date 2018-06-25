@@ -139,7 +139,7 @@ return array(
         "Pricing" => "Pricing",
         "Who should take this course?" => "Who should take this course?",
         "Someone with little or no coding skills, it's the ideal introduction for doing web development, allowing students to create small websites and start mastering real coding skills like looping, conditionals, etc" => "Someone with little or no coding skills, it's the ideal introduction for doing web development, allowing students to create small websites and start mastering real coding skills like looping, conditionals, etc",
-        "Segue to full-stack" => "Segue to full-stack",
+        "Blind to Full-Stack" => "Blind to Full-Stack",
         "By the end of this small course you will be already making your first real websites and ready to jump to the more complete full-stack web development course" => "By the end of this small course you will be already making your first real websites and ready to jump to the more complete full-stack web development course",
         "150+ hrs of lessons, 1 class per week during up to 4 weeks" => "150+ hrs of lessons, 1 class per week during up to 4 weeks",
         "Your first website" => "Your first website",

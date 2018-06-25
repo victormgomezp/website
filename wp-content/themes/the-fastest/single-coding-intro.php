@@ -62,10 +62,10 @@ $args = wpas_get_view_data();
             <h2 class="section-heading text-black mb-2"><?php pll_e("Who should take this course?"); ?></h2>
             <div class="row">
               <div class='col-sm-8 mb-3'>
-                <?php pll_e("Someone with little or no coding skills, it's the ideal introduction for doing web development, allowing students to create small websites and start mastering real coding skills like looping, conditionals, etc."); ?>.
+                <?php pll_e("Someone with little or no coding skills, it's the ideal introduction for doing web development, allowing students to create small websites and start mastering real coding skills like looping, conditionals, etc"); ?>.
               </div>
               <div class='col-sm-8 mb-3'>
-                <h4><?php pll_e("Segue to full-stack"); ?></h4>
+                <h4><?php pll_e("Blind to Full-Stack"); ?></h4>
                 <?php pll_e("By the end of this small course you will be already making your first real websites and ready to jump to the more complete full-stack web development course"); ?>.
               </div>
             </div>
@@ -125,7 +125,7 @@ $args = wpas_get_view_data();
             <div class="row">
               <div class='col-sm-12 col-md-10 mb-3'>
                 <p>
-                  <?php pll_e('4Geeks Academy students receive a lot of benefits, and even though the course is designed to be 99% online, you will also have the following student benefits while taking this course:'); ?>.
+                  <?php pll_e('4Geeks Academy students receive a lot of benefits, and even though the course is designed to be 99% online, you will also have the following student benefits while taking this course:'); ?>
                 </p>
                 <ul>
                   <li><?php pll_e('Access to the online platform with hundreds of online learning lessons and materials'); ?>.</li>
@@ -159,7 +159,7 @@ $args = wpas_get_view_data();
                       </div>
                       <div class="media-body">
                         <h5 class="media-heading"><?php pll_e('Build Websties with HTML and CSS'); ?></h5>
-                        <?php pll_e('In web development, everything start on HTML and CSS, learn how to create static websites with these two technologies'); ?>.
+                        <?php pll_e('In web development, everything starts with HTML and CSS, learn how to create static websites with these two technologies'); ?>.
                       </div>
                     </div>
                   </li>
@@ -188,7 +188,7 @@ $args = wpas_get_view_data();
               <div class="row">
                 <div class="col-md-9 ml-auto">
                   <h2 class="section-heading text-black mb-4 mt-2"><?php pll_e('Calendar: A new cohort starts every 4 weeks'); ?></h2>
-                  <?php pll_e('Pick the date that most acomodates to your schedule and start your career with a very small investment or even for free!'); ?>
+                  <?php pll_e('Pick the date that most accommodates to your schedule and start your career with a very small investment!'); ?>
   						  </div>
   						</div>
                 <?php if(!empty($args['upcoming-cohorts'])) foreach($args['upcoming-cohorts'] as $course){ ?>
