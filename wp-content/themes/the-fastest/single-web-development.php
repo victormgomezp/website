@@ -253,7 +253,7 @@ $args = wpas_get_view_data();
                 <div class='col-6 ml-auto upfront'>
                   <div class="card card-block card-primary card-inverse bg-light">
                     <div class="card-body">
-                      <h4 class="card-title m-0"><?php pll_e('Upfront'); ?></h4>
+                      <h4 class="card-title m-0"><?php pll_e('Up-Front'); ?></h4>
                       <h3 class="card-text">$3,405</h3>
                     </div>
                   </div>

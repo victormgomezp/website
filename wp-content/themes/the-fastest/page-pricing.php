@@ -47,7 +47,7 @@ $args = wpas_get_view_data();
               <div class='col-12'>
                 <div class="card card-block card-primary card-inverse bg-yellow mb-3">
                   <div class="card-body p-4 mb-3 mt-2">
-                    <h4 class="card-title text-center"><?php pll_e('Pay Upfront'); ?></h4>
+                    <h4 class="card-title text-center"><?php pll_e('Pay Up-Front'); ?></h4>
                     <h3 class="card-text text-center">$6,000</h3>
                   </div>
                 </div>
@@ -57,7 +57,7 @@ $args = wpas_get_view_data();
                   <div class='col-sm-12'>
                     <div class="card card-block card-primary bg-light mb-3">
                       <div class="card-body text-center">
-                        <p><?php pll_e('Enjoy the best price in town'); echo '<br />'; pll_e('Pay upfront now with no extra or hidden fees'); ?></p>
+                        <p><?php pll_e('Enjoy the best price in town'); echo '<br />'; pll_e('Pay up-front now with no extra or hidden fees'); ?></p>
                       </div>
                     </div>
                   </div>
