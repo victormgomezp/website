@@ -28,7 +28,7 @@
     
     $runner->addCheck(checkURL($publicURL.'/course/full-stack-development/', 'A Premium Program designed'));
     $runner->addCheck(checkURL($publicURL.'/course/web-development/', 'websites faster than anyone'));
-    $runner->addCheck(checkURL($publicURL.'/course/coding-introduction/', 'Someone with little or no coding skills'));
+    $runner->addCheck(checkURL($publicURL.'/course/coding-introduction/', '4Geeks Academy students receive a lot of benefits'));
     
     // TODO: check the website forms
 

@@ -11,8 +11,24 @@ class LandingPostType extends BasePostType{
     const POST_TYPE = 'landing';
     
     function initialize(){
+        add_filter( 'register_post_type_args',[$this, 'add_categories'], 10, 2 );
 		add_filter( 'manage_'.self::POST_TYPE.'_posts_columns', [$this,'columns_header'] ) ;
 		add_action( 'manage_'.self::POST_TYPE.'_posts_custom_column', [$this,'columns_content'], 10, 2 );
+    }
+    
+    function add_categories( $args, $post_type ) {
+    	// If not Products CPT, bail.
+    	if ( self::POST_TYPE !== $post_type ) {
+    		return $args;
+    	}
+    	// Add additional Products CPT options.
+    	$newargs = [
+    		'taxonomies' => array( 'category' )
+    	];
+    	
+    	$args = array_merge( $args, $newargs );
+    	// Merge args together.
+    	return $args;
     }
     
 	function columns_header( $columns ) {
