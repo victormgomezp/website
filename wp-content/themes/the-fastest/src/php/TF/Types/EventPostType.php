@@ -204,6 +204,7 @@ class EventPostType extends BasePostType{
             if($events){
             	foreach($events as $w){
             		$event = self::getDateInformation($w);
+            		$event['description'] = wp_strip_all_tags($event['description']);
             		if($event['time'] > time()) $upcoming[] = $event;
             	} 
             }
