@@ -71,11 +71,13 @@ Use it to make something cool, have fun, and share what you've learned with othe
   margin: auto;
 }
 
+.sticky{
+  z-index: 1000;
+}
 .sticky.is-sticky {
   position: fixed;
   right: 0;
   top: 0;
-  z-index: 1000;
 }
 .sticky.fozen-sticky{
   position: absolute;

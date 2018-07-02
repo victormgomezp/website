@@ -4,7 +4,7 @@ $gray-base:     #999999;
 $brand-primary: black; //Zen Blue
 
 
-.program-menu{display: none}
+.program-menu{display: none !important;}
 .page-the-program, .single-full-stack, .single-coding-intro, .single-web-development, .page-venezuela{
     section{ padding: 20px 0;}
     .tech-icons{font-size: 60px;}
@@ -253,7 +253,7 @@ $brand-primary: black; //Zen Blue
     }
     .program-menu{
         margin-top: 30px;
-        display: block;
+        display: block !important;
         //background: #2c2c35;
         //a{color: white;}
         a:not(.btn){color: black;}
