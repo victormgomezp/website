@@ -4,8 +4,8 @@
 
 0) **Clone this repository and get into the website2 directory**
 ```sh
-$ git clone git@bitbucket.org:codingacademy/website2.git
-$ cd website2
+$ git clone git@github.com:4GeeksAcademy/website.git
+$ cd website
 ```
 
 1) **Install WP-CLI by going to the following website: [http://wp-cli.org](http://wp-cli.org/#installing)**
