@@ -68,7 +68,7 @@ Note: Make sure you have npm installed.
 10) **Run webpack every time you want to generate a new bundle**
 
 ```sh
-$ npm run build-dev
+$ npm run dev
 ```
     
 ## The Application Uses the following plugins
