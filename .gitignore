@@ -105,3 +105,6 @@ node_modules/
 !webpack.production.js
 !webpack.development.js
 !hooks/
+!*.lock
+!webpack.dev.js
+!webpack.prod.js
