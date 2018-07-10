@@ -4,8 +4,8 @@
 
 0) **Clone this repository and get into the website2 directory**
 ```sh
-$ git clone git@bitbucket.org:codingacademy/website2.git
-$ cd website2
+$ git clone git@github.com:4GeeksAcademy/website.git
+$ cd website
 ```
 
 1) **Install WP-CLI by going to the following website: [http://wp-cli.org](http://wp-cli.org/#installing)**
@@ -26,9 +26,12 @@ $ wp core config --dbname={yourdatabase} --dbuser={yourusername} --dbpass={YOUR 
 
 ```php
 
-define('BREATHECODE_API_HOST', 'https://talenttree-alesanchezr.c9users.io/');
+define('BREATHECODE_API_HOST', 'https://api.breatheco.de');
+define('BREATHECODE_ASSETS_HOST', 'https://assets.breatheco.de');
 
 define('WP_DEBUG', true);
+define('WP_DEBUG_LOG', false);
+define('WP_ASYNC_LOADING', false);
 define('WP_DEBUG_LOG', false);
 define('UGLIFY_HTML', false);
 
@@ -65,7 +68,7 @@ Note: Make sure you have npm installed.
 10) **Run webpack every time you want to generate a new bundle**
 
 ```sh
-$ npm run build-dev
+$ npm run dev
 ```
     
 ## The Application Uses the following plugins
