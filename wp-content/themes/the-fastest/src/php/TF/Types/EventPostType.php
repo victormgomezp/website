@@ -117,13 +117,14 @@ class EventPostType extends BasePostType{
         $wkshp['name'] = $event['title'];
         $wkshp['type'] = $event['type'];
         $wkshp['url'] = $event['url'];
-        $wkshp['description'] = $event['description'];
+        $wkshp['description'] = wp_strip_all_tags($event['description']);
         $wkshp['address'] = $event['address'];
         $wkshp['city_slug'] = $event['city_slug'];
         
         $maxLength = 350; // maximum number of characters to extract
         $trimmedString = substr($event['description'], 0, $maxLength);//trim the string to the maximum length
         $wkshp['excerpt'] = substr($trimmedString, 0, min(strlen($trimmedString), strripos($trimmedString, "."))).'.';//re-trim if we are in the middle of a word
+        $wkshp['excerpt'] = wp_strip_all_tags($wkshp['excerpt']);//re-trim if we are in the middle of a word
         
         //print_r($wkshp); die();
         $location = LocationPostType::get(['meta_key' => 'breathecode_location_slug', 'meta_value' => $event['location_slug']]);
@@ -193,7 +194,7 @@ class EventPostType extends BasePostType{
     }
     
     public static function getEventsFromAPI(){
-	    $eventsJSON = file_get_contents(BREATHECODE_ASSETS_HOST.'/apis/event/all');
+	    $eventsJSON = file_get_contents(BREATHECODE_ASSETS_HOST.'/apis/event/all?status=upcoming');
         if($eventsJSON)
         {
             $events = json_decode($eventsJSON);
