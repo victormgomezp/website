@@ -32,7 +32,6 @@ define('BREATHECODE_ASSETS_HOST', 'https://assets.breatheco.de');
 define('WP_DEBUG', true);
 define('WP_DEBUG_LOG', false);
 define('WP_ASYNC_LOADING', false);
-define('WP_DEBUG_LOG', false);
 define('UGLIFY_HTML', false);
 
 ```
