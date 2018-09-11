@@ -1,10 +1,7 @@
 body, html { overflow-x:hidden; }
 body{
-    background: #3f3f3f;
     background-repeat: no-repeat;
-    color: black;
-    font-size: 14px;
-    font-family: 'Prida', sans-serif;
+    color: $gray-700;
     .video-background{
         position: absolute;
         width: 100vw;
@@ -21,62 +18,49 @@ body{
 }
 .navbar{ 
     z-index: 10;
-    img{ filter: invert(100%); }
     .nav-link:hover{ font-weight: 900; cursor: pointer;}
     img{
-        max-width: 70px;
+        max-width: 40px;
         -webkit-transition: width 2s; /* Safari */
         transition: width 2s;
     }
-    .collapse.show {
-        display: inline-table;
-        position: fixed;
-        top: 0px;
-        z-index: 1;
-        background: black;
-        width: 100%;
-        left: 0;
-        height: 100vh;
-        text-align: center;
-        ul{ 
-            margin-top: 55px; 
-            display: inline-block;
-        }
-    }
     .nav-item{
-        width: 200px;
-        padding-left: 10px;
         .nav-link{
             font-size: 0.8rem;
             text-transform: uppercase;
             font-weight: 800;
             .details{
-                display: inline-block;
+                display: none;
+                &:hover{
+                    display: inline-block;
+                }
                 font-weight: 300;
                 margin-top: 20px;
                 text-transform: initial;
             }
         }
     }
+    .submenu{
+        background: white;
+    }
+    &.inverted{
+        .navbar-toggler-icon{
+            filter: invert(100%);
+        }
+        .nav-item .nav-link{
+            color: $gray-800;
+            &:hover, &[aria-expanded="true"]{
+                color: $blue;
+            }
+        }
+    }
 }
-.navbar-dark .navbar-toggler{ z-index: 10; }
+.navbar-dark .navbar-toggler{ z-index: 10; margin-top: -20px; }
 .masthead{
     z-index: 5;
     position: relative;
     .heading-row{
         padding: 10vh 0 20vh 0;
-    }
-}
-
-//Tablets or bigger screens
-@include media-breakpoint-up(lg) { 
-    .navbar{ margin-top: 50px; }
-}
-@include media-breakpoint-up(sm) { 
-    .navbar{
-        img{
-            max-width: 140px;
-        }
     }
 }
 
@@ -99,6 +83,9 @@ body{
     .video-background{
         display: none;
     }
+    img{
+        margin-top: 10px;
+    }
 }
 //Tablets or bigger screens
 @include media-breakpoint-up(md) {
@@ -118,7 +105,10 @@ body{
             }
         }
     }
-    
+    .navbar .nav-item{
+        margin-left: 10px;
+        padding-left: 10px;
+    }
     section.call-to-action{
         width: 800px;
         margin: auto;

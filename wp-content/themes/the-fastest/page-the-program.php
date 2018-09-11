@@ -6,8 +6,8 @@ $args = wpas_get_view_data();
     <header class="masthead">
       <div class="header-content">
         <div class="row heading-row">
-          <div class="col-sm-10 mx-auto text-left text-black">
-            <h1><?php pll_e('Become a Full-Stack Web Developer'); ?></h1>
+          <div class="col-sm-10 mx-auto text-left">
+            <h1 class="text-white"><?php pll_e('Become a Full-Stack Web Developer'); ?></h1>
             <div id=flip>
               <div><div><?php pll_e('and increase your income significantly'); ?></div></div>
               <div><div><?php pll_e('and join the workforce of the future'); ?></div></div>

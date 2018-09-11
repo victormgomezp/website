@@ -126,14 +126,14 @@ class General{
         $args['h-partners'] = array_map(function($post){ return PartnerPostType::fill($post); },$query1->posts);
         
         $query2 = PartnerPostType::all([
-            'posts_per_page' => 4,
+            'posts_per_page' => -1,
             'meta_key' => 'partner_type',
             'meta_value' => 'coding_related' // or whatever it is you're using here
         ]);
         $args['code-partners'] = array_map(function($post){ return PartnerPostType::fill($post); },$query2->posts);
         
         $query3 = PartnerPostType::all([
-            'posts_per_page' => 8,
+            'posts_per_page' => -1,
             'meta_query' => array(
                 'relation' => 'OR',
                 array('key' => 'partner_type', 'value' => 'government_institution'),

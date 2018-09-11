@@ -1,5 +1,8 @@
-<?php 
-/* Template Name: Venezuela */
+<?php
+/*
+Template Name: Full Stack Development
+Template Post Type: course
+*/
 get_header(); 
 $args = wpas_get_view_data();
 ?>
@@ -65,7 +68,7 @@ $args = wpas_get_view_data();
             <div class="row">
               <div class='col-sm-8 mb-3'>
                 <h4><?php pll_e('Really senior mentoring'); ?></h4>
-                <?php pll_e('All of our staff has 10+ years coding and holds senior possitions at the City\'s tech industry'); ?>.
+                <?php pll_e('All of our staff has 10+ years coding and holds senior possitions in Miami\'s tech industry'); ?>.
               </div>
               <div class='col-sm-8 mb-3'>
                 <h4><?php pll_e('Top notch technology stack'); ?></h4>
@@ -112,7 +115,7 @@ $args = wpas_get_view_data();
                 <h3 class="steps-name"><?php pll_e('Junior Applications'); ?></h3>
                 <div class="steps-description">
                    <h5><?php pll_e('Duration: 6 wks'); ?></h5>
-                   <?php pll_e('Create your first ReactJS|VUE|Angular application, MVC Pattern, JS Modules, Bundling, Webpack, The DOM, Events, AJAX'); ?>.
+                   <?php pll_e('Create your first ReactJS application, MVC Pattern, JS Modules, Bundling, BabelJS, The DOM, Events, AJAX'); ?>.
                   <h5><?php pll_e('Possible projects'); ?></h5>
                    <?php pll_e('Coursera Clone, AirBNB Clone, Instagram Clone, YouTube Clone, etc'); ?>.
                 </div>
@@ -122,7 +125,7 @@ $args = wpas_get_view_data();
                 <h3 class="steps-name"><?php pll_e('Advanced Applications'); ?></h3>
                 <div class="steps-description">
                   <h5><?php pll_e('Duration: 6 wks'); ?></h5>
-                  <?php pll_e('PHP, Laravel, REST API\'s, Databases, MVC Pattern, Publishing your webiste, etc.'); ?>
+                  <?php pll_e('Python, Django, REST API\'s, Databases, MongoDB, MVC Pattern, Publishing your webiste, etc.'); ?>
                   <h5><?php pll_e('Possible projects'); ?></h5>
                   <?php pll_e('During this phase you will have to design, code, test and publish your own entire web application'); ?>.
                 </div>
@@ -136,12 +139,7 @@ $args = wpas_get_view_data();
       <div class="container">
         <div class="row">
           <div class="col-md-9 ml-auto call-to-action mb-0">
-            <h4><?php pll_e('Download our syllabus PDF to get all the details'); ?></h4>
-             <form class="form-inline text-center syllabus-download">
-              <div class="alert alert-danger" style=" width: 100%; display: none;" role="alert"></div>
-              <input type="email" class="form-control" name="" placeholder="Your email" required/>
-              <button class="btn btn-secondary form-control ml-sm-3 mt-sm-0 mt-3"><?php pll_e('Download'); ?></a>
-            </form>
+              <?php get_template_part( 'partials/common', 'syllabus-download' ); ?>
           </div>
         </div>
       </div>
@@ -154,7 +152,7 @@ $args = wpas_get_view_data();
             <div class="row">
               <div class='col-sm-12 col-md-10 mb-3'>
                 <p>
-                  <?php pll_e("Meet our team of highly trained developers, that currenlty hold senior positions at the City's tech industry"); ?>.
+                  <?php pll_e('Meet our team of highly trained developers, that currenlty hold senior positions in Miami\'s top tech industry companies'); ?>.
                 </p>
               </div>
             </div>
@@ -215,7 +213,7 @@ $args = wpas_get_view_data();
                       </div>
                       <div class="media-body">
                         <h5 class="media-heading"><?php pll_e('Data Master'); ?></h5>
-                        <?php pll_e("There is more data and information every day, being able to manipulate that data its mandatory to create today's products"); ?>.
+                        <?php pll_e('There is more data and information every day, being able to manipulate that data its mandatory to create today\'s products.'); ?>.
                       </div>
                     </div>
                   </li>
@@ -252,10 +250,11 @@ $args = wpas_get_view_data();
             <div class="row">
               <div class='col-sm-8 mb-3'>
                 <h5>
-                  <?php pll_e('Be proud, our graduates are capable of building incredible things in the most modern technologies'); ?>.
+                  <?php pll_e('Be proud, our graduates are capable of building incredible things in the most modern technologies.'); ?>
                 </h5>
                 <div class="tech-icons">
                   <em class="techico icon-js"></em>
+                  <em class="techico icon-python"></em>
                   <em class="techico icon-react"></em>
                   <em class="techico icon-git-squared"></em>
                   <em class="techico icon-database"></em>
@@ -275,16 +274,26 @@ $args = wpas_get_view_data();
           <div class="col-md-9 ml-auto">
             <h2 class="section-heading text-black"><?php pll_e('Pricing & Financing'); ?></h2>
               <div class='row'>
-                <div class='col-12 ml-auto upfront'>
+                <div class='col-6 ml-auto upfront'>
                   <div class="card card-block card-primary card-inverse bg-light">
                     <div class="card-body">
-                      <h4 class="card-title m-0"><?php pll_e('We offer great financing options for our students, contact the team and ask!'); ?></h4>
+                      <h4 class="card-title m-0"><?php pll_e('Up-Front'); ?></h4>
+                      <h3 class="card-text">$6,000</h3>
+                    </div>
+                  </div>
+                </div>
+                <div class='col-6 mr-auto'>
+                  <div class="card card-block card-primary card-inverse bg-light">
+                    <div class="card-body">
+                      <h4 class="card-title m-0"><?php pll_e('Payment Plan'); ?></h4>
+                      <h3 class="card-text"><?php pll_e('From'); ?>$240/month</h3>
                     </div>
                   </div>
                 </div>
               </div>
               <div class='row'>
                 <div class='col-md-10 mx-auto text-center'>
+                  <p class='section-message'><?php pll_e('This was the most challenging part, our program was designed from the ground up aming to make coding education universal'); ?>.</p>
                   <a href="<?php echo get_permalink( get_page_by_path( wpas_pll_get_slug('apply') ) ); ?>" class="btn btn-danger btn-lg"><?php pll_e('Apply to the program'); ?></a>
                 </div>
               </div>
@@ -293,4 +302,4 @@ $args = wpas_get_view_data();
       </div>
     </section>
     <?php include(locate_template('partials/common-testimonials.php')); ?>
-  <?php get_footer('venezuela'); ?>
+  <?php get_footer(); ?>

@@ -4,9 +4,23 @@ h3, .h3 { font-size: 1.4rem; margin: 10px 0; font-weight: 900; }
 h4, .h4 { font-size: 1.1rem; margin: 10px 0; font-weight: 900; }
 h5, .h5 { font-size: 0.9rem; margin: 10px 0; font-weight: 900; }
 h6, .h6 { font-size: 0.9rem; margin: 10px 0; font-weight: 700; }
-
-.navbar-dark .navbar-toggler{
+body{
+    background-position-y: 0px;
+    background-size: contain;
+}
+a{
+    color: $blue;
+    text-shadow: none !important;
+    background-image: none !important;
+}
+ul{
+    margin: 0 !important;
+}
+.navbar-dark .navbar-toggler, .navbar-light .navbar-toggler{
     border: none;
+}
+    
+.navbar-dark .navbar-toggler{
     .navbar-nav{
         .nav-link{color: white;}
         .nav-link.active{ font-weight: 900; }
@@ -40,10 +54,11 @@ h6, .h6 { font-size: 0.9rem; margin: 10px 0; font-weight: 700; }
 
 /* Medium. Above 48em (768px) */
 @media screen and (min-width: 48em) {
-    h1, .h1{font-size: 3rem; font-weight: 900; }
-    h2, .h2{font-size: 2.6rem; margin: 30px 0px; font-weight: 900; }
-    h3, .h3 { font-size: 2rem; margin: 10px 0; font-weight: 900; }
-    h4, .h4 { font-size: 1.7rem; margin: 10px 0; font-weight: 900; }
-    h5, .h5 { font-size: 1rem; margin: 10px 0; font-weight: 900; }
-    h6, .h6 { font-size: 0.9rem; margin: 10px 0; font-weight: 700; }
+    background-size: inherit;
+    // h1, .h1{font-size: 3rem; font-weight: 900; }
+    // h2, .h2{font-size: 2.6rem; margin: 30px 0px; font-weight: 900; }
+    // h3, .h3 { font-size: 2rem; margin: 10px 0; font-weight: 900; }
+    // h4, .h4 { font-size: 1.7rem; margin: 10px 0; font-weight: 900; }
+    // h5, .h5 { font-size: 1rem; margin: 10px 0; font-weight: 900; }
+    // h6, .h6 { font-size: 0.9rem; margin: 10px 0; font-weight: 700; }
 }

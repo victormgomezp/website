@@ -5,7 +5,8 @@ $brand-primary: black; //Zen Blue
 
 
 .program-menu{display: none !important;}
-.page-the-program, .single-full-stack, .single-coding-intro, .single-web-development, .page-venezuela{
+.page-the-program, .single-full-stack, .single-coding-intro, .single-web-development{
+    background-image: url('../../assets/img/coding-background.jpg');
     section{ padding: 20px 0;}
     .tech-icons{font-size: 60px;}
     section.instructors{
@@ -144,7 +145,7 @@ $brand-primary: black; //Zen Blue
     
 }
 
-.page-the-program, .single-full-stack, .page-venezuela{
+.page-the-program, .single-full-stack{
     
     #flip {
       display: block !important;
@@ -206,20 +207,6 @@ $brand-primary: black; //Zen Blue
         97% {margin-top: -360px;} 
         100% {margin-top: 0px;}
     }
-    @keyframes bg {
-      0% {background: #ff0075;}
-      3% {background: #0094ff;}
-      20% {background: #0094ff;}
-      23% {background: #b200ff;}
-      40% {background: #b200ff;}
-      43% {background: #8BC34A;}
-      60% {background: #8BC34A;}
-      63% {background: #F44336;}
-      80% {background: #F44336;}
-      83% {background: #F44336;}
-      100% {background: #F44336;}
-    }
-    animation:bg 20s linear infinite;
 }
 
 .single-web-development{
@@ -249,7 +236,7 @@ $brand-primary: black; //Zen Blue
 @media screen and (min-width: 48em) {
 
     .page-the-program, .single-full-stack, .page-venezuela{
-        background: #3f3f3f;
+        background-color: #3f3f3f;
     }
     .program-menu{
         margin-top: 30px;

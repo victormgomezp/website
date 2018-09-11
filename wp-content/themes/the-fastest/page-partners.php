@@ -9,8 +9,8 @@ $args = wpas_get_view_data();
           <div class="col-sm-10 mx-auto text-center">
             <h2><?php pll_e('Companies trust us and hire our students'); ?>.</h2>
             <blockquote>
-              <h4 class="mb-3">"I'm impressed with the level of understanding 4Geeks students have, my hire ended becoming a team leader"</h4>
-              <h5 class="mb-3">CuevaSocial Marketing Agency</h5>
+              <h4 class="mb-3 text-white">"I'm impressed with the level of understanding 4Geeks students have, my hire ended becoming a team leader"</h4>
+              <h5 class="mb-3 text-white">CuevaSocial Marketing Agency</h5>
             </blockquote>
             <!-- Breathe Coding is our motto, premium and accessible coding education is our obsession. -->
             <div class="row mt-5">
@@ -25,19 +25,19 @@ $args = wpas_get_view_data();
     <section class="bg-yellow text-black pt-5 pb-5">
       <div class="container">
         <div class="row text-center">
-          <div class="col-2 ml-auto stat">
+          <div class="col-6 col-md-2 ml-auto stat">
             <h5><?php pll_e('Employers'); ?></h5>
             <h3>290</h3>
           </div>
-          <div class="col-2 stat">
+          <div class="col-6 col-md-2 stat">
             <h5><?php pll_e('Graduates'); ?></h5>
             <h3>312</h3>
           </div>
-          <div class="col-3 col-md-2 stat">
+          <div class="col-6 col-md-2 stat">
             <h5><?php pll_e('Hiring Rate'); ?></h5>
             <h3>91%</h3>
           </div>
-          <div class="col-3 col-md-2 stat mr-auto">
+          <div class="col-6 col-md-2 stat mr-auto">
             <h5><?php pll_e('Avg Hiring Period'); ?></h5>
             <h3>70 <small>days</small></h3>
           </div>

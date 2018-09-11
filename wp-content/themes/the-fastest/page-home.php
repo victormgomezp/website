@@ -3,51 +3,37 @@
 get_header(); 
 $args = wpas_get_view_data();
 ?>
-    <header class="masthead pb-0">
+    <header class="masthead pb-0 masthead-white">
       <div class="header-content">
         <div class="row heading-row">
           <div class="col-sm-10 col-md-10 col-lg-9 col-xl-7 mx-auto">
-            <h1 id="homeHeading" class="text-white">&#x3C;/ Breathe Coding &#x3E;</h1>
-            <h3 class='text-white'><span class="text-orange">[ </span><span class="text-blue"><?php pll_e('Premium coding education'); ?></span>, <span class="text-blue"><?php pll_e('part-time'); ?></span> & <span class="text-blue"> <?php pll_e('from'); ?> $135/month.</span> <span class="text-orange">] </span></h3>
-          </div>
-        </div>
-        <div class="row certified">
-          <div class="col-sm-12 col-md-5 col-lg-4 col-xl-3 ml-auto florida">
-            <?php pll_e('licensed by'); ?> 
-            <a target="_blank" rel="nofollow" href="http://www.fldoe.org/">
-              <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/florida.png"></img>
-            </a>
-          </div>
-          <div class="col-sm-12 col-md-5 col-lg-4 col-xl-3 mr-auto">
-            <a target="_blank" rel="nofollow" href="http://www.newsweek.com/insights/coding-career-and-you-top-coding-schools-2017/4geeks-academy">
-              <img style="max-height: 45px;" src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/newsweek.jpg"></img>
-            </a>
+            <h1 id="homeHeading" class="text-center">&#x3C; TimeToCode /&#x3E;</h1>
+            <h3 class='text-white text-center'><span class="text-blue"><?php pll_e('Learn Coding Skills That Change Your Life'); ?></span></h3>
           </div>
         </div>
       </div>
-      <section class="bg-light text-black call-to-action" id="about">
-      <div class="container">
-        <div class="row">
-          <div class="col-11 mx-auto">
-            <h4 class="section-heading text-black"><?php pll_e('Finally an affordable & premium course in Miami'); ?></h4>
-            <p class="text-faded"><?php pll_e('We never stopped trying until we mastered a real premium but affordable program. Talk to one of our student advisors and make sure you are a good fit for our program'); ?></p>
-            <form class="form-inline">
-              <a href="#syllabusModal"  data-toggle="modal" data-target="#syllabusModal" class='btn btn-lg btn-secondary'><?php pll_e('Request Syllabus'); ?></a>
-              <a href="<?php echo get_permalink( get_page_by_path( wpas_pll_get_slug('apply') ) ); ?>" class='btn btn-lg btn-danger'><?php pll_e('Apply Now'); ?></a>
-            </form>
+      <div class="text-black call-to-action">
+        <div class="container">
+          <div class="row">
+            <div class="col-11 mx-auto pt-3">
+              <p class="text-faded text-center"><?php pll_e('Learn to code and join more than 500 graduates already coding and working. <br />Get career support for life and a become a part of one of the biggest coding communities in the world.'); ?></p>
+              <form class="form-inline">
+                <a href="#syllabusModal"  data-toggle="modal" data-target="#syllabusModal" class='btn btn-lg btn-secondary mr-sm-2'><?php pll_e('Request Syllabus'); ?></a>
+                <a href="<?php echo get_permalink( get_page_by_path( wpas_pll_get_slug('apply') ) ); ?>" class='btn btn-lg btn-danger btn-apply'><?php pll_e('Apply Now'); ?></a>
+              </form>
+            </div>
           </div>
         </div>
       </div>
-    </section>
     </header>
     <!--
       -->
-    <?php get_template_part('partials/common','parttime'); ?>
+    <?php get_template_part('partials/common','cornerstones'); ?>
     <section class="bg-white text-black text-center pb-5">
       <div class="container">
         <div class="row">
           <div class="col-12 ">
-            <h2 class="section-heading text-black"><?php pll_e('Gamified and focused on'); ?> <br/><?php pll_e('skills with modern technologies'); ?></h2>
+            <h2 class="section-heading text-black"><?php pll_e('Gamified and focused on'); ?><?php pll_e('skills with modern technologies'); ?></h2>
           </div>
         </div>
         <div class="row no-gutters">
@@ -127,7 +113,7 @@ $args = wpas_get_view_data();
     <section class="bg-yellow text-black text-center p-0">
       <div class="container">
         <div class="row">
-          <div class="col-sm-10 mx-auto call-to-action mb-0">
+          <div class="col-sm-10 mx-auto call-to-action mb-0 mt-0">
             <?php get_template_part( 'partials/common', 'syllabus-download' ); ?>
           </div>
         </div>
@@ -160,7 +146,7 @@ $args = wpas_get_view_data();
           </div>
         </div>
         <div class="row">
-          <div class="col-6 student-projects">
+          <div class="col-12 col-sm-6 student-projects">
             <p class='section-message pb-1'>
               <?php pll_e('As a student, you will develop real-life projects similar to the most popular websites out there:'); ?>
             </p>
@@ -191,7 +177,7 @@ $args = wpas_get_view_data();
               </li>
             </ul>
           </div>
-          <div class="col-6 h-partners">
+          <div class="col-12 col-sm-6 h-partners">
             <p class='section-message pb-1 mt-4'>
               <?php pll_e('Become prepared with all the desired skills and tools that our network of hiring partners is craving for:'); ?>
             </p>

@@ -1,5 +1,10 @@
 require('../styles/index.scss');
 
+import Typography from 'typography';
+import doelgerTheme from 'typography-theme-doelger';
+const typography = new Typography(doelgerTheme);
+typography.injectStyles();
+
 import 'bootstrap/js/dist/util';
 import 'bootstrap/js/dist/collapse';
 import 'bootstrap/js/dist/carousel';
@@ -17,13 +22,17 @@ WPAS_APP.loadVideo = loadVideo;
 **/
 if(WPAS_APP.view.slug === 'home' || WPAS_APP.view.slug === 'inicio'){
   
-  loadVideo('/wp-content/themes/the-fastest/assets/video/home-dark.mp4');
+  //loadVideo('/wp-content/themes/the-fastest/assets/video/home-dark.mp4');
   jQuery('[data-toggle="tooltip"]').tooltip();
   $('.value').each(function() {
   	var text = $(this).text();
   	$(this).parent().css('width', text);
   });
   $('.block').tooltip();
+  
+  var fireworks = require('./lib/fireworks.js');
+  var canvasBg = document.querySelector( '.masthead' );
+  fireworks(canvasBg);
 }
 
 /**
@@ -32,9 +41,8 @@ if(WPAS_APP.view.slug === 'home' || WPAS_APP.view.slug === 'inicio'){
 
 if(['page-the-program','single-full-stack','single-web-development','single-coding-intro'].indexOf(WPAS_APP.view.template)!=-1 || WPAS_APP.view.slug === 'venezuela'){
   
-  var maxStickPosition = $('#pricing').offset().top - 20;
-  MakeSticky.init('[data-toggle="sticky-onscroll"]', maxStickPosition);
-  
+  var maxStickPosition = $('#pricing').offset().top;
+  MakeSticky.init('[data-toggle="sticky-onscroll"]', maxStickPosition, 20);
   
   var TheProgram = require('./pages/program.js').default;
   TheProgram.init();
@@ -135,7 +143,9 @@ if(WPAS_APP.view.slug === 'pricing' || WPAS_APP.view.slug === 'precio'){
     
   });
   
-  require('./pages/pricing.js');
+  var fireworks = require('./lib/fireworks.js');
+  var canvasBg = document.querySelector( '#bg-sketch' );
+  fireworks(canvasBg);
 
 }
 
@@ -144,11 +154,11 @@ if(WPAS_APP.view.slug === 'pricing' || WPAS_APP.view.slug === 'precio'){
 **/
 
 if(WPAS_APP.view.slug === 'calendar' || WPAS_APP.view.slug === 'calendario'){
-  
+
   SmartFilters.init({
     loadingAnimation: '.courses .loading-animation',
     resultsContainer: '.courses .list-group',
-    filterDropdown: '.dropdown-menu a',
+    filterDropdown: '.dropdown-filter a',
     filters: [
       { button: '#locationSelector', urlKey: 'l', options: '.location-option' },
       { button: '#langSelector', urlKey: 'lang', options: '.lang-option'},

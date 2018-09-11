@@ -2,8 +2,9 @@ export var MakeSticky = (function(){
     
     var plugin = {};
     //[data-toggle="sticky-onscroll"]
-    plugin.init = function(selector, maxStickPosition)
+    plugin.init = function(selector, maxStickPosition, marginTop)
     {
+        if(typeof marginTop == 'undefined') marginTop = 0;
         // Find all data-toggle="sticky-onscroll" elements
         $(selector).each(function() {
           var sticky = $(this);
@@ -13,16 +14,16 @@ export var MakeSticky = (function(){
           
           // Scroll & resize events
           $(window).on('scroll.sticky-onscroll resize.sticky-onscroll', function() {
-            stickyToggle(sticky, stickyWrapper, $(this), maxStickPosition);
+            stickyToggle(sticky, stickyWrapper, $(this), maxStickPosition, marginTop);
           });
           
           // On page load
-          stickyToggle(sticky, stickyWrapper, $(window), maxStickPosition);
+          stickyToggle(sticky, stickyWrapper, $(window), maxStickPosition, marginTop);
         });
         
     }
     
-    function stickyToggle(sticky, stickyWrapper, scrollElement, maxStickPosition) {
+    function stickyToggle(sticky, stickyWrapper, scrollElement, maxStickPosition, marginTop) {
           var stickyHeight = sticky.outerHeight();
           var stickyWidth = sticky.outerWidth();
           var offset = stickyWrapper.offset();
@@ -30,6 +31,7 @@ export var MakeSticky = (function(){
           var stickyLeft = offset.left;
     
           var windowScrollPosition = scrollElement.scrollTop();
+          //console.log("winPos->"+windowScrollPosition+ " sTop->"+stickyTop+" max->"+maxStickPosition );
           if (windowScrollPosition >= stickyTop){
             if(windowScrollPosition < maxStickPosition)
             {
@@ -38,14 +40,13 @@ export var MakeSticky = (function(){
               sticky.removeClass("fozen-sticky");
               sticky.css('width',stickyWidth+'px');
               sticky.css('left',stickyLeft+'px');
-              sticky.css('top','0');
+              sticky.css('top',marginTop+'px');
             }
             else
             {
               sticky.removeClass("is-sticky");
-              stickyWrapper.height('auto');
               sticky.addClass("fozen-sticky");
-              sticky.css('top',(maxStickPosition-665)+'px');
+              sticky.css('top',(maxStickPosition-stickyTop)+'px');
               sticky.css('left','15px');
             }
           }

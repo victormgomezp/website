@@ -42,6 +42,9 @@
             "page" => [
                 "all" => ['vendor.js','index.js']
                 ],
+            "404" => [
+                "all" => ['vendor.js','index.js']
+                ],
             "custom-post" => [
                 "template:page-landing-vc.php" => ['vendor.js','landing.js'],
                 'all' => ['vendor.js','index.js']

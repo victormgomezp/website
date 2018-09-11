@@ -1,8 +1,12 @@
-    function Particle( x, y, radius ) {
-    	this.init( x, y, radius );
-    }
-    
-    Particle.prototype = {
+  // ----------------------------------------
+  // Particles
+  // ----------------------------------------
+var Sketch = require("./sketch");
+  
+function Particle( x, y, radius ) {
+	this.init( x, y, radius );
+}
+Particle.prototype = {
     
     	init: function( x, y, radius ) {
     
@@ -45,37 +49,27 @@
     		ctx.fill();
     	}
     };
-
-  // ----------------------------------------
-  // Particles
-  // ----------------------------------------
   
+module.exports = function(container){
   var MAX_PARTICLES = 280;
   var COLOURS = [ '#69D2E7', '#A7DBD8', '#E0E4CC', '#F38630', '#FA6900', '#FF4E50', '#F9D423' ];
-  
   var particles = [];
   var pool = [];
   
-  var Sketch = require("../lib/sketch");
-  var canvasBg = document.querySelector( '#bg-sketch' );
-  canvasBg.style.display = "block";
-  var pricingSketch = Sketch.create({
-  	container: canvasBg
-  });
-  
-  pricingSketch.setup = function() {
+  container.style.display = "block";
+  var fireworksSketch = Sketch.create({ container: container });
+  fireworksSketch.setup = function() {
   
   	// Set off some initial particles.
   	var i, x, y;
   
   	for ( i = 0; i < 20; i++ ) {
-  		x = ( pricingSketch.width * 0.5 ) + random( -100, 100 );
-  		y = ( pricingSketch.height * 0.5 ) + random( -100, 100 );
-  		pricingSketch.spawn( x, y );
+  		x = ( fireworksSketch.width * 0.5 ) + random( -100, 100 );
+  		y = ( fireworksSketch.height * 0.5 ) + random( -100, 100 );
+  		fireworksSketch.spawn( x, y );
   	}
   };
-  
-  pricingSketch.spawn = function( x, y ) {
+  fireworksSketch.spawn = function( x, y ) {
   
   	if ( particles.length >= MAX_PARTICLES )
   		pool.push( particles.shift() );
@@ -95,8 +89,7 @@
   
   	particles.push( particle );
   }
-  
-  pricingSketch.update = function() {
+  fireworksSketch.update = function() {
   
   	var i, particle;
   
@@ -108,23 +101,22 @@
   		else pool.push( particles.splice( i, 1 )[0] );
   	}
   };
+  fireworksSketch.draw = function() {
   
-  pricingSketch.draw = function() {
-  
-  	pricingSketch.globalCompositeOperation  = 'lighter';
+  	fireworksSketch.globalCompositeOperation  = 'lighter';
   	
   	for ( var i = particles.length - 1; i >= 0; i-- ) {
-  		particles[i].draw( pricingSketch );
+  		particles[i].draw( fireworksSketch );
   	}
   };
-  
-  pricingSketch.mousemove = function() {
-  
-  	var particle, theta, force, touch, max, i, j, n;
-  
-  	for ( i = 0, n = pricingSketch.touches.length; i < n; i++ ) {
-  
-  		touch = pricingSketch.touches[i], max = random( 1, 4 );
-  		for ( j = 0; j < max; j++ ) pricingSketch.spawn( touch.x, touch.y );
-  	}
-  };
+  fireworksSketch.mousemove = function() {
+      
+      	var particle, theta, force, touch, max, i, j, n;
+      
+      	for ( i = 0, n = fireworksSketch.touches.length; i < n; i++ ) {
+      
+      		touch = fireworksSketch.touches[i], max = random( 1, 4 );
+      		for ( j = 0; j < max; j++ ) fireworksSketch.spawn( touch.x, touch.y );
+      	}
+      };
+}

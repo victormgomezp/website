@@ -156,6 +156,12 @@ $(document).ready(function() {
          console.log("Error getting the upcoming event: "+p3);
       }
    });
+   
+   var masterWhite = document.querySelector('.masthead-white');
+   if(typeof masterWhite != 'undefined' && masterWhite){
+      var navbar = document.querySelector('.navbar'); 
+      navbar.classList.add('inverted');
+   } 
 });
 
 function promptUpcomingEvent(event){

@@ -1,5 +1,7 @@
 <?php get_header(); ?>
-  <h1 class='text-center text-white p-5'><?php pll_e('Woops! Page not found'); ?></h1>
+  <header class="masthead masthead-white">
+    <h1 class='text-center p-5'><?php pll_e('Woops! Page not found'); ?></h1>
+  </header>
   <section class='bg-white'>
       <div class="container">
           <div class="row">

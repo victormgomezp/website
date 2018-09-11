@@ -1,5 +1,5 @@
 <?php $args = wpas_get_view_data(); ?>
-    <section class="bg-primary text-center email-newsletter" id="about">
+    <section class="bg-primary text-center email-newsletter text-black" id="about">
         <div class="container">
             <h4><?php pll_e('Subscribe to our Newsletter!'); ?></h4>
             <form class="form-inline newsletter-signup">

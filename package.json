@@ -23,6 +23,8 @@
     "popper.js": "^1.12.5",
     "postcss-loader": "^2.0.6",
     "precss": "^2.0.0",
+    "typography": "^0.16.17",
+    "typography-theme-doelger": "^0.15.11",
     "webpack": "^3.5.5",
     "wowjs": "^1.1.3"
   },

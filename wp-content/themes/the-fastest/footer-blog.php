@@ -1,6 +1,6 @@
     	<!-- Begin Footer
     	================================================== -->
-    	<footer class="footer row pl-5 pr-5">
+    	<footer class="footer row pl-5 pr-5 bg-white">
     		<div class="col-12 col-md-4">
     			Copyright &copy; 2017 <?php echo get_option('company-name'); ?>
     		</div>

@@ -3,17 +3,18 @@
 get_header(); 
 $args = wpas_get_view_data();
 ?>
-    <header class="masthead">
+    <header class="masthead masthead-white">
       <div class="container">
         <div class="row">
           <div class="col-md-10 mx-auto">
+            <h1 class="mb-5 text-black">Upcoming programs workshops and events</h1>
             <h3>
               Select a location: 
-              <div class="dropdown cities dropdown-selector">
-                <button id="locationSelector" data-key="l" class="dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <div class="dropdown cities dropdown-selector ml-3">
+                <button id="locationSelector" data-key="l" class="dropdown-toggle btn-primary" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                   <span><?php pll_e('all locations'); ?></span>
                 </button>
-                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                <div class="dropdown-menu dropdown-filter" aria-labelledby="dropdownMenuButton">
                   <a class="dropdown-item location-option" href="#" data-value="all">
                     <span><?php pll_e('all locations'); ?></span>
                   </a>
@@ -34,12 +35,12 @@ $args = wpas_get_view_data();
     <section class="bg-white text-black filters pt-0 pb-0" data-toggle="sticky-onscroll">
       <div class="row filters">
         <div class="col-12 col-sm-10 col-lg-8 col-xl-6 mx-auto">
-          <p class="filter-label d-none d-md-inline"><?php pll_e('Showing'); ?></p>
+          <p class="filter-label d-none d-md-inline"><?php pll_e('Discover'); ?></p>
           <div class="dropdown type dropdown-selector">
             <button id="typeSelector" data-key="type" class="dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
               <?php pll_e('courses'); ?>
             </button>
-            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+            <div class="dropdown-menu dropdown-filter" aria-labelledby="dropdownMenuButton">
               <a class="dropdown-item type-option" data-value="event" href="#"> <?php pll_e('events'); ?></a>
               <a class="dropdown-item type-option" data-value="course" href="#"> <?php pll_e('courses'); ?></a>
               <a class="dropdown-item type-option" data-value="workshop" href="#"> <?php pll_e('workshops'); ?></a>
@@ -50,7 +51,7 @@ $args = wpas_get_view_data();
                 <span class='d-inline d-lg-none'><?php pll_e('in all langs'); ?></span>
                 <span class='d-none d-lg-inline'><?php pll_e('in all languages'); ?></span>
             </button>
-            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+            <div class="dropdown-menu dropdown-filter" aria-labelledby="dropdownMenuButton">
               <a class="dropdown-item lang-option" href="#" data-value="all">
                 <span class='d-inline d-lg-none'><?php pll_e('in all langs'); ?></span>
                 <span class='d-none d-lg-inline'><?php pll_e('in all languages'); ?></span>
