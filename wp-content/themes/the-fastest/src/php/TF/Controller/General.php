@@ -106,6 +106,9 @@ class General{
         
         $args['locations'] = LocationPostType::all();
         $args['styles'] = UtilsController::getBodyStyles($args['current-location']["ID"]);
+        $args['page']['styles'] = get_field('landing_extra_styles', $args['current-location']["ID"]);
+        $args['page']['script'] = get_field('landing_extra_script', $args['current-location']["ID"]);
+        
         $args['upcoming-cohorts'] = CoursePostType::getUpcomingDates(['location' => $args['current-location']['bc_location_slug']]);;
         if(count($args['upcoming-cohorts'])>0) $args['upcoming'] = $args['upcoming-cohorts'][0];
         else $args['upcoming-message'] = [
