@@ -188,7 +188,6 @@ class CoursePostType extends BasePostType{
             	} 
             }
             
-            //print_r($cohorts->data); die();
             //Sort 
 			usort($upcoming, function( $a, $b ) {
 			    return $a["time"] - $b["time"];
