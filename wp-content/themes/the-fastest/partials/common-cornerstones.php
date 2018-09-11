@@ -29,7 +29,7 @@
           <div class="col-12 col-md-4 mx-auto mb-md-5">
             <div class="row text-left">
               <div class="col-4 pt-2">
-                <?php wpas_get_inline_svg('assets/icons/inline','webarchitect.svg'); ?>
+                <?php wpas_get_inline_svg('assets/icons/inline','binarycode.svg'); ?>
               </div>
               <div class="col-8">
                 <p><strong>The most used languages and tools</strong> Python, React.js, Node, Heroku, Git and many other. </p>

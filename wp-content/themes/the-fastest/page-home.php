@@ -4,10 +4,11 @@ get_header();
 $args = wpas_get_view_data();
 ?>
     <header class="masthead pb-0 masthead-white">
+      <h1 class="text-center" style="font-size: 12px">4Geeks Academy - Miami Coding Bootcamp</h1>
       <div class="header-content">
         <div class="row heading-row">
           <div class="col-sm-10 col-md-10 col-lg-9 col-xl-7 mx-auto">
-            <h1 id="homeHeading" class="text-center">&#x3C; TimeToCode /&#x3E;</h1>
+            <p id="homeHeading" class="text-center h1">&#x3C; TimeToCode /&#x3E;</p>
             <h3 class='text-white text-center'><span class="text-blue"><?php pll_e('Learn Coding Skills That Change Your Life'); ?></span></h3>
           </div>
         </div>
@@ -16,7 +17,7 @@ $args = wpas_get_view_data();
         <div class="container">
           <div class="row">
             <div class="col-11 mx-auto pt-3">
-              <p class="text-faded text-center"><?php pll_e('Learn to code and join more than 500 graduates already coding and working. <br />Get career support for life and a become a part of one of the biggest coding communities in the world.'); ?></p>
+              <p class="text-faded text-center"><?php pll_e('Learn to code and join more than 500 graduates already working as coders. <br />Get career support for life and a become a part of one of the biggest coding communities in the world.'); ?></p>
               <form class="form-inline">
                 <a href="#syllabusModal"  data-toggle="modal" data-target="#syllabusModal" class='btn btn-lg btn-secondary mr-sm-2'><?php pll_e('Request Syllabus'); ?></a>
                 <a href="<?php echo get_permalink( get_page_by_path( wpas_pll_get_slug('apply') ) ); ?>" class='btn btn-lg btn-danger btn-apply'><?php pll_e('Apply Now'); ?></a>
