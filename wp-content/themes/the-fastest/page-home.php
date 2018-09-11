@@ -3,11 +3,12 @@
 get_header(); 
 $args = wpas_get_view_data();
 ?>
+  <div class="container">
     <header class="masthead pb-0 masthead-white">
       <h1 class="text-center" style="font-size: 12px">4Geeks Academy - Miami Coding Bootcamp</h1>
       <div class="header-content">
         <div class="row heading-row">
-          <div class="col-sm-10 col-md-10 col-lg-9 col-xl-7 mx-auto">
+          <div class="col-12 mx-auto">
             <p id="homeHeading" class="text-center h1">&#x3C; TimeToCode /&#x3E;</p>
             <h3 class='text-white text-center'><span class="text-blue"><?php pll_e('Learn Coding Skills That Change Your Life'); ?></span></h3>
           </div>
@@ -27,6 +28,7 @@ $args = wpas_get_view_data();
         </div>
       </div>
     </header>
+  </div>
     <!--
       -->
     <?php get_template_part('partials/common','cornerstones'); ?>
