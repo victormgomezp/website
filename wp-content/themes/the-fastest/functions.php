@@ -4,6 +4,8 @@
     if(!defined('PUBLICPATH')) define('PUBLICPATH', get_site_url() . '/wp-content/themes/the-fastest/public/');
     require ABSPATH . 'vendor/autoload.php';
     
+    if(!file_exists(ABSPATH.'wp-content/themes/the-fastest/public/')) throw new Exception('There is no public folder in '.ABSPATH.'wp-content/themes/the-fastest/, $ npm run build');
+    
     use TF\ThemeManager;
     $themeManager = new ThemeManager();
     
@@ -11,7 +13,6 @@
     $settings = new ThemeAdminSettings();
     
     use WPAS\Performance\WPASAsyncLoader;
-    //$publicPath = parse_url( get_stylesheet_directory_uri(), PHP_URL_PATH );
     $publicPath = get_stylesheet_directory_uri();
     
     $asyncLoader = new WPASAsyncLoader([

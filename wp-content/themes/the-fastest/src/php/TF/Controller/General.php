@@ -75,6 +75,9 @@ class General{
     
     public function renderTheProgram(){
         $args = $this->getData();
+        $args['students'] = TestimonialPostType::All(array(
+        	'numberposts'	=> 6
+        ));
         $args['members'] = TeamMemberPostType::All(array(
         	'numberposts'	=> 6,
         	'meta_key'		=> 'member_type',
@@ -125,7 +128,7 @@ class General{
 
         $args = [];
         $args = $this->getData();
-        $query1 = PartnerPostType::all(['meta_key' => 'partner_type', 'meta_value' => 'hiring_partner', 'posts_per_page' => 4]);
+        $query1 = PartnerPostType::all(['meta_key' => 'partner_type', 'meta_value' => 'hiring_partner', 'posts_per_page' => -1]);
         $args['h-partners'] = array_map(function($post){ return PartnerPostType::fill($post); },$query1->posts);
         
         $query2 = PartnerPostType::all([

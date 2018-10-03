@@ -209,6 +209,7 @@ $args = wpas_get_view_data();
         </div>
       </div>
     </section>
+    <span id="bar-breakpoint"></span>
     <section id="pricing" class="bg-white text-black text-center pricing-section">
       <div class="container">
         <div class="row">

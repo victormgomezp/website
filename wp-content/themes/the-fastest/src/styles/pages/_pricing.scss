@@ -6,13 +6,6 @@
         margin: 0px auto;
         display: block;
     }
-    .glow{
-    	transition: all 0.1s ease-in-out;
-    	box-shadow: 0 5px 15px rgba(255, 255, 0, .4);
-    	background: rgba(255, 255, 0, .4);
-    	padding: 0px 5px 5px 5px;
-    	color: black;
-    }
     .underline:after {
         content: '';
         z-index: -1;
@@ -24,15 +17,6 @@
         right: 0px;
         top: 40px;
         width: 460px;
-    }
-    #financing-logo{
-        max-width: 180px;
-        margin-left: auto;
-        margin-right: auto;
-        top: 50%;
-        /* left: 50%; */
-        position: relative;
-        transform: translateY(-50%);
     }
 }
 

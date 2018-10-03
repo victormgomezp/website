@@ -52,6 +52,14 @@ ul{
     opacity: 0.9;
 }
 
+.accordion{
+    h5 small{ display: block; }
+    .btn{
+        background: none;
+        border: none;
+    }
+}
+
 /* Medium. Above 48em (768px) */
 @media screen and (min-width: 48em) {
     background-size: inherit;

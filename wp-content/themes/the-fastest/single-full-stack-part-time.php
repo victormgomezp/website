@@ -10,7 +10,11 @@ $args = wpas_get_view_data();
       <div class="header-content">
         <div class="row heading-row">
           <div class="col-sm-10 mx-auto text-left text-black">
-            <h1 class="text-white"><?php pll_e('Become a Full-Stack Web Developer'); ?></h1>
+            <h1 class="text-white"><?php pll_e('Become a'); ?></h1>
+            <h1 class="text-white"><?php pll_e('Full-Stack Software Developer'); ?></h1>
+            <h2 class="text-white mt-0">
+              <?php pll_e('16 weeks (part-time)'); ?>
+            </h2>
             <div id=flip>
               <div><div><?php pll_e('and increase your income significantly'); ?></div></div>
               <div><div><?php pll_e('and join the workforce of the future'); ?></div></div>
@@ -19,8 +23,8 @@ $args = wpas_get_view_data();
               <div><div><?php pll_e('and join the Tech community'); ?></div></div>
             </div>
             <form class="form-inline mt-3 mt-sm-0">
-              <a href="<?php echo get_permalink( get_page_by_path( wpas_pll_get_slug('apply') ) ); ?>" class='btn btn-lg btn-danger'><?php pll_e('Apply Now'); ?></a>
-              <a href="#syllabusModal"  data-toggle="modal" data-target="#syllabusModal" class='btn btn-lg btn-secondary mr-3'><?php pll_e('Request Syllabus'); ?></a>
+              <a href="<?php echo get_permalink( get_page_by_path( wpas_pll_get_slug('apply') ) ); ?>" class='btn btn-lg btn-danger mr-3'><?php pll_e('Apply Now'); ?></a>
+              <a href="#syllabusModal"  data-toggle="modal" data-target="#syllabusModal" class='btn btn-lg btn-secondary'><?php pll_e('Request Syllabus'); ?></a>
             </form>
           </div>
         </div>
@@ -244,6 +248,7 @@ $args = wpas_get_view_data();
             </div>
           </div>
         </div>
+        <span id="bar-breakpoint"></span>
         <div id="technologies" class="row">
           <div class="col-md-9 ml-auto">
             <h2 class="section-heading text-black mb-3"><?php pll_e('Technologies: Current and future most needed technolgies'); ?>.</h2>
@@ -268,35 +273,74 @@ $args = wpas_get_view_data();
         </div>
       </div>
     </section>
-    <section id="pricing" class="bg-white text-black text-center pricing-section">
+<section id="pricing" class="pricing-calculator bg-white text-black pt-md-5 pb-5">
       <div class="container">
-        <div class="row">
-          <div class="col-md-9 ml-auto">
-            <h2 class="section-heading text-black"><?php pll_e('Pricing & Financing'); ?></h2>
-              <div class='row'>
-                <div class='col-6 ml-auto upfront'>
-                  <div class="card card-block card-primary card-inverse bg-light">
-                    <div class="card-body">
-                      <h4 class="card-title m-0"><?php pll_e('Up-Front'); ?></h4>
-                      <h3 class="card-text">$6,000</h3>
-                    </div>
-                  </div>
-                </div>
-                <div class='col-6 mr-auto'>
-                  <div class="card card-block card-primary card-inverse bg-light">
-                    <div class="card-body">
-                      <h4 class="card-title m-0"><?php pll_e('Payment Plan'); ?></h4>
-                      <h3 class="card-text"><?php pll_e('From'); ?>$240/month</h3>
-                    </div>
+        <div class="row mb-4">
+          <div class="col-md-6 mx-auto">
+            <h2 class="text-center"><?php pll_e('Pricing & Financing'); ?></h2>
+            <h4 class='text-center'><?php pll_e('Pick your payment plan, no extra fees or hidden costs, everything is included'); ?></h4>
+          </div>
+        </div>
+        <div class='row'>
+          <div class='col-md-6 upfront'>
+            <div class='row mb-3'>
+              <div class='col-12'>
+                <div class="card card-block card-primary card-inverse bg-yellow mb-3">
+                  <div class="card-body p-4 mb-3 mt-2">
+                    <h4 class="card-title text-center"><?php pll_e('Pay Up-Front'); ?></h4>
+                    <h3 class="card-text text-center">$6,000</h3>
                   </div>
                 </div>
               </div>
-              <div class='row'>
-                <div class='col-md-10 mx-auto text-center'>
-                  <p class='section-message'><?php pll_e('This was the most challenging part, our program was designed from the ground up aming to make coding education universal'); ?>.</p>
-                  <a href="<?php echo get_permalink( get_page_by_path( wpas_pll_get_slug('apply') ) ); ?>" class="btn btn-danger btn-lg"><?php pll_e('Apply to the program'); ?></a>
+              <div class='col-12 d-none d-md-block'>
+                <div class='row mb-3'>
+                  <div class='col-sm-12'>
+                    <div class="card card-block card-primary bg-light mb-3">
+                      <div class="card-body text-center">
+                        <p><?php pll_e('Enjoy the best price in town'); echo '<br />'; pll_e('Pay up-front now with no extra or hidden fees'); ?></p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class='col-sm-12 text-center'>
+                  <a href="<?php echo get_permalink( get_page_by_path( wpas_pll_get_slug('apply') ) ); ?>" class="btn btn-danger btn-lg"><?php pll_e('Apply to 4Geeks Academy'); ?></a>
                 </div>
               </div>
+            </div>
+          </div>
+          <div class='col-md-6 text-center'>
+            <div class='row'>
+              <div class='col-12'>
+                <div class="card card-block card-primary card-inverse bg-yellow payment-plan">
+                  <div class="card-body">
+                    <h5 class="card-title m-0 text-center"><?php pll_e('Or Extended Payment Plan'); ?></h5>
+                    <h4 id="price-label" class="card-text text-center">$135 / month (No deposit)</h4>
+                  </div>
+                  <div class="card-footer">
+                    <input class="pricing-slider" data-slider-value="4" data-slider-id='pricing-slider-instance' data-slider-ticks-snap-bounds="100" type="text" data-slider-ticks="[0, 1, 2, 3, 4]" data-slider-ticks-labels='["6 months", "12 mo.", "24 mo.", "36 mo.", "60 mo."]' ticks_positions="[0, 25, 50, 75, 100]" />
+                  </div>
+                </div>
+              </div>
+              <div class='col-12'>
+                <div class='row'>
+                  <div class='col-12 mt-2'>
+                    <div class="card card-block card-primary bg-light mb-3">
+                  <div class="card-body">
+                    <p id="financing-details"><?php pll_e('Thanks to our partnership with Skillfund we have managed to create a new special payment plant <strong>starting at $135/mo</strong>'); ?></p>
+                  </div>
+                </div>
+                  </div>
+                </div>
+                <div class='row'>
+                  <div class='col-sm-6'>
+                      <img class="card-img-top financing-logo" data-templateurl="<?php echo get_stylesheet_directory_uri(); ?>" src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/skillsfund.png">
+                  </div>
+                  <div class='col-sm-6'>
+                      <a data-applylink="<?php echo get_permalink( get_page_by_path( wpas_pll_get_slug('apply') ) ); ?>" href="http://4geeksacademy.skills.fund" class="financing-btn btn btn-danger btn-lg"><?php pll_e('Apply to Financing'); ?></a>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>

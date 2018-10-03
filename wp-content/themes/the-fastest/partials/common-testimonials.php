@@ -1,7 +1,7 @@
 <?php if(isset($args['testimonials']) && count($args['testimonials'])>0){ ?>
 <section class="bg-light text-black testimonials pt-5 pb-5">
       <div class="container">
-        <h2 class="text-black text-center"><?php pll_e('Over 200 students graduated so far'); ?></h2>
+        <h2 class="text-black text-center"><?php pll_e('Over 300 students graduated so far'); ?></h2>
         <div class="row">
             <div class="col-md-12">
               <div id="testimonials-carousel" class="carousel carousel-testimonial slide" data-ride="carousel">
