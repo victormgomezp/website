@@ -1,6 +1,6 @@
 <?php
 /*
-Template Name: Full Stack Development
+Template Name: Full Stack Development (Part-time)
 Template Post Type: course
 */
 get_header(); 
@@ -10,7 +10,7 @@ $args = wpas_get_view_data();
       <div class="header-content">
         <div class="row heading-row">
           <div class="col-sm-10 mx-auto text-left text-black">
-            <h1><?php pll_e('Become a Full-Stack Web Developer'); ?></h1>
+            <h1 class="text-white"><?php pll_e('Become a Full-Stack Web Developer'); ?></h1>
             <div id=flip>
               <div><div><?php pll_e('and increase your income significantly'); ?></div></div>
               <div><div><?php pll_e('and join the workforce of the future'); ?></div></div>
@@ -19,8 +19,8 @@ $args = wpas_get_view_data();
               <div><div><?php pll_e('and join the Tech community'); ?></div></div>
             </div>
             <form class="form-inline mt-3 mt-sm-0">
-              <a href="#syllabusModal"  data-toggle="modal" data-target="#syllabusModal" class='btn btn-lg btn-secondary mr-3'><?php pll_e('Request Syllabus'); ?></a>
               <a href="<?php echo get_permalink( get_page_by_path( wpas_pll_get_slug('apply') ) ); ?>" class='btn btn-lg btn-danger'><?php pll_e('Apply Now'); ?></a>
+              <a href="#syllabusModal"  data-toggle="modal" data-target="#syllabusModal" class='btn btn-lg btn-secondary mr-3'><?php pll_e('Request Syllabus'); ?></a>
             </form>
           </div>
         </div>

@@ -2,11 +2,13 @@ $outline-width: 0;
 $break-point: 48em;
 $gray-base:     #999999;
 $brand-primary: black; //Zen Blue
+$bulletSize: 15px;
 
 
 .program-menu{display: none !important;}
-.page-the-program, .single-full-stack, .single-coding-intro, .single-web-development, .page-venezuela{
+.page-the-program, .single-full-stack, .single-full-stack-part-time, .single-coding-intro, .single-web-development, .page-venezuela{
     background-image: url('../../assets/img/coding-background.jpg');
+    background-position-y: 0px;
     section{ padding: 20px 0;}
     .tech-icons{font-size: 60px;}
     section.instructors{
@@ -22,6 +24,9 @@ $brand-primary: black; //Zen Blue
                 }
             }
         }
+        .circle-img{
+          height: 100px; width: 100px;
+        }
     }
     section.skills{
       svg{
@@ -30,10 +35,14 @@ $brand-primary: black; //Zen Blue
         margin-right: 20px;
       }
     }
+    .full-section-background{
+      background-size: cover;
+      background-position: center center;
+    }
     .section-header {
       color: $brand-primary;
-      font-weight: 400;
-      font-size: 1.4em;
+      font-weight: 800;
+      font-size: 1em;
     }
     .steps-timeline {
       outline: 1px dashed rgba(red, $outline-width);
@@ -108,8 +117,8 @@ $brand-primary: black; //Zen Blue
     .steps-img {
       display: block;
       margin: auto;
-      width: 25px;
-      height: 25px;
+      width: $bulletSize;
+      height: $bulletSize;
       background: black;
       border-radius: 50%; 
       @media screen and (max-width: $break-point) {
@@ -142,71 +151,126 @@ $brand-primary: black; //Zen Blue
             text-align: left;
         }
     }
+    @media screen and (min-width: 48em) {
+        background-color: #3f3f3f;
+    }
+    // Large devices (desktops, 62em and up)
+    @media (min-width: 1500px) { background-position-y: -250px; }
+    #course-modules{
+      .prework-phase, .profile-phase, .support-phase{
+      }
+      .multi-phase{
+        padding: 0;
+        background: white;
+        .nav-pills .nav-link{
+          color: black;
+          position: relative;
+          padding: 0.5rem 0.5rem;
+          font-size: 14px;
+          small{ display: block; margin:0; padding: 0;}
+          svg{
+            display: none;
+            height: 35px;
+            width: 35px;
+            position: absolute;
+            top: 10px;
+            right: 0;
+          }
+          &.sub-pills{
+            color: #868e96;
+            svg{ top: 5px;}
+          }
+          &.active{
+            svg{
+                display: inline-block;
+            }
+            color: black;
+            position:relative;
+            background: none;
+            border-radius: 0;
+            border-right: 0;
+            margin-left: 1px;
+            box-shadow: 0px 2px 5px 0px rgba(191,191,191,1);
+            &:before{
+              position: absolute;
+              top: 0;
+              bottom: 0;
+              right: -5px;
+              width: 10px;
+              background: #FFFF;
+              content: ' ';
+              z-index: 1;
+            }
+          }
+        }
+        .w-shadow{
+            box-shadow: 0px 2px 5px 0px rgba(191,191,191,1);
+        }
+      }
+    }
     
 }
 
-.page-the-program, .single-full-stack{
     
-    #flip {
-      display: block !important;
-      overflow:hidden;
-      font-size: 20px;
-      height:60px;
-      font-weight: 900;
-      @media screen and (min-width: $break-point) {
-        height:80px;
-        font-size: 40px;
-      }
-    }
-    #flip > div > div {
-      color:#fff;
-      padding: 0px 15px;
-      margin-bottom:30px;
-      display:inline-block;
-    }
-    #flip div:first-child {
-      @media screen and (max-width: $break-point) {
-        animation: show-mobile 8s linear infinite;
-      }
-      @media screen and (min-width: $break-point) {
-        animation: show-desktop 8s linear infinite;
-      }
-    }
-    #flip div div {
-      background:#42c58a;
-    }
-    #flip div:first-child div {
-      background:#4ec7f3;
-    }
-    #flip div:last-child div {
-      background:#DC143C;
-    }
-    @keyframes show-mobile {
-      0% {margin-top: 0px;} 
-      17% {margin-top: 0px;} 
-      20% {margin-top:-30px;}
-      37% {margin-top:-30px;}
-      40% {margin-top:-120px;}
-      57% {margin-top:-120px;}
-      60% {margin-top:-180px;}
-      77% {margin-top:-180px;}
-      80% {margin-top:-240px;}
-      97% {margin-top:-240px;}
-      100% {margin-top:0px;} 
-    }
-    @keyframes show-desktop {
-        0% {margin-top: 0px;} 
-        17% {margin-top: 0px;} 
-        20% {margin-top: -90px;}
-        37% {margin-top: -90px;}
-        40% {margin-top: -180px;} 
-        57% {margin-top: -180px;} 
-        60% {margin-top: -270px;} 
-        77% {margin-top: -270px;} 
-        80% {margin-top: -360px;} 
-        97% {margin-top: -360px;} 
-        100% {margin-top: 0px;}
-    }
+#flip {
+  display: block !important;
+  overflow:hidden;
+  font-size: 20px;
+  height:60px;
+  font-weight: 900;
+  @media screen and (min-width: $break-point) {
+    height:80px;
+    font-size: 40px;
+  }
+}
+#flip > div > div {
+  color:#fff;
+  padding: 0px 15px;
+  margin-bottom:30px;
+  display:inline-block;
+}
+#flip div:first-child {
+  @media screen and (max-width: $break-point) {
+    animation: show-mobile 8s linear infinite;
+  }
+  @media screen and (min-width: $break-point) {
+    animation: show-desktop 8s linear infinite;
+  }
+}
+#flip div div {
+  background:#42c58a;
+}
+#flip div:first-child div {
+  background:#4ec7f3;
+}
+#flip div:last-child div {
+  background:#DC143C;
+}
+@keyframes show-mobile {
+  0% {margin-top: 0px;} 
+  17% {margin-top: 0px;} 
+  20% {margin-top:-30px;}
+  37% {margin-top:-30px;}
+  40% {margin-top:-120px;}
+  57% {margin-top:-120px;}
+  60% {margin-top:-180px;}
+  77% {margin-top:-180px;}
+  80% {margin-top:-240px;}
+  97% {margin-top:-240px;}
+  100% {margin-top:0px;} 
+}
+@keyframes show-desktop {
+    0% {margin-top: 0px;} 
+    17% {margin-top: 0px;} 
+    20% {margin-top: -90px;}
+    37% {margin-top: -90px;}
+    40% {margin-top: -180px;} 
+    57% {margin-top: -180px;} 
+    60% {margin-top: -270px;} 
+    77% {margin-top: -270px;} 
+    80% {margin-top: -360px;} 
+    97% {margin-top: -360px;} 
+    100% {margin-top: 0px;}
 }
 
 .single-web-development{
@@ -235,9 +299,6 @@ $brand-primary: black; //Zen Blue
 //Tablets or bigger screens
 @media screen and (min-width: 48em) {
 
-    .page-the-program, .single-full-stack, .page-venezuela{
-        background-color: #3f3f3f;
-    }
     .program-menu{
         margin-top: 30px;
         display: block !important;

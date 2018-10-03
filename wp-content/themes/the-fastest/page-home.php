@@ -29,6 +29,14 @@ $args = wpas_get_view_data();
       </div>
     </header>
   </div>
+  <div class="container mt-5">
+    <div class="row">
+      <div class="col-3 text-center"><?php wpas_get_inline_svg('assets/icons/badges/inline','1.svg'); ?></div>
+      <div class="col-3 text-center"><?php wpas_get_inline_svg('assets/icons/badges/inline','2.svg'); ?></div>
+      <div class="col-3 text-center"><?php wpas_get_inline_svg('assets/icons/badges/inline','3.svg'); ?></div>
+      <div class="col-3 text-center"><?php wpas_get_inline_svg('assets/icons/badges/inline','4.svg'); ?></div>
+    </div>
+  </div>
     <!--
       -->
     <?php get_template_part('partials/common','cornerstones'); ?>

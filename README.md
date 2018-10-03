@@ -99,3 +99,27 @@ These are all the mandatory plugins for the wordpress instalation (any other plu
 
 **Alejandro Sanchez**
 - About me: [alesanchezr.com](alesanchezr.com)
+
+
+- What happends next
+- Week by week
+- A day at the academy
+- Facts
+    - Senior only mentors
+    - SAllary increase average
+    - Open posssions right now
+    - Placement rate of ours
+- Skills
+- Technologies (try to blend it with weeb by week section.)
+- Pricing
+- Students
+- Proyects
+- 
+8:00 yoga including starthub members??
+8:45 am: Setup and coffee
+9 am to 9:55 am: Review last day & weekend activities, Q&A. and brief overall of what we have addressed;
+9:55 am to 10:00 am: Coffee break and bathroom
+10:00 am to 12:30 pm: Lesson time. With new content, 
+12:40 pm to 1:50 pm: Lunch Time;
+2:00 pm to 4:00 pm: Project/exercises. Students must build and complete exercises in classes;
+5:00 pm to 6:30 pm: New content. Normally about the same technology or topic addressed in the morning.

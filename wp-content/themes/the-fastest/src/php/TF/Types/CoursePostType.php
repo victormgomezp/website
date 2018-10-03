@@ -58,7 +58,6 @@ class CoursePostType extends BasePostType{
         $cohorts = WPASThemeSettingsBuilder::getThemeOption('sync-bc-cohorts-api');
         $upcoming = [];
         if(!empty($cohorts)) foreach($cohorts as $c) if(self::filterQuery($c,$query)) $upcoming[] = $c;
-        
         return $upcoming;
     }
     

@@ -64,6 +64,8 @@ $('.syllabus-download').submit(function(event){
       method: 'POST',
       data: {
          action: 'download_syllabus',
+         template: (typeof WPAS_APP.template == 'string') ? WPAS_APP.template.replace('single-','') : 'none',
+         url: WPAS_APP.url,
          email: email,
          first_name: firstName
       },
