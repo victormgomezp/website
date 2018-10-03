@@ -13,7 +13,7 @@
     $runner = new Runner();
     
     $runner->addCheck(checkURL($publicURL.'/apply', 'Once you click on Apply, you will'));
-    $runner->addCheck(checkURL($publicURL.'/home', 'Breathe Coding'));
+    $runner->addCheck(checkURL($publicURL.'/home', 'Time To Code'));
     $runner->addCheck(checkURL($publicURL.'/the-program', 'A Premium Program designed to'));
     $runner->addCheck(checkURL($publicURL.'/pricing', 'Our program was specifically built to efficiently'));
     $runner->addCheck(checkURL($publicURL.'/the-academy', 'Theory is delivered through video, animation, images, '));
