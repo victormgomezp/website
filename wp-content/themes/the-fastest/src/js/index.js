@@ -1,3 +1,4 @@
+/* global WPAS_APP, $ */
 require('../styles/index.scss');
 
 import Typography from 'typography';
@@ -40,7 +41,7 @@ if(WPAS_APP.view.slug === 'home' || WPAS_APP.view.slug === 'inicio'){
  * THE PROGRAM
 **/
 
-if(['page-the-program','single-full-stack-part-time','single-full-stack','single-web-development','single-coding-intro'].indexOf(WPAS_APP.view.template)!=-1 || WPAS_APP.view.slug === 'venezuela'){
+if(['page-the-program','single-full-stack-part-time','single-full-stack','single-web-development','single-coding-intro'].indexOf(WPAS_APP.view.template)!= -1){
   
   var barBreakpoint = $('#bar-breakpoint');
   if(!barBreakpoint) throw new Error('There is no breathepoint established for the bar');
@@ -50,46 +51,15 @@ if(['page-the-program','single-full-stack-part-time','single-full-stack','single
   
   //script for the slider calculator
   var PriceCalculator = require('./lib/priceCalculator.js').default;
-  PriceCalculator('#pricing',
-    [
-      {
-        price: '$1000 deposit + $853 / month',
-        details: 'Thanks to our partnership with Quotanda we have managed to create the most flexible placement plan in town',
-        logo: '/assets/img/quotanda.png',
-        applyText: 'Apply now',
-        applyURL: false
-      },
-      {
-        price: '$1000 deposit + $445 / month',
-        details: 'Thanks to our partnership with Quotanda we have managed to create the most flexible placement plan in town',
-        logo: '/assets/img/quotanda.png',
-        applyText: 'Apply now',
-        applyURL: false
-      },
-      {
-        price: '$1000 deposit + $240 / month',
-        details: 'Thanks to our partnership with Quotanda we have managed to create the most flexible placement plan in town',
-        logo: '/assets/img/quotanda.png',
-        applyText: 'Apply now',
-        applyURL: false
-      },
-      {
-        price: '$198 / month (No deposit)',
-        details: 'Apply to Skillsfund and get 36 month financing, pay <strong>only $198 per month</strong> and with no deposit to start.',
-        logo: '/assets/img/skillsfund.png',
-        applyText: 'Apply to financing',
-        applyURL: 'http://4geeksacademy.skills.fund'
-      },
-      {
-        price: '$135 / month (No deposit)',
-        details: 'Apply to Skillsfund and get 60 month financing, pay <strong>only $135 every month</strong> and with no deposit to start.',
-        logo: '/assets/img/skillsfund.png',
-        applyText: 'Apply to financing',
-        applyURL: 'http://4geeksacademy.skills.fund'
-      }
-    ]
-  );
+  const PRICES = require('./common/prices.js').default;
   
+  if(WPAS_APP.view.template == 'single-full-stack-part-time') 
+    PriceCalculator('#pricing',PRICES['full-stack-part-time']);
+    
+  else if (WPAS_APP.view.template ==  'single-full-stack') 
+    PriceCalculator('#pricing',PRICES['full-stack-full-time']);
+  
+  //animation for the program
   var TheProgram = require('./pages/program.js').default;
   TheProgram.init();
   

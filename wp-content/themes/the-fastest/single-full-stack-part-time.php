@@ -297,7 +297,7 @@ $args = wpas_get_view_data();
                   <div class='col-sm-12'>
                     <div class="card card-block card-primary bg-light mb-3">
                       <div class="card-body text-center">
-                        <p><?php pll_e('Enjoy the best price in town'); echo '<br />'; pll_e('Pay up-front now with no extra or hidden fees'); ?></p>
+                        <p><?php pll_e('Prices will raise $1,000 from January 2019'); echo '.<br />'; pll_e('Apply now and take advantage of the current price'); ?>.</p>
                       </div>
                     </div>
                   </div>
@@ -336,7 +336,7 @@ $args = wpas_get_view_data();
                       <img class="card-img-top financing-logo" data-templateurl="<?php echo get_stylesheet_directory_uri(); ?>" src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/skillsfund.png">
                   </div>
                   <div class='col-sm-6'>
-                      <a data-applylink="<?php echo get_permalink( get_page_by_path( wpas_pll_get_slug('apply') ) ); ?>" href="http://4geeksacademy.skills.fund" class="financing-btn btn btn-danger btn-lg"><?php pll_e('Apply to Financing'); ?></a>
+                      <a data-applylink="<?php echo get_permalink( get_page_by_path( wpas_pll_get_slug('apply') ) ); ?>" href="https://4geeksacademy.skills.fund" class="financing-btn btn btn-danger btn-lg"><?php pll_e('Apply to Financing'); ?></a>
                   </div>
                 </div>
               </div>

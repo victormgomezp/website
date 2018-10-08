@@ -50,9 +50,6 @@ $args = wpas_get_view_data();
                 <a class="nav-link" href="#technologies"><?php pll_e('Technologies'); ?></a>
               </li>
               <li class="nav-item">
-                <a class="nav-link disabled" href="#pricing"><?php pll_e('Price & Financing'); ?></a>
-              </li>
-              <li class="nav-item">
                 <a href="<?php echo get_permalink( get_page_by_path( wpas_pll_get_slug('apply') ) ); ?>" class='btn btn-danger'><?php pll_e('Apply Now'); ?></a>
               </li>
             </ul>
@@ -266,38 +263,5 @@ $args = wpas_get_view_data();
       </div>
     </section>
     <span id="bar-breakpoint"></span>
-    <section id="pricing" class="bg-white text-black text-center pricing-section">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-9 ml-auto">
-            <h2 class="section-heading text-black"><?php pll_e('Pricing & Financing'); ?></h2>
-              <div class='row'>
-                <div class='col-6 ml-auto upfront'>
-                  <div class="card card-block card-primary card-inverse bg-light">
-                    <div class="card-body">
-                      <h4 class="card-title m-0"><?php pll_e('Up-Front'); ?></h4>
-                      <h3 class="card-text">$6,000</h3>
-                    </div>
-                  </div>
-                </div>
-                <div class='col-6 mr-auto'>
-                  <div class="card card-block card-primary card-inverse bg-light">
-                    <div class="card-body">
-                      <h4 class="card-title m-0"><?php pll_e('Payment Plan'); ?></h4>
-                      <h3 class="card-text"><?php pll_e('From'); ?>$240/month</h3>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class='row'>
-                <div class='col-md-10 mx-auto text-center'>
-                  <p class='section-message'><?php pll_e('This was the most challenging part, our program was designed from the ground up aming to make coding education universal'); ?>.</p>
-                  <a href="<?php echo get_permalink( get_page_by_path( wpas_pll_get_slug('apply') ) ); ?>" class="btn btn-danger btn-lg"><?php pll_e('Apply to the program'); ?></a>
-                </div>
-              </div>
-          </div>
-        </div>
-      </div>
-    </section>
     <?php include(locate_template('partials/common-testimonials.php')); ?>
   <?php get_footer(); ?>
