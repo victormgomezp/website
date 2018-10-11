@@ -31,10 +31,10 @@ $args = wpas_get_view_data();
   </div>
   <div class="container mt-5">
     <div class="row">
-      <div class="col-3 text-center"><?php wpas_get_inline_svg('assets/icons/badges/inline','1.svg'); ?></div>
-      <div class="col-3 text-center"><?php wpas_get_inline_svg('assets/icons/badges/inline','2.svg'); ?></div>
-      <div class="col-3 text-center"><?php wpas_get_inline_svg('assets/icons/badges/inline','3.svg'); ?></div>
-      <div class="col-3 text-center"><?php wpas_get_inline_svg('assets/icons/badges/inline','4.svg'); ?></div>
+      <div class="col-3 text-center"><a target="_black" rel="nofollow" href="https://www.switchup.org/bootcamps/4geeks-academy"><?php wpas_get_inline_svg('assets/icons/badges/inline','1.1.svg'); ?></a></div>
+      <div class="col-3 text-center"><a target="_black" rel="nofollow" href="https://www.newsweek.com/insights/coding-career-and-you-top-coding-schools-2017/4geeks-academy"><?php wpas_get_inline_svg('assets/icons/badges/inline','1.2.svg'); ?></a></div>
+      <div class="col-3 text-center"><?php wpas_get_inline_svg('assets/icons/badges/inline','1.3.svg'); ?></div>
+      <div class="col-3 text-center"><?php wpas_get_inline_svg('assets/icons/badges/inline','1.4.svg'); ?></div>
     </div>
   </div>
     <!--
