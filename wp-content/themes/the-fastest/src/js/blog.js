@@ -3,16 +3,15 @@ require('../styles/blog.scss');
 import 'bootstrap/js/dist/util';
 import 'bootstrap/js/dist/collapse';
 
-/*
-$(function(){
-  var topOfOthDiv = $(".hideshare").offset().top;
-  $(window).scroll(function() {
-      if($(window).scrollTop() > topOfOthDiv) { //scrolled past the other div?
-          $(".share").hide(); //reached the desired point -- show div
-      }
-      else{
-        $(".share").show();
-      }
-  });
-});
-*/
+if(WPAS_APP.view.slug === 'pricing' || WPAS_APP.view.slug === 'precio'){
+  
+  loadVideo('/wp-content/themes/the-fastest/assets/video/pricing.mp4');
+  
+  //script for the slider calculator
+  var priceCalculator = require('./lib/priceCalculator.js');
+  
+  var fireworks = require('./lib/fireworks.js');
+  var canvasBg = document.querySelector( '#bg-sketch' );
+  fireworks(canvasBg);
+
+}

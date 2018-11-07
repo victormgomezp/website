@@ -2,7 +2,11 @@
     	================================================== -->
     	<footer class="footer row pl-5 pr-5 bg-white">
     		<div class="col-12 col-md-4">
-    			Copyright &copy; 2017 <?php echo get_option('company-name'); ?>
+    			Copyright &copy; 
+    			<script type="text/javascript">
+                  document.write(new Date().getFullYear());
+                </script> 
+                <?php echo get_option('company-name'); ?>
     		</div>
     		<div class="col-12 col-md-4">
     		</div>
