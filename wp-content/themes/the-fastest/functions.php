@@ -16,7 +16,7 @@
     $publicPath = get_stylesheet_directory_uri();
     //print_r($publicPath); die();
     $asyncLoader = new WPASAsyncLoader([
-        'manifest-url' => $publicPath.'/public/manifest.json',
+        //'manifest-url' => $publicPath.'/public/manifest.json',
         'public-url' => $publicPath.'/public/',
         'debug' => !WP_ASYNC_LOADING,
         'force-jquery' => true,
