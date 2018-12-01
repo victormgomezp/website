@@ -10,7 +10,7 @@ $args = wpas_get_view_data();
         <div class="row heading-row">
           <div class="col-12 mx-auto">
             <p id="homeHeading" class="text-center h1">&#x3C; TimeToCode /&#x3E;</p>
-            <h3 class='text-white text-center'><span class="text-blue"><?php pll_e('Learn Coding Skills That Change Your Life'); ?></span></h3>
+            <h3 class='text-white text-center'><span class="text-blue"><?php pll_e('Premium coding education'); ?>, <?php pll_e('part-time'); ?>, <?php pll_e('from'); ?> $135/mo</span></h3>
           </div>
         </div>
       </div>
