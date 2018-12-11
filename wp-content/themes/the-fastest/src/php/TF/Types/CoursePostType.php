@@ -10,6 +10,9 @@ use DateTime;
 
 class CoursePostType extends BasePostType{
     
+    private static $cohorts = null;
+    private static $cohortsSlugs = null;
+    
     function populate_fields(){
         
         add_filter('acf/load_field/name=active_campaign_course_slug', [$this,'populate_active_campaign_slug']);
@@ -30,19 +33,33 @@ class CoursePostType extends BasePostType{
         
     }
     
+    static function _fetchProfiles(){
+        $cohortsJSON = @file_get_contents(BREATHECODE_API_HOST.'/profiles/');
+        if($cohortsJSON)
+        {
+            $c = json_decode($cohortsJSON);
+            if($c && $c->code==200){
+                
+                self::$cohorts = [];
+                self::$cohortsSlugs = [];
+                
+                foreach($c->data as $opt){
+                    self::$cohorts[$opt->slug] = $opt->name;
+                    self::$cohortsSlugs[] = $opt->slug;
+                } 
+            }
+            return self::$cohorts;
+            
+        }else WPASAdminNotifier::addTransientMessage(WPASAdminNotifier::ERROR,'Error getting the BreatheCode Profiles Slugs');
+    }
+    
     function populate_breathecode_slug( $field ) {
         
         $field['choices'] = array();
         $field['choices']['0'] = 'Select a slug from breathecode';
 
-        $cohortsJSON = @file_get_contents(BREATHECODE_API_HOST.'/profiles/');
-        if($cohortsJSON)
-        {
-            $cohorts = json_decode($cohortsJSON);
-            if($cohorts && $cohorts->code==200) foreach($cohorts->data as $opt) $field['choices'][$opt->slug] = $opt->name.' ('.$opt->slug.')';
-        
-            
-        }else WPASAdminNotifier::addTransientMessage(WPASAdminNotifier::ERROR,'Error getting the BreatheCode Profiles Slugs');
+        if(!self::$cohortsSlugs) self::_fetchProfiles();
+        foreach(self::$cohorts as $slug => $name) $field['choices'][$slug] = $name.' ('.$slug.')';
         
         return $field;
         
@@ -50,11 +67,10 @@ class CoursePostType extends BasePostType{
     
     public static function getUpcomingDates($params=null){
         
+        if($params and !empty($params['profile']) and is_string($params['profile']) and $params['profile']!=='all') $params['profile'] = [$params['profile']];
         $query = $params;
         if(!$params) $query = self::getCalendarQuery();
 
-        if(empty($query['profile'])) $query['profile'] = 'full-stack';
-        
         $cohorts = WPASThemeSettingsBuilder::getThemeOption('sync-bc-cohorts-api');
         $upcoming = [];
         if(!empty($cohorts)) foreach($cohorts as $c) if(self::filterQuery($c,$query)) $upcoming[] = $c;
@@ -104,25 +120,29 @@ class CoursePostType extends BasePostType{
     public static function getCalendarQuery($args=null){
         $query = [];
         
+        if(!self::$cohortsSlugs) self::_fetchProfiles();
+        
         if(!empty($_REQUEST['lang'])) $query['language'] = $_REQUEST['lang'];
         if(!empty($_REQUEST['l'])) $query['location'] = $_REQUEST['l'];
-        
+        if(empty($_REQUEST['profile']) || $_REQUEST['profile'] === 'all'){
+            $query['profile'] = self::$cohortsSlugs;
+        }else{
+            $query['profile'] = explode(",", $_REQUEST['profile']);
+        }
         return $query;
     }
     
     private static function filterQuery($cohort, $query){
-        //if($cohort['bc_profile_slug'] == 'coding-introduction') return false;
-        //else{
+        //debug($query);
             if( 
-                !empty($query['profile']) && $cohort['bc_profile_slug'] != $query['profile'] 
+                !empty($query['profile']) && !in_array($cohort['bc_profile_slug'], $query['profile'])
                 //&& $query['profile'] != 'coding-introduction'
             ) return false;
-        //}
 
         if(!empty($query['language']) && strtolower(substr($cohort['language'],0,2)) != $query['language']) return false;
         if(!empty($query['location']) && $cohort['bc_location_slug'] != $query['location']) return false;
         if(new DateTime() > new DateTime(date('Y-m-d',$cohort['time']))) return false;
-        
+
         return true;
     }
     

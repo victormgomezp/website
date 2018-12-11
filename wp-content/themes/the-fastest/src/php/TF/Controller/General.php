@@ -34,24 +34,14 @@ class General{
         $args['h-partners'] = array_map(function($post){
             return PartnerPostType::fill($post);
         },$query2->posts);
-        /*
-        $profilesJSON = @file_get_contents(BREATHECODE_API_HOST.'/specialties/');
-        if($profilesJSON)
-        {
-            $result = json_decode($profilesJSON);
-            $args['profiles'] = (array) $result->data;
-        }
-        else
-        {
-            $args['profiles'] = [];
-            $profile = [];
-            $profile['image_url'] = 'Profile 1';
-            $profile['name'] = '';
-            
-            $args['profiles'][] = (object) $profile;
-        }
-        */
-        //print_r($args['profiles']); die();
+        
+        $args['upcoming-cohorts'] = CoursePostType::getUpcomingDates();
+
+        if(count($args['upcoming-cohorts'])>0) $args['upcoming'] = $args['upcoming-cohorts'][0];
+        else $args['upcoming-message'] = [
+            "message" => "No upcoming dates scheduled for this curse",
+            "btn-message" => "Other dates & locations"
+        ];
         return $args;
     }
     
@@ -87,7 +77,8 @@ class General{
         $args['course'] = (array) get_queried_object();
         $args['course']['slug'] = get_field('breathecode_course_slug', $args['course']['ID']);
 
-        $args['upcoming-cohorts'] = CoursePostType::getUpcomingDates(['profile' => $args['course']['slug']]);
+        $args['upcoming-cohorts'] = CoursePostType::getUpcomingDates(['profile' =>$args['course']['slug'] ]);
+
         if(count($args['upcoming-cohorts'])>0) $args['upcoming'] = $args['upcoming-cohorts'][0];
         else $args['upcoming-message'] = [
             "message" => "No upcoming dates scheduled for this curse",
