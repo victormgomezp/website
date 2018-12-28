@@ -15,7 +15,7 @@
     $runner->addCheck(checkURL($publicURL.'/apply', 'Once you click on Apply, you will'));
     $runner->addCheck(checkURL($publicURL.'/home', 'TimeToCode'));
     $runner->addCheck(checkURL($publicURL.'/the-program', 'A Premium Program designed to'));
-    $runner->addCheck(checkURL($publicURL.'/pricing', 'Our program was specifically built to efficiently'));
+    //$runner->addCheck(checkURL($publicURL.'/pricing', 'Our program was specifically built to efficiently'));
     $runner->addCheck(checkURL($publicURL.'/the-academy', 'Theory is delivered through video, animation, images, '));
     $runner->addCheck(checkURL($publicURL.'/calendar', 'to discover our available courses, workshops and events.'));
     $runner->addCheck(checkURL($publicURL.'/venezuela', 'acelerar tu carrera como programador'));

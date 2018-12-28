@@ -108,3 +108,5 @@ node_modules/
 !*.lock
 !webpack.dev.js
 !webpack.prod.js
+
+.env
