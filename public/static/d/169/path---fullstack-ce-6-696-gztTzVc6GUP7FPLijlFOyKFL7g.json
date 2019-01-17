@@ -1,0 +1,42 @@
+{
+  "data": {
+    "coursesYaml": {
+      "info": "fullstack info",
+      "basic_info": { "slug": "fullstack" },
+      "banner": {
+        "subtitle": "4Geeks Academy Miami Coding Bootcamp",
+        "title": "Become a Full-Stack Software Developer",
+        "time": "16 weeks (Part-time)"
+      },
+      "description": {
+        "description": "A Premiun Program designed tolaunch your web developer career",
+        "time": "300+ hours of lessons 3 times a week for a 16-week period.",
+        "menu_program": {
+          "option1": null,
+          "option2": null,
+          "option3": null,
+          "option4": null,
+          "option5": null,
+          "option6": null
+        },
+        "detail_program": null
+      },
+      "course_structure": {
+        "menu_structure": {
+          "option1": "Pre-Work",
+          "option2": "Learng To Code",
+          "option3": "Junior Applications",
+          "option4": "Advanced Applications"
+        },
+        "detail_program": {
+          "option1": {
+            "time": "2wks",
+            "description": "Starting with basics HTML5 + CSS3 + Javascript. We review the basics of coding and make sure we are all on the same page.",
+            "possible_projects": "CSS Postcard, Minimal Instagram Version, etc."
+          }
+        }
+      }
+    }
+  },
+  "pageContext": { "slug": "fullstack" }
+}

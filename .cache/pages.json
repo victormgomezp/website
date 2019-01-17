@@ -1,0 +1,42 @@
+[
+  {
+    "componentChunkName": "component---src-pages-index-js",
+    "jsonName": "index",
+    "path": "/"
+  },
+  {
+    "componentChunkName": "component---src-templates-about-us-template-js",
+    "jsonName": "about-us-9d7",
+    "path": "/about-us"
+  },
+  {
+    "componentChunkName": "component---src-templates-apply-template-js",
+    "jsonName": "apply-4da",
+    "path": "/apply"
+  },
+  {
+    "componentChunkName": "component---src-templates-location-template-js",
+    "jsonName": "caracas-986",
+    "path": "/caracas"
+  },
+  {
+    "componentChunkName": "component---cache-dev-404-page-js",
+    "jsonName": "dev-404-page-5f9",
+    "path": "/dev-404-page/"
+  },
+  {
+    "componentChunkName": "component---src-templates-course-template-js",
+    "jsonName": "fullstack-ce6",
+    "path": "/fullstack"
+  },
+  {
+    "componentChunkName": "component---src-templates-course-template-js",
+    "jsonName": "fullstack-fulltime-517",
+    "path": "/fullstack-fulltime"
+  },
+  {
+    "componentChunkName": "component---src-templates-location-template-js",
+    "jsonName": "santiago-a6f",
+    "path": "/santiago"
+  }
+]

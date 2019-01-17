@@ -1,0 +1,71 @@
+@import 'node_modules/bootstrap/scss/bootstrap.scss';
+@import "./colors.scss";
+
+//Desktop
+@media only screen and (min-width: 992px){
+    @import "./media/desktop.scss";
+}
+
+//Tablets
+@media only screen and (min-width: 768px) and (max-width: 992px){
+@import "./media/tablet.scss";
+}
+
+//Mobile
+@media only screen and (max-width: 768px){
+@import "./media/phone.scss";
+}
+
+//General
+.no-padding{
+    padding: 0px;
+}
+
+.no-margin{
+    margin: 0px;
+}
+
+.full-width{
+    width: 100%;
+    margin: 0px;
+}
+
+p{
+    margin: 0px;
+}
+
+.btn-red{
+    background-color: $red;
+    margin-right: 25px;
+    color: $white;
+    font-size: 16px;
+    font-weight: 100;
+    width: 220px;
+    border-radius: 27px;
+    padding: 13px 0px;
+    margin-top: 30px;
+}
+
+.btn-grey{
+    background-color: $grey-light;
+    margin-right: 25px;
+    color: $white;
+    font-size: 16px;
+    font-weight: 100;
+    width: 220px;
+    border-radius: 27px;
+    padding: 13px 0px;
+    margin-top: 30px;
+}
+
+//Menu
+.menu{
+    z-index: 1;
+    .item-menu{
+        padding: 0px 10px;
+        margin: 0px;
+        a{
+            color: $yellow;
+        }
+    }
+}

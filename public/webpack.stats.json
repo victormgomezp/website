@@ -1,0 +1,110 @@
+{
+  "errors": [],
+  "warnings": [
+    "./node_modules/React/cjs/react.production.min.js\nThere are multiple modules with names that only differ in casing.\nThis can lead to unexpected behavior when compiling on a filesystem with other case-semantic.\nUse equal casing. Compare these module identifiers:\n* /Users/rafaelesaa/workspaces/website/node_modules/React/cjs/react.production.min.js\n    Used by 1 module(s), i. e.\n    /Users/rafaelesaa/workspaces/website/node_modules/React/index.js\n* /Users/rafaelesaa/workspaces/website/node_modules/react/cjs/react.production.min.js\n    Used by 1 module(s), i. e.\n    /Users/rafaelesaa/workspaces/website/node_modules/react/index.js",
+    "./node_modules/React/index.js\nThere are multiple modules with names that only differ in casing.\nThis can lead to unexpected behavior when compiling on a filesystem with other case-semantic.\nUse equal casing. Compare these module identifiers:\n* /Users/rafaelesaa/workspaces/website/node_modules/React/index.js\n    Used by 59 module(s), i. e.\n    /Users/rafaelesaa/workspaces/website/node_modules/gatsby/dist/utils/babel-loader.js??ref--5-0!/Users/rafaelesaa/workspaces/website/src/components/rowEvent.js\n* /Users/rafaelesaa/workspaces/website/node_modules/react/index.js\n    Used by 149 module(s), i. e.\n    /Users/rafaelesaa/workspaces/website/node_modules/gatsby/dist/utils/babel-loader.js??ref--5-0!/Users/rafaelesaa/workspaces/website/.cache/production-app.js"
+  ],
+  "namedChunkGroups": {
+    "app": {
+      "chunks": [8, 0],
+      "assets": [
+        "webpack-runtime-fac55a8ad173f4398a8b.js",
+        "webpack-runtime-fac55a8ad173f4398a8b.js.map",
+        "app-a95330a18c09313b2cbe.js",
+        "app-a95330a18c09313b2cbe.js.map"
+      ],
+      "children": {},
+      "childAssets": {}
+    },
+    "component---node-modules-gatsby-plugin-offline-app-shell-js": {
+      "chunks": [1],
+      "assets": [
+        "component---node-modules-gatsby-plugin-offline-app-shell-js-fb1881f935cf4629d27f.js",
+        "component---node-modules-gatsby-plugin-offline-app-shell-js-fb1881f935cf4629d27f.js.map"
+      ],
+      "children": {},
+      "childAssets": {}
+    },
+    "component---src-templates-course-template-js": {
+      "chunks": [5],
+      "assets": [
+        "component---src-templates-course-template-js-96e83e82ed3dbfa0be27.js",
+        "component---src-templates-course-template-js-96e83e82ed3dbfa0be27.js.map"
+      ],
+      "children": {},
+      "childAssets": {}
+    },
+    "component---src-templates-location-template-js": {
+      "chunks": [6],
+      "assets": [
+        "component---src-templates-location-template-js-fdf95564fb233f287710.js",
+        "component---src-templates-location-template-js-fdf95564fb233f287710.js.map"
+      ],
+      "children": {},
+      "childAssets": {}
+    },
+    "component---src-templates-apply-template-js": {
+      "chunks": [4],
+      "assets": [
+        "component---src-templates-apply-template-js-63dd2453fb4d5253b0dd.js",
+        "component---src-templates-apply-template-js-63dd2453fb4d5253b0dd.js.map"
+      ],
+      "children": {},
+      "childAssets": {}
+    },
+    "component---src-templates-about-us-template-js": {
+      "chunks": [3],
+      "assets": [
+        "component---src-templates-about-us-template-js-9d844c6986bfb7800c7a.js",
+        "component---src-templates-about-us-template-js-9d844c6986bfb7800c7a.js.map"
+      ],
+      "children": {},
+      "childAssets": {}
+    },
+    "component---src-pages-index-js": {
+      "chunks": [2],
+      "assets": [
+        "component---src-pages-index-js.e7b7c8fe7eb4096c018b.css",
+        "component---src-pages-index-js-437f7de5951230660c17.js",
+        "component---src-pages-index-js-437f7de5951230660c17.js.map"
+      ],
+      "children": {},
+      "childAssets": {}
+    },
+    "pages-manifest": {
+      "chunks": [7],
+      "assets": [
+        "pages-manifest-762c248f36da28e22618.js",
+        "pages-manifest-762c248f36da28e22618.js.map"
+      ],
+      "children": {},
+      "childAssets": {}
+    }
+  },
+  "assetsByChunkName": {
+    "app": [
+      "webpack-runtime-fac55a8ad173f4398a8b.js",
+      "app-a95330a18c09313b2cbe.js"
+    ],
+    "component---node-modules-gatsby-plugin-offline-app-shell-js": [
+      "component---node-modules-gatsby-plugin-offline-app-shell-js-fb1881f935cf4629d27f.js"
+    ],
+    "component---src-templates-course-template-js": [
+      "component---src-templates-course-template-js-96e83e82ed3dbfa0be27.js"
+    ],
+    "component---src-templates-location-template-js": [
+      "component---src-templates-location-template-js-fdf95564fb233f287710.js"
+    ],
+    "component---src-templates-apply-template-js": [
+      "component---src-templates-apply-template-js-63dd2453fb4d5253b0dd.js"
+    ],
+    "component---src-templates-about-us-template-js": [
+      "component---src-templates-about-us-template-js-9d844c6986bfb7800c7a.js"
+    ],
+    "component---src-pages-index-js": [
+      "component---src-pages-index-js.e7b7c8fe7eb4096c018b.css",
+      "component---src-pages-index-js-437f7de5951230660c17.js"
+    ],
+    "pages-manifest": ["pages-manifest-762c248f36da28e22618.js"]
+  }
+}

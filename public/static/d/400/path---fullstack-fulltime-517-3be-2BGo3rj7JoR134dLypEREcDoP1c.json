@@ -1,0 +1,18 @@
+{
+  "data": {
+    "coursesYaml": {
+      "info": "fullstack-fulltime info",
+      "basic_info": { "slug": "fullstack-fulltime" },
+      "banner": {
+        "subtitle": null,
+        "title": "Become a Full-Stack Software Developer",
+        "time": "8 weeks (full-time)"
+      },
+      "description": {
+        "description": "8 weeks to launch your web development career",
+        "time": "380+ hours of lessons, 5 times a week during 8 weeks."
+      }
+    }
+  },
+  "pageContext": { "slug": "fullstack-fulltime" }
+}

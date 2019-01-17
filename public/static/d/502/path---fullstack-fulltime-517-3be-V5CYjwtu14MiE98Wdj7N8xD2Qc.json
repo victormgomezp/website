@@ -1,0 +1,14 @@
+{
+  "data": {
+    "coursesYaml": {
+      "info": "fullstack-fulltime info",
+      "basic_info": { "slug": "fullstack-fulltime" },
+      "banner": {
+        "subtitle": null,
+        "title": "Become a Full-Stack Software Developer",
+        "time": "8 weeks (full-time)"
+      }
+    }
+  },
+  "pageContext": { "slug": "fullstack-fulltime" }
+}

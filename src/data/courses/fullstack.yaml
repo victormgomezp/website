@@ -1,0 +1,123 @@
+info: fullstack info
+basic_info:
+  slug: fullstack
+## Texto en el banner
+banner:
+  subtitle: 4Geeks Academy Miami Coding Bootcamp
+  title: Become a Full-Stack Software Developer
+  time: 16 weeks (Part-time)
+## Description del bootcamp
+description:
+  description: A Premiun Program designed tolaunch your web developer career
+  time: 300+ hours of lessons 3 times a week for a 16-week period.
+  menu_program:
+    ## Titulo de menu
+    - program_detail:
+      - title: Program Detail
+    ## Detalle de esa opcion
+      - detail:
+          title: Real "Senior" Mentoring
+          subtitle: All of our staff has 10+ years coding and holds senior possitions in Miamis tech industry.
+      - detail:
+          title: Top-notch Technology Stack
+          subtitle: The world of Coding grows and changes EVERY DAY. Learn the newest and most demanded languages and frameworks in the current market. Your potential employers will LOVE IT.
+      - detail:
+          title: Really Part-time
+          subtitle: This course is meant for employed professionals. We have designed the perfect method for both flexible and blended learning in an "after-hours" setting
+    ## Titulo de menu
+    - program_detail:
+      - title: Course Modules
+    ## Detalle de esa opcion
+      - detail:
+          title: Real "Senior" Mentoring
+          subtitle: All of our staff has 10+ years coding and holds senior possitions in Miamis tech industry.
+      - detail:
+          title: Top-notch Technology Stack
+          subtitle: The world of Coding grows and changes EVERY DAY. Learn the newest and most demanded languages and frameworks in the current market. Your potential employers will LOVE IT.
+      - detail:
+          title: Really Part-time
+          subtitle: This course is meant for employed professionals. We have designed the perfect method for both flexible and blended learning in an "after-hours" setting
+    ## Titulo de menu
+    - program_detail:
+      - title: Mentors
+    ## Detalle de esa opcion
+      - detail:
+          title: Real "Senior" Mentoring
+          subtitle: All of our staff has 10+ years coding and holds senior possitions in Miamis tech industry.
+      - detail:
+          title: Top-notch Technology Stack
+          subtitle: The world of Coding grows and changes EVERY DAY. Learn the newest and most demanded languages and frameworks in the current market. Your potential employers will LOVE IT.
+      - detail:
+          title: Really Part-time
+          subtitle: This course is meant for employed professionals. We have designed the perfect method for both flexible and blended learning in an "after-hours" setting
+    ## Titulo de menu
+    - program_detail:
+      - title: Skills
+    ## Detalle de esa opcion
+      - detail:
+          title: Real "Senior" Mentoring
+          subtitle: All of our staff has 10+ years coding and holds senior possitions in Miamis tech industry.
+      - detail:
+          title: Top-notch Technology Stack
+          subtitle: The world of Coding grows and changes EVERY DAY. Learn the newest and most demanded languages and frameworks in the current market. Your potential employers will LOVE IT.
+      - detail:
+          title: Really Part-time
+          subtitle: This course is meant for employed professionals. We have designed the perfect method for both flexible and blended learning in an "after-hours" setting
+    ## Titulo de menu
+    - program_detail:
+      - title: Technologies
+    ## Detalle de esa opcion
+      - detail:
+          title: Real "Senior" Mentoring
+          subtitle: All of our staff has 10+ years coding and holds senior possitions in Miamis tech industry.
+      - detail:
+          title: Top-notch Technology Stack
+          subtitle: The world of Coding grows and changes EVERY DAY. Learn the newest and most demanded languages and frameworks in the current market. Your potential employers will LOVE IT.
+      - detail:
+          title: Really Part-time
+          subtitle: This course is meant for employed professionals. We have designed the perfect method for both flexible and blended learning in an "after-hours" setting
+    ## Titulo de menu
+    - program_detail:
+      - title: Price & Financing
+    ## Detalle de esa opcion
+      - detail:
+          title: Real "Senior" Mentoring
+          subtitle: All of our staff has 10+ years coding and holds senior possitions in Miamis tech industry.
+      - detail:
+          title: Top-notch Technology Stack
+          subtitle: The world of Coding grows and changes EVERY DAY. Learn the newest and most demanded languages and frameworks in the current market. Your potential employers will LOVE IT.
+      - detail:
+          title: Really Part-time
+          subtitle: This course is meant for employed professionals. We have designed the perfect method for both flexible and blended learning in an "after-hours" setting
+
+course_structure:
+  menu_structure:
+    option1: Pre-Work
+    option2: Learng To Code
+    option3: Junior Applications
+    option4: Advanced Applications
+  detail_program:
+    option1:
+      time: 2wks
+      description: Starting with basics HTML5 + CSS3 + Javascript. We review the basics of coding and make sure we are all on the same page.
+      possible_projects: CSS Postcard, Minimal Instagram Version, etc.
+pricing:
+  description: Choose the payment plan that is most convenient for yout. No extra fees or hidden cost. EVERYTHING is included.
+  price: Pay Up-Front $6000
+  description_price: Prices will raise $1000 from January 2019. Apply now and take advantage of the current price.
+  duration:
+    6month:
+      title_description_extended: Extended Payment Plan $1000 deposit + $853 / month
+      description_extensed: Thanks to our partnership with Quotanda we have managed to create the most flexible placement plan in town
+    12month:
+      title_description_extended: Extended Payment Plan $1000 deposit + $853 / month
+      description_extensed: Thanks to our partnership with Quotanda we have managed to create the most flexible placement plan in town
+    24month:
+      title_description_extended: Extended Payment Plan $1000 deposit + $853 / month
+      description_extensed: Thanks to our partnership with Quotanda we have managed to create the most flexible placement plan in town
+    36month:
+      title_description_extended: Extended Payment Plan $1000 deposit + $853 / month
+      description_extensed: Thanks to our partnership with Quotanda we have managed to create the most flexible placement plan in town
+    60month:
+      title_description_extended: Extended Payment Plan $1000 deposit + $853 / month
+      description_extensed: Thanks to our partnership with Quotanda we have managed to create the most flexible placement plan in town

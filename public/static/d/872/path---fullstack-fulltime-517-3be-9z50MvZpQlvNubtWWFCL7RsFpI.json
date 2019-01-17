@@ -1,0 +1,12 @@
+{
+  "data": {
+    "coursesYaml": {
+      "info": "fullstack-fulltime info",
+      "basic_info": { "slug": "fullstack-fulltime" },
+      "banner": null,
+      "description": null,
+      "course_structure": null
+    }
+  },
+  "pageContext": { "slug": "fullstack-fulltime" }
+}

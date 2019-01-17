@@ -1,0 +1,17 @@
+{
+  "data": {
+    "coursesYaml": {
+      "info": "fullstack info",
+      "basic_info": { "slug": "fullstack" },
+      "banner": {
+        "subtitle": "4Geeks Academy Miami Coding Bootcamp",
+        "title": "Become a Full-Stack Software Developer",
+        "time": "16 weeks (Part-time)"
+      },
+      "description": {
+        "description": "A Premiun Program designed tolaunch your web developer career"
+      }
+    }
+  },
+  "pageContext": { "slug": "fullstack" }
+}

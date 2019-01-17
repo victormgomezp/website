@@ -1,0 +1,10 @@
+{
+  "data": {
+    "coursesYaml": {
+      "info": "fullstack info",
+      "basic_info": { "slug": "fullstack" },
+      "banner": { "title": "Become a Full-Stack Software Developer" }
+    }
+  },
+  "pageContext": { "slug": "fullstack" }
+}
