@@ -108,6 +108,7 @@ class ThemeManager{
         }
         // merge with global rules
         $wp_rewrite->rules = $rules + $wp_rewrite->rules;
+        if(isset($_GET['debug'])) debug($wp_rewrite->rules);
     }
     
     function custom_query_vars_filter($vars) {
