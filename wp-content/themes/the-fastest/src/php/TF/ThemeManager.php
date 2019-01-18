@@ -60,7 +60,7 @@ class ThemeManager{
         
         if ( false === ( $value = get_transient( 'geolocalization_info_'.$ip ) ) ) {
             /** @var array|WP_Error $response */
-            $response = wp_remote_get( 'http://api.ipstack.com/'.$ip.'?access_key=613c6539625ffd1e8e20254785d2483f' );
+            $response = wp_remote_get( 'http://api.ipstack.com/'.$ip.'?access_key='.IPSTACK_KEY );
             if ( is_array( $response ) && ! is_wp_error( $response ) ) {
                 $headers = $response['headers']; // array of http header lines
                 $result = (array) json_decode($response['body']); // use the content
