@@ -5,27 +5,38 @@ Template Post Type: course
 */
 get_header(); 
 $args = wpas_get_view_data();
+$hasFinancing = !empty($args['current-location']['prices']['financed']);
 ?>
     <header class="masthead">
       <div class="header-content">
-        <div class="row heading-row">
-          <div class="col-sm-10 mx-auto text-left text-black">
-            <h1 class="text-white"><?php pll_e('Become a'); ?></h1>
-            <h1 class="text-white"><?php pll_e('Full-Stack Software Developer'); ?></h1>
-            <h2 class="text-white mt-0">
-              <?php pll_e('16 weeks (part-time)'); ?>
-            </h2>
-            <div id=flip>
+        <div class="row heading-row mb-5">
+          <div class="col-sm-10 mx-auto text-center">
+            <h3 class="text-white mb-0"><span class="d-none d-sm-inline"><?php pll_e('It takes just'); ?></span> 16 <?php pll_e('weeks (part-time) in'); ?>
+              <div class="dropdown cities dropdown-selector ml-2 mr-2">
+                <button class="dropdown-toggle bg-white" type="button" id="pricing-cities" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  <span><?php echo $args['current-location']['post_title']; ?></span>
+                </button>
+                <div class="dropdown-menu" aria-labelledby="pricing-cities">
+                  <?php foreach($args['locations'] as $l){ ?>
+                  <a class="dropdown-item location-option" href="<?php echo get_permalink($args['course']['ID']); ?><?php echo $l['post_name']; ?>" data-value="<?php echo $l['bc_location_slug']; ?>">
+                    <?php echo $l['post_title']; ?>
+                    <?php wpas_get_inline_svg('assets/icons/flags/inline',$l['flag'].'.svg'); ?>
+                  </a>
+                  <?php } ?>
+                </div>
+              </div>
+             <?php pll_e('to become a'); ?></h3>
+            <h1 class="text-white mb-0"><?php pll_e('Full-Stack Software Developer'); ?></h1>
+            <div id="flip">
               <div><div><?php pll_e('and increase your income significantly'); ?></div></div>
               <div><div><?php pll_e('and join the workforce of the future'); ?></div></div>
               <div><div><?php pll_e('and re-launch your career'); ?></div></div>
-              <div><div><?php pll_e('build your own Tech Startup'); ?></div></div>
-              <div><div><?php pll_e('and join the Tech community'); ?></div></div>
+              <div><div><?php pll_e('or build your own Tech Startup'); ?></div></div>
             </div>
-            <form class="form-inline mt-3 mt-sm-0">
+            <div class="mt-3 mt-sm-0">
               <a href="<?php echo get_permalink( get_page_by_path( wpas_pll_get_slug('apply') ) ); ?>" class='btn btn-lg btn-danger mr-3'><?php pll_e('Apply Now'); ?></a>
               <a href="#syllabusModal"  data-toggle="modal" data-target="#syllabusModal" class='btn btn-lg btn-secondary'><?php pll_e('Request Syllabus'); ?></a>
-            </form>
+            </div>
           </div>
         </div>
         <div class="row">
@@ -34,6 +45,23 @@ $args = wpas_get_view_data();
         </div>
       </div>
     </header>
+    <div class="container d-none d-sm-block badges mt-5 mb-5 text-white text-center">
+      <h5><?php pll_e('The number one part-time school in the US'); ?></h5>
+      <div class="card-deck">
+        <div class="card">
+          <a target="_black" rel="nofollow" href="https://www.switchup.org/bootcamps/4geeks-academy"><?php wpas_get_inline_svg('assets/icons/badges/inline','black1.1.svg'); ?></a>
+        </div>
+        <div class="card">
+          <a target="_black" rel="nofollow" href="https://www.newsweek.com/insights/coding-career-and-you-top-coding-schools-2017/4geeks-academy"><?php wpas_get_inline_svg('assets/icons/badges/inline','black1.2.svg'); ?></a>
+        </div>
+        <div class="card d-none d-lg-block">
+          <?php wpas_get_inline_svg('assets/icons/badges/inline','black1.3.svg'); ?>
+        </div>
+        <div class="card">
+          <?php wpas_get_inline_svg('assets/icons/badges/inline','black1.4.svg'); ?>
+        </div>
+      </div>
+    </div>
     <!--
       -->
     <section class="bg-light text-black text-left">
@@ -273,77 +301,12 @@ $args = wpas_get_view_data();
         </div>
       </div>
     </section>
-<section id="pricing" class="pricing-calculator bg-white text-black pt-md-5 pb-5">
-      <div class="container">
-        <div class="row mb-4">
-          <div class="col-md-6 mx-auto">
-            <h2 class="text-center"><?php pll_e('Pricing & Financing'); ?></h2>
-            <h4 class='text-center'><?php pll_e('Pick your payment plan, no extra fees or hidden costs, everything is included'); ?></h4>
-          </div>
-        </div>
-        <div class='row'>
-          <div class='col-md-6 upfront'>
-            <div class='row mb-3'>
-              <div class='col-12'>
-                <div class="card card-block card-primary card-inverse bg-yellow mb-3">
-                  <div class="card-body p-4 mb-3 mt-2">
-                    <h4 class="card-title text-center"><?php pll_e('Pay Up-Front'); ?></h4>
-                    <h3 class="card-text text-center">$6,000</h3>
-                  </div>
-                </div>
-              </div>
-              <div class='col-12 d-none d-md-block'>
-                <div class='row mb-3'>
-                  <div class='col-sm-12'>
-                    <div class="card card-block card-primary bg-light mb-3">
-                      <div class="card-body text-center">
-                        <p><?php pll_e('Prices will raise $1,000 from January 2019'); echo '.<br />'; pll_e('Apply now and take advantage of the current price'); ?>.</p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class='col-sm-12 text-center'>
-                  <a href="<?php echo get_permalink( get_page_by_path( wpas_pll_get_slug('apply') ) ); ?>" class="btn btn-danger btn-lg"><?php pll_e('Apply to 4Geeks Academy'); ?></a>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class='col-md-6 text-center'>
-            <div class='row'>
-              <div class='col-12'>
-                <div class="card card-block card-primary card-inverse bg-yellow payment-plan">
-                  <div class="card-body">
-                    <h5 class="card-title m-0 text-center"><?php pll_e('Or Extended Payment Plan'); ?></h5>
-                    <h4 id="price-label" class="card-text text-center">$135 / month (No deposit)</h4>
-                  </div>
-                  <div class="card-footer">
-                    <input class="pricing-slider" data-slider-value="4" data-slider-id='pricing-slider-instance' data-slider-ticks-snap-bounds="100" type="text" data-slider-ticks="[0, 1, 2, 3, 4]" data-slider-ticks-labels='["6 months", "12 mo.", "24 mo.", "36 mo.", "60 mo."]' ticks_positions="[0, 25, 50, 75, 100]" />
-                  </div>
-                </div>
-              </div>
-              <div class='col-12'>
-                <div class='row'>
-                  <div class='col-12 mt-2'>
-                    <div class="card card-block card-primary bg-light mb-3">
-                  <div class="card-body">
-                    <p id="financing-details"><?php pll_e('Thanks to our partnership with Skillfund we have managed to create a new special payment plant <strong>starting at $135/mo</strong>'); ?></p>
-                  </div>
-                </div>
-                  </div>
-                </div>
-                <div class='row'>
-                  <div class='col-sm-6'>
-                      <img class="card-img-top financing-logo" data-templateurl="<?php echo get_stylesheet_directory_uri(); ?>" src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/skillsfund.png">
-                  </div>
-                  <div class='col-sm-6'>
-                      <a data-applylink="<?php echo get_permalink( get_page_by_path( wpas_pll_get_slug('apply') ) ); ?>" href="https://4geeksacademy.skills.fund" class="financing-btn btn btn-danger btn-lg"><?php pll_e('Apply to Financing'); ?></a>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+    
+    
+    <!-- PRICING -->
+    <section id="pricing" class="pricing-calculator bg-white text-black pt-md-5 pb-5">
+      <?php include(locate_template('partials/common-pricing.php')); ?>
     </section>
+    
     <?php include(locate_template('partials/common-testimonials.php')); ?>
   <?php get_footer(); ?>

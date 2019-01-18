@@ -129,11 +129,13 @@
     ]);
     
     $api->get(['path' => '/events', 'controller' => 'APIController:getAllEvents']);
+    $api->get(['path' => '/prices', 'controller' => 'APIController:getPrices']);
     $api->get(['path' => '/locations', 'controller' => 'APIController:getAllLocations']);
     $api->get(['path' => '/courses', 'controller' => 'APIController:getAllCourses']);
     $api->get(['path' => '/hook/sync_events', 'controller' => 'APIController:syncEvents']);
     $api->get(['path' => '/hook/sync_cohorts', 'controller' => 'APIController:syncCohorts']);
     $api->get(['path' => '/hook/sync_profiles', 'controller' => 'APIController:syncProfiles']);
+    $api->post(['path' => '/apply/request_info', 'controller' => 'APIController:requestMoreInfo']);
     
     
     use \WPAS\Types\PostTypesManager;

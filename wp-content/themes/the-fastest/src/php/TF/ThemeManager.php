@@ -23,6 +23,13 @@ class ThemeManager{
         //customize the page clumnos to add the template
 		add_filter( 'manage_pages_columns', [$this,'pages_columns_header'] ) ;
 		add_action( 'manage_pages_custom_column', [$this,'pages_columns_content'], 10, 2 );
+		
+		//customize rewrite rules
+		add_filter('generate_rewrite_rules', [$this, 'customRewriteRules'], 10,1);
+        add_filter( 'query_vars', [$this,'custom_query_vars_filter'] );
+        
+        //acf api key
+        add_filter('acf/fields/google_map/api', [$this, 'my_acf_google_map_api']);
         
         //advanced custome fields configuration
         $this->advancedCustomFieldsSync();
@@ -30,17 +37,82 @@ class ThemeManager{
         add_filter('wpas_fill_content', function($data){
 			
 			//if its not already set
-			if(!isset($data['country']) || $data['country']=='undefined')
-			{
-    			if(is_page('venezuela')) $data['country'] = 'venezuela';
-    			else $data['country'] = 'undefined';
-			}
+		    $info = $this->getUserInfo($this->getRealIpAddr());
+            $data['country'] = strtolower($info['country_name']);
+            $data['city'] = strtolower($info['city']);
+            $data['latitude'] = $info['latitude'];
+            $data['longitude'] = $info['longitude'];
+		    
+		    $city = get_query_var('city');
+		    if(!empty($city)) $data['city_slug'] = $city;
 			
 			//if its not already set
 			if(isset($_GET['referral_key'])) $data['referral_key'] = $_GET['referral_key'];
 			
 			return $data;
 		},10,2);
+		
+
+        
+    }
+    
+    function getUserInfo($ip, $defaults=[]){
+        
+        if ( false === ( $value = get_transient( 'geolocalization_info_'.$ip ) ) ) {
+            /** @var array|WP_Error $response */
+            $response = wp_remote_get( 'http://api.ipstack.com/'.$ip.'?access_key=613c6539625ffd1e8e20254785d2483f' );
+            if ( is_array( $response ) && ! is_wp_error( $response ) ) {
+                $headers = $response['headers']; // array of http header lines
+                $result = (array) json_decode($response['body']); // use the content
+                if($result){
+                    set_transient( 'geolocalization_info_'.$ip, array_merge($result, $defaults), 60*60*12 ); # 12 hours  
+                    return $result;
+                } 
+                else return null;
+            }
+            else return null;
+             // this code runs when there is no valid transient set
+        }
+        
+        return $value;
+    }
+    
+    
+    function getRealIpAddr()
+    {
+        if (!empty($_SERVER['HTTP_CLIENT_IP']))   //check ip from share internet
+        {
+          $ip=$_SERVER['HTTP_CLIENT_IP'];
+        }
+        elseif (!empty($_SERVER['HTTP_X_FORWARDED_FOR']))   //to check ip is pass from proxy
+        {
+          $ip=$_SERVER['HTTP_X_FORWARDED_FOR'];
+        }
+        else
+        {
+          $ip=$_SERVER['REMOTE_ADDR'];
+        }
+        return $ip;
+    }
+    
+    function customRewriteRules($wp_rewrite) {
+        $rules = array();
+        $courses = get_posts( array(
+            'post_type' => 'course',
+            'hide_empty' => false,
+        ) );
+       
+        $post_type = 'course';
+        foreach ($courses as $c) {    
+            $rules[$post_type.'/' . $c->post_name . '/([a-zA-Z-_]*)[\/\?]?.*$'] = 'index.php?post_type=' . $post_type. '&city=$matches[1]&name='.$c->post_name;
+        }
+        // merge with global rules
+        $wp_rewrite->rules = $rules + $wp_rewrite->rules;
+    }
+    
+    function custom_query_vars_filter($vars) {
+      $vars[] .= 'city';
+      return $vars;
     }
     
 	function pages_columns_header( $columns ) {

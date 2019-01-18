@@ -36,7 +36,7 @@ $('.newsletter-signup').submit(function(event){
          }
       },
       error: function(p1,p2,p3){
-         alert(p3);
+         alert("There has been an error signing you up");
       }
    });
    
@@ -83,7 +83,47 @@ $('.syllabus-download').submit(function(event){
          }
       },
       error: function(p1,p2,p3){
-         alert(p3);
+         alert("There has been an error signing you up");
+      }
+   });
+   } 
+   
+});
+
+$('.more-info-signup').submit(function(event){
+   
+   event.preventDefault();
+   
+   var formSyllabus = $(this);
+   var emailField = formSyllabus.find('input[type=email]');
+   var firstNameField = formSyllabus.find('input[type=text]');
+   var email = emailField.val();
+   var firstName = firstNameField.val();
+   
+   if(email == '' || firstName =='')
+   {
+      formSyllabus.find('.alert-danger').html('We need your email and first name').css('display','block');
+   }
+   else{
+      formSyllabus.find('.alert-danger').html('').css('display','none');
+      $.ajax({
+      url: '/wp-json/4g/v1/apply/request_info',
+      dataType: 'JSON',
+      method: 'POST',
+      data: {
+         url: WPAS_APP.url,
+         email: email,
+         first_name: firstName
+      },
+      success: function(response){
+         if(response)
+         {
+            if(response.code == 200) formSyllabus.html('<div class="alert alert-info" role="alert">'+response.data+'</div>');
+            else formSyllabus.find('.alert-danger').html(response.msg).css('display','block');
+         }
+      },
+      error: function(p1,p2,p3){
+         alert("There has been an error signing you up");
       }
    });
    } 
@@ -158,6 +198,9 @@ $(document).ready(function() {
          console.log("Error getting the upcoming event: "+p3);
       }
    });
+   markDefaultLocation();
+   
+   setupPriceCalculator();
    
    var masterWhite = document.querySelector('.masthead-white');
    if(typeof masterWhite != 'undefined' && masterWhite){
@@ -165,6 +208,58 @@ $(document).ready(function() {
       navbar.classList.add('inverted');
    } 
 });
+
+function setupPriceCalculator(){
+   
+   var PriceCalculator = require('../lib/priceCalculator.js').default;
+   const sliders = $('.pricing-slider');
+   
+   if(sliders.length === 0) console.log('There is no slider to load');
+   else{
+      $.ajax({
+         url: '/wp-json/4g/v1/prices',
+         dataType: 'JSON',
+         method: 'GET',
+         success: function(prices){
+            if(prices && typeof prices.data != 'undefined')
+            {
+               prices = prices.data;
+               sliders.each(function(index){
+                  const slider = $(this);
+                  const location = slider.data('location');
+                  const course = slider.data('course');
+                  if(typeof prices[course] !== 'undefined'){
+                     if(typeof prices[course][location] === 'undefined') console.error('Price not found for '+course+' at '+location);
+                     renderLocationPrices(slider, prices[course][location]);
+                     PriceCalculator(sliders, prices[course][location]);
+                  }
+                  else console.error("Invalid course prices");
+               });
+            }
+         },
+         error: function(p1,p2,p3){
+            console.log("Error getting the academy prices "+p3);
+         }
+      });
+   }
+}
+
+function renderLocationPrices(slider, prices){
+   const pricingComponent = slider.closest('.pricing-component');
+   if(typeof prices === 'undefined'){
+      let content = '<div class="col-md-12">';
+         content += '<div class="card card-block card-primary card-inverse bg-yellow mb-3 p-4 text-center">';
+            content += 'Prices have not been defined yet';
+         content += '</div>';
+      content += '</div>';
+      pricingComponent.html(content);
+   }
+   else{
+      pricingComponent.find('[data-concept="upfront"]').html(prices['upfront']);
+      pricingComponent.find('[data-concept="monthly"]').html(prices['financed'][0]);
+      
+   }
+}
 
 function promptUpcomingEvent(event){
    
@@ -179,6 +274,33 @@ function promptUpcomingEvent(event){
       });
 
    }
+}
+
+function markDefaultLocation(){
+   if(typeof WPAS_APP !== 'undefined'){
+      if(typeof WPAS_APP.city_slug !== 'undefined' && WPAS_APP.city_slug !== '') console.log("Ignoring user location because he specified a different one");
+      else if(typeof WPAS_APP.latitude !== 'undefined' && WPAS_APP.latitude !== '') markLocationFromLatLong();
+   }
+}
+
+function markLocationFromLatLong(){
+   $.ajax({
+      url: '/wp-json/4g/v1/locations',
+      dataType: 'JSON',
+      method: 'GET',
+      success: function(locations){
+         console.log("Welelele.");
+         if(locations)
+         {
+            const closest = closestLocation({ latitude: WPAS_APP.latitude, longitude: WPAS_APP.longitude }, locations);
+            console.log(closest);
+            $('.cities.dropdown-selector button span').html(closest.post_title);
+         }
+      },
+      error: function(p1,p2,p3){
+         console.log("Error getting the academy locations "+p3);
+      }
+   });
 }
 
 function fillUpcomingIntroToCoding(event){
@@ -205,4 +327,23 @@ function fillUpcomingEvent(event){
    
    modal.find('.btn-danger').attr('href',event.url);
    
+}
+
+function closestLocation(targetLocation, locationData) {
+    function vectorDistance(dx, dy) {
+        return Math.sqrt(dx * dx + dy * dy);
+    }
+
+    function locationDistance(location1, location2) {
+        var dx = location1.latitude - location2.latitude,
+            dy = location1.longitude - location2.longitude;
+
+        return vectorDistance(dx, dy);
+    }
+
+    return locationData.reduce(function(prev, curr) {
+        var prevDistance = locationDistance(targetLocation , prev),
+            currDistance = locationDistance(targetLocation , curr);
+        return (prevDistance < currDistance) ? prev : curr;
+    });
 }
