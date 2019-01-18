@@ -99,6 +99,7 @@ class ThemeManager{
         $rules = array();
         $courses = get_posts( array(
             'post_type' => 'course',
+            'lang' => 'en,es',
             'hide_empty' => false,
         ) );
        
