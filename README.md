@@ -25,7 +25,6 @@ $ wp core config --dbname={yourdatabase} --dbuser={yourusername} --dbpass={YOUR 
 4) Include these new variables into your configuration file:
 
 ```php
-
 define('BREATHECODE_API_HOST', 'https://api.breatheco.de');
 define('BREATHECODE_ASSETS_HOST', 'https://assets.breatheco.de');
 
@@ -33,7 +32,6 @@ define('WP_DEBUG', true);
 define('WP_DEBUG_LOG', false);
 define('WP_ASYNC_LOADING', false);
 define('UGLIFY_HTML', false);
-
 ```
 
 5) **Create database for your installation**
@@ -69,7 +67,11 @@ Note: Make sure you have npm installed.
 ```sh
 $ npm run dev
 ```
-    
+
+### You can run the unit testing  like this:
+```
+./vendor/bin/phpunit wp-content/themes/the-fastest/tests/ --colors
+``` 
 ## The Application Uses the following plugins
 
 These are all the mandatory plugins for the wordpress instalation (any other plugin is not really mandatory)

@@ -30,7 +30,9 @@
                 "MDC": "MDC",
                 "santiago-chile": "santiago-chile"
             },
-            "default_value": [],
+            "default_value": [
+
+            ],
             "allow_null": 0,
             "multiple": 0,
             "ui": 0,
@@ -58,7 +60,9 @@
                 "chile": "Chile",
                 "spain": "Spain"
             },
-            "default_value": [],
+            "default_value": [
+
+            ],
             "allow_null": 0,
             "multiple": 0,
             "ui": 0,
@@ -197,16 +201,55 @@
             "choices": {
                 "Caracas, Vzla": "Caracas, Vzla",
                 "Miami, USA": "Miami, USA",
-                "Maracaibo, Vzla": "Maracaibo, Vzla",
-                "Santiago, Chile": "Santiago, Chile"
-            },
-            "default_value": [],
+                "Maracaibo, Vzla": "Maracaibo, Vzla"
+            }
+			"default_value": [
+
+            ],
             "allow_null": 0,
             "multiple": 0,
             "ui": 0,
             "ajax": 0,
             "return_format": "value",
             "placeholder": ""
+        },
+        {
+            "key": "field_5c3e0d48071ce",
+            "label": "location_latitude",
+            "name": "location_latitude",
+            "type": "text",
+            "instructions": "",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_5c3e42f0ead9d",
+            "label": "location_longitude",
+            "name": "location_longitude",
+            "type": "text",
+            "instructions": "",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
         }
     ],
     "location": [

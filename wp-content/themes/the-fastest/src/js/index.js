@@ -49,16 +49,6 @@ if(['page-the-program','single-full-stack-part-time','single-full-stack','single
   var maxStickPosition = barBreakpoint.offset().top;
   MakeSticky.init('[data-toggle="sticky-onscroll"]', maxStickPosition, 20);
   
-  //script for the slider calculator
-  var PriceCalculator = require('./lib/priceCalculator.js').default;
-  const PRICES = require('./common/prices.js').default;
-  
-  if(WPAS_APP.view.template == 'single-full-stack-part-time') 
-    PriceCalculator('#pricing',PRICES['full-stack-part-time']);
-    
-  else if (WPAS_APP.view.template ==  'single-full-stack') 
-    PriceCalculator('#pricing',PRICES['full-stack-full-time']);
-  
   //animation for the program
   var TheProgram = require('./pages/program.js').default;
   TheProgram.init();
@@ -75,9 +65,6 @@ if(['page-the-program','single-full-stack-part-time','single-full-stack','single
 if(WPAS_APP.view.slug === 'pricing' || WPAS_APP.view.slug === 'precio'){
   
   loadVideo('/wp-content/themes/the-fastest/assets/video/pricing.mp4');
-  
-  //script for the slider calculator
-  var priceCalculator = require('./lib/priceCalculator.js');
   
   var fireworks = require('./lib/fireworks.js');
   var canvasBg = document.querySelector( '#bg-sketch' );

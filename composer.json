@@ -40,7 +40,8 @@
         "wpackagist-plugin/transients-manager": "*",
         "wpackagist-plugin/query-monitor": "2.7.*",
         "wpackagist-plugin/debug-bar": "*",
-        "rarst/laps": "~1.2"
+        "rarst/laps": "~1.2",
+        "phpunit/phpunit": "^6.5"
 	},
 	"autoload":{
         "psr-0":{

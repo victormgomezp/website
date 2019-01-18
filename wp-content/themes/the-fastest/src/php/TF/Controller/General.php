@@ -76,7 +76,51 @@ class General{
         
         $args['course'] = (array) get_queried_object();
         $args['course']['slug'] = get_field('breathecode_course_slug', $args['course']['ID']);
+        
+        $args['current-location'] = null;
+        $globalContext = wpas_get_global_context();
 
+        //if there is a global location set
+        $city = get_query_var('city');
+        if(!empty($city)){
+            $args['current-location'] = (array) LocationPostType::get([ "name" => $city]);
+        } 
+        
+        //else use miami
+        if(empty($args['current-location'])) $args['current-location'] = (array) LocationPostType::get([ "p" => 145 ]);
+
+        $args['current-location']['bc_location_slug'] = get_field('breathecode_location_slug', $args['current-location']['ID']);
+        $args['locations'] = LocationPostType::all();
+        
+        $args['prices'] = @include dirname(__FILE__).'/../../languages/prices.'.$args['course']['slug'].'.php';
+        //debug($args['current-location']);
+        if($args['prices'] and !empty($args['prices'][$args['current-location']['bc_location_slug']])){
+            //all the prices in just one place
+            $args['current-location']['prices'] = $args['prices'][$args['current-location']['bc_location_slug']];
+            if(!empty($args['current-location']['prices']['financed'])){
+                //array of months
+                $months = array_keys($args['prices'][$args['current-location']['bc_location_slug']]['financed']);
+                
+                $args['prices']['data-slider-total'] = count($months);
+                $args['prices']['data-slider-ticks'] = "[".implode(",",$months).']';
+                $args['prices']['data-slider-initial-index'] = count($months)-1;
+                $args['prices']['data-slider-initial-value'] = $months[count($months)-1];
+                
+                $args['prices']['data-slider-ticks'] = "[".implode(",",array_map(function ($el, $i) {
+                      return $i;
+                   },$months, array_keys($months))).']';
+                   
+                $args['prices']['data-slider-ticks-labels'] = "[".implode(",",array_map(function ($el, $i) {
+                      return $i == 0 ? "\"$el months\"" : "\"$el mo.\"";
+                   },$months, array_keys($months))).']';
+                 
+                $totalPositions = count($months);
+                $args['prices']['ticks_positions'] = "[".implode(",",array_map(function ($el, $i) use ($totalPositions) {
+                      return ($i / $totalPositions) * 100;
+                   },$months, array_keys($months))).']';
+            }
+        } else $args['prices'] = null;
+        
         $args['upcoming-cohorts'] = CoursePostType::getUpcomingDates(['profile' =>$args['course']['slug'] ]);
 
         if(count($args['upcoming-cohorts'])>0) $args['upcoming'] = $args['upcoming-cohorts'][0];
@@ -193,6 +237,7 @@ class General{
         $utmUrlId = get_option('activecampaign-utm-url-field');
         $utmLanguageId = get_option('activecampaign-utm-language-field');
         $utmCountryId = get_option('activecampaign-utm-country-field');
+        $utmLocationId = get_option('activecampaign-utm-location-field');
         $gclid = get_option('activecampaign-gclid-field');
         $referralId = get_option('activecampaign-referral-key-field');
 
@@ -209,6 +254,10 @@ class General{
         
         $utmLanguageValue = 'undefined';
         if(isset($globalContext['lang'])) $utmLanguageValue = $globalContext['lang'];
+        
+        $utmLocationValue = 'undefined';
+        if(isset($_GET['utm_location'])) $utmLocationValue = $_GET['utm_location'];
+        else if(isset($globalContext['city_slug'])) $utmLocationValue = $globalContext['city_slug'];
         
         $utmCountryValue = 'undefined';
         if(isset($globalContext['country'])) $utmCountryValue = $globalContext['country'];
@@ -228,6 +277,7 @@ class General{
     		"field[".$utmUrlId.",0]" => $utmURLValue,
     		"field[".$utmLanguageId.",0]" => $utmLanguageValue,
     		"field[".$utmCountryId.",0]" => $utmCountryValue,
+    		"field[".$utmLocationId.",0]" => $utmLocationValue,
     		"field[".$gclid.",0]" => $gclidValue,
     	);
     	if(!empty($referralId)) $contact["field[".$referralId.",0]"] = $referralValue;
