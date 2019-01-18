@@ -108,8 +108,12 @@ class ThemeManager{
         foreach ($courses as $c) {    
             $rules[$post_type.'/' . $c->post_name . '/([a-zA-Z-_]*)[\/\?]?.*$'] = 'index.php?post_type=' . $post_type. '&city=$matches[1]&name='.$c->post_name;
         }
+        foreach ($courses as $c) {    
+            $rules[pll_get_post_language($c->ID).'/'.$post_type.'/' . $c->post_name . '/([a-zA-Z-_]*)[\/\?]?.*$'] = 'index.php?post_type=' . $post_type. '&city=$matches[1]&name='.$c->post_name;
+        }
         // merge with global rules
         $wp_rewrite->rules = $rules + $wp_rewrite->rules;
+        debug($wp_rewrite->rules);
     }
     
     function custom_query_vars_filter($vars) {
