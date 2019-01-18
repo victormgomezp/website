@@ -100,7 +100,7 @@ class ThemeManager{
         $courses = get_posts( array(
             'post_type' => 'course',
             'lang' => 'en,es',
-            'hide_empty' => false,
+            'posts_per_page' => -1
         ) );
         if(isset($_GET['debug'])) debug($courses);
         
