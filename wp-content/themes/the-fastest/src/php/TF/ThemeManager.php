@@ -29,7 +29,7 @@ class ThemeManager{
         add_filter( 'query_vars', [$this,'custom_query_vars_filter'] );
         
         //acf api key
-        add_filter('acf/fields/google_map/api', [$this, 'my_acf_google_map_api']);
+        //add_filter('acf/fields/google_map/api', [$this, 'my_acf_google_map_api']);
         
         //advanced custome fields configuration
         $this->advancedCustomFieldsSync();
@@ -107,8 +107,6 @@ class ThemeManager{
         $post_type = 'course';
         foreach ($courses as $c) {    
             $rules[$post_type.'/' . $c->post_name . '/([a-zA-Z-_]*)[\/\?]?.*$'] = 'index.php?post_type=' . $post_type. '&city=$matches[1]&name='.$c->post_name;
-        }
-        foreach ($courses as $c) {    
             $rules[pll_get_post_language($c->ID).'/'.$post_type.'/' . $c->post_name . '/([a-zA-Z-_]*)[\/\?]?.*$'] = 'index.php?post_type=' . $post_type. '&city=$matches[1]&name='.$c->post_name;
         }
         // merge with global rules
