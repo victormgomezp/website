@@ -102,7 +102,8 @@ class ThemeManager{
             'lang' => 'en,es',
             'hide_empty' => false,
         ) );
-       
+        if(isset($_GET['debug'])) debug($courses);
+        
         $post_type = 'course';
         foreach ($courses as $c) {    
             $rules[$post_type.'/' . $c->post_name . '/([a-zA-Z-_]*)[\/\?]?.*$'] = 'index.php?post_type=' . $post_type. '&city=$matches[1]&name='.$c->post_name;
