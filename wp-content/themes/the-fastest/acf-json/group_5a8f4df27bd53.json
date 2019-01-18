@@ -27,7 +27,8 @@
                 "bbc-lincoln-road-miami-beach": "bbc-lincoln-road-miami-beach",
                 "bbc-brickell-miami": "bbc-brickell-miami",
                 "mdc-little-havana": "mdc-little-havana",
-                "MDC": "MDC"
+                "MDC": "MDC",
+                "santiago-chile": "santiago-chile"
             },
             "default_value": [],
             "allow_null": 0,
@@ -86,9 +87,12 @@
                 "mdc": "MDC (mdc)",
                 "black-belt-coding": "Black Belt Coding (black-belt-coding)",
                 "el-rosal": "El Rosal (el-rosal)",
-                "downtown-miami": "Downtown Miami (downtown-miami)"
+                "downtown-miami": "Downtown Miami (downtown-miami)",
+                "santiago-chile": "Santiago (santiago-chile)"
             },
             "default_value": [],
+            "allow_null": 0,
+            "multiple": 0,
             "ui": 0,
             "ajax": 0,
             "placeholder": "",
@@ -100,7 +104,7 @@
             "name": "location_map",
             "type": "textarea",
             "instructions": "Insert your iframe tag, for exampe: <iframe width=\"600\" height=\"450\" frameborder=\"0\" style=\"border:0\"\r\nsrc=\"https:\/\/www.google.com\/maps\/embed\/v1\/place?q=place_id:ChIJTaQ625u22YgREyc1xz2XXGc&key=...\" allowfullscreen><\/iframe>",
-            "required": 0,
+            "required": 1,
             "conditional_logic": 0,
             "wrapper": {
                 "width": "",
@@ -193,7 +197,8 @@
             "choices": {
                 "Caracas, Vzla": "Caracas, Vzla",
                 "Miami, USA": "Miami, USA",
-                "Maracaibo, Vzla": "Maracaibo, Vzla"
+                "Maracaibo, Vzla": "Maracaibo, Vzla",
+                "Santiago, Chile": "Santiago, Chile"
             },
             "default_value": [],
             "allow_null": 0,
@@ -235,5 +240,5 @@
     ],
     "active": 1,
     "description": "",
-    "modified": 1519775743
+    "modified": 1544490739
 }
