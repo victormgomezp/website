@@ -93,18 +93,18 @@ $hasFinancing = !empty($args['current-location']['prices']['financed']);
             </ul>
           </div>
           <div id="program-details" class="col-md-9 ml-auto">
-            <h2 class="section-heading text-black mb-2"><?php pll_e('8 weeks to launch your'); ?><br /> <?php pll_e('web development career'); ?></h2>
+            <h2 class="section-heading text-black mb-2">9 <?php pll_e('weeks to launch your'); ?><br /> <?php pll_e('coding career'); ?></h2>
             <h5 class="mb-4">
-              <span class="text-orange">[ </span><span class="text-blue"><?php pll_e('380+ hrs of lessons, 5 times a week during 8 weeks'); ?>.</span> <span class="text-orange">]</span>
+              <span class="text-orange">[ </span><span class="text-blue"><?php pll_e('380+ hrs of lessons, 5 times a week during 9 weeks'); ?>.</span> <span class="text-orange">]</span>
             </h5>
             <div class="row">
               <div class='col-sm-8 mb-3'>
                 <h4>1) <?php pll_e('Learn the skills'); ?></h4>
-                <?php pll_e('At first, you will focus on learning the technologies and skills that will make you succeed in your new career.'); ?>.
+                <?php pll_e('At first, you will focus on learning the technologies and skills that will make you succeed in your new career'); ?>.
               </div>
               <div class='col-sm-8 mb-3'>
                 <h4>2) <?php pll_e('Build your profile'); ?></h4>
-                <?php pll_e('Everything you during the course will become a part of your professional profile. With our help and our methodology, you will end up having a great resume, portfolio, and online presence.'); ?>.
+                <?php pll_e('Everything you during the course will become a part of your professional profile. With our help and our methodology, you will end up having a great resume, portfolio, and online presence'); ?>.
               </div>
               <div class='col-sm-8 mb-3'>
                 <h4>3) <?php pll_e('Get hired'); ?></h4>
