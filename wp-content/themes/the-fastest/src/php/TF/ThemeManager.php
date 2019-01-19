@@ -38,10 +38,10 @@ class ThemeManager{
 			
 			//if its not already set
 		    $info = $this->getUserInfo($this->getRealIpAddr());
-            $data['country'] = strtolower($info['country_name']);
-            $data['city'] = strtolower($info['city']);
-            $data['latitude'] = $info['latitude'];
-            $data['longitude'] = $info['longitude'];
+		    if(isset($info['country_name'])) $data['country'] = strtolower($info['country_name']);
+		    if(isset($info['city'])) $data['country'] = strtolower($info['city']);
+		    if(isset($info['latitude'])) $data['country'] = $info['latitude'];
+		    if(isset($info['longitude'])) $data['country'] = $info['longitude'];
 		    
 		    $city = get_query_var('city');
 		    if(!empty($city)) $data['city_slug'] = $city;
