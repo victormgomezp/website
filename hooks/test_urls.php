@@ -8,7 +8,7 @@
     use ZendDiagnostics\Runner\Reporter\BasicConsole;
 
     
-    $publicURL = 'https://www.4geeksacademy.com';
+    $publicURL = 'https://www.4geeksacademy.co';
     // Create Runner instance
     $runner = new Runner();
     
@@ -21,12 +21,18 @@
     $runner->addCheck(checkURL($publicURL.'/venezuela', 'acelerar tu carrera como programador'));
     $runner->addCheck(checkURL($publicURL.'/partners', 'To assure that our students are getting hired'));
 
-    $runner->addCheck(checkURL($publicURL.'/location/downtown-miami/', 'Starthub. 66 W Flaggle, #900. 33130, Miami, Florida.'));
-    $runner->addCheck(checkURL($publicURL.'/es/location/maracaibo-venezuela/', 'Av. 5 de julio. Maracaibo, Venezuela.'));
-    $runner->addCheck(checkURL($publicURL.'/es/location/el-nacional-caracas-venezuela/', 'Sede Principal de El Nacional. Los Cortijos de Lourdes, Caracas.'));
-    $runner->addCheck(checkURL($publicURL.'/es/location/impact-hub-caracas/', 'Av. Francisco de Miranda, Torre HP, piso 17'));
-    
+    $runner->addCheck(checkURL($publicURL.'/location/downtown-miami/', '66 W Flagler Street, #900'));
+    $runner->addCheck(checkURL($publicURL.'/location/santiago-de-chile/', '66 W Flagler Street, #900'));
+    $runner->addCheck(checkURL($publicURL.'/location/los-cortijos-caracas-venezuela-en/', '66 W Flagler Street, #900'));
+    $runner->addCheck(checkURL($publicURL.'/es/location/miami-downtown-usa/', '66 W Flagler Street, #900'));
+    $runner->addCheck(checkURL($publicURL.'/es/location/santiago-de-chile-2/', '66 W Flagler Street, #900'));
+    $runner->addCheck(checkURL($publicURL.'/es/location/maracaibo-venezuela/', '66 W Flagler Street, #900'));
+    $runner->addCheck(checkURL($publicURL.'/es/location/los-cortijos-caracas-venezuela/', '66 W Flagler Street, #900'));
+
+    $runner->addCheck(checkURL($publicURL.'/course/bootcamp-de-desarrollo-web-full-stack-part-time/', 'Un programa premium diseñado para'));
+    $runner->addCheck(checkURL($publicURL.'/course/full-stack-web-development-bootcamp-full-time/', '9 weeks to launch your'));
     $runner->addCheck(checkURL($publicURL.'/course/full-stack-development/', 'A Premium Program designed'));
+    $runner->addCheck(checkURL($publicURL.'/course/desarrollo-web/', 'websites faster than anyone'));
     $runner->addCheck(checkURL($publicURL.'/course/web-development/', 'websites faster than anyone'));
     $runner->addCheck(checkURL($publicURL.'/course/coding-introduction/', '4Geeks Academy students receive a lot of benefits'));
     
