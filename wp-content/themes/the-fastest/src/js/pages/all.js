@@ -202,6 +202,10 @@ $(document).ready(function() {
    
    setupPriceCalculator();
    
+   $(".dropdown-toggle").click(function(e){
+     $(this).find('.dropdown-menu').toggleClass("show");
+   });
+   
    var masterWhite = document.querySelector('.masthead-white');
    if(typeof masterWhite != 'undefined' && masterWhite){
       var navbar = document.querySelector('.navbar'); 

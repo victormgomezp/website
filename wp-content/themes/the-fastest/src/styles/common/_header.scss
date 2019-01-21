@@ -63,12 +63,12 @@ body{
     .heading-row{
         padding: 10vh 0 20vh 0;
     }
-}
-
-
-.masthead{
     margin-top: 5vh;
     padding: 30px;
+    @include media-breakpoint-down(sm) { 
+        padding-top: 0;
+        .btn{ width: 100%; margin-top: 5px; margin-bottom: 5px; }
+    }
     .certified{
         margin-top: 60px;
         text-align: center;
