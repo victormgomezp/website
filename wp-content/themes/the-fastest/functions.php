@@ -136,6 +136,7 @@
     $api->get(['path' => '/hook/sync_cohorts', 'controller' => 'APIController:syncCohorts']);
     $api->get(['path' => '/hook/sync_profiles', 'controller' => 'APIController:syncProfiles']);
     $api->post(['path' => '/apply/request_info', 'controller' => 'APIController:requestMoreInfo']);
+    $api->post(['path' => '/apply/request_tour', 'controller' => 'APIController:requestTour']);
     
     
     use \WPAS\Types\PostTypesManager;

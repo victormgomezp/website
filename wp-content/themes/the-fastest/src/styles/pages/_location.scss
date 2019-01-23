@@ -2,10 +2,22 @@
     background-position: center top;
     background-color: white;
     .masthead{
+        margin-top: 0;
         h1{
-            font-size: 25px;
+            font-size: 12px;
+            color: #BDBDBD;
+            font-weight: 900;
+            text-align: center;
+            margin-bottom: 60px;
+        }
+        h2{
+            font-size: 30px;
             color: white;
+            font-weight: 900;
             text-shadow: -1px -1px 4px rgba(150, 150, 150, 1);
+        }
+        .card{
+            background: none !important;
         }
     } 
     section.contact{
@@ -18,18 +30,14 @@
         }
     }
     section.upcoming-courses,section.upcoming-events{
-        .media{
+        .card{
             background: white;
-            padding: 5px;
+            padding: 10px;
             box-shadow: 0 2px 15px 0 rgba(0,0,0,.1);
             margin-bottom: 15px;
-            img{max-width: 100px;max-height: 100px;}
+            .card-title{ margin-top: 0; }
+            ul li{ display: inline; list-style: none; }
             svg{ height: 18px; }
-            .media-body{
-                padding: 5px;
-                h4{ font-size: 18px; margin-top: 0;}
-                p{padding: 2px; margin: 0;}
-            }
         }
     }
     section.location-showcase .center-box{
