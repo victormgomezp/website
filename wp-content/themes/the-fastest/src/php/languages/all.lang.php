@@ -257,6 +257,11 @@ return array(
         "Get updates right in your inbox. <br/>We promise to not spam you" => "Get updates right in your inbox. <br/>We promise to not spam you",
         "Subscribe to our Newsletter!" => "Subscribe to our Newsletter!",
 
+//Location
+
+        "Upcoming Events at this location" => "Upcoming Events at this location",
+        
+
 //Calendar
         "Show" => "Show",
         "courses" => "courses",

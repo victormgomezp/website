@@ -141,13 +141,16 @@ class General{
         $args['current-location']['phone'] = get_field('location_phone_number', $args['current-location']['ID']);
         $args['current-location']['email'] = get_field('location_email', $args['current-location']['ID']);
         $args['current-location']['office_image'] = get_field('location_office_image', $args['current-location']['ID']);
+        $args['current-location']['office_image2'] = get_field('location_office_image2', $args['current-location']['ID']);
+        $args['current-location']['office_image3'] = get_field('location_office_image3', $args['current-location']['ID']);
+        $args['current-location']['should_know'] = get_field('should_know', $args['current-location']['ID']);
         
         $args['locations'] = LocationPostType::all();
         $args['styles'] = UtilsController::getBodyStyles($args['current-location']["ID"]);
         $args['page']['styles'] = get_field('landing_extra_styles', $args['current-location']["ID"]);
         $args['page']['script'] = get_field('landing_extra_script', $args['current-location']["ID"]);
         
-        $args['upcoming-cohorts'] = CoursePostType::getUpcomingDates(['location' => $args['current-location']['bc_location_slug']]);;
+        $args['upcoming-cohorts'] = CoursePostType::getUpcomingDates(['location' => $args['current-location']['bc_location_slug'], 'posts_per_page' => 4 ]);;
         if(count($args['upcoming-cohorts'])>0) $args['upcoming'] = $args['upcoming-cohorts'][0];
         else $args['upcoming-message'] = [
             "message" => "No upcoming dates scheduled for this location",
