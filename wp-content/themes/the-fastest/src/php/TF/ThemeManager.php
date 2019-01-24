@@ -72,7 +72,7 @@ class ThemeManager{
     function getUserInfo($ip, $defaults=[]){
         
         $value = get_transient( 'geolocalization_info_'.$ip );
-        if (empty($value) or true) {
+        if (empty($value) or (isset($_GET['debug']) and $_GET['debug'] == 'true')) {
             /** @var array|WP_Error $response */
             $response = wp_remote_get( 'http://api.ipstack.com/'.$ip.'?access_key='.IPSTACK_KEY );
             if ( is_array( $response ) && ! is_wp_error( $response ) ) {
