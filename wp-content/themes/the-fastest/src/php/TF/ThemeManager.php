@@ -49,7 +49,7 @@ class ThemeManager{
 			//if its not already set
 			if(isset($_GET['referral_key'])) $data['referral_key'] = $_GET['referral_key'];
 			
-		    $this->_debug("The data: ",$data);
+		    $this->_debug("The data: ",$info);
 			return $data;
 		},10,2);
 		
