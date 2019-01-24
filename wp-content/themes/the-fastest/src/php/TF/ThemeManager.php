@@ -57,7 +57,7 @@ class ThemeManager{
     }
     
     function _debug($val){
-        if(WP_DEBUG or isset($_GET['debug'])){
+        if((isset($_GET['debug']) && $_GET['debug']==true) or (WP_DEBUG and (!isset($_GET['debug']) or $_GET['debug']!=false))){
             print_r($val);
             die();
         }
