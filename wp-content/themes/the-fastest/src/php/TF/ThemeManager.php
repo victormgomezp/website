@@ -38,6 +38,7 @@ class ThemeManager{
 			
 			//if its not already set
 		    $info = $this->getUserInfo($this->getRealIpAddr());
+		    $this->_debug($info);
 		    if(isset($info['country_name'])) $data['country'] = strtolower($info['country_name']);
 		    if(isset($info['city'])) $data['country'] = strtolower($info['city']);
 		    if(isset($info['latitude'])) $data['country'] = $info['latitude'];
@@ -81,7 +82,6 @@ class ThemeManager{
             else return null;
              // this code runs when there is no valid transient set
         }
-        $this->_debug($value);
         
         return $value;
     }
