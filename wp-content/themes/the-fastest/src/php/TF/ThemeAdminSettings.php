@@ -82,7 +82,30 @@ class ThemeAdminSettings {
 				    'label' => 'Top Bar: Close button',
 				    'name' => 'top-bar-close-btn',
 					'description' => 'If the alert can be closed or not'
-				]
+				],
+				[
+				    'type' => 'button', 
+				    'label' => 'Clear location transient information',
+				    'id' => 'clear-location-transients',
+				    'name' => 'clear-location-transients',
+					'description' => function(){
+					    global $wpdb;
+					    $sql = "SELECT `option_name` AS `name`, `option_value` AS `value`
+					            FROM  $wpdb->options
+					            WHERE `option_name` LIKE '%geolocalization_info_%'
+					            ORDER BY `option_name`";
+					            
+					    $results = $wpdb->get_results( $sql );
+					    $transients = array();
+        				echo "<table style='background: white; padding: 5px; height: 150px; overflow-y: auto; display: block;'>" ;               
+					    foreach ( $results as $result ){
+				            echo "<tr>";
+				                echo "<td style='padding: 0;'>".$result->name."</td>";
+				            echo "</tr>";
+					    }
+        				echo "</table>";
+					}
+				],
 		];
 		
 		$activeCampaignFields = [
@@ -256,6 +279,7 @@ class ThemeAdminSettings {
             case 'sync-bc-cohorts-api': $this->syncCohorts($inputId); break;
             case 'sync-bc-events-api': $this->syncEvents($inputId); break;
             case 'sync-bc-profiles-api': $this->syncProfiles($inputId); break;
+            case 'clear-location-transients': $this->clearLocationTransients(); break;
 	    }
 	}
 	
@@ -269,6 +293,23 @@ class ThemeAdminSettings {
         }
         echo "</table>";
 	}
+	
+    function _getRealIpAddr()
+    {
+        if (!empty($_SERVER['HTTP_CLIENT_IP']))   //check ip from share internet
+        {
+          $ip=$_SERVER['HTTP_CLIENT_IP'];
+        }
+        elseif (!empty($_SERVER['HTTP_X_FORWARDED_FOR']))   //to check ip is pass from proxy
+        {
+          $ip=$_SERVER['HTTP_X_FORWARDED_FOR'];
+        }
+        else
+        {
+          $ip=$_SERVER['REMOTE_ADDR'];
+        }
+        return $ip;
+    }
 	
 	private function syncCohorts($inputId){
         $upcoming = CoursePostType::getCohortsFromAPI();
@@ -346,4 +387,18 @@ class ThemeAdminSettings {
 		return $tab;
 	}
 	
+	function clearLocationTransients(){
+	    global $wpdb;
+	    $sql = "SELECT `option_name` AS `name`, `option_value` AS `value`
+	            FROM  $wpdb->options
+	            WHERE `option_name` LIKE '%geolocalization_info_%'
+	            ORDER BY `option_name`";
+	            
+	    $results = $wpdb->get_results( $sql );
+	    $transients = array();
+	    foreach ( $results as $result ){
+	    	delete_transient( str_replace("_transient_","",$result->name ));
+            echo "Deleting: ".$result->name."... \n";
+	    }
+	}
 }

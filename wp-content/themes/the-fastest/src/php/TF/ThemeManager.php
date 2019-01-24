@@ -44,7 +44,10 @@ class ThemeManager{
 		    if(isset($info['longitude'])) $data['longitude'] = $info['longitude'];
 		    
 		    $city = get_query_var('city');
-		    if(!empty($city)) $data['city_slug'] = $city;
+		    if(!empty($city)){
+		        if(empty($_GET['city_slug'])) $data['city_slug'] = $city;
+		        else $data['city_slug'] = $_GET['city_slug'];
+		    } 
 			
 			//if its not already set
 			if(isset($_GET['referral_key'])) $data['referral_key'] = $_GET['referral_key'];
