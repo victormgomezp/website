@@ -88,6 +88,7 @@ wp-content/plugins/*
 
 !wp-content/themes/
 !wp-content/themes/the-fastest
+wp-content/themes/the-fastest/acf-json/*
 
 # ignore these plugins
 wp-content/plugins/hello.php
