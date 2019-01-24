@@ -38,10 +38,10 @@ class ThemeManager{
 			
 			//if its not already set
 		    $info = $this->getUserInfo($this->getRealIpAddr());
-		    if(isset($info['country_name'])) $data['country'] = strtolower($info['country_name']);
-		    if(isset($info['city'])) $data['country'] = strtolower($info['city']);
-		    if(isset($info['latitude'])) $data['country'] = $info['latitude'];
-		    if(isset($info['longitude'])) $data['country'] = $info['longitude'];
+		    if(isset($info['country_name'])) $data['country_name'] = strtolower($info['country_name']);
+		    if(isset($info['city'])) $data['city'] = strtolower($info['city']);
+		    if(isset($info['latitude'])) $data['latitude'] = $info['latitude'];
+		    if(isset($info['longitude'])) $data['longitude'] = $info['longitude'];
 		    
 		    $city = get_query_var('city');
 		    if(!empty($city)) $data['city_slug'] = $city;
@@ -49,7 +49,6 @@ class ThemeManager{
 			//if its not already set
 			if(isset($_GET['referral_key'])) $data['referral_key'] = $_GET['referral_key'];
 			
-		    $this->_debug("The data: ",$info);
 			return $data;
 		},10,2);
 		
