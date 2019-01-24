@@ -109,7 +109,7 @@ class APIController{
         if(isset($globalContext['lang'])) $utmLanguageValue = $globalContext['lang'];
         
         $utmCountryValue = 'undefined';
-        if(isset($globalContext['country'])) $utmCountryValue = $globalContext['country'];
+        if(isset($globalContext['country_name'])) $utmCountryValue = $globalContext['country_name'];
         
         $gclidValue = 'undefined';
         if(isset($_GET['gclid'])) $gclidValue = $_GET['gclid'];
@@ -177,7 +177,7 @@ class APIController{
         if(isset($globalContext['lang'])) $utmLanguageValue = $globalContext['lang'];
         
         $utmCountryValue = 'undefined';
-        if(isset($globalContext['country'])) $utmCountryValue = $globalContext['country'];
+        if(isset($globalContext['country_name'])) $utmCountryValue = $globalContext['country_name'];
         
         $gclidValue = 'undefined';
         if(isset($_GET['gclid'])) $gclidValue = $_GET['gclid'];

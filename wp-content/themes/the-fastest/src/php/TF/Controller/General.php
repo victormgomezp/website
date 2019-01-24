@@ -263,7 +263,7 @@ class General{
         else if(isset($globalContext['city_slug'])) $utmLocationValue = $globalContext['city_slug'];
         
         $utmCountryValue = 'undefined';
-        if(isset($globalContext['country'])) $utmCountryValue = $globalContext['country'];
+        if(isset($globalContext['country_name'])) $utmCountryValue = $globalContext['country_name'];
         
         $gclidValue = 'undefined';
         if(isset($_GET['gclid'])) $gclidValue = $_GET['gclid'];
