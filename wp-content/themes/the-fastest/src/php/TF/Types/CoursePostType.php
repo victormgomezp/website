@@ -125,7 +125,13 @@ class CoursePostType extends BasePostType{
         if(!self::$cohortsSlugs) self::_fetchProfiles();
         
         if(!empty($_REQUEST['lang'])) $query['language'] = $_REQUEST['lang'];
+        
+        $city = get_query_var('city');
         if(!empty($_REQUEST['l'])) $query['location'] = $_REQUEST['l'];
+        else if(!empty($city)) $query['location'] = $city;
+        else if(!empty($_GET['city_slug'])) $query['location'] = $_GET['city_slug'];
+        else if(!empty($globalContext['city_slug'])) $query['location'] = $globalContext['city_slug'];
+        
         if(empty($_REQUEST['profile']) || $_REQUEST['profile'] === 'all'){
             $query['profile'] = self::$cohortsSlugs;
         }else{

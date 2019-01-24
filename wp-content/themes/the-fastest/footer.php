@@ -224,9 +224,13 @@
                 <div class="mb-4">
                     <form class="form-inline text-center syllabus-download d-inline">
                         <div class="alert alert-danger" style=" width: 100%; display: none;" role="alert"></div>
-                        <input type="text" class="form-control mr-sm-3 mb-1 mb-sm-0" name="" placeholder="Your first name" required/>
-                        <input type="email" class="form-control" name="" placeholder="Your email" required/>
-                        <button class="btn btn-secondary form-control ml-md-3 ml-0 mt-3 mt-sm-0"><?php pll_e('Download'); ?></button>
+                                <input type="text" class="form-control mr-md-2 mb-1 mb-md-0 firstname" name="" placeholder="Your first name" required/>
+                                <input type="email" class="form-control mr-md-2" name="" placeholder="Your email" required/>
+                                <select class='locations form-control mt-1 mt-md-0'>
+                                    <option>Loading...</option>
+                                </select>
+                                <button class="btn btn-secondary form-control ml-md-3 ml-0 mt-3 mt-md-0"><?php pll_e('Download'); ?></button>
+                        </div>
                     </form>
                 </div>
             </div>

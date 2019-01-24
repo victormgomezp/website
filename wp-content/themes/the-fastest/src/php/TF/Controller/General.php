@@ -36,6 +36,12 @@ class General{
         },$query2->posts);
         
         $args['upcoming-cohorts'] = CoursePostType::getUpcomingDates();
+        
+        //if there is a global location set
+        $city = get_query_var('city');
+        if(!empty($city)) $args['current-location'] = (array) LocationPostType::get([ "name" => $city]);
+        else if(!empty($_GET['city_slug'])) $args['current-location'] = (array) LocationPostType::get([ "name" => $_GET['city_slug']]);
+        else if(!empty($globalContext['city_slug'])) $args['current-location'] = (array) LocationPostType::get([ "name" => $globalContext['city_slug']]);
 
         if(count($args['upcoming-cohorts'])>0) $args['upcoming'] = $args['upcoming-cohorts'][0];
         else $args['upcoming-message'] = [
@@ -82,9 +88,9 @@ class General{
 
         //if there is a global location set
         $city = get_query_var('city');
-        if(!empty($city)){
-            $args['current-location'] = (array) LocationPostType::get([ "name" => $city]);
-        } 
+        if(!empty($city)) $args['current-location'] = (array) LocationPostType::get([ "name" => $city]);
+        else if(!empty($_GET['city_slug'])) $args['current-location'] = (array) LocationPostType::get([ "name" => $_GET['city_slug']]);
+        else if(!empty($globalContext['city_slug'])) $args['current-location'] = (array) LocationPostType::get([ "name" => $globalContext['city_slug']]);
         
         //else use miami
         if(empty($args['current-location'])) $args['current-location'] = (array) LocationPostType::get([ "p" => 145 ]);
@@ -259,18 +265,18 @@ class General{
         if(isset($globalContext['lang'])) $utmLanguageValue = $globalContext['lang'];
         
         $utmLocationValue = 'undefined';
-        if(isset($_GET['utm_location'])) $utmLocationValue = $_GET['utm_location'];
+        if(isset($_POST['utm_location'])) $utmLocationValue = $_POST['utm_location'];
         else if(isset($globalContext['city_slug'])) $utmLocationValue = $globalContext['city_slug'];
-        
+
         $utmCountryValue = 'undefined';
         if(isset($globalContext['country_name'])) $utmCountryValue = $globalContext['country_name'];
         
         $gclidValue = 'undefined';
-        if(isset($_GET['gclid'])) $gclidValue = $_GET['gclid'];
+        if(isset($_POST['gclid'])) $gclidValue = $_POST['gclid'];
         else if(isset($globalContext['gclid'])) $gclidValue = $globalContext['gclid'];
         
         $referralValue = 'undefined';
-        if(isset($_GET['referral_key'])) $referralValue = $_GET['referral_key'];
+        if(isset($_POST['referral_key'])) $referralValue = $_POST['referral_key'];
         else if(isset($globalContext['referral_key'])) $referralValue = $globalContext['referral_key'];
 
         $contact = array(

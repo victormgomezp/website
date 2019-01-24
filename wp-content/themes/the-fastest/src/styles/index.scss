@@ -102,6 +102,12 @@ section.instructors{
 
 .syllabus-download{
   display: table;
+  &.form-inline .form-control{
+    width: 100%;
+    @media screen and (min-width: 993px) { //tablets or bigger
+      width: 150px;
+    }
+  }
 }
 
 #upcomingEvent.modal{

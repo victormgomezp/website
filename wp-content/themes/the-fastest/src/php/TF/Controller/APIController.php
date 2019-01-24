@@ -20,7 +20,9 @@ class APIController{
     }
     
     public function getAllLocations(){
-        return LocationPostType::all();
+        $lang = 'en';
+        if(!empty($_GET['lang'])) $lang = $_GET['lang'];
+        return LocationPostType::all(['lang' => $lang]);
     }
     
     public function getPrices(){

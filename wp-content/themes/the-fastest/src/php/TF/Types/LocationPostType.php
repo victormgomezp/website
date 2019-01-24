@@ -92,10 +92,11 @@ class LocationPostType extends BasePostType{
     }
     
     public static function all($args=[], $hook=null){
-        $query = new WP_Query([
+        $args = array_merge($args, [
             'post_type' => 'location',
             'post_status' => 'publish'
-            ]);
+        ]);
+        $query = new WP_Query($args);
         wp_reset_postdata();
         $objectsArray = [];
         foreach($query->posts as $object){
