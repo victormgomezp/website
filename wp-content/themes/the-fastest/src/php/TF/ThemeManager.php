@@ -65,13 +65,13 @@ class ThemeManager{
     
     function getUserInfo($ip, $defaults=[]){
         
-        if ( false === ( $value = get_transient( 'geolocalization_info_'.$ip ) ) or true ) {
+        $value = get_transient( 'geolocalization_info_'.$ip );
+        if (empty($value) or true) {
             /** @var array|WP_Error $response */
             $response = wp_remote_get( 'http://api.ipstack.com/'.$ip.'?access_key='.IPSTACK_KEY );
             if ( is_array( $response ) && ! is_wp_error( $response ) ) {
                 $headers = $response['headers']; // array of http header lines
                 $result = (array) json_decode($response['body']); // use the content
-                $this->_debug($result);
                 if($result){
                     set_transient( 'geolocalization_info_'.$ip, array_merge($result, $defaults), 60*60*12 ); # 12 hours  
                     return $result;
@@ -81,6 +81,7 @@ class ThemeManager{
             else return null;
              // this code runs when there is no valid transient set
         }
+        $this->_debug($value);
         
         return $value;
     }
