@@ -88,10 +88,10 @@ $args = wpas_get_view_data();
                     <p><?php echo $course['short_description']; ?></p>
                   </div>
                   <div class="col-md-4 text-left">
-                    <h5>Additional Info</h5>
+                    <h5><?php pll_e('Additional Info'); ?></h5>
                     <ul>
                       <li>
-                          Duration: <?php echo $course['hr_duration']; ?> hrs (<?php echo $course['week_duration']; ?> wks)
+                          <?php pll_e('Duration'); ?>: <?php echo $course['hr_duration']; ?> hrs (<?php echo $course['week_duration']; ?> wks)
                       </li>
                       <li>
                         <?php wpas_get_inline_svg('assets/icons/flags/inline',$course['icon'].'.svg'); ?>

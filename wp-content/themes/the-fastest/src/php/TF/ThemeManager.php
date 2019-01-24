@@ -56,14 +56,22 @@ class ThemeManager{
         
     }
     
+    function _debug($val){
+        if(WP_DEBUG or isset($_GET['debug'])){
+            print_r($val);
+            die();
+        }
+    }
+    
     function getUserInfo($ip, $defaults=[]){
         
-        if ( false === ( $value = get_transient( 'geolocalization_info_'.$ip ) ) ) {
+        if ( false === ( $value = get_transient( 'geolocalization_info_'.$ip ) ) or true ) {
             /** @var array|WP_Error $response */
             $response = wp_remote_get( 'http://api.ipstack.com/'.$ip.'?access_key='.IPSTACK_KEY );
             if ( is_array( $response ) && ! is_wp_error( $response ) ) {
                 $headers = $response['headers']; // array of http header lines
                 $result = (array) json_decode($response['body']); // use the content
+                $this->_debug($result);
                 if($result){
                     set_transient( 'geolocalization_info_'.$ip, array_merge($result, $defaults), 60*60*12 ); # 12 hours  
                     return $result;
@@ -109,6 +117,13 @@ class ThemeManager{
             $rules[$post_type.'/' . $c->post_name . '/([a-zA-Z-_]*)[\/\?]?.*$'] = 'index.php?post_type=' . $post_type. '&city=$matches[1]&name='.$c->post_name;
             $rules[pll_get_post_language($c->ID).'/'.$post_type.'/' . $c->post_name . '/([a-zA-Z-_]*)[\/\?]?.*$'] = 'index.php?post_type=' . $post_type. '&city=$matches[1]&name='.$c->post_name;
         }
+        
+        $frontpage_id = get_option( 'page_on_front' );
+        $rules['home/santiago-chile'] = 'index.php?city=santiago-chile&pagename=home';
+        $rules['en/home/santiago-chile'] = 'index.php?city=santiago-chile&pagename=home';
+        $rules['inicio/santiago-chile'] = 'index.php?city=santiago-chile&pagename=inicio';
+        $rules['es/inicio/santiago-chile'] = 'index.php?city=santiago-chile&pagename=inicio';
+        
         // merge with global rules
         $wp_rewrite->rules = $rules + $wp_rewrite->rules;
     }

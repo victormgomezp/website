@@ -20,6 +20,10 @@ class Landing{
         $args['page']['styles'] = get_field('landing_extra_styles', $page->ID);
         $args['page']['script'] = get_field('landing_extra_script', $page->ID);
         
+        $city = get_query_var('city');
+        if(!empty($city)) $args['current-location'] = (array) LocationPostType::get([ "name" => $city]);
+        if(empty($args['current-location'])) $args['current-location'] = (array) LocationPostType::get([ "p" => 145 ]);
+        
         $args['testimonials'] = TestimonialPostType::All();
         $args['upcoming'] = CoursePostType::getNextCohort();
         

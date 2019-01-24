@@ -137,7 +137,6 @@ return array(
     	"Instagram Application, Memory Card Game, Tic Tac Toe, Flapy Bird, etc." => "Instagram Application, Memory Card Game, Tic Tac Toe, Flapy Bird, etc.",
     	"Possible Projects" => "Possible Projects",
     	"Think like a computer: Control the flow of your code, code algorithms, loop, use conditionals, webpack, the command line, SASS transpile, GIT, etc" => "Think like a computer: Control the flow of your code, code algorithms, loop, use conditionals, webpack, the command line, SASS transpile, GIT, etc",
-    	"Duration: 2 wks" => "Duration: 2 wks",
     	"Each member of our teaching staff has over 10 years of coding experience and holds a \'Senior\' position in Miami\'s tech industry" => 'Each member of our teaching staff has over 10 years of coding experience and holds a \'Senior\' position in Miami\'s tech industry',
     	"Learn To Code" => "Learn To Code",
     	"and increase your income significantly" => "and increase your income significantly",
@@ -260,7 +259,8 @@ return array(
 //Location
 
         "Upcoming Events at this location" => "Upcoming Events at this location",
-        
+        "Additional Info" => "Additional Info",
+        "Duration" => "Duration",
 
 //Calendar
         "Show" => "Show",
