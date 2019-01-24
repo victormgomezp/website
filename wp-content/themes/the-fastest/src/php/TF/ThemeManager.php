@@ -38,7 +38,6 @@ class ThemeManager{
 			
 			//if its not already set
 		    $info = $this->getUserInfo($this->getRealIpAddr());
-		    $this->_debug($info);
 		    if(isset($info['country_name'])) $data['country'] = strtolower($info['country_name']);
 		    if(isset($info['city'])) $data['country'] = strtolower($info['city']);
 		    if(isset($info['latitude'])) $data['country'] = $info['latitude'];
@@ -50,6 +49,7 @@ class ThemeManager{
 			//if its not already set
 			if(isset($_GET['referral_key'])) $data['referral_key'] = $_GET['referral_key'];
 			
+		    $this->_debug("The data: ",$data);
 			return $data;
 		},10,2);
 		
@@ -57,9 +57,15 @@ class ThemeManager{
         
     }
     
-    function _debug($val){
+    function _debug($val, $val2=null){
         if((isset($_GET['debug']) && $_GET['debug']==true) or (WP_DEBUG and (!isset($_GET['debug']) or $_GET['debug']!=false))){
-            print_r($val);
+            if($val2){
+                echo $val."\n";
+                print_r($val2);
+            } 
+        
+            else print_r($val);
+            
             die();
         }
     }
