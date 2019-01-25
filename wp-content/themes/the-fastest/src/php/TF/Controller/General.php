@@ -14,6 +14,13 @@ use \WP_Query;
 
 class General{
     
+    var $globalContext = null;
+    var $defaultLocation = 145;
+    
+    public function __construct(){
+        $this->globalContext = wpas_get_global_context();
+    }
+    
     public function load_controller_hooks(){
         
         //add_filter( 'gform_pre_validation_'.$fieldId, [$this,'populate_location_dropdown'] );
@@ -23,7 +30,6 @@ class General{
     
     public function renderHome(){
 
-        $args['current-location'] = null;
         $args = [];
         $args = $this->getData();
         $query = PartnerPostType::all(['meta_key' => 'partner_type', 'meta_value' => 'coding_related','posts_per_page' => 4]);
@@ -38,12 +44,7 @@ class General{
         
         $args['upcoming-cohorts'] = CoursePostType::getUpcomingDates();
         
-        //if there is a global location set
-        $city = get_query_var('city');
-        if(!empty($city)) $args['current-location'] = (array) LocationPostType::get([ "name" => $city]);
-        else if(!empty($_GET['city_slug'])) $args['current-location'] = (array) LocationPostType::get([ "name" => $_GET['city_slug']]);
-        else if(!empty($globalContext['city_slug'])) $args['current-location'] = (array) LocationPostType::get([ "name" => $globalContext['city_slug']]);
-        else if(empty($args['current-location'])) $args['current-location'] = (array) LocationPostType::get([ "p" => 145 ]);
+        $args['current-location'] = $this->_getCurrentLocation();
 
         if(count($args['upcoming-cohorts'])>0) $args['upcoming'] = $args['upcoming-cohorts'][0];
         else $args['upcoming-message'] = [
@@ -57,6 +58,19 @@ class General{
         
         $args = [];
         $args = $this->getData();
+        $args['current-location'] = $this->_getCurrentLocation();
+        $args['current-location']['bc_location_slug'] = get_field('breathecode_location_slug', $args['current-location']['ID']);
+        
+        $args['course'] = (array) CoursePostType::get([
+            'meta_key'		=> 'breathecode_course_slug',
+	        'meta_value'	=> 'full-stack'
+        ]);
+        $args['course']['slug'] = get_field('breathecode_course_slug', $args['course']['ID']);
+        
+        $args['current-location']['prices'] = $this->_getPrices($args['current-location'], $args['course']);
+        
+        $args['locations'] = LocationPostType::all();
+        
         return $args;
     }
     
@@ -85,23 +99,13 @@ class General{
         $args['course'] = (array) get_queried_object();
         $args['course']['slug'] = get_field('breathecode_course_slug', $args['course']['ID']);
         
-        $args['current-location'] = null;
-        $globalContext = wpas_get_global_context();
-
-        //if there is a global location set
-        $city = get_query_var('city');
-        if(!empty($city)) $args['current-location'] = (array) LocationPostType::get([ "name" => $city]);
-        else if(!empty($_GET['city_slug'])) $args['current-location'] = (array) LocationPostType::get([ "name" => $_GET['city_slug']]);
-        else if(!empty($globalContext['city_slug'])) $args['current-location'] = (array) LocationPostType::get([ "name" => $globalContext['city_slug']]);
-        
-        //else use miami
-        if(empty($args['current-location'])) $args['current-location'] = (array) LocationPostType::get([ "p" => 145 ]);
-
+        // get the current location
+        $args['current-location'] = $this->_getCurrentLocation();
         $args['current-location']['bc_location_slug'] = get_field('breathecode_location_slug', $args['current-location']['ID']);
-        $args['locations'] = LocationPostType::all();
-        
         $args['current-location']['prices'] = $this->_getPrices($args['current-location'], $args['course']);
-        //debug($args['prices']);
+
+        //get the rest of the locations
+        $args['locations'] = LocationPostType::all();
         
         $args['upcoming-cohorts'] = CoursePostType::getUpcomingDates(['profile' =>$args['course']['slug'] ]);
 
@@ -113,40 +117,6 @@ class General{
         return $args;
     }
     
-    private function _getPrices($location, $course){
-        $prices = @include dirname(__FILE__).'/../../languages/prices.'.$course['slug'].'.php';
-        if($prices and !empty($prices[$location['bc_location_slug']])){
-            //all the prices in just one place
-            $location['prices'] = $prices[$location['bc_location_slug']];
-            if(!empty($location['prices']['financed'])){
-                //array of months
-                $months = array_keys($location['prices']['financed']);
-                
-                $location['prices']['data-slider-total'] = count($months);
-                $location['prices']['data-slider-ticks'] = "[".implode(",",$months).']';
-                $location['prices']['data-slider-initial-index'] = count($months)-1;
-                $location['prices']['data-slider-initial-value'] = $months[count($months)-1];
-                
-                $location['prices']['data-slider-ticks'] = "[".implode(",",array_map(function ($el, $i) {
-                      return $i;
-                   },$months, array_keys($months))).']';
-                   
-                $location['prices']['data-slider-ticks-labels'] = "[".implode(",",array_map(function ($el, $i) {
-                      return $i == 0 ? "\"$el months\"" : "\"$el mo.\"";
-                   },$months, array_keys($months))).']';
-                 
-                $totalPositions = count($months);
-                $location['prices']['ticks_positions'] = "[".implode(",",array_map(function ($el, $i) use ($totalPositions) {
-                      return ($i / $totalPositions) * 100;
-                   },$months, array_keys($months))).']';
-                   
-                return $location['prices'];
-            }
-            else return $location['prices'];
-        }
-        
-        return null;
-    }
     
     public function renderLocation(){
 
@@ -235,9 +205,9 @@ class General{
         if(empty($_POST['email'])) WPASController::ajaxError('Invalid Email');
         
         //get WPAS_APP values
-        $globalContext = wpas_get_global_context();
+        $this->globalContext = wpas_get_global_context();
         $gclidValue = 'undefined';
-        if(isset($globalContext['gclid'])) $gclidValue = $globalContext['gclid'];
+        if(isset($this->globalContext['gclid'])) $gclidValue = $this->globalContext['gclid'];
         
         $contact = array(
     		"email" => $_POST['email'],
@@ -267,28 +237,28 @@ class General{
         if(!empty($_POST['first_name'])) $fistName = $_POST['first_name'];
         
         //get WPAS_APP values
-        $globalContext = wpas_get_global_context();
+        $this->globalContext = wpas_get_global_context();
 
         $utmURLValue = 'undefined';
-        if(isset($globalContext['url'])) $utmURLValue = $globalContext['url'];
+        if(isset($this->globalContext['url'])) $utmURLValue = $this->globalContext['url'];
         
         $utmLanguageValue = 'undefined';
-        if(isset($globalContext['lang'])) $utmLanguageValue = $globalContext['lang'];
+        if(isset($this->globalContext['lang'])) $utmLanguageValue = $this->globalContext['lang'];
         
         $utmLocationValue = 'undefined';
         if(isset($_POST['utm_location'])) $utmLocationValue = $_POST['utm_location'];
-        else if(isset($globalContext['city_slug'])) $utmLocationValue = $globalContext['city_slug'];
+        else if(isset($this->globalContext['city_slug'])) $utmLocationValue = $this->globalContext['city_slug'];
 
         $utmCountryValue = 'undefined';
-        if(isset($globalContext['country_name'])) $utmCountryValue = $globalContext['country_name'];
+        if(isset($this->globalContext['country_name'])) $utmCountryValue = $this->globalContext['country_name'];
         
         $gclidValue = 'undefined';
         if(isset($_POST['gclid'])) $gclidValue = $_POST['gclid'];
-        else if(isset($globalContext['gclid'])) $gclidValue = $globalContext['gclid'];
+        else if(isset($this->globalContext['gclid'])) $gclidValue = $this->globalContext['gclid'];
         
         $referralValue = 'undefined';
         if(isset($_POST['referral_key'])) $referralValue = $_POST['referral_key'];
-        else if(isset($globalContext['referral_key'])) $referralValue = $globalContext['referral_key'];
+        else if(isset($this->globalContext['referral_key'])) $referralValue = $this->globalContext['referral_key'];
 
         $contact = array(
     		"email" => $_POST['email'],
@@ -324,6 +294,49 @@ class General{
         if(!empty($cohorts)) WPASController::ajaxSuccess($cohorts[0]);
         else WPASController::ajaxError('No upcoming dates');
         
+    }
+    
+    private function _getPrices($location, $course){
+        $prices = @include dirname(__FILE__).'/../../languages/prices.'.$course['slug'].'.php';
+        if($prices and !empty($prices[$location['bc_location_slug']])){
+            //all the prices in just one place
+            $location['prices'] = $prices[$location['bc_location_slug']];
+            if(!empty($location['prices']['financed'])){
+                //array of months
+                $months = array_keys($location['prices']['financed']);
+                
+                $location['prices']['data-slider-total'] = count($months);
+                $location['prices']['data-slider-ticks'] = "[".implode(",",$months).']';
+                $location['prices']['data-slider-initial-index'] = count($months)-1;
+                $location['prices']['data-slider-initial-value'] = $months[count($months)-1];
+                
+                $location['prices']['data-slider-ticks'] = "[".implode(",",array_map(function ($el, $i) {
+                      return $i;
+                   },$months, array_keys($months))).']';
+                   
+                $location['prices']['data-slider-ticks-labels'] = "[".implode(",",array_map(function ($el, $i) {
+                      return $i == 0 ? "\"$el months\"" : "\"$el mo.\"";
+                   },$months, array_keys($months))).']';
+                 
+                $totalPositions = count($months);
+                $location['prices']['ticks_positions'] = "[".implode(",",array_map(function ($el, $i) use ($totalPositions) {
+                      return ($i / $totalPositions) * 100;
+                   },$months, array_keys($months))).']';
+                   
+                return $location['prices'];
+            }
+            else return $location['prices'];
+        }
+        
+        return null;
+    }
+
+    public function _getCurrentLocation(){
+        $city = get_query_var('city');
+        if(!empty($city)) return (array) LocationPostType::get([ "name" => $city]);
+        else if(!empty($_GET['city_slug'])) return (array) LocationPostType::get([ "name" => $_GET['city_slug']]);
+        else if(!empty($this->globalContext['city_slug'])) return (array) LocationPostType::get([ "name" => $this->globalContext['city_slug']]);
+        return (array) LocationPostType::get([ "p" => $this->defaultLocation ]);
     }
     
 }

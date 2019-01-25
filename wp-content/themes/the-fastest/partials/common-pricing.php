@@ -1,3 +1,6 @@
+<?php
+$hasFinancing = !empty($args['current-location']['prices']['financed']);
+?>
 <div class="container">
   <div class="row mb-4">
     <div class="col-md-6 mx-auto">

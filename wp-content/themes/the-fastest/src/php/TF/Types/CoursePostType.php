@@ -172,6 +172,7 @@ class CoursePostType extends BasePostType{
         $arrayObject = (array) $object;
         $arrayObject['financed_minimum_monthly_price'] = get_field('financed_minimum_monthly_price',$object->ID);
         $arrayObject['financed_deposit'] = get_field('financed_deposit',$object->ID);
+        $arrayObject['slug'] = $arrayObject['post_name'];
         $arrayObject['full_price'] = get_field('full_price',$object->ID);
         return $arrayObject;
     }

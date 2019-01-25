@@ -16,7 +16,7 @@ $args = wpas_get_view_data();
     <section class="bg-white text-black pt-5">
       <div class="container">
         <div class="row">
-          <div class="col-sm-12 col-md-5 col-lg-3 mx-auto order-2 order-md-1">
+          <div class="col-sm-12 col-md-5 col-lg-3 mx-auto order-2 order-md-1 text-center">
             <svg width="270" height="240" class="mt-0">
               <circle cx="80" cy="80" r="80" style="fill:red" opacity="0.9" />
               <circle cx="145" cy="160" r="80" style="fill:cornflowerblue" opacity="0.9" />

@@ -221,16 +221,17 @@ $args = wpas_get_view_data();
                 <div class='col-6 ml-auto upfront'>
                   <div class="card card-block card-primary card-inverse">
                     <div class="card-body mb-3">
-                      <h3 class="card-title m-3"><?php pll_e('Up-Front'); ?></h3>
-                      <h4 class="card-text">$6,000</h4>
+                      <h3 class="card-title m-3"><?php pll_e('Starting at'); ?></h3>
+                      <h4 class="card-text">From $3,000 to $9,000</h4>
+                      <small><?php pll_e('Prices can vary depending on our courses and locations'); ?></small>
                     </div>
                   </div>
                 </div>
                 <div class='col-6 mr-auto'>
                   <div class="card card-block card-primary card-inverse">
                     <div class="card-body">
-                      <h3 class="card-title m-0"><?php pll_e('Extended Plan'); ?></h3>
-                      <h4 class="card-text">From $135/month</h4>
+                      <h3 class="card-title m-0"><?php pll_e('How to pay?'); ?></h3>
+                      <p class="card-text mt-2"><?php pll_e('We make a huge effort to accept the best possible talent with multiple financing options and even full scolarships'); ?></p>
                       <a href="<?php echo get_permalink( get_page_by_path( wpas_pll_get_slug('pricing') ) ); ?>">*<?php pll_e('Learn more about our payment plans'); ?></a>
                     </div>
                   </div>
