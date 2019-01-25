@@ -62,7 +62,7 @@ class ThemeManager{
     }
     function wpse_184163_disable_canonical_front_page( $redirect ) {
         $front_page = get_option( 'page_on_front' );
-        if ( is_page() && $front_page) {
+        if ((is_page() || is_front_page()) && $front_page) {
             $city = get_query_var('city');
             $this->_debug($city);
             if ( is_page( $front_page ) && !empty($city))
