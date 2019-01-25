@@ -57,14 +57,12 @@ class ThemeManager{
 		
 
         
-        add_filter( 'redirect_canonical', [$this, 'wpse_184163_disable_canonical_front_page'] );
+        add_filter( 'redirect_canonical', [$this, 'wpse_184163_disable_canonical_front_page'], 10, 2 );
         add_filter( 'wp_title', [$this, 'override_the_title']);
     }
-    function wpse_184163_disable_canonical_front_page( $redirect ) {
+    function wpse_184163_disable_canonical_front_page( $redirect, $requested ) {
         
-        $template = get_page_template();
-        $this->_debug(wp_get_canonical_url());
-        if (strpos($template, 'page-home.php') !== false) {
+        if (preg_match('/(home)|(inicio)\/.*/',$requested)){
             $city = get_query_var('city');
             if (!empty($city)) $redirect = false;
         }
