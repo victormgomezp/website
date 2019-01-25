@@ -61,14 +61,10 @@ class ThemeManager{
         add_filter( 'wp_title', [$this, 'override_the_title']);
     }
     function wpse_184163_disable_canonical_front_page( $redirect ) {
-        $front_page = get_option( 'page_on_front' );
-        $this->_debug(is_page($front_page));
-        if ((is_page() || is_front_page()) && $front_page) {
+        if (is_front_page()) {
             $city = get_query_var('city');
-            if ( is_page( $front_page ) && !empty($city))
-                $redirect = false;
+            if (!empty($city)) $redirect = false;
         }
-    
         return $redirect;
     }
     
