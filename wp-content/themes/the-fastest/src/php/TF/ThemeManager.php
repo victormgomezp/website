@@ -63,6 +63,7 @@ class ThemeManager{
     function wpse_184163_disable_canonical_front_page( $redirect ) {
         if (is_front_page()) {
             $city = get_query_var('city');
+            $this->_debug($city);
             if (!empty($city)) $redirect = false;
         }
         return $redirect;
