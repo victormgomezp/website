@@ -142,8 +142,8 @@ $args = wpas_get_view_data();
       <div class="container">
         <div class="row">
           <div class="col-sm-10 mx-auto">
-            <h2 class="text-center"><?php pll_e('Get immersed in Miami\'s Coding Ecosystem'); ?></h2>
-            <h5 class="text-center mb-5"><?php pll_e('4Geeks Academy and our students actively participate in Miami\'s top coding initiatives'); ?>.</h5>
+            <h2 class="text-center"><?php pll_e("Get immersed in Miami's Coding Ecosystem"); ?></h2>
+            <h5 class="text-center mb-5"><?php pll_e("4Geeks Academy and our students actively participate in Miami's top coding initiatives"); ?>.</h5>
             <div class="row">
             <?php foreach ($args['c-partners'] as $p) { ?>
                 <div class="col-6 col-sm-3">
