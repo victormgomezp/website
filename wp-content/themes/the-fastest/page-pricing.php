@@ -34,76 +34,8 @@ $args = wpas_get_view_data();
         </div>
       </div>
     </section>
-    <section class="bg-white text-black pt-md-5 pb-5">
-      <div class="container">
-        <div class="row mb-4">
-          <div class="col-md-6 mx-auto">
-            <h4 class='text-center'><?php pll_e('Pick your payment plan, no extra fees or hidden costs, everything is included'); ?></h4>
-          </div>
-        </div>
-        <div class='row'>
-          <div class='col-md-6 upfront'>
-            <div class='row mb-3'>
-              <div class='col-12'>
-                <div class="card card-block card-primary card-inverse bg-yellow mb-3">
-                  <div class="card-body p-4 mb-3 mt-2">
-                    <h4 class="card-title text-center"><?php pll_e('Pay Up-Front'); ?></h4>
-                    <h3 class="card-text text-center">$6,000</h3>
-                  </div>
-                </div>
-              </div>
-              <div class='col-12 d-none d-md-block'>
-                <div class='row mb-3'>
-                  <div class='col-sm-12'>
-                    <div class="card card-block card-primary bg-light mb-3">
-                      <div class="card-body text-center">
-                        <p><?php pll_e('Enjoy the best price in town'); echo '<br />'; pll_e('Pay up-front now with no extra or hidden fees'); ?></p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class='col-sm-12 text-center'>
-                  <a href="<?php echo get_permalink( get_page_by_path( wpas_pll_get_slug('apply') ) ); ?>" class="btn btn-danger btn-lg"><?php pll_e('Apply to 4Geeks Academy'); ?></a>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class='col-md-6 text-center'>
-            <div class='row'>
-              <div class='col-12'>
-                <div class="card card-block card-primary card-inverse bg-yellow payment-plan">
-                  <div class="card-body">
-                    <h5 class="card-title m-0 text-center"><?php pll_e('Or Extended Payment Plan'); ?></h5>
-                    <h4 id="price-label" class="card-text text-center">$135 / month (No deposit)</h4>
-                  </div>
-                  <div class="card-footer">
-                    <input id="pricing-slider" data-slider-value="4" data-slider-id='pricing-slider-instance' data-slider-ticks-snap-bounds="100" type="text" data-slider-ticks="[0, 1, 2, 3, 4]" data-slider-ticks-labels='["6 months", "12 mo.", "24 mo.", "36 mo.", "60 mo."]' ticks_positions="[0, 25, 50, 75, 100]" />
-                  </div>
-                </div>
-              </div>
-              <div class='col-12'>
-                <div class='row'>
-                  <div class='col-12 mt-2'>
-                    <div class="card card-block card-primary bg-light mb-3">
-                  <div class="card-body">
-                    <p id="financing-details"><?php pll_e('Thanks to our partnership with Skillfund we have managed to create a new special payment plant <strong>starting at $135/mo</strong>'); ?></p>
-                  </div>
-                </div>
-                  </div>
-                </div>
-                <div class='row'>
-                  <div class='col-sm-6'>
-                      <img id="financing-logo" class="card-img-top" data-templateurl="<?php echo get_stylesheet_directory_uri(); ?>" src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/skillsfund.png">
-                  </div>
-                  <div class='col-sm-6'>
-                      <a id="financing-btn" data-applylink="<?php echo get_permalink( get_page_by_path( wpas_pll_get_slug('apply') ) ); ?>" href="http://4geeksacademy.skills.fund" class="btn btn-danger btn-lg"><?php pll_e('Apply to Financing'); ?></a>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+    <section class="pricing-calculator bg-white text-black pt-md-5 pb-5">
+      <?php include(locate_template('partials/common-pricing.php')); ?>
     </section>
     <section class="bg-light text-black pt-5 pb-5">
       <div class="container">

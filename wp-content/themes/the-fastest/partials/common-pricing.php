@@ -21,7 +21,7 @@
       </h4>
     </div>
   </div>
-  <?php if($args['prices']){ ?>
+  <?php if(isset($args['current-location']['prices'])){ ?>
     <div class='row pricing-component'>
     <div class='col-md-6 upfront'>
       <div class='row mb-3'>
@@ -56,20 +56,20 @@
             <div class="card-body">
               <h5 class="card-title m-0 text-center"><?php pll_e('Or Extended Payment Plan'); ?></h5>
               <?php if($hasFinancing){ ?>
-                <h4 data-concept="monthly" class="card-text text-center price-label"><?php echo $args['current-location']['prices']['financed'][$args['prices']['data-slider-initial-value']]['monthly'];  ?></h4>
+                <h4 data-concept="monthly" class="card-text text-center price-label"><?php echo $args['current-location']['prices']['financed'][$args['current-location']['prices']['data-slider-initial-value']]['monthly'];  ?></h4>
               <?php } else { ?>
               <?php } ?>
             </div>
                 <?php if($hasFinancing){ ?>
                   <div class="card-footer">
-                      <input class="pricing-slider" data-slider-value="<?php echo $args['prices']['data-slider-initial-index'];  ?>" type="text" 
+                      <input class="pricing-slider" data-slider-value="<?php echo $args['current-location']['prices']['data-slider-initial-index'];  ?>" type="text" 
                         data-location='<?php echo $args['current-location']['bc_location_slug']; ?>'
                         data-course='<?php echo $args['course']['slug']; ?>'
                         data-slider-id='pricing-slider-instance' 
                         data-slider-ticks-snap-bounds="100" 
-                        data-slider-ticks='<?php echo $args['prices']['data-slider-ticks']; ?>'
-                        data-slider-ticks-labels='<?php echo $args['prices']['data-slider-ticks-labels']; ?>'
-                        ticks_positions='<?php echo $args['prices']['ticks_positions']; ?>' />
+                        data-slider-ticks='<?php echo $args['current-location']['prices']['data-slider-ticks']; ?>'
+                        data-slider-ticks-labels='<?php echo $args['current-location']['prices']['data-slider-ticks-labels']; ?>'
+                        ticks_positions='<?php echo $args['current-location']['prices']['ticks_positions']; ?>' />
                   </div>
                 <?php } else { ?>
                   <div class="card-footer">

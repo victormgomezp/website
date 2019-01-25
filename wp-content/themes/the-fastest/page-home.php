@@ -5,7 +5,7 @@ $args = wpas_get_view_data();
 ?>
   <div class="container">
     <header class="masthead pb-0 masthead-white">
-      <h1 class="text-center" style="font-size: 12px">4Geeks Academy - Miami Coding Bootcamp</h1>
+      <h1 class="text-center" style="font-size: 12px">4Geeks Academy - <?php echo $args['current-location']['post_title']; ?> Coding Bootcamp</h1>
       <div class="header-content">
         <div class="row heading-row">
           <div class="col-12 mx-auto">

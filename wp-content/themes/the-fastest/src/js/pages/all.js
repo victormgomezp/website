@@ -221,7 +221,7 @@ $(document).ready(function() {
       success: function(locations){
          if(locations)
          {
-            $('#syllabusModal .locations').html(['<option value="select">Select a location</option>'].concat(locations.map(function(l){
+            $('#syllabusModal .locations, .syllabus-download .locations').html(['<option value="select">Select a location</option>'].concat(locations.map(function(l){
                return '<option value="'+l['ac_location_slug']+'">'+l['post_title']+'</option>';
             })).join(''));
             

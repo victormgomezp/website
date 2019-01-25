@@ -113,6 +113,7 @@ class LocationPostType extends BasePostType{
         $arrayObject['ac_location_slug'] = get_field('active_campaign_location_slug',$object->ID);
         $arrayObject['latitude'] = floatval(get_field('location_latitude',$object->ID));
         $arrayObject['longitude'] = floatval(get_field('location_longitude',$object->ID));
+        $arrayObject['city'] = floatval(get_field('location_city',$object->ID));
         $arrayObject['short-title'] = substr($object->post_title,0,13).'...';
         
         return $arrayObject;

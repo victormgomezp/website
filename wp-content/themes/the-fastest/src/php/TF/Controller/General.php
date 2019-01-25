@@ -23,6 +23,7 @@ class General{
     
     public function renderHome(){
 
+        $args['current-location'] = null;
         $args = [];
         $args = $this->getData();
         $query = PartnerPostType::all(['meta_key' => 'partner_type', 'meta_value' => 'coding_related','posts_per_page' => 4]);
@@ -42,6 +43,7 @@ class General{
         if(!empty($city)) $args['current-location'] = (array) LocationPostType::get([ "name" => $city]);
         else if(!empty($_GET['city_slug'])) $args['current-location'] = (array) LocationPostType::get([ "name" => $_GET['city_slug']]);
         else if(!empty($globalContext['city_slug'])) $args['current-location'] = (array) LocationPostType::get([ "name" => $globalContext['city_slug']]);
+        else if(empty($args['current-location'])) $args['current-location'] = (array) LocationPostType::get([ "p" => 145 ]);
 
         if(count($args['upcoming-cohorts'])>0) $args['upcoming'] = $args['upcoming-cohorts'][0];
         else $args['upcoming-message'] = [
@@ -98,34 +100,8 @@ class General{
         $args['current-location']['bc_location_slug'] = get_field('breathecode_location_slug', $args['current-location']['ID']);
         $args['locations'] = LocationPostType::all();
         
-        $args['prices'] = @include dirname(__FILE__).'/../../languages/prices.'.$args['course']['slug'].'.php';
-        //debug($args['current-location']);
-        if($args['prices'] and !empty($args['prices'][$args['current-location']['bc_location_slug']])){
-            //all the prices in just one place
-            $args['current-location']['prices'] = $args['prices'][$args['current-location']['bc_location_slug']];
-            if(!empty($args['current-location']['prices']['financed'])){
-                //array of months
-                $months = array_keys($args['prices'][$args['current-location']['bc_location_slug']]['financed']);
-                
-                $args['prices']['data-slider-total'] = count($months);
-                $args['prices']['data-slider-ticks'] = "[".implode(",",$months).']';
-                $args['prices']['data-slider-initial-index'] = count($months)-1;
-                $args['prices']['data-slider-initial-value'] = $months[count($months)-1];
-                
-                $args['prices']['data-slider-ticks'] = "[".implode(",",array_map(function ($el, $i) {
-                      return $i;
-                   },$months, array_keys($months))).']';
-                   
-                $args['prices']['data-slider-ticks-labels'] = "[".implode(",",array_map(function ($el, $i) {
-                      return $i == 0 ? "\"$el months\"" : "\"$el mo.\"";
-                   },$months, array_keys($months))).']';
-                 
-                $totalPositions = count($months);
-                $args['prices']['ticks_positions'] = "[".implode(",",array_map(function ($el, $i) use ($totalPositions) {
-                      return ($i / $totalPositions) * 100;
-                   },$months, array_keys($months))).']';
-            }
-        } else $args['prices'] = null;
+        $args['current-location']['prices'] = $this->_getPrices($args['current-location'], $args['course']);
+        //debug($args['prices']);
         
         $args['upcoming-cohorts'] = CoursePostType::getUpcomingDates(['profile' =>$args['course']['slug'] ]);
 
@@ -135,6 +111,41 @@ class General{
             "btn-message" => "Other dates & locations"
         ];
         return $args;
+    }
+    
+    private function _getPrices($location, $course){
+        $prices = @include dirname(__FILE__).'/../../languages/prices.'.$course['slug'].'.php';
+        if($prices and !empty($prices[$location['bc_location_slug']])){
+            //all the prices in just one place
+            $location['prices'] = $prices[$location['bc_location_slug']];
+            if(!empty($location['prices']['financed'])){
+                //array of months
+                $months = array_keys($location['prices']['financed']);
+                
+                $location['prices']['data-slider-total'] = count($months);
+                $location['prices']['data-slider-ticks'] = "[".implode(",",$months).']';
+                $location['prices']['data-slider-initial-index'] = count($months)-1;
+                $location['prices']['data-slider-initial-value'] = $months[count($months)-1];
+                
+                $location['prices']['data-slider-ticks'] = "[".implode(",",array_map(function ($el, $i) {
+                      return $i;
+                   },$months, array_keys($months))).']';
+                   
+                $location['prices']['data-slider-ticks-labels'] = "[".implode(",",array_map(function ($el, $i) {
+                      return $i == 0 ? "\"$el months\"" : "\"$el mo.\"";
+                   },$months, array_keys($months))).']';
+                 
+                $totalPositions = count($months);
+                $location['prices']['ticks_positions'] = "[".implode(",",array_map(function ($el, $i) use ($totalPositions) {
+                      return ($i / $totalPositions) * 100;
+                   },$months, array_keys($months))).']';
+                   
+                return $location['prices'];
+            }
+            else return $location['prices'];
+        }
+        
+        return null;
     }
     
     public function renderLocation(){

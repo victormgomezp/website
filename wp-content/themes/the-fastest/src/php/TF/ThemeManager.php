@@ -57,6 +57,29 @@ class ThemeManager{
 		
 
         
+        add_filter( 'redirect_canonical', [$this, 'wpse_184163_disable_canonical_front_page'] );
+        add_filter( 'wp_title', [$this, 'override_the_title']);
+    }
+    function wpse_184163_disable_canonical_front_page( $redirect ) {
+        if ( is_page() && $front_page = get_option( 'page_on_front' )) {
+            $city = get_query_var('city');
+            if ( is_page( $front_page ) && !empty($city))
+                $redirect = false;
+        }
+    
+        return $redirect;
+    }
+    
+    function override_the_title( $title ) {
+        $city = get_query_var('city');
+        if ( is_page() && $front_page = get_option( 'page_on_front' )) {
+            if ( is_page( $front_page )){
+                if(!empty($city)) echo ucwords(str_replace("-"," ",$city)) . ' Coding Bootcamp';
+            }
+            else if(!empty($city)) echo ucwords(str_replace("-"," ",$city)) . ' - ';
+            
+        }
+        else if(!empty($city)) echo ucwords(str_replace("-"," ",$city)) . ' - ';
     }
     
     function _debug($val, $val2=null){
@@ -128,13 +151,14 @@ class ThemeManager{
         }
         
         $frontpage_id = get_option( 'page_on_front' );
-        $rules['home/santiago-chile'] = 'index.php?city=santiago-chile&pagename=home';
-        $rules['en/home/santiago-chile'] = 'index.php?city=santiago-chile&pagename=home';
-        $rules['inicio/santiago-chile'] = 'index.php?city=santiago-chile&pagename=inicio';
-        $rules['es/inicio/santiago-chile'] = 'index.php?city=santiago-chile&pagename=inicio';
+        $rules['home/([a-zA-Z-_]*)[\/\?]?.*$'] = 'index.php?city=$matches[1]&name=home';
+        $rules['en/home/([a-zA-Z-_]*)[\/\?]?.*$'] = 'index.php?city=$matches[1]&name=home';
+        $rules['inicio/([a-zA-Z-_]*)[\/\?]?.*$'] = 'index.php?city=$matches[1]&name=inicio';
+        $rules['es/inicio/([a-zA-Z-_]*)[\/\?]?.*$'] = 'index.php?city=$matches[1]&name=inicio';
         
         // merge with global rules
         $wp_rewrite->rules = $rules + $wp_rewrite->rules;
+        
     }
     
     function custom_query_vars_filter($vars) {
