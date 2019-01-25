@@ -63,6 +63,7 @@ class ThemeManager{
     function wpse_184163_disable_canonical_front_page( $redirect ) {
         if ( is_page() && $front_page = get_option( 'page_on_front' )) {
             $city = get_query_var('city');
+            $this->_debug($city);
             if ( is_page( $front_page ) && !empty($city))
                 $redirect = false;
         }
@@ -117,9 +118,8 @@ class ThemeManager{
         return $value;
     }
     
-    
-    function getRealIpAddr()
-    {
+    function getRealIpAddr(){
+        
         if (!empty($_SERVER['HTTP_CLIENT_IP']))   //check ip from share internet
         {
           $ip=$_SERVER['HTTP_CLIENT_IP'];
