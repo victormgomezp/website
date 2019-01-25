@@ -30,6 +30,8 @@ return array(
         "Instagram Clone" => "Instagram Clone",
         "Slack.com Clone" => "Slack.com Clone",
         "Coursera Clone" => "Coursera Clone",
+        "and up to" => "and up to",
+        "We accept the best talent no matter their income: Long term financing, scholarships or deferred tuition options available" => "We accept the best talent no matter their income: Long term financing, scholarships or deferred tuition options available",
         
 //The program        
         "Program details" => "Program details",
@@ -228,7 +230,7 @@ return array(
         "In partnership with the biggest city influencers" => "In partnership with the biggest city influencers",
         "We actively organize and/or participate in the city's biggest coding innitiatives" => "We actively organize and/or participate in the city's biggest coding innitiatives",
 //Common: Testimonials
-        "Over 200 students graduated so far" => "Over 200 students graduated so far",
+        "Over 500 students graduated so far" => "Over 500 students graduated so far",
         "Previous" => "Previous",
         "Next" => "Next",
 //Common: Part-time

@@ -201,7 +201,7 @@ $args = wpas_get_view_data();
     </section>
     <section class="bg-white text-black testimonials">
       <div class="container">
-        <h2 class="text-black text-center">Over 300 students graduated</h2>
+        <h2 class="text-black text-center">Over 500 students graduated</h2>
         <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
           <div class="carousel-inner">
             <div class="carousel-item active">
