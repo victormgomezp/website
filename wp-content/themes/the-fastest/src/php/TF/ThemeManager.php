@@ -149,10 +149,10 @@ class ThemeManager{
         }
         
         $frontpage_id = get_option( 'page_on_front' );
-        $rules['home/([a-zA-Z-_]*)[\/\?]?.*$'] = 'index.php?city=$matches[1]&name=home';
-        $rules['en/home/([a-zA-Z-_]*)[\/\?]?.*$'] = 'index.php?city=$matches[1]&name=home';
-        $rules['inicio/([a-zA-Z-_]*)[\/\?]?.*$'] = 'index.php?city=$matches[1]&name=inicio';
-        $rules['es/inicio/([a-zA-Z-_]*)[\/\?]?.*$'] = 'index.php?city=$matches[1]&name=inicio';
+        $rules['home/([a-zA-Z-_]*)[\/\?]?.*$'] = 'index.php?city=$matches[1]&pagename=home';
+        $rules['en/home/([a-zA-Z-_]*)[\/\?]?.*$'] = 'index.php?city=$matches[1]&pagename=home';
+        $rules['inicio/([a-zA-Z-_]*)[\/\?]?.*$'] = 'index.php?city=$matches[1]&pagename=inicio';
+        $rules['es/inicio/([a-zA-Z-_]*)[\/\?]?.*$'] = 'index.php?city=$matches[1]&pagename=inicio';
         
         // merge with global rules
         $wp_rewrite->rules = $rules + $wp_rewrite->rules;
