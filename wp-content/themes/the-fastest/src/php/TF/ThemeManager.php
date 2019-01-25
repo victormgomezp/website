@@ -65,6 +65,7 @@ class ThemeManager{
         $template = get_page_template();
         if (preg_match('/page-home.php/',$template)){
             $city = get_query_var('city');
+            $this->_debug($city);
             if (!empty($city)) $redirect = false;
         }
         return $redirect;
