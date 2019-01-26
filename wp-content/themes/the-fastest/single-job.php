@@ -15,7 +15,7 @@
         </h4>
       </div>
       <div class="col-sm-4 text-center p-3 ">
-        <a href="#gform_wrapper_1" class='btn btn-lg btn-danger w-100'>Apply to the Job</a>
+        <a href="#apply_button" class='btn btn-lg btn-danger w-100'>Apply to the Job</a>
       </div>
     </div>
   </div>
