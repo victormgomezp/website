@@ -1,24 +1,30 @@
 <?php 
-    /* Template Name: Single Job */
+    /* Template Name: Jobs */
     get_header('visualcomposer'); 
     $args = wpas_get_view_data();
 ?>
   <div class="container">
     <div class="row mt-5 mb-5">
-      <div class="col-sm-8">
-        <h1 class="mb-0 text-left"><span>Se busca:</span> <?php echo $args['wp_query']->post_title; ?></h1>
-        <h4>
-          Ciudades:
-          <?php foreach($args['locations'] as $l){ ?>
-            <span class='badge bg-light'><?php echo $l['post_title']; ?></span>
-          <?php } ?>
-        </h4>
-      </div>
-      <div class="col-sm-4 text-center p-3 ">
-        <a href="#gform_wrapper_1" class='btn btn-lg btn-danger w-100'>Apply to the Job</a>
+      <div class="col-12">
+        <h1 class="text-left"><span>Open Jobs at 4Geeks Academy</h1>
       </div>
     </div>
+    <?php foreach($args['jobs'] as $j){ ?>
+      <div class="row job">
+        <div class="col-8">
+          <h3>Looking for a <a href="<?php echo get_permalink($j['ID']); ?>"><?php echo $j['post_title']; ?></a></h3>at
+          <?php foreach($j['locations'] as $l){ ?>
+            <?php echo $l['post_title']; ?>
+          <?php } ?>
+        </div>
+        <div class="col-4 p-3">
+          <a href="<?php echo get_permalink($j['ID']); ?>" class="btn btn-primary">More Details</a>
+        </div>
+      </div>
+    <?php } ?>
+    </div>
   </div>
+  
   <div class="container-fluid bg-white mb-0">
     <section class="container pt-3 pb-3">
       <div class="row">

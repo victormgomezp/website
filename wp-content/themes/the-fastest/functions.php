@@ -73,6 +73,10 @@
     $controller->route([ 'slug' => 'Template:page-default.php', 'controller' => 'Landing:renderLanding']);
     $controller->route([ 'slug' => 'Single:landing', 'controller' => 'Landing:renderLanding']);
     
+    $controller->route([ 'slug' => 'single:job', 'controller' => 'General:renderSingleJob']);
+    $controller->route([ 'slug' => 'jobs', 'controller' => 'General:renderJobs']);
+    $controller->route([ 'slug' => 'trabaja', 'controller' => 'General:renderJobs']);
+    
     $controller->route([ 'slug' => 'blog:blog', 'controller' => 'Blog']);
     $controller->route([ 'slug' => 'blog:blog-en-espanol', 'controller' => 'Blog']);
     

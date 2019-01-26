@@ -106,6 +106,14 @@ class LocationPostType extends BasePostType{
         return $objectsArray;
     }
     
+    public static function fromJob($jobId){
+        $locations = get_field('job_locations', $jobId);
+        foreach($locations as $object){
+            $objectsArray[] = self::fillMember($object);
+        } 
+        return $objectsArray;
+    }
+    
     private static function fillMember($object){
         $arrayObject = (array) $object;
         $arrayObject['flag'] = get_field('flag_icon',$object->ID);

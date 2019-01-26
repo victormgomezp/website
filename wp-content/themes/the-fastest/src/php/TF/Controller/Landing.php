@@ -3,6 +3,7 @@
 namespace TF\Controller;
 
 use WPAS\Exception\WPASException;
+use TF\Types\LocationPostType;
 use TF\Types\TestimonialPostType;
 use TF\Types\CoursePostType;
 use \WP_Query;

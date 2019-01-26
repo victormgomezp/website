@@ -7,6 +7,7 @@ use WPAS\Controller\WPASController;
 use TF\Types\TeamMemberPostType;
 use TF\Types\TestimonialPostType;
 use TF\Types\LocationPostType;
+use TF\Types\JobPostType;
 use TF\Types\CoursePostType;
 use TF\Types\EventPostType;
 use TF\Types\PartnerPostType;
@@ -117,7 +118,6 @@ class General{
         return $args;
     }
     
-    
     public function renderLocation(){
 
         $args = [];
@@ -180,6 +180,42 @@ class General{
     public function renderApply(){
         $args = [];
         $args['upcoming'] = CoursePostType::getNextCohort();
+        return $args;
+    }
+
+    public function renderSingleJob(){
+        $page = get_queried_object();
+        $args = [];
+        $args['styles'] = UtilsController::getBodyStyles($page->ID);
+        $args['page']['styles'] = get_field('landing_extra_styles', $page->ID);
+        $args['page']['script'] = get_field('landing_extra_script', $page->ID);
+        
+        $args['current-location'] = $this->_getCurrentLocation();
+
+        $args['locations'] = LocationPostType::fromJob($page->ID);
+        
+        $args['upcoming'] = CoursePostType::getNextCohort();
+        
+        return $args;
+    }
+    
+    public function renderJobs(){
+        
+        $page = get_queried_object();
+        $args = [];
+        $args['styles'] = UtilsController::getBodyStyles($page->ID);
+        $args['page']['styles'] = get_field('landing_extra_styles', $page->ID);
+        $args['page']['script'] = get_field('landing_extra_script', $page->ID);
+        
+        $args['current-location'] = $this->_getCurrentLocation();
+
+        $args['jobs'] = JobPostType::all();
+        for($i = 0; $i<count($args['jobs']);$i++){
+            $args['jobs'][$i]['locations'] = LocationPostType::fromJob($args['jobs'][$i]['ID']);
+        }
+            
+        $args['upcoming'] = CoursePostType::getNextCohort();
+        
         return $args;
     }
 

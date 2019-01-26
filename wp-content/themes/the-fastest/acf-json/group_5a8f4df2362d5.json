@@ -78,7 +78,7 @@
             "theme": "monokai",
             "choices": {
                 "0": "Select a script",
-                "https:\/\/www.4geeksacademy.co\/wp-content\/themes\/the-fastest\/src\/js\/scripts\/referral-program.js": "referral-program.js"
+                "https:\/\/academy-web-alesanchezr.c9users.io\/wp-content\/themes\/the-fastest\/src\/js\/scripts\/referral-program.js": "referral-program.js"
             }
         },
         {
@@ -122,9 +122,9 @@
         ],
         [
             {
-                "param": "post_template",
+                "param": "post_type",
                 "operator": "==",
-                "value": "default"
+                "value": "job"
             }
         ]
     ],
@@ -149,5 +149,5 @@
     ],
     "active": 1,
     "description": "",
-    "modified": 1536658629
+    "modified": 1548462705
 }

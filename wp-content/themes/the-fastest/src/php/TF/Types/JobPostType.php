@@ -8,10 +8,11 @@ use WP_Query;
 
 class JobPostType extends BasePostType{
     
-    public static function get($args){
+    public static function get($args=[]){
         
         $args = array_merge($args,[
-            'post_type' => 'job'
+            'post_type' => 'job',
+            'status' => 'publish'
         ]);
         
         $query = new WP_Query($args);
@@ -20,12 +21,12 @@ class JobPostType extends BasePostType{
         }else return null;
     }
     
-    public static function all($args=null, $hook=null){
+    public static function all($args=[], $hook=null){
         
-        $args = array_merge($args,[
-            'post_type' => 'job'
-            ]);
-        
+        $args = array_merge($args, [
+            'post_type' => 'job',
+            'post_status' => 'publish'
+        ]);
         $query = new WP_Query($args);
         wp_reset_postdata();
         $objectsArray = [];

@@ -25,7 +25,7 @@
     $runner->addCheck(checkURL($publicURL.'/location/santiago-de-chile/', '66 W Flagler Street, #900'));
     $runner->addCheck(checkURL($publicURL.'/location/los-cortijos-caracas-venezuela-en/', '66 W Flagler Street, #900'));
     $runner->addCheck(checkURL($publicURL.'/es/location/miami-downtown-usa/', '66 W Flagler Street, #900'));
-    $runner->addCheck(checkURL($publicURL.'/es/location/santiago-de-chile-2/', '66 W Flagler Street, #900'));
+    $runner->addCheck(checkURL($publicURL.'/es/location/santiago-de-chile-es/', '66 W Flagler Street, #900'));
     $runner->addCheck(checkURL($publicURL.'/es/location/maracaibo-venezuela/', '66 W Flagler Street, #900'));
     $runner->addCheck(checkURL($publicURL.'/es/location/los-cortijos-caracas-venezuela/', '66 W Flagler Street, #900'));
 
