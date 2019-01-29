@@ -1,43 +1,43 @@
-import { apiRunner, apiRunnerAsync } from "./api-runner-browser";
-import React, { createElement } from "react";
-import ReactDOM from "react-dom";
-import { Router, navigate } from "@reach/router";
-import { match } from "@reach/router/lib/utils";
-import { ScrollContext } from "gatsby-react-router-scroll";
-import domReady from "domready";
+import { apiRunner, apiRunnerAsync } from "./api-runner-browser"
+import React, { createElement } from "react"
+import ReactDOM from "react-dom"
+import { Router, navigate } from "@reach/router"
+import { match } from "@reach/router/lib/utils"
+import { ScrollContext } from "gatsby-react-router-scroll"
+import domReady from "domready"
 import {
   shouldUpdateScroll,
   init as navigationInit,
-  RouteUpdates
-} from "./navigation";
-import emitter from "./emitter";
-import PageRenderer from "./page-renderer";
-import asyncRequires from "./async-requires";
-import loader, { setApiRunnerForLoader, postInitialRenderWork } from "./loader";
-import EnsureResources from "./ensure-resources";
+  RouteUpdates,
+} from "./navigation"
+import emitter from "./emitter"
+import PageRenderer from "./page-renderer"
+import asyncRequires from "./async-requires"
+import loader, { setApiRunnerForLoader, postInitialRenderWork } from "./loader"
+import EnsureResources from "./ensure-resources"
 
-window.asyncRequires = asyncRequires;
-window.___emitter = emitter;
-window.___loader = loader;
+window.asyncRequires = asyncRequires
+window.___emitter = emitter
+window.___loader = loader
 
-loader.addPagesArray([window.page]);
-loader.addDataPaths({ [window.page.jsonName]: window.dataPath });
-loader.addProdRequires(asyncRequires);
-setApiRunnerForLoader(apiRunner);
+loader.addPagesArray([window.page])
+loader.addDataPaths({ [window.page.jsonName]: window.dataPath })
+loader.addProdRequires(asyncRequires)
+setApiRunnerForLoader(apiRunner)
 
-navigationInit();
+navigationInit()
 
 // Let the site/plugins run code very early.
 apiRunnerAsync(`onClientEntry`).then(() => {
   // Let plugins register a service worker. The plugin just needs
   // to return true.
   if (apiRunner(`registerServiceWorker`).length > 0) {
-    require(`./register-service-worker`);
+    require(`./register-service-worker`)
   }
 
   class RouteHandler extends React.Component {
     render() {
-      let { location } = this.props;
+      let { location } = this.props
 
       return (
         <EnsureResources location={location}>
@@ -57,11 +57,11 @@ apiRunnerAsync(`onClientEntry`).then(() => {
             </RouteUpdates>
           )}
         </EnsureResources>
-      );
+      )
     }
   }
 
-  const { page, location: browserLoc } = window;
+  const { page, location: browserLoc } = window
   if (
     // Make sure the window.page object is defined
     page &&
@@ -80,7 +80,7 @@ apiRunnerAsync(`onClientEntry`).then(() => {
     navigate(
       __PATH_PREFIX__ + page.path + browserLoc.search + browserLoc.hash,
       { replace: true }
-    );
+    )
   }
 
   loader.getResourcesForPathname(browserLoc.pathname).then(() => {
@@ -88,27 +88,27 @@ apiRunnerAsync(`onClientEntry`).then(() => {
       createElement(
         Router,
         {
-          basepath: __PATH_PREFIX__
+          basepath: __PATH_PREFIX__,
         },
         createElement(RouteHandler, { path: `/*` })
-      );
+      )
 
     const WrappedRoot = apiRunner(
       `wrapRootElement`,
       { element: <Root /> },
       <Root />,
       ({ result }) => {
-        return { element: result };
+        return { element: result }
       }
-    ).pop();
+    ).pop()
 
-    let NewRoot = () => WrappedRoot;
+    let NewRoot = () => WrappedRoot
 
     const renderer = apiRunner(
       `replaceHydrateFunction`,
       undefined,
       ReactDOM.hydrate
-    )[0];
+    )[0]
 
     domReady(() => {
       renderer(
@@ -117,10 +117,10 @@ apiRunnerAsync(`onClientEntry`).then(() => {
           ? document.getElementById(`___gatsby`)
           : void 0,
         () => {
-          postInitialRenderWork();
-          apiRunner(`onInitialClientRender`);
+          postInitialRenderWork()
+          apiRunner(`onInitialClientRender`)
         }
-      );
-    });
-  });
-});
+      )
+    })
+  })
+})

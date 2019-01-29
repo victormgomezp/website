@@ -33,9 +33,7 @@ const linkPrefetchStrategy = function linkPrefetchStrategy(url) {
     link.setAttribute(`href`, url);
     link.onload = resolve;
     link.onerror = reject;
-    const parentElement =
-      document.getElementsByTagName(`head`)[0] ||
-      document.getElementsByName(`script`)[0].parentNode;
+    const parentElement = document.getElementsByTagName(`head`)[0] || document.getElementsByName(`script`)[0].parentNode;
     parentElement.appendChild(link);
   });
 };
@@ -58,9 +56,7 @@ const xhrPrefetchStrategy = function xhrPrefetchStrategy(url) {
   });
 };
 
-const supportedPrefetchStrategy = support(`prefetch`)
-  ? linkPrefetchStrategy
-  : xhrPrefetchStrategy;
+const supportedPrefetchStrategy = support(`prefetch`) ? linkPrefetchStrategy : xhrPrefetchStrategy;
 const preFetched = {};
 
 const prefetch = function prefetch(url) {
@@ -70,12 +66,10 @@ const prefetch = function prefetch(url) {
       return;
     }
 
-    supportedPrefetchStrategy(url)
-      .then(() => {
-        resolve();
-        preFetched[url] = true;
-      })
-      .catch(() => {}); // 404s are logged to the console anyway
+    supportedPrefetchStrategy(url).then(() => {
+      resolve();
+      preFetched[url] = true;
+    }).catch(() => {}); // 404s are logged to the console anyway
   });
 };
 

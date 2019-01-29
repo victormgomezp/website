@@ -106,27 +106,20 @@ var _default = (pagePath, callback) => {
     replacePostBodyComponents
   });
 
-  const htmlElement = _react.default.createElement(
-    Html,
-    Object.assign({}, bodyProps, {
-      body: ``,
-      headComponents: headComponents.concat([
-        _react.default.createElement("script", {
-          key: `io`,
-          src: "/socket.io/socket.io.js"
-        })
-      ]),
-      htmlAttributes,
-      bodyAttributes,
-      preBodyComponents,
-      postBodyComponents: postBodyComponents.concat([
-        _react.default.createElement("script", {
-          key: `commons`,
-          src: "/commons.js"
-        })
-      ])
-    })
-  );
+  const htmlElement = _react.default.createElement(Html, Object.assign({}, bodyProps, {
+    body: ``,
+    headComponents: headComponents.concat([_react.default.createElement("script", {
+      key: `io`,
+      src: "/socket.io/socket.io.js"
+    })]),
+    htmlAttributes,
+    bodyAttributes,
+    preBodyComponents,
+    postBodyComponents: postBodyComponents.concat([_react.default.createElement("script", {
+      key: `commons`,
+      src: "/commons.js"
+    })])
+  }));
 
   htmlStr = (0, _server.renderToStaticMarkup)(htmlElement);
   htmlStr = `<!DOCTYPE html>${htmlStr}`;

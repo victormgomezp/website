@@ -3,10 +3,9 @@
 const plugins = require(`./api-runner-browser-plugins`);
 
 const _require$publicLoader = require(`./loader`).publicLoader,
-  getResourcesForPathname = _require$publicLoader.getResourcesForPathname,
-  getResourcesForPathnameSync =
-    _require$publicLoader.getResourcesForPathnameSync,
-  getResourceURLsForPathname = _require$publicLoader.getResourceURLsForPathname;
+      getResourcesForPathname = _require$publicLoader.getResourcesForPathname,
+      getResourcesForPathnameSync = _require$publicLoader.getResourcesForPathnameSync,
+      getResourceURLsForPathname = _require$publicLoader.getResourceURLsForPathname;
 
 exports.apiRunner = (api, args = {}, defaultReturn, argTransform) => {
   // Hooks for cypress-gatsby's API handler
@@ -52,11 +51,4 @@ exports.apiRunner = (api, args = {}, defaultReturn, argTransform) => {
   }
 };
 
-exports.apiRunnerAsync = (api, args, defaultReturn) =>
-  plugins.reduce(
-    (previous, next) =>
-      next.plugin[api]
-        ? previous.then(() => next.plugin[api](args, next.options))
-        : previous,
-    Promise.resolve()
-  );
+exports.apiRunnerAsync = (api, args, defaultReturn) => plugins.reduce((previous, next) => next.plugin[api] ? previous.then(() => next.plugin[api](args, next.options)) : previous, Promise.resolve());

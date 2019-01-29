@@ -1,36 +1,36 @@
-import React from "react";
-import PropTypes from "prop-types";
-import { Link } from "gatsby";
+import React from "react"
+import PropTypes from "prop-types"
+import { Link } from "gatsby"
 
 class Dev404Page extends React.Component {
   static propTypes = {
     pages: PropTypes.arrayOf(PropTypes.object),
     custom404: PropTypes.element,
-    location: PropTypes.object
-  };
+    location: PropTypes.object,
+  }
 
   constructor(props) {
-    super(props);
-    this.state = { showCustom404: false };
-    this.showCustom404 = this.showCustom404.bind(this);
+    super(props)
+    this.state = { showCustom404: false }
+    this.showCustom404 = this.showCustom404.bind(this)
   }
 
   showCustom404() {
-    this.setState({ showCustom404: true });
+    this.setState({ showCustom404: true })
   }
 
   render() {
-    const { pathname } = this.props.location;
+    const { pathname } = this.props.location
     const pages = this.props.pages.filter(
       p => !/^\/dev-404-page\/$/.test(p.path)
-    );
-    let newFilePath;
+    )
+    let newFilePath
     if (pathname === `/`) {
-      newFilePath = `src/pages/index.js`;
+      newFilePath = `src/pages/index.js`
     } else if (pathname.slice(-1) === `/`) {
-      newFilePath = `src/pages${pathname.slice(0, -1)}.js`;
+      newFilePath = `src/pages${pathname.slice(0, -1)}.js`
     } else {
-      newFilePath = `src/pages${pathname}.js`;
+      newFilePath = `src/pages${pathname}.js`
     }
 
     return this.state.showCustom404 ? (
@@ -79,8 +79,8 @@ class Dev404Page extends React.Component {
           </div>
         )}
       </div>
-    );
+    )
   }
 }
 
-export default Dev404Page;
+export default Dev404Page

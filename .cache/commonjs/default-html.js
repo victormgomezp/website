@@ -11,40 +11,23 @@ var _propTypes = _interopRequireDefault(require("prop-types"));
 
 class HTML extends _react.default.Component {
   render() {
-    return _react.default.createElement(
-      "html",
-      this.props.htmlAttributes,
-      _react.default.createElement(
-        "head",
-        null,
-        _react.default.createElement("meta", {
-          charSet: "utf-8"
-        }),
-        _react.default.createElement("meta", {
-          httpEquiv: "x-ua-compatible",
-          content: "ie=edge"
-        }),
-        _react.default.createElement("meta", {
-          name: "viewport",
-          content: "width=device-width, initial-scale=1, shrink-to-fit=no"
-        }),
-        this.props.headComponents
-      ),
-      _react.default.createElement(
-        "body",
-        this.props.bodyAttributes,
-        this.props.preBodyComponents,
-        _react.default.createElement("div", {
-          key: `body`,
-          id: "___gatsby",
-          dangerouslySetInnerHTML: {
-            __html: this.props.body
-          }
-        }),
-        this.props.postBodyComponents
-      )
-    );
+    return _react.default.createElement("html", this.props.htmlAttributes, _react.default.createElement("head", null, _react.default.createElement("meta", {
+      charSet: "utf-8"
+    }), _react.default.createElement("meta", {
+      httpEquiv: "x-ua-compatible",
+      content: "ie=edge"
+    }), _react.default.createElement("meta", {
+      name: "viewport",
+      content: "width=device-width, initial-scale=1, shrink-to-fit=no"
+    }), this.props.headComponents), _react.default.createElement("body", this.props.bodyAttributes, this.props.preBodyComponents, _react.default.createElement("div", {
+      key: `body`,
+      id: "___gatsby",
+      dangerouslySetInnerHTML: {
+        __html: this.props.body
+      }
+    }), this.props.postBodyComponents));
   }
+
 }
 
 exports.default = HTML;

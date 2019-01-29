@@ -25,9 +25,7 @@ class EnsureResources extends _react.default.Component {
     let location = props.location;
     this.state = {
       location: Object.assign({}, location),
-      pageResources: _loader.default.getResourcesForPathnameSync(
-        location.pathname
-      )
+      pageResources: _loader.default.getResourcesForPathnameSync(location.pathname)
     };
   }
 
@@ -42,11 +40,11 @@ class EnsureResources extends _react.default.Component {
     window.location.replace(href);
   }
 
-  static getDerivedStateFromProps({ location }, prevState) {
+  static getDerivedStateFromProps({
+    location
+  }, prevState) {
     if (prevState.location !== location) {
-      const pageResources = _loader.default.getResourcesForPathnameSync(
-        location.pathname
-      );
+      const pageResources = _loader.default.getResourcesForPathnameSync(location.pathname);
 
       return {
         pageResources,
@@ -95,6 +93,7 @@ class EnsureResources extends _react.default.Component {
         // (This won't happen on initial render, since shouldComponentUpdate
         // is only called when the component updates.)
 
+
         this.reloadPage(prevLocation.href);
       });
     }
@@ -107,13 +106,12 @@ class EnsureResources extends _react.default.Component {
       return false;
     } // Check if the component or json have changed.
 
+
     if (this.state.pageResources !== nextState.pageResources) {
       return true;
     }
 
-    if (
-      this.state.pageResources.component !== nextState.pageResources.component
-    ) {
+    if (this.state.pageResources.component !== nextState.pageResources.component) {
       return true;
     }
 
@@ -122,12 +120,8 @@ class EnsureResources extends _react.default.Component {
     } // Check if location has changed on a page using internal routing
     // via matchPath configuration.
 
-    if (
-      this.state.location.key !== nextState.location.key &&
-      nextState.pageResources.page &&
-      (nextState.pageResources.page.matchPath ||
-        nextState.pageResources.page.path)
-    ) {
+
+    if (this.state.location.key !== nextState.location.key && nextState.pageResources.page && (nextState.pageResources.page.matchPath || nextState.pageResources.page.path)) {
       return true;
     }
 
@@ -143,6 +137,7 @@ class EnsureResources extends _react.default.Component {
     isInitialRender = false;
     return this.props.children(this.state);
   }
+
 }
 
 EnsureResources.propTypes = {

@@ -38,6 +38,30 @@ p{
     background-color: $red;
     margin-right: 25px;
     color: $white;
+    font-size: 14px;
+    font-weight: 100;
+    width: 124px;
+    border-radius: 27px;
+    padding: 13px 0px;
+    margin-top: 30px;
+}
+
+.btn-red-large{
+    background-color: #FF0000;
+    margin-right: 25px;
+    color: white;
+    font-size: 14px;
+    font-weight: 100;
+    width: 230px;
+    border-radius: 27px;
+    padding: 13px 0px;
+    margin-top: 30px;
+}
+
+.btn-red-menufixed{
+    background-color: $red;
+    margin-right: 25px;
+    color: $white;
     font-size: 16px;
     font-weight: 100;
     width: 220px;
@@ -53,6 +77,18 @@ p{
     font-size: 16px;
     font-weight: 100;
     width: 220px;
+    border-radius: 27px;
+    padding: 13px 0px;
+    margin-top: 30px;
+}
+
+.btn-grey-large{
+    background-color: $grey;
+    margin-right: 25px;
+    color: white;
+    font-size: 14px;
+    font-weight: 100;
+    width: 230px;
     border-radius: 27px;
     padding: 13px 0px;
     margin-top: 30px;

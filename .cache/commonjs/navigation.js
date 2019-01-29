@@ -34,14 +34,10 @@ function maybeRedirect(pathname) {
 
   if (redirect != null) {
     if (process.env.NODE_ENV !== `production`) {
-      const pageResources = _loader.default.getResourcesForPathnameSync(
-        pathname
-      );
+      const pageResources = _loader.default.getResourcesForPathnameSync(pathname);
 
       if (pageResources != null) {
-        console.error(
-          `The route "${pathname}" matches both a page and a redirect; this is probably not intentional.`
-        );
+        console.error(`The route "${pathname}" matches both a page and a redirect; this is probably not intentional.`);
       }
     }
 
@@ -78,7 +74,7 @@ const navigate = (to, options = {}) => {
   }
 
   let _parsePath = (0, _parsePath2.default)(to),
-    pathname = _parsePath.pathname;
+      pathname = _parsePath.pathname;
 
   const redirect = redirectMap[pathname]; // If we're redirecting, just replace the passed in pathname
   // to the one we want to redirect to.
@@ -89,6 +85,7 @@ const navigate = (to, options = {}) => {
   } // If we had a service worker update, no matter the path, reload window and
   // reset the pathname whitelist
 
+
   if (window.GATSBY_SW_UPDATED) {
     const controller = navigator.serviceWorker.controller;
     controller.postMessage({
@@ -98,6 +95,7 @@ const navigate = (to, options = {}) => {
     return;
   } // Start a timer to wait for a second before transitioning and showing a
   // loader in case resources aren't around yet.
+
 
   const timeoutId = setTimeout(() => {
     _emitter.default.emit(`onDelayedLoadPageResources`, {
@@ -115,9 +113,11 @@ const navigate = (to, options = {}) => {
   });
 };
 
-function shouldUpdateScroll(prevRouterProps, { location }) {
+function shouldUpdateScroll(prevRouterProps, {
+  location
+}) {
   const pathname = location.pathname,
-    hash = location.hash;
+        hash = location.hash;
   const results = (0, _apiRunnerBrowser.apiRunner)(`shouldUpdateScroll`, {
     prevRouterProps,
     // `pathname` for backwards compatibility
@@ -150,20 +150,20 @@ function init() {
   window.__navigatingToLink = false;
   window.___loader = _loader.default;
 
-  window.___push = to =>
-    navigate(to, {
-      replace: false
-    });
+  window.___push = to => navigate(to, {
+    replace: false
+  });
 
-  window.___replace = to =>
-    navigate(to, {
-      replace: true
-    });
+  window.___replace = to => navigate(to, {
+    replace: true
+  });
 
   window.___navigate = (to, options) => navigate(to, options); // Check for initial page-load redirect
 
+
   maybeRedirect(window.location.pathname);
 } // Fire on(Pre)RouteUpdate APIs
+
 
 class RouteUpdates extends _react.default.Component {
   constructor(props) {
@@ -193,6 +193,7 @@ class RouteUpdates extends _react.default.Component {
   render() {
     return this.props.children;
   }
+
 }
 
 exports.RouteUpdates = RouteUpdates;

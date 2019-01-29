@@ -1,6 +1,27 @@
 {
   "main.js": "render-page.js",
   "main.js.map": "render-page.js.map",
+  "static/airbnb.png": "static/airbnb-766f59bcfb66b011907f00ddae98ee62.png",
+  "static/babel.png": "static/babel-45522c95372e6a8c9a4805e62dba149d.png",
+  "static/blocktech.png": "static/blocktech-dc460fde8f6871943a5ae84eae25c97e.png",
+  "static/dataMaster.png": "static/dataMaster-d0b83bde072d81e0d487f029f5133cb5.png",
+  "static/db.png": "static/db-a4753a2cc0adf2b8d900380f99513759.png",
+  "static/dynamicWebsite.png": "static/dynamicWebsite-399113e194fcd74b4582e449fb697fbc.png",
+  "static/git.png": "static/git-22a4444b38679cb9fa74bd414eaa654b.png",
+  "static/html.png": "static/html-de9467df6e697ea8621f01c85df8ea43.png",
   "static/icon2.png": "static/icon2-203a8e5dc283bac9b5b7c91af03f360e.png",
-  "static/night.jpg": "static/night-48cac7cf94ce00a32a5771744b7919ff.jpg"
+  "static/icon3.png": "static/icon3-74fbb6c33efbacd400f78d88001a47f5.png",
+  "static/icon4.png": "static/icon4-52e629a4d91593ff9b81cb9b8ecbda42.png",
+  "static/icon5.png": "static/icon5-56667a36fe15d4fc0325ea57ebfb0dd3.png",
+  "static/icon6.png": "static/icon6-1b30477efc5403a13453e630dade8ac2.png",
+  "static/icon7.png": "static/icon7-ef179dc59ee4ae86bee6a621487db339.png",
+  "static/instagram.png": "static/instagram-12e7480b5ff9d162d4e076c1735f5c34.png",
+  "static/mysqlworkbench.png": "static/mysqlworkbench-a36449d76c644a75a1f24699a002c7ca.png",
+  "static/night.jpg": "static/night-48cac7cf94ce00a32a5771744b7919ff.jpg",
+  "static/python.png": "static/python-2a6d905c77bcb96af2902c7528c5bae1.png",
+  "static/react.png": "static/react-930addebab35ff1ec955f27e3b1a3971.png",
+  "static/sass.png": "static/sass-06c6bfbeb31203deaed3b222e94be8d1.png",
+  "static/skill_fund.png": "static/skill_fund-0327e950b66bf90f30a3b91b8d9cebd2.png",
+  "static/slack.png": "static/slack-ee2d4fb1d68d366ceb71142e1e9091c9.png",
+  "static/tech1.png": "static/tech1-015d8dffac7dd78abf97ac99bf34781b.png"
 }

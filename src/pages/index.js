@@ -19,6 +19,18 @@ import StudentGraduate from "../components/studentGraduate";
 import FormSubscribe from "../components/formSubscribe";
 import Footer from "../components/footer";
 
+import Icon1 from "../components/iconTechnologies/icon1";
+import IconSass from "../components/iconTechnologies/sass";
+import IconHtml from "../components/iconTechnologies/html";
+import IconGit from "../components/iconTechnologies/git";
+import IconDb from "../components/iconTechnologies/db";
+import IconMysql from "../components/iconTechnologies/mysql";
+import IconJavascript from "../components/iconTechnologies/javascript";
+import IconBabel from "../components/iconTechnologies/babel";
+import Icon2 from "../components/iconTechnologies/icon2";
+import IconReact from "../components/iconTechnologies/react";
+import IconPython from "../components/iconTechnologies/python";
+
 import "../sass/index.scss";
 
 const BlogIndex = ({ data, location }) => {
@@ -42,7 +54,42 @@ const BlogIndex = ({ data, location }) => {
         title="Gamified and focused on skills with modern technologies"
         subtitle="Complete challenges, projects and quizzes to gain all the skills from our Talent Tree"
       />
-      <TecnologiesRow title="Learn and advanced stack of technologies to meet the demands that companies seek." />
+      <TecnologiesRow 
+        title="Learn and advanced stack of technologies to meet the demands that companies seek.">
+        <div className="col-1">
+          <Icon1 />
+        </div>
+        <div className="col-1">
+          <IconSass />
+        </div>
+        <div className="col-1">
+          <IconHtml />
+        </div>
+        <div className="col-1">
+          <IconGit />
+        </div>
+        <div className="col-1">
+          <IconDb />
+        </div>
+        <div className="col-1">
+          <IconMysql />
+        </div>
+        <div className="col-1">
+          <IconJavascript />
+        </div>
+        <div className="col-1">
+          <IconBabel />
+        </div>
+        <div className="col-1">
+          <Icon2 />
+        </div>
+        <div className="col-1">
+          <IconReact />
+        </div>
+        <div className="col-1">
+          <IconPython />
+        </div>
+      </TecnologiesRow>
       <LearningTechnologies />
       <DownloadPdf title="Download our syllabus PDF to get all the details" />
 
@@ -144,7 +191,7 @@ const BlogIndex = ({ data, location }) => {
               This was the most challenging part... our program was designed
               from the ground up aiming to make coding education universal.
             </p>
-            <button className="btn btn-red mt-5">Apply to the program</button>
+            <button className="btn btn-red-large mt-5">Apply to the program</button>
           </div>
         </div>
       </div>

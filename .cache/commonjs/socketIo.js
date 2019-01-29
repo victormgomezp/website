@@ -34,10 +34,7 @@ function socketIo() {
         // eslint-disable-next-line no-undef
         socket = io();
 
-        const didDataChange = (msg, queryData) =>
-          !(msg.payload.id in queryData) ||
-          JSON.stringify(msg.payload.result) !==
-            JSON.stringify(queryData[msg.payload.id]);
+        const didDataChange = (msg, queryData) => !(msg.payload.id in queryData) || JSON.stringify(msg.payload.result) !== JSON.stringify(queryData[msg.payload.id]);
 
         socket.on(`message`, msg => {
           if (msg.type === `staticQueryResult`) {
@@ -54,10 +51,7 @@ function socketIo() {
             }
           } else if (msg.type === `overlayError`) {
             if (msg.payload.message) {
-              (0, _errorOverlayHandler.reportError)(
-                msg.payload.id,
-                msg.payload.message
-              );
+              (0, _errorOverlayHandler.reportError)(msg.payload.id, msg.payload.message);
             } else {
               (0, _errorOverlayHandler.clearError)(msg.payload.id);
             }
@@ -108,9 +102,11 @@ function getPageData(pathname) {
 // This will help the backend prioritize queries for this
 // path.
 
+
 function registerPath(path) {
   socket.emit(`registerPath`, path);
 } // Unregister the former path
+
 
 function unregisterPath(path) {
   socket.emit(`unregisterPath`, path);

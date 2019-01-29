@@ -213,6 +213,7 @@
             font-size: 50px;
             color: $grey-light;
             font-weight: 200;
+            line-height: 60px;
         }
         p{
             font-size: 16px;
@@ -282,9 +283,13 @@
     background-color: $black;
     padding: 80px 0px;
     .title-pricing-4geeks{
+        color: $grey-light;
         h2{
             font-size: 50px;
             color: $grey-light;
+            font-weight: 200;
+        }
+        p{
             font-weight: 200;
         }
         .section-price{
@@ -384,6 +389,12 @@
     background-color: $black;
     color: $grey-light;
     padding: 70px 0px;
+    .flex-footer{
+        width: 100%;
+        display: flex;
+        -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    }
     h3{
         color: $grey-light;
         font-size: 30px;
@@ -394,6 +405,331 @@
         margin: 0px;
         li{
             margin: 0px;
+        }
+    }
+    .description{
+        padding-bottom: 25px;
+    }
+}
+
+
+//Course Template
+.description-course{
+    background-color: $black;
+    color: $grey-light;
+    padding: 70px 0px;
+    h2{
+        font-size: 50px;
+        color: $grey-light;
+        font-weight: 200;
+        line-height: 60px;
+    }
+    h3{
+        color: $grey-light;
+        font-size: 30px;
+        font-weight: 200;
+    }
+}
+
+.menu-course{
+    background-color: $black;
+    color: $grey-light;
+    padding: 70px 0px;
+    .flex-menu-course{
+        display: -ms-flexbox;
+        display: flex;
+        width: 100%;
+        .menu{
+            width: 14%;
+            ul{
+                list-style: none;
+                padding-left: 10px;
+                border-left-color: $yellow;
+                border-left-style: solid;
+                border-left-width: 1px;
+                margin: 0px;
+                li{
+                    padding-bottom: 10px;
+                    font-weight: 200;
+                }
+            }
+        }
+        .menu-description{
+            ul{
+                list-style: none;
+                li{
+                    padding-bottom: 15px;
+                    color: $yellow;
+                    .title{
+                        margin: 0px;
+                        font-size: 30px;
+                        font-weight: 200;
+                    }
+                }
+            }
+
+        }
+    }
+}
+
+.course-structure{
+    background-color: $black;
+    color: $grey-light;
+    padding: 70px 0px;
+    h2{
+        font-size: 50px;
+        color: $grey-light;
+        font-weight: 200;       
+    }
+    .flex-course-structure{
+        display: flex;
+        display: -webkit-flex;
+        width: 100%;
+        .description-course{
+            width: 60%;
+            color: $yellow;
+            h3{
+                color: $yellow;
+                font-size: 30px;
+                font-weight: 200;
+                margin: 0px;
+            }
+            .possible-project{
+                margin: 0px;
+                font-weight: 200;
+            }
+            p{
+                font-weight: 200;
+            }
+        }
+        .menu-course{
+            width: 40%;
+            color: $yellow;
+            ul{
+                list-style: none;
+                li{
+                    padding-bottom: 20px;
+                    font-weight: 200;
+                }
+            }
+        }
+    }
+}
+
+.title-trainer-course{
+    background-color: $black;
+    color: $grey-light;
+    padding: 70px 0px;
+    h2{
+        margin: 0px;
+        font-size: 50px;
+        color: $grey-light;
+        font-weight: 200;
+    }
+    p{
+        margin: 0px;
+    }
+}
+
+.trainer-course{
+    background-color: $black;
+    color: $grey-light;
+    padding: 70px 0px;
+    h2{
+        font-size: 50px;
+        color: $grey-light;
+        font-weight: 200;       
+    }
+    p{
+        font-weight: 200;
+    }
+    .flex-trainner-course{
+        display: flex;
+        display: -webkit-flex;
+        -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+        width: 100%;
+        .trainner{
+            width: 100%;
+            padding-bottom: 20px;
+            img{
+                margin: 0px;
+                padding-right: 15px;
+                max-width: 110px;
+            }
+            span{
+                font-weight: 200;
+            }
+            p{
+                padding-top: 15px;
+                font-weight: 200;
+            }
+        }
+    }
+}
+
+.title-skills-course{
+    background-color: $black;
+    padding: 70px 0px 30px 0px;
+    h2{
+        margin: 0px;
+        font-size: 50px;
+        color: $grey-light;
+        font-weight: 200;  
+    }
+    p{
+        color: $grey-light;
+        font-weight: 200;
+    }
+}
+
+.skills-course{
+    background-color: $black;
+    color: $grey-light;
+    padding-bottom: 30px;
+    .flex-skill{
+        display: flex;
+        width: 100%;
+        position: relative;
+        flex-wrap: wrap;
+        img{
+            margin: 0px;
+            padding-right: 15px;
+            max-width: 110px;
+        }
+        .title-skill{
+            h3{
+                color: #7D7C7D;
+                font-size: 30px;
+                font-weight: 200;
+                position: absolute;
+                bottom: 0px;
+            }
+        }
+        .description-skill{
+            p{
+                font-weight: 200;
+            }
+        }
+    }
+    .description-skills{
+        width: 72.5%;
+        p{
+            font-weight: 200;
+        }
+    }
+}
+
+//Component Course Price&Financing
+.pricing-financing{
+    background-color: $black;
+    padding: 80px 0px;
+    .title-pricing{
+        color: $grey-light;
+        h2{
+            font-size: 50px;
+            color: $grey-light;
+            font-weight: 200;
+        }
+        p{
+            font-weight: 200;
+        }
+        .section-pricing-financing{
+            padding-top: 40px;
+            .description-pricing-financing{
+                h3{
+                    font-size: 30px;
+                    color: $yellow;
+                    font-weight: 200;
+                }
+                p{
+                    font-size: 16px;
+                    font-weight: 100;
+                    color: $yellow;
+                    margin: 0px;
+                }
+                button{
+                    margin-top: 40px;
+                }
+            }
+            .flex-pricing-financing{
+                display: -ms-flexbox;
+                display: flex;
+                position: relative;
+                -ms-flex-wrap: wrap;
+                flex-wrap: wrap;
+                .line{
+                    height: 1px;
+                    background-color: $yellow;
+                    position: relative;
+                    top: 50%;
+                }
+                p{
+                    color: $yellow;
+                    text-decoration: none;
+                }
+            }
+        }
+        .plan-price{
+            .flex-plan-price{
+                padding-top: 20px;
+                padding-bottom: 70px;
+                display: flex;
+                display: -webkit-flex;
+                -ms-flex-wrap: wrap;
+                flex-wrap: wrap;
+                width: 100%;
+                .line-red:first-child{
+                    border-top-left-radius: 6px;
+                    border-bottom-left-radius: 6px;
+                }
+                .line-red:last-child{
+                    border-top-right-radius: 6px;
+                    border-bottom-right-radius: 6px;
+                }
+                .line-red{
+                    background-color: red;
+                    height: 10px;
+                    color: $yellow;
+                    .circle{
+                        width: 20px;
+                        height: 20px;
+                        background-color: red;
+                        border-radius: 25px;
+                        position: relative;
+                        top: -4px;
+                        border: 1px solid white;
+                        cursor: pointer;
+                        .point-circle{
+                            height: 5px;
+                            width: 5px;
+                            background-color: white;
+                            border-radius: 25px;
+                            position: absolute;
+                            left: 50%;
+                            transform: translate(-50%, -50%);
+                            top: 50%;
+                            cursor: pointer;
+                        }
+                    }
+                    .only-point-circle{
+                        width: 5px;
+                        height: 5px;
+                        background-color: white;
+                        border-radius: 25px;
+                        position: absolute;
+                        top: 3px;
+                        left: 7px;
+                        cursor: pointer;
+                    }
+                    .month-selected{
+                        padding-top: 22px;
+                    }
+                    .month{
+                        padding-top: 31px;
+                    }
+                }
+            }
         }
     }
 }

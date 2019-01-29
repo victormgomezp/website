@@ -13,21 +13,15 @@ var _pageRenderer = _interopRequireDefault(require("./page-renderer"));
 
 var _loader = _interopRequireDefault(require("./loader"));
 
-const ProdPageRenderer = ({ location }) => {
-  const pageResources = _loader.default.getResourcesForPathnameSync(
-    location.pathname
-  );
+const ProdPageRenderer = ({
+  location
+}) => {
+  const pageResources = _loader.default.getResourcesForPathnameSync(location.pathname);
 
-  return _react.default.createElement(
-    _pageRenderer.default,
-    Object.assign(
-      {
-        location,
-        pageResources
-      },
-      pageResources.json
-    )
-  );
+  return _react.default.createElement(_pageRenderer.default, Object.assign({
+    location,
+    pageResources
+  }, pageResources.json));
 };
 
 ProdPageRenderer.propTypes = {

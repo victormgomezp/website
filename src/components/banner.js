@@ -17,7 +17,7 @@ export default class Banner extends Component {
           <div>
             <h3>{this.props.headerText}</h3>
             <h1>{this.props.title}</h1>
-            <h2>{this.props.subtitle}</h2>
+            <h2>{this.props.time}</h2>
             <p className="w-75">{this.props.description}</p>
             <div className="pt-4">
               <button type="button" className="btn btn-lg btn-1">

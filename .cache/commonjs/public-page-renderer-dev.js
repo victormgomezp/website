@@ -15,10 +15,10 @@ var _loader = _interopRequireDefault(require("./loader"));
 
 var _jsonStore = _interopRequireDefault(require("./json-store"));
 
-const DevPageRenderer = ({ location }) => {
-  const pageResources = _loader.default.getResourcesForPathnameSync(
-    location.pathname
-  );
+const DevPageRenderer = ({
+  location
+}) => {
+  const pageResources = _loader.default.getResourcesForPathnameSync(location.pathname);
 
   return _react.default.createElement(_jsonStore.default, {
     pages: _pages.default,

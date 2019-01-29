@@ -61,6 +61,7 @@
     "react": "16.7.0",
     "react-dom": "16.7.0",
     "react-helmet": "5.2.0",
+    "react-sticky": "^6.0.3",
     "sass": "^1.15.3",
     "textlint": "11.2.1",
     "textlint-rule-preset-ja-spacing": "2.0.1",

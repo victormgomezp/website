@@ -43,16 +43,10 @@ window.___emitter = _emitter.default;
    * Let's unregister the service workers in development, and tidy up a few errors.
    */
 
+
   if (supportsServiceWorkers(location, navigator)) {
     navigator.serviceWorker.getRegistrations().then(registrations => {
-      for (
-        var _iterator = registrations,
-          _isArray = Array.isArray(_iterator),
-          _i = 0,
-          _iterator = _isArray ? _iterator : _iterator[Symbol.iterator]();
-        ;
-
-      ) {
+      for (var _iterator = registrations, _isArray = Array.isArray(_iterator), _i = 0, _iterator = _isArray ? _iterator : _iterator[Symbol.iterator]();;) {
         var _ref;
 
         if (_isArray) {
@@ -71,18 +65,14 @@ window.___emitter = _emitter.default;
   }
 
   const rootElement = document.getElementById(`___gatsby`);
-  const renderer = (0, _apiRunnerBrowser.apiRunner)(
-    `replaceHydrateFunction`,
-    undefined,
-    _reactDom.default.render
-  )[0];
+  const renderer = (0, _apiRunnerBrowser.apiRunner)(`replaceHydrateFunction`, undefined, _reactDom.default.render)[0];
 
   _loader.default.addPagesArray(_pages.default);
 
   _loader.default.addDevRequires(_syncRequires.default);
 
   _loader.default.getResourcesForPathname(window.location.pathname).then(() => {
-    const preferDefault = m => (m && m.default) || m;
+    const preferDefault = m => m && m.default || m;
 
     let Root = preferDefault(require(`./root`));
     (0, _domready.default)(() => {

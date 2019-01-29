@@ -21,7 +21,8 @@ class Technologies extends Component {
           <h2>{props.title}</h2>
           <div className="description-technologies">
             <div className="flex-tecnologies">
-              <div className="col-1">
+              {props.children}
+              {/* <div className="col-1">
                 <Icon1 />
               </div>
               <div className="col-1">
@@ -53,7 +54,7 @@ class Technologies extends Component {
               </div>
               <div className="col-1">
                 <IconPython />
-              </div>
+              </div> */}
             </div>
           </div>
         </div>

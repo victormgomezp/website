@@ -9,26 +9,23 @@
 /sw.js
   Cache-Control: no-cache
 /offline-plugin-app-shell-fallback/
-  Link: </webpack-runtime-fac55a8ad173f4398a8b.js>; rel=preload; as=script
-  Link: </component---node-modules-gatsby-plugin-offline-app-shell-js-fb1881f935cf4629d27f.js>; rel=preload; as=script
+  Link: </webpack-runtime-f47e49753874d9184201.js>; rel=preload; as=script
+  Link: </component---node-modules-gatsby-plugin-offline-app-shell-js-8aec832acf6ebfaacf26.js>; rel=preload; as=script
 /fullstack
-  Link: </webpack-runtime-fac55a8ad173f4398a8b.js>; rel=preload; as=script
-  Link: </component---src-templates-course-template-js-96e83e82ed3dbfa0be27.js>; rel=preload; as=script
-/fullstack-fulltime
-  Link: </webpack-runtime-fac55a8ad173f4398a8b.js>; rel=preload; as=script
-  Link: </component---src-templates-course-template-js-96e83e82ed3dbfa0be27.js>; rel=preload; as=script
-/santiago
-  Link: </webpack-runtime-fac55a8ad173f4398a8b.js>; rel=preload; as=script
-  Link: </component---src-templates-location-template-js-fdf95564fb233f287710.js>; rel=preload; as=script
+  Link: </webpack-runtime-f47e49753874d9184201.js>; rel=preload; as=script
+  Link: </0-21a07f899158b9ba9a73.js>; rel=preload; as=script
 /caracas
-  Link: </webpack-runtime-fac55a8ad173f4398a8b.js>; rel=preload; as=script
-  Link: </component---src-templates-location-template-js-fdf95564fb233f287710.js>; rel=preload; as=script
-/apply
-  Link: </webpack-runtime-fac55a8ad173f4398a8b.js>; rel=preload; as=script
-  Link: </component---src-templates-apply-template-js-63dd2453fb4d5253b0dd.js>; rel=preload; as=script
+  Link: </webpack-runtime-f47e49753874d9184201.js>; rel=preload; as=script
+  Link: </component---src-templates-location-template-js-0ce247e33fdb2bf41b7a.js>; rel=preload; as=script
+/santiago
+  Link: </webpack-runtime-f47e49753874d9184201.js>; rel=preload; as=script
+  Link: </component---src-templates-location-template-js-0ce247e33fdb2bf41b7a.js>; rel=preload; as=script
 /about-us
-  Link: </webpack-runtime-fac55a8ad173f4398a8b.js>; rel=preload; as=script
-  Link: </component---src-templates-about-us-template-js-9d844c6986bfb7800c7a.js>; rel=preload; as=script
+  Link: </webpack-runtime-f47e49753874d9184201.js>; rel=preload; as=script
+  Link: </component---src-templates-about-us-template-js-320e2618514608e6af6a.js>; rel=preload; as=script
+/apply
+  Link: </webpack-runtime-f47e49753874d9184201.js>; rel=preload; as=script
+  Link: </component---src-templates-apply-template-js-38ef3e4821db465af3ef.js>; rel=preload; as=script
 /
-  Link: </webpack-runtime-fac55a8ad173f4398a8b.js>; rel=preload; as=script
-  Link: </component---src-pages-index-js.e7b7c8fe7eb4096c018b.css>; rel=preload; as=script
+  Link: </webpack-runtime-f47e49753874d9184201.js>; rel=preload; as=script
+  Link: </0-21a07f899158b9ba9a73.js>; rel=preload; as=script

@@ -1,16 +1,16 @@
-import React from "react";
-import PropTypes from "prop-types";
+import React from "react"
+import PropTypes from "prop-types"
 import Link, {
   withPrefix,
   navigate,
   push,
   replace,
-  navigateTo
-} from "gatsby-link";
-import PageRenderer from "./public-page-renderer";
-import parsePath from "./parse-path";
+  navigateTo,
+} from "gatsby-link"
+import PageRenderer from "./public-page-renderer"
+import parsePath from "./parse-path"
 
-const StaticQueryContext = React.createContext({});
+const StaticQueryContext = React.createContext({})
 
 const StaticQuery = props => (
   <StaticQueryContext.Consumer>
@@ -21,20 +21,20 @@ const StaticQuery = props => (
       ) {
         return (props.render || props.children)(
           props.data ? props.data.data : staticQueryData[props.query].data
-        );
+        )
       } else {
-        return <div>Loading (StaticQuery)</div>;
+        return <div>Loading (StaticQuery)</div>
       }
     }}
   </StaticQueryContext.Consumer>
-);
+)
 
 StaticQuery.propTypes = {
   data: PropTypes.object,
   query: PropTypes.string.isRequired,
   render: PropTypes.func,
-  children: PropTypes.func
-};
+  children: PropTypes.func,
+}
 
 function graphql() {
   throw new Error(
@@ -42,7 +42,7 @@ function graphql() {
       `are supposed to only be evaluated at compile time, and then compiled away,. ` +
       `Unfortunately, something went wrong and the query was left in the compiled code.\n\n.` +
       `Unless your site has a complex or custom babel/Gatsby configuration this is likely a bug in Gatsby.`
-  );
+  )
 }
 
 export {
@@ -56,5 +56,5 @@ export {
   navigateTo, // TODO: remove navigateTo for v3
   StaticQueryContext,
   StaticQuery,
-  PageRenderer
-};
+  PageRenderer,
+}
