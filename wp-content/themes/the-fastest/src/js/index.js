@@ -110,3 +110,15 @@ if(WPAS_APP.view.slug === 'partners' || WPAS_APP.view.slug === 'socios'){
   jQuery('[data-toggle="tooltip"]').tooltip();
   loadVideo('/wp-content/themes/the-fastest/assets/video/office.mp4',{overlay: 'black'});
 }
+
+/**
+ * JOBS
+**/
+
+if(['job'].indexOf(WPAS_APP.view.slug) != -1){
+  jQuery('.job-apply').click(function(e){
+    document.querySelector("form").scrollIntoView();
+    e.preventDefault();
+    return false;
+  });
+}

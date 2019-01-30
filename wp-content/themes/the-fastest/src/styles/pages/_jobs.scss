@@ -1,6 +1,9 @@
-.page-template-page-jobs{
-    .job:hover{
-        
+.job-template-default{
+    .job-header{
+        h4,h1{
+            color: white;
+            .badge{ color: black; }
+        }
     }
 }
 

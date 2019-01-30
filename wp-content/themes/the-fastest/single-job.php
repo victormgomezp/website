@@ -4,18 +4,18 @@
     $args = wpas_get_view_data();
 ?>
   <div class="container">
-    <div class="row mt-5 mb-5">
+    <div class="row mt-5 mb-5 job-header">
       <div class="col-sm-8">
-        <h1 class="mb-0 text-left"><span>Se busca:</span> <?php echo $args['wp_query']->post_title; ?></h1>
+        <h1 class="mb-0 text-left"><span>Looking for:</span> <?php echo $args['wp_query']->post_title; ?></h1>
         <h4>
-          Ciudades:
+          Cities:
           <?php foreach($args['locations'] as $l){ ?>
             <span class='badge bg-light'><?php echo $l['post_title']; ?></span>
           <?php } ?>
         </h4>
       </div>
       <div class="col-sm-4 text-center p-3 ">
-        <a href="#apply_button" class='btn btn-lg btn-danger w-100'>Apply to the Job</a>
+        <a href="#" class='job-apply btn btn-lg btn-danger w-100' >Apply to the Job</a>
       </div>
     </div>
   </div>
