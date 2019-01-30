@@ -117,7 +117,9 @@ if(WPAS_APP.view.slug === 'partners' || WPAS_APP.view.slug === 'socios'){
 
 if(['job'].indexOf(WPAS_APP.view.slug) != -1){
   jQuery('.job-apply').click(function(e){
-    document.querySelector("form").scrollIntoView();
+    var form = document.querySelector('.apply-to-4geeks-form');
+    if(typeof form !== 'undefined') form.scrollIntoView();
+    else alert('The form to apply seems to be missing');
     e.preventDefault();
     return false;
   });

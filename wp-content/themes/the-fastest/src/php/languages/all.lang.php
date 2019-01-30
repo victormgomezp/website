@@ -323,6 +323,10 @@ return array(
             'en' => 'apply',
             'es' => 'aplica'
         ],
+        "jobs" => [
+            'en' => 'jobs',
+            'es' => 'trabaja'
+        ],
         "blog" => [
             'en' => 'blog',
             'es' => 'blog-en-espanol',

@@ -4,7 +4,7 @@
     $args = wpas_get_view_data();
 ?>
   <div class="container">
-    <div class="row mt-5 mb-5 job-header">
+    <div class="row mb-5 mt-4 job-header">
       <div class="col-sm-8">
         <h1 class="mb-0 text-left"><span>Looking for:</span> <?php echo $args['wp_query']->post_title; ?></h1>
         <h4>
@@ -16,6 +16,7 @@
       </div>
       <div class="col-sm-4 text-center p-3 ">
         <a href="#" class='job-apply btn btn-lg btn-danger w-100' >Apply to the Job</a>
+        <p class="text-center mb-0"><small><a class="text-white" href="<?php echo get_permalink( get_page_by_path( wpas_pll_get_slug('jobs') ) ); ?>">or review other jobs</a></small></p>
       </div>
     </div>
   </div>
@@ -26,6 +27,10 @@
           <?php echo do_shortcode($args['wp_query']->post_content); ?>
         </div>
       </div>
+    </section>
+    <section class="container apply-to-4geeks-form mt-3 mb-5">
+      <h3 class="text-center">Apply to 4Geeks Academy</h3>
+      <?php gravity_form( 'Career Opportunities', $display_title = false, $display_description = false, $display_inactive = false, $field_values = null, $ajax = false ); ?>
     </section>
     <section class="bg-light pt-3 pb-3">
       <div class="container">
