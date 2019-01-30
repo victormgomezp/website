@@ -21,7 +21,7 @@
     </div>
   </div>
   <div class="container-fluid bg-white mb-0">
-    <section class="container pt-3 pb-3">
+    <section class="container pt-3 pb-3 job-description">
       <div class="row">
         <div class="col-12">
           <?php echo do_shortcode($args['wp_query']->post_content); ?>
