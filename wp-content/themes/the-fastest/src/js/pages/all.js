@@ -252,6 +252,7 @@ $(document).ready(function() {
       navbar.classList.add('inverted');
    } 
    
+   syncDataLayer();
 });
 
 function setupPriceCalculator(){
@@ -364,4 +365,18 @@ function closestLocation(targetLocation, locationData) {
             currDistance = locationDistance(targetLocation , curr);
         return (prevDistance < currDistance) ? prev : curr;
     });
+}
+
+function syncDataLayer(){
+   
+   if(typeof dataLayer != 'undefined'){
+      if(typeof WPAS_APP !== 'undefined'){
+         dataLayer.push({ city: WPAS_APP.city });
+         dataLayer.push({ city_slug: WPAS_APP.city_slug });
+         dataLayer.push({ country_name: WPAS_APP.country_name });
+         dataLayer.push({ lang: WPAS_APP.lang });
+         dataLayer.push({ city: WPAS_APP.city });
+      }
+      
+   } 
 }
