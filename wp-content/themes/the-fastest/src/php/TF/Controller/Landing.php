@@ -20,6 +20,8 @@ class Landing{
         $args['styles'] = UtilsController::getBodyStyles($page->ID);
         $args['page']['styles'] = get_field('landing_extra_styles', $page->ID);
         $args['page']['script'] = get_field('landing_extra_script', $page->ID);
+        $args['page']['navbar_name'] = get_field('landing_navbar_name', $page->ID);
+        
         
         $city = get_query_var('city');
         if(!empty($city)) $args['current-location'] = (array) LocationPostType::get([ "name" => $city]);

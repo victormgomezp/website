@@ -126,6 +126,13 @@
                 "operator": "==",
                 "value": "job"
             }
+        ],
+        [
+            {
+                "param": "post_template",
+                "operator": "==",
+                "value": "page-landing-no-navbar.php"
+            }
         ]
     ],
     "menu_order": 0,
@@ -149,5 +156,5 @@
     ],
     "active": 1,
     "description": "",
-    "modified": 1548462705
+    "modified": 1549568793
 }
