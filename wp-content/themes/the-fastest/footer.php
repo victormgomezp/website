@@ -281,10 +281,10 @@
                     <div class="col-12 text-right">
                     </div>
                 </div>
-            </div>
-            <div class="modal-footer pr-0">
-                <a href="#" class="btn btn-secondary btn-lg" data-dismiss="modal"><?php pll_e('Close'); ?></a>
-                <a target="_blank" href="#" class="btn btn-danger btn-lg"><?php pll_e('Learn more'); ?></a>
+                <div class="modal-footer pr-0">
+                    <a href="#" class="btn btn-secondary btn-lg" data-dismiss="modal"><?php pll_e('Close'); ?></a>
+                    <a target="_blank" href="#" class="btn btn-danger btn-lg"><?php pll_e('Learn more'); ?></a>
+                </div>
             </div>
           </div>
         </div>

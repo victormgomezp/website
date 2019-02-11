@@ -82,10 +82,8 @@ $('.newsletter-signup').submit(function(event){
     triggerTagManagerEvent('newsletter_signup'); 
 });
 $('.apply-btn').click(function(event){ triggerTagManagerEvent('application_rendered'); });
-onPageView("/apply-thank-you",function(){
-    //Code goes here
-    triggerTagManagerEvent('student_application'); 
-});
+onPageView("/thank-you/apply",function(){ triggerTagManagerEvent('student_application'); }); 
+onPageView("/thank-you/more-info",function(){ triggerTagManagerEvent('more_info_requested'); }); 
 $('#financing_guide_download').click(function(event){ 
     event.preventDefault();
     triggerTagManagerEvent('financing_guide_download'); 
