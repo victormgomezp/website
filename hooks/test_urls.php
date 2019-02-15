@@ -18,8 +18,7 @@
     //$runner->addCheck(checkURL($publicURL.'/pricing', 'Our program was specifically built to efficiently'));
     $runner->addCheck(checkURL($publicURL.'/the-academy', 'Theory is delivered through video, animation, images, '));
     $runner->addCheck(checkURL($publicURL.'/calendar', 'to discover our available courses, workshops and events.'));
-    $runner->addCheck(checkURL($publicURL.'/venezuela', 'acelerar tu carrera como programador'));
-    $runner->addCheck(checkURL($publicURL.'/partners', 'To assure that our students are getting hired'));
+    $runner->addCheck(checkURL($publicURL.'/partners', 'To ensure that our students are getting hired'));
 
     $runner->addCheck(checkURL($publicURL.'/location/downtown-miami/', '66 W Flagler Street, #900'));
     $runner->addCheck(checkURL($publicURL.'/location/santiago-de-chile/', '66 W Flagler Street, #900'));
