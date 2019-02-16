@@ -82,10 +82,10 @@ $hasFinancing = !empty($args['current-location']['prices']['financed']);
                 <a class="nav-link" href="#day-at-academy"><?php pll_e('A Day At The Academy'); ?></a>
               </li>
               <li class="nav-item">
-                <a class="nav-link disabled" href="#skills"><?php pll_e('Skills'); ?></a>
+                <a class="nav-link" href="#skills"><?php pll_e('Skills'); ?></a>
               </li>
               <li class="nav-item">
-                <a class="nav-link disabled" href="#pricing"><?php pll_e('Pricing & Financing'); ?></a>
+                <a class="nav-link" href="#pricing"><?php pll_e('Pricing & Financing'); ?></a>
               </li>
               <li class="nav-item">
                 <a href="<?php echo get_permalink( get_page_by_path( wpas_pll_get_slug('apply') ) ); ?>" class='btn btn-danger'><?php pll_e('Apply Now'); ?></a>

@@ -52,7 +52,7 @@ $args = wpas_get_view_data();
       <div class="container">
         <div class="row">
           <div class="col-12 ">
-            <h2 class="section-heading text-black"><?php pll_e('Gamified and focused on'); ?><?php pll_e('skills with modern technologies'); ?></h2>
+            <h2 class="section-heading text-black"><?php pll_e('Gamified and focused on'); ?> <?php pll_e('skills with modern technologies'); ?></h2>
           </div>
         </div>
         <div class="row no-gutters">
@@ -230,7 +230,7 @@ $args = wpas_get_view_data();
                 <div class='col-6 mr-auto'>
                   <div class="card card-block card-primary card-inverse">
                     <div class="card-body">
-                      <h3 class="card-title m-0"><?php pll_e('How to pay?'); ?></h3>
+                      <h3 class="card-title m-0"><?php pll_e('Payment options'); ?></h3>
                       <p class="card-text mt-2"><?php pll_e('We accept the best talent no matter their income: Long term financing, scholarships or deferred tuition options available'); ?>.</p>
                       <a href="<?php echo get_permalink( get_page_by_path( wpas_pll_get_slug('pricing') ) ); ?>">*<?php pll_e('Learn more about our payment plans'); ?></a>
                     </div>

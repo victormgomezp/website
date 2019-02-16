@@ -101,7 +101,7 @@
         <div class="footer-bar fixed-bottom">
             <div class="container">
                 <div class="row">
-                    <div class="col-12 col-sm-10 col-md-12 col-lg-9 mx-auto">
+                    <div class="col-12 col-sm-10 col-md-12 col-lg-9 mx-auto px-0">
                         <?php if(!empty($args['upcoming'])){ ?>
                         <div class="media">
                             <div class="media-left">
@@ -144,7 +144,7 @@
                                 <h5 class=""><?php echo $args['upcoming']['name']; ?></h5>
                             </div>
                             <div class="media-right">
-                                <a href="<?php echo get_permalink( get_page_by_path( wpas_pll_get_slug('apply') ) ); ?>" class='btn btn-danger mb-1 apply-btn'><?php pll_e('Apply now'); ?></a>
+                                <a href="<?php echo get_permalink( get_page_by_path( wpas_pll_get_slug('apply') ) ); ?>" class='btn btn-danger p-1 apply-btn'><?php pll_e('Apply now'); ?></a>
                                 <p>or <a href="<?php echo get_permalink( get_page_by_path( wpas_pll_get_slug('calendar') ) ); ?>?type=course"><?php pll_e('review other dates'); ?></a></p>
                             </div>
                         </div>
@@ -283,7 +283,7 @@
                 </div>
                 <div class="modal-footer pr-0">
                     <a href="#" class="btn btn-secondary btn-lg" data-dismiss="modal"><?php pll_e('Close'); ?></a>
-                    <a target="_blank" href="#" class="btn btn-danger btn-lg"><?php pll_e('Learn more'); ?></a>
+                    <a target="_blank" href="#" class="btn btn-danger btn-lg mr-2"><?php pll_e('Learn more'); ?></a>
                 </div>
             </div>
           </div>

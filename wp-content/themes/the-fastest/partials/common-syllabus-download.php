@@ -3,6 +3,6 @@
               <div class="alert alert-danger" style=" width: 100%; display: none;" role="alert"></div>
               <input type="text" class="form-control mr-sm-3 mb-sm-0 mb-1" name="" placeholder="Your first name" required/>
               <input type="email" class="form-control  mr-sm-3 mb-sm-0 mb-1" name="" placeholder="Your email" required/>
-              <select class='locations form-control'><option>Select a location</option></select>
+              <select class='locations form-control'><option value="undefined">Select a location</option></select>
               <button class="btn btn-secondary form-control ml-sm-3 mt-sm-0 mt-1"><?php pll_e('Download'); ?></a>
             </form>

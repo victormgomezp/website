@@ -24,8 +24,8 @@ return array(
         "We never stopped trying until we mastered a real premium but affordable program. Talk to one of our student advisors and make sure you are a good fit for our program" => "We never stopped trying until we mastered a real premium but affordable program. Talk to one of our student advisors and make sure you are a good fit for our program",
         "Request Syllabus" => "Request Syllabus",
         "Apply Now" => "Apply Now",
-        "Gamified training focused on" => "Gamified training focused on",
-        "skills & modern technologies" => "skills & modern technologies",
+        "Gamified and focused on" => "Gamified and focused on",
+        "skills with modern technologies" => "skills & modern technologies",
         "Talent Tree" => "Talent Tree",
         "Complete challenges, projects and quizes to gain all the skills from our" => "Complete challenges, projects and quizes to gain all the skills from our",
         "Learn an advanced stack of technologies to meet the demands that companies seek" => "Learn an advanced stack of technologies to meet the demands that companies seek",
@@ -166,9 +166,11 @@ return array(
     	"At first, you will focus on learning the technologies and skills that will make you succeed in your new career" => "At first, you will focus on learning the technologies and skills that will make you succeed in your new career",
     	"Coursera Clone, AirBNB Clone, Instagram Clone, YouTube Clone, etc" => "Coursera Clone, AirBNB Clone, Instagram Clone, YouTube Clone, etc",
     	"When companies seek Senior Developers, they are really looking for Web Architects: Understanding HTTP properly, AJAX, APIs, GET, Client vs Server, etc" => "When companies seek Senior Developers, they are really looking for Web Architects: Understanding HTTP properly, AJAX, APIs, GET, Client vs Server, etc",
-    	
+    	"More about the program" => "More about the program",
 //	Pricing
     	"Or Extended Payment Plan" => "Or Extended Payment Plan",
+    	"Starting at" => "Starting at",
+    	"Payment options" => "Payment options",
     	"Using technology and building -from the ground up- our entire program we have managed to deliver a more affordable program" => "Using technology and building -from the ground up- our entire program we have managed to deliver a more affordable program",
     	"We never stopped trying until we mastered a real premium but affordable program. Our philosophy is rooted in making coding education available to EVERYONE" => "We never stopped trying until we mastered a real premium but affordable program. Our philosophy is rooted in making coding education available to EVERYONE",
     	"Pick your payment plan, no extra fees or hidden costs, everything is included" => "Pick your payment plan, no extra fees or hidden costs, everything is included",
@@ -178,13 +180,16 @@ return array(
     	"Any questions on the financing or extended payment?" => "Any questions on the financing or extended payment?",
     	"Click here to review our Payment Guidebook" => "Click here to review our Payment Guidebook",
     	'Thanks to our partnership with Skillfund we have managed to create a new special payment plant <strong>starting at $135/mo</strong>' => 'Thanks to our partnership with Skillfund we have managed to create a new special payment plant <strong>starting at $135/mo</strong>',
-//	The Academy
 
+//	The Academy
         "Enabling future and current software builders to adapt to the needs of the real world" => "Enabling future and current software builders to adapt to the needs of the real world",
         "Founded" => "Founded",
         "Campuses" => "Campuses",
+        "Our story" => "Our story",
         "Graduates" => "Graduates",
+        "Employers" => "Employers",
         "Hiring Partners" => "Hiring Partners",
+        "Hiring Rate" => "Hiring Rate",
         "Our four cornerstones" => "Our four cornerstones",
         "Flipped Classroom" => "Flipped Classroom",
         "Theory is delivered through video, animation, images, and infographics. Class-time is then used to debate, build projects and mentor over practical exercises" => "Theory is delivered through video, animation, images, and infographics. Class-time is then used to debate, build projects and mentor over practical exercises",
@@ -196,6 +201,7 @@ return array(
         "The Team" => "The Team",
         "Our team is devoted to deliver a premium program. In order to be part of our team, everybody needs to feel the passion for education, coding and helping students develop their skills. At 4Geeks Academy we believe in the power of education and the importance of coding" => "Our team is devoted to deliver a premium program. In order to be part of our team, everybody needs to feel the passion for education, coding and helping students develop their skills. At 4Geeks Academy we believe in the power of education and the importance of coding",
         "Learn more about 4Geeks Academy" => "Learn more about 4Geeks Academy",
+        
 //	Coding Introduction
         "Coding Introduction Course" => "Coding Introduction Course",
         "From nothing to real coding in just 2 weeks" => "From nothing to real coding in just 2 weeks",
@@ -244,12 +250,13 @@ return array(
         "Working together to make it the tech hub it deserves to be" => "Working together to make it the tech hub it deserves to be",
         "In partnership with the biggest city influencers" => "In partnership with the biggest city influencers",
         "We actively organize and/or participate in the city's biggest coding innitiatives" => "We actively organize and/or participate in the city's biggest coding innitiatives",
+
 //Common: Testimonials
         "Over 500 students graduated so far" => "Over 500 students graduated so far",
         "Previous" => "Previous",
         "Next" => "Next",
-//Common: Part-time
         
+//Common: Part-time
         "Let's Part-time" => "Let's Part-time",
         "Part-time is more than a schedule. Building a methodology and content for part-time education has made us more flexible, tech-based and efficient." => "Part-time is more than a schedule. Building a methodology and content for part-time education has made us more flexible, tech-based and efficient.",
         "All of our courses are part-time, in 3-hour classes, 3 times a week" => "All of our courses are part-time, in 3-hour classes, 3 times a week",
@@ -274,7 +281,6 @@ return array(
         "Subscribe to our Newsletter!" => "Subscribe to our Newsletter!",
 
 //Location
-
         "Upcoming Events at this location" => "Upcoming Events at this location",
         "Additional Info" => "Additional Info",
         "Duration" => "Duration",
@@ -283,9 +289,12 @@ return array(
         "Show" => "Show",
         "courses" => "courses",
         "events" => "events",
+        "Discover" => "Discover",
         "in all langs" => "in all langs",
         "in all languages" => "in all languages",
         "& locations" => "& locations",
+        "Upcoming programs workshops and events" => "Upcoming programs workshops and events",
+        "to discover our available courses, workshops and events" => "to discover our available courses, workshops and events",
         
 //Blog
 

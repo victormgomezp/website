@@ -106,7 +106,7 @@ $args = wpas_get_view_data();
             <div class='founders-img' style="width: 100%; background-image: url('<?php echo get_stylesheet_directory_uri(); ?>/assets/img/founders.png');"></div>
           </div>
           <div class="col-md-8 col-xl-6">
-            <h3 class='text-left pl-3 mt-0 mb-3'><?php pll_e('Our story...'); ?></h3>
+            <h3 class='text-left pl-3 mt-0 mb-3'><?php pll_e('Our story'); ?>...</h3>
             <p class="section-message pt-0 mb-0">
               <?php the_content(); ?>
               <a target="_blank" href="https://4geeksacademy.co/en/4geeks-academy-history/" class='btn btn-danger mt-3'><?php pll_e('Learn more about 4Geeks Academy'); ?></a>

@@ -1,6 +1,12 @@
 .dropdown.dropdown-selector{
     display: inline-block;
     margin-left: -5px;
+    &.cities{
+        width: 100%;
+        .dropdown-toggle{
+            width: 100%;
+        }
+    }
     .dropdown-toggle::after{
         border-top: 0.3em solid #ddd;
     }

@@ -7,10 +7,10 @@ $args = wpas_get_view_data();
       <div class="container">
         <div class="row">
           <div class="col-md-10 mx-auto">
-            <h1 class="mb-5 text-black">Upcoming programs workshops and events</h1>
+            <h1 class="mb-5 text-black"><?php pll_e('Upcoming programs workshops and events'); ?></h1>
             <h3>
               Select a location: 
-              <div class="dropdown cities dropdown-selector ml-3">
+              <div class="dropdown cities dropdown-selector ml-sm-3">
                 <button id="locationSelector" data-key="l" class="dropdown-toggle btn-primary" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                   <span><?php pll_e('all locations'); ?></span>
                 </button>
@@ -27,7 +27,7 @@ $args = wpas_get_view_data();
                 </div>
               </div>
             </h3>
-            <h3>to discover our available courses, workshops and events.</h3>
+            <h3><?php pll_e('to discover our available courses, workshops and events'); ?>.</h3>
           </div>
         </div>
       </div>

@@ -52,7 +52,7 @@ $args = wpas_get_view_data();
       <div class="container">
         <div class="row">
           <div class="col-12 ">
-            <h2 class="section-heading text-black"><?php pll_e('Gamified and focused on'); ?><?php pll_e('skills with modern technologies'); ?></h2>
+            <h2 class="section-heading text-black"><?php pll_e('Gamified and focused on'); ?> <?php pll_e('skills with modern technologies'); ?></h2>
           </div>
         </div>
         <div class="row no-gutters">
