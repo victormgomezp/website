@@ -227,7 +227,7 @@ $(document).ready(function() {
             
             //mark default location
             if(typeof WPAS_APP !== 'undefined'){
-               if(typeof WPAS_APP.city_slug !== 'undefined' && WPAS_APP.city_slug !== '') console.log("Ignoring user location because he specified a different one");
+               if((typeof WPAS_APP.city_slug !== 'undefined' && WPAS_APP.city_slug !== '') || WPAS_APP.view.slug == 'location') console.log("Ignoring user location because he specified a different one");
                else if(typeof WPAS_APP.latitude !== 'undefined' && WPAS_APP.latitude !== ''){
                   const closest = closestLocation({ latitude: WPAS_APP.latitude, longitude: WPAS_APP.longitude }, locations);
                   $('.cities.dropdown-selector button span').html(closest.post_title);

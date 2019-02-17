@@ -3,6 +3,7 @@
 return array(
     "labels" => [
         
+        "No dates scheduled for this course" => "No dates scheduled for this course",
 //Home
         "Premium coding education" => "Premium coding education",
         "part-time" => "part-time",
