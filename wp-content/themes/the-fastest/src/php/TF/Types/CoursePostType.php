@@ -89,7 +89,7 @@ class CoursePostType extends BasePostType{
         $course['day'] = date('d',$time);
         $course['month'] = date('M',$time);
         $course['year'] = date('Y',$time);
-        $course['date'] = date('F j, Y',$time);
+        $course['date'] = date('M j, Y',$time);
         $course['bc_location_slug'] = $cohort['location_slug'];
         $course['bc_profile_slug'] = $cohort['profile_slug'];
         $course['status'] = $cohort['stage'];
