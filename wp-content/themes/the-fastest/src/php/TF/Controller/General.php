@@ -49,8 +49,8 @@ class General{
 
         if(count($args['upcoming-cohorts'])>0) $args['upcoming'] = $args['upcoming-cohorts'][0];
         else $args['upcoming-message'] = [
-            "message" => "No upcoming dates scheduled for this curse",
-            "btn-message" => "Other dates & locations"
+            "message" => pll__("No scheduled dates for this course"),
+            "btn-message" => pll__("Other dates & locations")
         ];
         return $args;
     }
@@ -112,8 +112,8 @@ class General{
 
         if(count($args['upcoming-cohorts'])>0) $args['upcoming'] = $args['upcoming-cohorts'][0];
         else $args['upcoming-message'] = [
-            "message" => "No upcoming dates scheduled for this curse",
-            "btn-message" => "Other dates & locations"
+            "message" => pll__("No scheduled dates for this course"),
+            "btn-message" => pll__("Other dates & locations")
         ];
         return $args;
     }
@@ -140,8 +140,8 @@ class General{
         $args['upcoming-cohorts'] = CoursePostType::getUpcomingDates(['location' => $args['current-location']['bc_location_slug'], 'posts_per_page' => 4 ]);;
         if(count($args['upcoming-cohorts'])>0) $args['upcoming'] = $args['upcoming-cohorts'][0];
         else $args['upcoming-message'] = [
-            "message" => "No upcoming dates scheduled for this location",
-            "btn-message" => "Other dates & locations"
+            "message" => pll__("No scheduled dates for this location"),
+            "btn-message" => pll__("Other dates & locations")
         ];
         $args['testimonials'] = TestimonialPostType::All();
         

@@ -3,8 +3,15 @@
 return array(
     "labels" => [
         
-        "No dates scheduled for this course" => "No dates scheduled for this course",
+        "No scheduled dates for this course" => "No scheduled dates for this course",
+        "No scheduled dates for this location" => "No scheduled dates for this location",
+        "Other dates & locations" => "Other dates & locations",
+        "Select a location" => "Select a location",
+        "Your email" => "Your email",
+        "Your first name" => "Your first name",
 //Home
+        "Learn to code and join more than 500 graduates already working as coders" => "Learn to code and join more than 500 graduates already working as coders",
+        "Get career support for life and a become a part of one of the biggest coding communities in the world" => "Get career support for life and a become a part of one of the biggest coding communities in the world",
         "Premium coding education" => "Premium coding education",
         "part-time" => "part-time",
         "6 goals to change your life" => "6 goals to change your life",

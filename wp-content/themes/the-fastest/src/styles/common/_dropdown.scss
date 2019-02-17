@@ -1,10 +1,12 @@
 .dropdown.dropdown-selector{
     display: inline-block;
     margin-left: -5px;
-    &.cities{
-        width: 100%;
-        .dropdown-toggle{
+    @media (max-width: 575px) { 
+        &.cities{
             width: 100%;
+            .dropdown-toggle{
+                width: 100%;
+            }
         }
     }
     .dropdown-toggle::after{

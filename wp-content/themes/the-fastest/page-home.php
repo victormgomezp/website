@@ -18,7 +18,7 @@ $args = wpas_get_view_data();
         <div class="container">
           <div class="row">
             <div class="col-11 mx-auto pt-3">
-              <p class="text-faded text-center"><?php pll_e('Learn to code and join more than 500 graduates already working as coders. <br />Get career support for life and a become a part of one of the biggest coding communities in the world.'); ?></p>
+              <p class="text-faded text-center"><?php pll_e('Learn to code and join more than 500 graduates already working as coders');?><br /> <?php pll_e('Get career support for life and a become a part of one of the biggest coding communities in the world'); ?>.</p>
               <form class="form-inline">
                 <a href="#syllabusModal"  data-toggle="modal" data-target="#syllabusModal" class='btn btn-lg btn-secondary mr-sm-2'><?php pll_e('Request Syllabus'); ?></a>
                 <a href="<?php echo get_permalink( get_page_by_path( wpas_pll_get_slug('apply') ) ); ?>" class='btn btn-lg btn-danger btn-apply'><?php pll_e('Apply Now'); ?></a>
@@ -222,7 +222,7 @@ $args = wpas_get_view_data();
                   <div class="card card-block card-primary card-inverse">
                     <div class="card-body mb-3">
                       <h3 class="card-title m-3"><?php pll_e('Starting at'); ?></h3>
-                      <h4 class="card-text">$3,000 <?php pll_e('and up to'); ?> $9,000</h4>
+                      <h4 class="card-text">$500 <?php pll_e('and up to'); ?> $9,000</h4>
                       <small><?php pll_e('Prices can vary depending on our courses and locations'); ?></small>
                     </div>
                   </div>
