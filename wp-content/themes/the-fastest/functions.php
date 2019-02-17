@@ -128,7 +128,7 @@
     $api = new WPASAPIController([
         'namespace' => 'TF\\Controller\\',
         'application_name' => '4g',
-        'version' => 2,
+        'version' => 1,
         'allow-origin' => '*'
     ]);
     

@@ -118,7 +118,7 @@ $hasFinancing = !empty($args['current-location']['prices']['financed']);
           <div class="alert alert-danger" style=" width: 100%; display: none;" role="alert"></div>
           <input type="text" class="form-control mr-sm-3 mb-1 mb-sm-0" name="" placeholder="Your first name" required="" data-kwimpalastatus="alive" data-kwimpalaid="1547773331449-5">
           <input type="email" class="form-control" name="" placeholder="Your email" required="" data-kwimpalastatus="alive" data-kwimpalaid="1547773331449-6">
-          <button class="btn btn-secondary form-control ml-md-3 ml-0 mt-3 mt-sm-0">Get notified</button>
+          <button class="btn btn-secondary form-control ml-lg-3 ml-0 mt-3 mt-sm-0">Get notified</button>
         </form>
       </div>
     </div>

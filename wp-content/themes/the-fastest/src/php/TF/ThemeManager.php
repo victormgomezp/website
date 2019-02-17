@@ -4,7 +4,7 @@ namespace TF;
 
 class ThemeManager{
     
-    public $version = 1.2;
+    public $version = 1.3;
     
     public function __construct(){
 
