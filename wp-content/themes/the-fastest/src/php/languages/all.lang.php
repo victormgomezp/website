@@ -51,8 +51,8 @@ return array(
         "Instagram Clone" => "Instagram Clone",
         "Slack.com Clone" => "Slack.com Clone",
         "Coursera Clone" => "Coursera Clone",
-        "and up to" => "and up to",
         "Prices can vary depending on our courses and locations" => "Prices can vary depending on our courses and locations",
+        "Learn more about our prices" => "Learn more about our prices",
         "We accept the best talent no matter their income: Long term financing, scholarships or deferred tuition options available" => "We accept the best talent no matter their income: Long term financing, scholarships or deferred tuition options available",
         
 //The program        
@@ -270,6 +270,7 @@ return array(
         "All of our courses are part-time, in 3-hour classes, 3 times a week" => "All of our courses are part-time, in 3-hour classes, 3 times a week",
 
 //Footer
+        "Click for contact info" => "Click for contact info",
         "Learn more" => "Learn more",
         "Close" => "Close",
         "Upcoming event" => "Upcoming event",

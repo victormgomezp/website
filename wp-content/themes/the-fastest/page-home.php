@@ -221,9 +221,9 @@ $args = wpas_get_view_data();
                 <div class='col-6 ml-auto upfront'>
                   <div class="card card-block card-primary card-inverse">
                     <div class="card-body mb-3">
-                      <h3 class="card-title m-3"><?php pll_e('Starting at'); ?></h3>
-                      <h4 class="card-text">$500 <?php pll_e('and up to'); ?> $9,000</h4>
-                      <small><?php pll_e('Prices can vary depending on our courses and locations'); ?></small>
+                      <h3 class="card-title m-0"><?php pll_e('Starting at'); ?></h3>
+                      <p class="card-text mt-2"><?php pll_e('Prices can vary depending on our courses and locations'); ?></p>
+                      <a href="<?php echo get_permalink( get_page_by_path( wpas_pll_get_slug('pricing') ) ); ?>">*<?php pll_e('Learn more about our prices'); ?></a>
                     </div>
                   </div>
                 </div>

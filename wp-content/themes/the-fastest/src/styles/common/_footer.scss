@@ -16,7 +16,18 @@ footer{
     .social-media{ font-size: 2em; 
         a:hover{ text-decoration: none; color: white; }
     }
-    
+    .contact-selector{
+        &.dropdown-selector .dropdown-toggle, .dropdown-menu.show .dropdown-item{
+            font-size: 13px !important;
+            text-align: left;
+        }
+        .dropdown-item:hover{
+            background: #e2e2e2;
+        }
+        .dropdown-menu{
+            padding: 0;
+        }
+    }
     .bitcoin{height: 30px;}
     .ethereum{height: 50px;}
 }

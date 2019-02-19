@@ -13,7 +13,6 @@
             </form>
         </div>
     </section>
-    <?php if(!is_page('venezuela')){ ?>
         <footer>
             <div class='container'>
                 <div class='row'>
@@ -23,16 +22,43 @@
                         <ul class="list-unstyled">
                             <li>
                                 <?php pll_e('We are available Monday to Friday:'); ?><br/>
-                                09:00am - 06:30pm
+                                09:00am - 06:00pm
                             </li>
                             <li>
-                                <address>
-                                <a href="#">Starthub</a><br />
-                                66 W Flagler Street, #900<br />
-                                Miami, FL 33130<br />
-                                P: <?php echo get_option('company-phone-number'); ?><br />
-                                <?php echo get_option('company-email'); ?><br />
-                                </address> 
+                                <div class="dropdown dropdown-selector contact-selector">
+                                    <button id="locationSelector" data-key="l" class="dropdown-toggle btn-sm" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        <span><?php pll_e('Click for contact info'); ?></span>
+                                    </button>
+                                    <div class="dropdown-menu dropdown-filter" aria-labelledby="dropdownMenuButton">
+                                        <a class="dropdown-item location-option" href="#" data-value="all">
+                                            <span><strong>United States</strong> <?php wpas_get_inline_svg('assets/icons/flags/inline','united-states.svg'); ?></span>
+                                            <address>
+                                                66 W Flagler Street, #900<br />
+                                                Miami, FL 33130<br />
+                                                <?php echo get_option('company-phone-number'); ?><br />
+                                                <?php echo get_option('company-email'); ?><br />
+                                            </address> 
+                                        </a>
+                                        <a class="dropdown-item location-option" href="#" data-value="all">
+                                            <span><strong>Santiago</strong> <?php wpas_get_inline_svg('assets/icons/flags/inline','chile.svg'); ?></span>
+                                            <address>
+                                                Av. Apoquindo 5950, Las Condes<br />
+                                                Región Metropolitana, Chile<br />
+                                                +56 9 7284 8039<br />
+                                                chile@4geeksacademy.com<br />
+                                            </address> 
+                                        </a>
+                                        <a class="dropdown-item location-option" href="#" data-value="all">
+                                            <span><strong>Venezuela</strong> <?php wpas_get_inline_svg('assets/icons/flags/inline','venezuela.svg'); ?></span>
+                                            <address>
+                                                Av. Ppal de Los Cortijos, Edf. El Nacional<br />
+                                                Caracas 1070, Miranda, Venezuela<br />
+                                                +58 424-2419697<br />
+                                                venezuela@4geeksacademy.com<br />
+                                            </address> 
+                                        </a>
+                                    </div>
+                                </div>
                             </li>
                         </ul>
                     </div>
@@ -162,59 +188,6 @@
                 </div>
             </div>
         </div>
-    <?php } else { ?>
-        <footer>
-            <div class='container'>
-                <div class='row'>
-                    <div class='col-md-3 footer-pad address-section'>
-                        <ul class="list-unstyled">
-                            <li>
-                                <?php pll_e('We are available Monday to Friday:'); ?><br/>
-                                09:00am - 06:30pm
-                            </li>
-                            <li>
-                                <address>
-                                Av Ppal de Los Cortijos<br />
-                                Torre Bravasol, Oficina 1B<br />
-                                P: <?php echo get_option('company-phone-number'); ?><br />
-                                <?php echo get_option('company-email'); ?><br />
-                                </address> 
-                            </li>
-                        </ul>
-                    </div>
-                    <div class='col-md-3'></div>
-                    <div class='col-md-3'></div>
-                    <div class='col-md-3'>
-                        <h5 class="mt-5 mb-3"><?php pll_e('We accept'); ?></h5>
-                        <?php wpas_get_inline_svg('assets/icons/inline','bitcoin.svg'); ?>
-                        <?php wpas_get_inline_svg('assets/icons/inline','ethereum.svg'); ?>
-                    </div>
-                </div>
-                <div class='row'>
-                    <div class='col-12'>
-                        <hr />
-                    </div>
-                </div>
-                <div class='row'>
-                    <div class='col-2 col-sm-1 text-left order-1'>
-                        <img style="max-height: 40px;" src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/icon-logo.png"></img>
-                    </div>
-                    <div class='col-12 col-sm-5 order-4 text-left order-sm-2'>
-                        Copyright © <?php echo get_option('company-name'); ?> 2017. <br/> <?php pll_e('All rights reserved'); ?>.
-                    </div>
-                    <div class='col-10 col-sm-6 text-right order-3'>
-                        <ul class="list-unstyled list-inline social-media">
-                            <li class='list-inline-item'><a target="_blank" href="<?php echo get_option('company-github'); ?>"><span class="imoon icon-github"></span></a></li>
-                            <li class='list-inline-item'><a target="_blank" href="<?php echo get_option('company-facebook'); ?>"><span class="imoon icon-facebook2"></span></a></li>
-                            <li class='list-inline-item'><a target="_blank" href="<?php echo get_option('company-instagram'); ?>"><span class="imoon icon-instagram"></span></a></li>
-                            <li class='list-inline-item'><a target="_blank" href="<?php echo get_option('company-twitter'); ?>"><span class="imoon icon-twitter"></span></a></li>
-                            <li class='list-inline-item'><a target="_blank" href="<?php echo get_option('company-youtube'); ?>"><span class="imoon icon-youtube2"></span></a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </footer>
-    <?php } ?>
         <?php get_template_part('partials/modal','free-coding-intro'); ?>
         <div id="syllabusModal" class="modal fade mt-5" tabindex="-1" role="dialog" aria-labelledby="syllabusModalLabel" aria-hidden="true">
           <div class="modal-dialog modal-lg">
