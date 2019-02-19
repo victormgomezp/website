@@ -97,12 +97,12 @@ $hasFinancing = !empty($args['current-location']['prices']['financed']);
           </div>
           <div class='row'>
             <?php if($hasFinancing){ ?>
-            <div class='col-sm-6'>
+            <div class='col-sm-6 mx-auto'>
                 <img class="card-img-top financing-logo" data-templateurl="<?php echo get_stylesheet_directory_uri(); ?>" src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/skillsfund.png">
             </div>
             <?php } ?>
             <div class='col-sm-6 mx-auto'>
-                <a data-applylink="<?php echo get_permalink( get_page_by_path( wpas_pll_get_slug('apply') ) ); ?>" href="http://4geeksacademy.skills.fund" class="financing-btn btn btn-danger btn-lg"><?php pll_e('Apply to Financing'); ?></a>
+                <a data-applylink="<?php echo get_permalink( get_page_by_path( wpas_pll_get_slug('apply') ) ); ?>" href="<?php echo get_permalink( get_page_by_path( wpas_pll_get_slug('apply') ) ); ?>" class="financing-btn btn btn-danger btn-lg"><?php pll_e('Apply to Financing'); ?></a>
             </div>
           </div>
         </div>

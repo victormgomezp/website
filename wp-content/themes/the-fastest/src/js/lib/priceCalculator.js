@@ -14,6 +14,15 @@ export default function PricingCalculator(sliders, messages){
           var logoElm = pricingComponent.find('.financing-logo');
           logoElm.attr('src',messages[key].logo);
         }
+        if(typeof(messages[key].url) == 'string'){
+          var logoElm = pricingComponent.find('.financing-btn');
+          logoElm.attr('href',messages[key].url);
+          logoElm.parent().css('display',"block");
+        }
+        else{
+          var logoElm = pricingComponent.find('.financing-btn');
+          logoElm.parent().css('display',"none");
+        }
       }
   		
   		var paymentPlanCard = pricingComponent.find('.payment-plan');

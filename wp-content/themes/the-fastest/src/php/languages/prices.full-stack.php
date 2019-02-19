@@ -34,7 +34,8 @@ return array(
                     "en" => "Thanks to our partnership with Skillfund we have managed to create a new special payment plant starting at $135/mo",
                     "es" => "Gracias a nuestro partnership con Skillfund hemos podido crear un plan especial de financiamiento empezando en $135/mes"
                 ],
-                "logo" => "https://www.4geeksacademy.co/wp-content/themes/the-fastest/assets/img/skillsfund.png"
+                "logo" => "https://www.4geeksacademy.co/wp-content/themes/the-fastest/assets/img/skillsfund.png",
+                "url" => "https://4geeksacademy.skills.fund/"
             ],
             "60" => [
                 "monthly" => 'NO deposit + $158.23 / month',
@@ -42,7 +43,8 @@ return array(
                     "en" => "Thanks to our partnership with Skillfund we have managed to create a new special payment plant starting at $135/mo",
                     "es" => "Gracias a nuestro partnership con Skillfund hemos podido crear un plan especial de financiamiento empezando en $135/mes"
                 ],
-                "logo" => "https://www.4geeksacademy.co/wp-content/themes/the-fastest/assets/img/skillsfund.png"
+                "logo" => "https://www.4geeksacademy.co/wp-content/themes/the-fastest/assets/img/skillsfund.png",
+                "url" => "https://4geeksacademy.skills.fund/"
             ]
         ]
     ],
