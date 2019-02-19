@@ -116,14 +116,52 @@ class LocationPostType extends BasePostType{
     
     private static function fillMember($object){
         $arrayObject = (array) $object;
-        $arrayObject['flag'] = get_field('flag_icon',$object->ID);
-        $arrayObject['bc_location_slug'] = get_field('breathecode_location_slug',$object->ID);
-        $arrayObject['ac_location_slug'] = get_field('active_campaign_location_slug',$object->ID);
-        $arrayObject['latitude'] = floatval(get_field('location_latitude',$object->ID));
-        $arrayObject['longitude'] = floatval(get_field('location_longitude',$object->ID));
-        $arrayObject['city'] = floatval(get_field('location_city',$object->ID));
-        $arrayObject['short-title'] = substr($object->post_title,0,13).'...';
+        $arrayObject['flag'] = get_field('flag_icon',$arrayObject['ID']);
+        $arrayObject['bc_location_slug'] = get_field('breathecode_location_slug',$arrayObject['ID']);
+        $arrayObject['ac_location_slug'] = get_field('active_campaign_location_slug',$arrayObject['ID']);
+        $arrayObject['latitude'] = floatval(get_field('location_latitude',$arrayObject['ID']));
+        $arrayObject['longitude'] = floatval(get_field('location_longitude',$arrayObject['ID']));
+        $arrayObject['city'] = floatval(get_field('location_city',$arrayObject['ID']));
+        $arrayObject['short-title'] = substr($arrayObject['post_title'],0,13).'...';
         
         return $arrayObject;
+    }
+    
+    public static function nearest($latitude, $longitude){
+        $query = new WP_Query([
+            'post_type' => 'location',
+            "lang" => "en",
+            'post_status' => 'publish'
+        ]);
+        wp_reset_postdata();
+        $nearest = null;
+        if(defined('WP_DEBUG_CONTEXT') && WP_DEBUG_CONTEXT){
+            echo "<ul style='background: #232323; position: absolute;right: 0;top: 20px;color: white;padding: 5px;line-height: 10px;font-size: 11px;'>";
+            echo "<li style='list-style: none; color: orange;'>Nearest location calculation</li>";
+            echo "<li style='list-style: none;'>Original: ".$latitude.",".$longitude."</li>";
+        } 
+        foreach($query->posts as $object){
+            $l = (array) $object;
+            $l['lat'] = floatval(get_field('location_latitude',$object->ID));
+            $l['lon'] = floatval(get_field('location_longitude',$object->ID));
+            $l['miles'] = self::_distance($l, [
+                "lat" => $latitude,
+                "lon" => $longitude
+            ]);
+            if(defined('WP_DEBUG_CONTEXT') && WP_DEBUG_CONTEXT) echo "<li style='list-style: none;'>".$l["post_title"].": ".$l['miles']."</li>";
+            if(!$nearest || $nearest["miles"] > $l['miles']) $nearest = $l;
+        } 
+        if(defined('WP_DEBUG_CONTEXT') && WP_DEBUG_CONTEXT) echo "</ul>";
+        return self::fillMember($nearest);
+    }
+    
+    private static function _distance($a, $b)
+    {
+        $theta = $a['lon'] - $b['lon'];
+        $dist = sin(deg2rad($a['lat'])) * sin(deg2rad($b['lat'])) +  cos(deg2rad($a['lat'])) * cos(deg2rad($b['lat'])) * cos(deg2rad($theta));
+        $dist = acos($dist);
+        $dist = rad2deg($dist);
+        $miles = $dist * 60 * 1.1515;
+        return $miles;
     }
 }

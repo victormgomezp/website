@@ -18,10 +18,6 @@ class General{
     var $globalContext = null;
     var $defaultLocation = 145;
     
-    public function __construct(){
-        $this->globalContext = wpas_get_global_context();
-    }
-    
     public function load_controller_hooks(){
         
         //add_filter( 'gform_pre_validation_'.$fieldId, [$this,'populate_location_dropdown'] );
@@ -241,7 +237,7 @@ class General{
         if(empty($_POST['email'])) WPASController::ajaxError('Invalid Email');
         
         //get WPAS_APP values
-        $this->globalContext = wpas_get_global_context();
+        $this->fetchContent();
         $gclidValue = 'undefined';
         if(isset($this->globalContext['gclid'])) $gclidValue = $this->globalContext['gclid'];
         
@@ -273,7 +269,7 @@ class General{
         if(!empty($_POST['first_name'])) $fistName = $_POST['first_name'];
         
         //get WPAS_APP values
-        $this->globalContext = wpas_get_global_context();
+        $this->fetchContent();
 
         $utmURLValue = 'undefined';
         if(isset($this->globalContext['url'])) $utmURLValue = $this->globalContext['url'];
@@ -366,13 +362,24 @@ class General{
         
         return null;
     }
-
+    
     public function _getCurrentLocation(){
+        $this->fetchContent();
         $city = get_query_var('city');
         if(!empty($city)) return (array) LocationPostType::get([ "name" => $city]);
         else if(!empty($_GET['city_slug'])) return (array) LocationPostType::get([ "name" => $_GET['city_slug']]);
         else if(!empty($this->globalContext['city_slug'])) return (array) LocationPostType::get([ "name" => $this->globalContext['city_slug']]);
+        else if(!empty($this->globalContext['latitude']) and !empty($this->globalContext['longitude'])){
+            $loc = LocationPostType::nearest($this->globalContext['latitude'], $this->globalContext['longitude']);
+            if($loc) return $loc;
+        }
         return (array) LocationPostType::get([ "p" => $this->defaultLocation ]);
+    }
+    
+    private function fetchContent(){
+        if(!$this->globalContext){
+            $this->globalContext = wpas_get_global_context();
+        } 
     }
     
 }

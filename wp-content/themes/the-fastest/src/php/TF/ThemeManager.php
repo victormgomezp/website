@@ -38,6 +38,7 @@ class ThemeManager{
 			
 			//if its not already set
 		    $info = $this->getUserInfo($this->getRealIpAddr());
+		    if(defined('WP_DEBUG_CONTEXT') && WP_DEBUG_CONTEXT) self::logOnTopBar($info);
 		    if(isset($info['country_name'])) $data['country_name'] = strtolower($info['country_name']);
 		    if(isset($info['city'])) $data['city'] = strtolower($info['city']);
 		    if(isset($info['latitude'])) $data['latitude'] = $info['latitude'];
@@ -99,21 +100,29 @@ class ThemeManager{
         $value = get_transient( 'geolocalization_info_'.$ip );
         if (empty($value) or (isset($_GET['debug']) and $_GET['debug'] == 'true')) {
             /** @var array|WP_Error $response */
+            if(defined('WP_DEBUG_CONTEXT') && WP_DEBUG_CONTEXT) self::logOnTopBar("Retreving IP info...");
             $response = wp_remote_get( 'http://api.ipstack.com/'.$ip.'?access_key='.IPSTACK_KEY );
             if ( is_array( $response ) && ! is_wp_error( $response ) ) {
                 $headers = $response['headers']; // array of http header lines
                 $result = (array) json_decode($response['body']); // use the content
                 if($result){
                     set_transient( 'geolocalization_info_'.$ip, array_merge($result, $defaults), 60*60*12 ); # 12 hours  
-                    return $result;
+                    $value = $result;
                 } 
-                else return null;
+                else $value = null;
             }
-            else return null;
+            else $value = null;
              // this code runs when there is no valid transient set
         }
         
         return $value;
+    }
+    
+    private static function logOnTopBar($context){
+        echo '<pre style="background: #232323; color: white; font-size: 10px; line-height: 10px;margin-bottom: 0;">';
+        if(is_string($context)) echo $context;
+        else print_r($context);
+        echo '</pre>';
     }
     
     function getRealIpAddr(){
