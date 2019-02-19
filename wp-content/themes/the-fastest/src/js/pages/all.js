@@ -229,7 +229,7 @@ $(document).ready(function() {
             if(typeof WPAS_APP !== 'undefined'){
                if((typeof WPAS_APP.city_slug !== 'undefined' && WPAS_APP.city_slug !== '') || WPAS_APP.view.slug == 'location') console.log("Ignoring user location because he specified a different one");
                else if(typeof WPAS_APP.latitude !== 'undefined' && WPAS_APP.latitude !== ''){
-                  const closest = closestLocation({ latitude: WPAS_APP.latitude, longitude: WPAS_APP.longitude }, locations);
+                  var closest = closestLocation({ latitude: WPAS_APP.latitude, longitude: WPAS_APP.longitude }, locations);
                   $('.cities.dropdown-selector button span').html(closest.post_title);
                }
             }
@@ -258,7 +258,7 @@ $(document).ready(function() {
 function setupPriceCalculator(){
    
    var PriceCalculator = require('../lib/priceCalculator.js').default;
-   const sliders = $('.pricing-slider');
+   var sliders = $('.pricing-slider');
    
    if(sliders.length === 0) console.log('There is no slider to load');
    else{
@@ -271,9 +271,9 @@ function setupPriceCalculator(){
             {
                prices = prices.data;
                sliders.each(function(index){
-                  const slider = $(this);
-                  const location = slider.data('location');
-                  const course = slider.data('course');
+                  var slider = $(this);
+                  var location = slider.data('location');
+                  var course = slider.data('course');
                   if(typeof prices[course] !== 'undefined'){
                      if(typeof prices[course][location] === 'undefined') console.error('Price not found for '+course+' at '+location);
                      renderLocationPrices(slider, prices[course][location]);
@@ -291,9 +291,9 @@ function setupPriceCalculator(){
 }
 
 function renderLocationPrices(slider, prices){
-   const pricingComponent = slider.closest('.pricing-component');
+   var pricingComponent = slider.closest('.pricing-component');
    if(typeof prices === 'undefined'){
-      let content = '<div class="col-md-12">';
+      var content = '<div class="col-md-12">';
          content += '<div class="card card-block card-primary card-inverse bg-yellow mb-3 p-4 text-center">';
             content += 'Prices have not been defined yet';
          content += '</div>';

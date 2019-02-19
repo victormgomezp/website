@@ -139,7 +139,7 @@ function reading_time($content) {
 			Our next cohort starts on <?php echo $args['upcoming']['date']; ?>
 		</div>
 		<div class="col-12 col-sm-2 col-xl-1 mr-auto text-center pl-3 pt-2">
-			<a href="<?php echo get_permalink( get_page_by_path( wpas_pll_get_slug('the-program') ) ); ?>" class="btn btn-danger">Learn More</a>
+			<a href="<?php echo get_permalink( get_page_by_path( wpas_pll_get_slug('calendar') ) ); ?>" class="btn btn-danger">Learn More</a>
 		</div>
 	</div>
 </div>

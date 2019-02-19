@@ -1,15 +1,16 @@
 /* global WPAS_APP, $ */
-require('../styles/index.scss');
-
+import '../styles/index.scss';
 import Typography from 'typography';
 import doelgerTheme from 'typography-theme-doelger';
-const typography = new Typography(doelgerTheme);
+var typography = new Typography(doelgerTheme);
 typography.injectStyles();
 
 import 'bootstrap/js/dist/util';
 import 'bootstrap/js/dist/collapse';
 import 'bootstrap/js/dist/carousel';
 import 'bootstrap/js/dist/tooltip';
+import 'bootstrap/js/dist/dropdown';
+import 'bootstrap/js/dist/modal';
 import 'bootstrap/js/dist/tab';
 import './pages/all.js';
 import './common/marketing-events.js';
