@@ -26,6 +26,21 @@ class VCAboutTheProgram{
                     "value" => "",
                     "description" => "Extra Classes"
                 ),
+    		        array(
+    		            "type" => "textfield",
+    		            "heading" => "Course Length",
+    		            "param_name" => "course_length",
+    		            "value" => "",
+    		            "description" => "You have to pick one from the cohort exercises list"
+    		         ),
+                array(
+                    "type" => "textfield",
+                    "holder" => "div",
+                    "heading" => "Extra Styles",
+                    "param_name" => "extrastyles",
+                    "value" => "",
+                    "description" => "Extra Stypes for the box"
+                ),
             )
 	   ) );
     }
@@ -33,10 +48,11 @@ class VCAboutTheProgram{
 	function render( $atts , $content = null) {
 	    extract( shortcode_atts( array(
 	      'classnames' => '',
+	      'course_length' => '',
 	   ), $atts ) );
 	   return '
         <div class="row about-the-program">
-          <div class="col-md-9 col-sm-12 ml-auto multi-phase">
+          <div class="col-12 multi-phase">
               <div class="row">
                   <div class="col-sm-4 p-0">
                       <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
@@ -50,7 +66,7 @@ class VCAboutTheProgram{
                           <a class="nav-link" id="v-pills-2-tab" data-toggle="pill" href="#v-pills-2" role="tab" aria-controls="v-pills-2" aria-selected="true">
                             <span>
                                 '.pll__('Coding intensive').'
-                                <small>8 '.pll__('weeks').'</small>
+                                <small>'.$course_length.' '.pll__('weeks').'</small>
                                 '.file_get_contents(get_template_directory_uri().'/assets/icons/inline-right.svg.php').'
                                 <span class="sub-pills">
                                   <a class="nav-link pl-3 sub-pills" id="v-pills-21-tab" data-toggle="pill" href="#v-pills-21" role="tab" aria-controls="v-pills-21" aria-selected="true">

@@ -26,6 +26,14 @@ class VCRequestSyllabus{
                     "value" => "",
                     "description" => "Extra Classes for the form"
                 ),
+                array(
+                    "type" => "textfield",
+                    "holder" => "div",
+                    "heading" => "Extra Styles",
+                    "param_name" => "extrastyles",
+                    "value" => "",
+                    "description" => "Extra Stypes for the box"
+                ),
             )
 	   ) );
     }
@@ -33,10 +41,11 @@ class VCRequestSyllabus{
 	function render( $atts , $content = null) {
 	    extract( shortcode_atts( array(
 	      'classnames' => '',
+	      'extrastyles' => '',
 	   ), $atts ) );
 	   return '
             <h4>'.pll__('Download our syllabus PDF to get all the details').'</h4>
-             <form class="form-inline text-center syllabus-download '.$classnames.'">
+             <form style="'.$extrastyles.'" class="form-inline text-center syllabus-download '.$classnames.'">
               <div class="alert alert-danger" style=" width: 100%; display: none;" role="alert"></div>
               <input type="text" class="form-control mr-lg-3 mb-sm-0 mb-1" name="" placeholder="'.pll__('Your first name').'" required/>
               <input type="email" class="form-control  mr-lg-3 mb-sm-0 mb-1" name="" placeholder="'.pll__('Your email').'" required/>
