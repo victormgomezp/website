@@ -35,7 +35,7 @@ class EventPostType extends BasePostType{
     public static function get($args){
         
         $args = array_merge($args,[
-            'post_type' => 'wvent'
+            'post_type' => 'event'
         ]);
         
         $query = new WP_Query($args);
@@ -194,7 +194,12 @@ class EventPostType extends BasePostType{
     }
     
     public static function getEventsFromAPI(){
-	    $eventsJSON = file_get_contents(BREATHECODE_ASSETS_HOST.'/apis/event/all?status=upcoming');
+        
+        $coordinates = '';
+        if(!empty($_GET['latitude']) && !empty($_GET['latitude']))
+            $coordinates = '&lat=' . $_GET['latitude'] . '&long=' . $_GET['longitude'];
+            
+	    $eventsJSON = file_get_contents(BREATHECODE_ASSETS_HOST.'/apis/event/all?status=upcoming'.$coordinates);
         if($eventsJSON)
         {
             $events = json_decode($eventsJSON);

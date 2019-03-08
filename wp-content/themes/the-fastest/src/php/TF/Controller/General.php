@@ -215,14 +215,6 @@ class General{
         return $args;
     }
 
-    private function getData(){
-        $args = [];
-        $args['testimonials'] = TestimonialPostType::All();
-        //$args['locations'] = LocationPostType::All();
-        $args['upcoming'] = CoursePostType::getNextCohort();
-        return $args;
-    }
-
     public function get_incoming_dates(){
         
         $cohorts = CoursePostType::getUpcomingDates();
@@ -326,6 +318,14 @@ class General{
         if(!empty($cohorts)) WPASController::ajaxSuccess($cohorts[0]);
         else WPASController::ajaxError('No upcoming dates');
         
+    }
+    
+    private function getData(){
+        $args = [];
+        $args['testimonials'] = TestimonialPostType::All();
+        //$args['locations'] = LocationPostType::All();
+        $args['upcoming'] = CoursePostType::getNextCohort();
+        return $args;
     }
     
     private function _getPrices($location, $course){

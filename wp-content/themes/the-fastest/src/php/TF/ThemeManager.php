@@ -47,11 +47,15 @@ class ThemeManager{
 		    $city = get_query_var('city');
 		    if(!empty($city)){
 		        if(empty($_GET['city_slug'])) $data['city_slug'] = $city;
-		        else $data['city_slug'] = $_GET['city_slug'];
+		        else $data['city_slug'] = strtolower($_GET['city_slug']);
 		    } 
 			
 			//if its not already set
 			if(isset($_GET['referral_key'])) $data['referral_key'] = $_GET['referral_key'];
+			if(isset($_GET['gclid'])) $data['gclid'] = $_GET['gclid'];
+			if(isset($_GET['utm_medium'])) $data['utm_medium'] = $_GET['utm_medium'];
+			if(isset($_GET['utm_campaign'])) $data['utm_campaign'] = $_GET['utm_medium'];
+			if(isset($_GET['utm_source'])) $data['utm_source'] = $_GET['utm_source'];
 			
 			return $data;
 		},10,2);

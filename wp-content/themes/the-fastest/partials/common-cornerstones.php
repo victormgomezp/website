@@ -12,7 +12,7 @@
                 <?php wpas_get_inline_svg('assets/icons/inline','datamaster.svg'); ?>
               </div>
               <div class="col-8">
-                <p><strong><?php pll_e('Master the coding fundamentals'); ?></strong><?php pll_e('and how to apply them to create web applications'); ?>.</p>
+                <p><strong><?php pll_e('Master the coding fundamentals'); ?> </strong><?php pll_e('and how to apply them to create web applications'); ?>.</p>
               </div>
             </div>
           </div>
