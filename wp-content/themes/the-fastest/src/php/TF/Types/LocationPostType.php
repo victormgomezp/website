@@ -87,7 +87,7 @@ class LocationPostType extends BasePostType{
         $query = new WP_Query($args);
 
         if($query->posts && count($query->posts)==1){
-            return $query->posts[0];
+            return self::fillMember($query->posts[0]);
         }else return null;
     }
     
@@ -144,6 +144,7 @@ class LocationPostType extends BasePostType{
             $l = (array) $object;
             $l['lat'] = floatval(get_field('location_latitude',$object->ID));
             $l['lon'] = floatval(get_field('location_longitude',$object->ID));
+            $l['bc_location_slug'] = get_field('bc_location_slug',$object->ID);
             $l['miles'] = self::_distance($l, [
                 "lat" => $latitude,
                 "lon" => $longitude
@@ -164,4 +165,5 @@ class LocationPostType extends BasePostType{
         $miles = $dist * 60 * 1.1515;
         return $miles;
     }
+    
 }

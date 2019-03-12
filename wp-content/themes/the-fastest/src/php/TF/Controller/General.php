@@ -214,6 +214,49 @@ class General{
         
         return $args;
     }
+    
+    public function renderCalendar(){
+
+        $args = [];
+        $args['locations'] = LocationPostType::all();
+        
+        if(!empty($_GET['type'])){
+            if($_GET['type']=='course'){
+                $args['selected_type'] = 'course';
+                $args['courses'] = CoursePostType::getUpcomingDates();
+            }
+            else{
+                $args['selected_type'] = $_GET['type'];
+                $args['events'] = EventPostType::getUpcomingEvents();
+            }
+        } 
+        else{
+            $args['selected_type'] = 'course';
+            $args['courses'] = CoursePostType::getUpcomingDates();
+        } 
+        
+        //if(!empty($_GET['type']) && $_GET['type']=='events') $args['events'] = EventPostType::getUpcomingEvents();
+        //$args['courses'] = CoursePostType::getUpcomingDates();
+        $args['current-location'] = $this->_getCurrentLocation();
+        $args['query'] = $this->_getCalendarQuery();
+        if(!empty($args['courses'])) $args['upcoming'] = $args['courses'][0];
+        else $args['upcoming'] = null;
+        return $args;
+    }
+    
+    private function _getCalendarQuery(){
+        
+        $query = [];
+        if(!empty($_GET['type']))
+        {
+            if($_GET['type'] != 'course') $query = EventPostType::getCalendarQuery();
+            else  $query = CoursePostType::getCalendarQuery();
+            $query['type'] = $_GET['type'];
+        }
+        else $query = CoursePostType::getCalendarQuery();
+        
+        return $query;
+    }
 
     private function getData(){
         $args = [];
@@ -363,7 +406,7 @@ class General{
         return null;
     }
     
-    public function _getCurrentLocation(){
+    private function _getCurrentLocation(){
         $this->fetchContent();
         $city = get_query_var('city');
         if(!empty($city)) return (array) LocationPostType::get([ "name" => $city]);
@@ -381,5 +424,4 @@ class General{
             $this->globalContext = wpas_get_global_context();
         } 
     }
-    
 }

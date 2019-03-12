@@ -98,8 +98,8 @@
 
     $controller->route([ 'slug' => 'Course', 'controller' => 'Course']);
     
-    $controller->route([ 'slug' => 'calendar', 'controller' => 'Calendar']);
-    $controller->route([ 'slug' => 'calendario', 'controller' => 'Calendar:renderCalendar']);
+    $controller->route([ 'slug' => 'calendar', 'controller' => 'General:renderCalendar']);
+    $controller->route([ 'slug' => 'calendario', 'controller' => 'General:renderCalendar']);
     
     $controller->route([ 'slug' => 'pricing', 'controller' => 'General']);
     $controller->route([ 'slug' => 'precio', 'controller' => 'General:renderPricing']);

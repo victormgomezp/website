@@ -171,7 +171,7 @@
                             </div>
                             <div class="media-right">
                                 <a href="<?php echo get_permalink( get_page_by_path( wpas_pll_get_slug('apply') ) ); ?>" class='btn btn-danger p-1 apply-btn'><?php pll_e('Apply now'); ?></a>
-                                <p>or <a href="<?php echo get_permalink( get_page_by_path( wpas_pll_get_slug('calendar') ) ); ?>?type=course"><?php pll_e('review other dates'); ?></a></p>
+                                <p>or <a href="<?php echo get_permalink( get_page_by_path( wpas_pll_get_slug('calendar') ) ); ?>?type=course&l=<?php echo $args['current-location']['bc_location_slug']; ?>"><?php pll_e('review other dates'); ?></a></p>
                             </div>
                         </div>
                         <?php } else { ?>
@@ -180,7 +180,7 @@
                                 <h4 class='mt-0 mt-sm-1 mt-md-0'><?php echo (!empty($args['upcoming-message']) && !empty($args['upcoming-message']["message"])) ? $args['upcoming-message']["message"] : pll__('No scheduled dates for this course'); ?></h4>
                             </div>
                             <div class="media-right">
-                                <a href="<?php echo get_permalink( get_page_by_path( wpas_pll_get_slug('calendar') ) ); ?>?type=course" class='btn btn-danger mt-1 apply-btn'><?php echo (!empty($args['upcoming-message']) && !empty($args['upcoming-message']["btn-message"])) ? $args['upcoming-message']["btn-message"] : pll__('Review other courses'); ?></a>
+                                <a href="<?php echo get_permalink( get_page_by_path( wpas_pll_get_slug('calendar') ) ); ?>?type=course&l=<?php echo $args['current-location']['bc_location_slug']; ?>" class='btn btn-danger mt-1 apply-btn'><?php echo (!empty($args['upcoming-message']) && !empty($args['upcoming-message']["btn-message"])) ? $args['upcoming-message']["btn-message"] : pll__('Review other courses'); ?></a>
                             </div>
                         </div>
                         <?php } ?>
