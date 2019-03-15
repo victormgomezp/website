@@ -19,6 +19,7 @@ footer{
     .contact-selector{
         &.dropdown-selector .dropdown-toggle, .dropdown-menu.show .dropdown-item{
             font-size: 13px !important;
+            cursor: inherit;
             text-align: left;
         }
         .dropdown-item:hover{
@@ -26,6 +27,7 @@ footer{
         }
         .dropdown-menu{
             padding: 0;
+            z-index: 1031;
         }
     }
     .bitcoin{height: 30px;}

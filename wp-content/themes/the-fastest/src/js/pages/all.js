@@ -197,7 +197,9 @@ $(document).ready(function() {
       method: 'POST',
       data: {
          action: 'get_upcoming_event',
-         type: 'intro_to_coding'
+         type: 'intro_to_coding',
+         latitude: WPAS_APP.latitude,
+         longitude: WPAS_APP.longitude
       },
       success: function(response){
          if(response)

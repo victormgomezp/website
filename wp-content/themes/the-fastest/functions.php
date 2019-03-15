@@ -179,5 +179,7 @@
         'languages-directory' => ABSPATH.'wp-content/themes/the-fastest/src/php/languages/'
     ]);
     
+    $vcSettings = new TF\VCSettings();
+    
     use WPAS\Messaging\WPASAdminNotifier;
     WPASAdminNotifier::loadTransientMessages();
