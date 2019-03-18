@@ -54,7 +54,7 @@ class ThemeManager{
 			if(isset($_GET['referral_key'])) $data['referral_key'] = $_GET['referral_key'];
 			if(isset($_GET['gclid'])) $data['gclid'] = $_GET['gclid'];
 			if(isset($_GET['utm_medium'])) $data['utm_medium'] = $_GET['utm_medium'];
-			if(isset($_GET['utm_campaign'])) $data['utm_campaign'] = $_GET['utm_medium'];
+			if(isset($_GET['utm_campaign'])) $data['utm_campaign'] = $_GET['utm_campaign'];
 			if(isset($_GET['utm_source'])) $data['utm_source'] = $_GET['utm_source'];
 			
 			return $data;

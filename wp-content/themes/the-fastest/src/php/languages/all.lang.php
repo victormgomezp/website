@@ -55,7 +55,7 @@ return array(
         "Learn more about our prices" => "Learn more about our prices",
         "We accept the best talent no matter their income: Long term financing, scholarships or deferred tuition options available" => "We accept the best talent no matter their income: Long term financing, scholarships or deferred tuition options available",
         
-//The program        
+//The courses        
         "Program details" => "Program details",
         "It takes just" => "It takes just",
         "weeks in" => "weeks in",
