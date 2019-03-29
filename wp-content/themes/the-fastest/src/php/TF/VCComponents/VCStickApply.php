@@ -2,9 +2,14 @@
 
 namespace TF\VCComponents;
 
-class VCRequestSyllabus{
+use TF\Types\CoursePostType;
+use TF\Types\EventPostType;
+use TF\Types\LocationPostType;
+
+class VCStickApply{
     
     const BASE_NAME = 'stick-apply';
+    var $globalContext = null;
     
     function __construct(){
         add_action( 'vc_before_init', array($this,'register'));
@@ -18,6 +23,14 @@ class VCRequestSyllabus{
 	      "base" => self::BASE_NAME,
 	      "category" => "BreatheCode",
 	      "params" => array(
+                  array(
+    	            "type" => "dropdown",
+    	            "heading" => "Position",
+    	            "param_name" => "position",
+    	            "value" => array('top' => 'top',
+    	                            'down' => 'down'),
+    	            "description" => "Stick Apply position"
+    	         ),
                 array(
                     "type" => "textfield",
                     "holder" => "div",
@@ -38,28 +51,47 @@ class VCRequestSyllabus{
 	   ) );
     }
     
+    private function getNextCohort(){
+        $cohorts = CoursePostType::getUpcomingDates();
+        if(!empty($cohorts)) return $cohorts[0];
+        else return null;
+    }
+    
+    private function fetchContent(){
+        if(!$this->globalContext){
+            $this->globalContext = wpas_get_global_context();
+        } 
+    }
+    
+    private function _getCurrentLocation(){
+    $this->fetchContent();
+    $city = get_query_var('city');
+    if(!empty($city)) return (array) LocationPostType::get([ "name" => $city]);
+    else if(!empty($_GET['city_slug'])) return (array) LocationPostType::get([ "name" => $_GET['city_slug']]);
+    else if(!empty($this->globalContext['city_slug'])) return (array) LocationPostType::get([ "name" => $this->globalContext['city_slug']]);
+    else if(!empty($this->globalContext['latitude']) and !empty($this->globalContext['longitude'])){
+        $loc = LocationPostType::nearest($this->globalContext['latitude'], $this->globalContext['longitude']);
+        if($loc) return $loc;
+        }
+    return (array) LocationPostType::get([ "p" => $this->defaultLocation ]);
+    }
+    
 	function render( $atts , $content = null) {
+	    $upComingEvent = $this->getNextCohort();
+	    $currentLocation = $this->_getCurrentLocation();
 	    extract( shortcode_atts( array(
 	      'classnames' => '',
 	      'extrastyles' => '',
+	      'position' => 'down',
 	   ), $atts ) );
-	   return '
-            <h4>'.pll__('Download our syllabus PDF to get all the details').'</h4>
-             <form style="'.$extrastyles.'" class="form-inline text-center syllabus-download '.$classnames.'">
-              <div class="alert alert-danger" style=" width: 100%; display: none;" role="alert"></div>
-              <input type="text" class="form-control mr-lg-3 mb-sm-0 mb-1" name="" placeholder="'.pll__('Your first name').'" required/>
-              <input type="email" class="form-control  mr-lg-3 mb-sm-0 mb-1" name="" placeholder="'.pll__('Your email').'" required/>
-              <select class="locations form-control"><option value="undefined">'.pll__('Select a location').'</option></select>
-              <button class="btn btn-secondary form-control ml-lg-3 mt-sm-0 mt-1">'.pll__('Download').'</a>
-            </form>';
-            
-            
-        <div class="footer-bar fixed-bottom">
+
+        $content = '
+        <div class="footer-bar '.$classnames.'" '.(($position== "top") ? 'style="top: 0;"':'style="bottom: 0;"').'>
             <div class="container">
                 <div class="row">
-                    <div class="col-12 col-sm-10 col-md-12 col-lg-9 mx-auto px-0">
-                        <?php if(!empty($args['upcoming'])){ ?>
-                        <div class="media">
+                    <div class="col-12 col-sm-10 col-md-12 col-lg-9 mx-auto px-0">';
+                        if(!empty($upComingEvent )){
+                        $content.='<div class="media">
                             <div class="media-left">
                                 
                                 <!-- Generator: Adobe Illustrator 19.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
@@ -87,8 +119,8 @@ class VCRequestSyllabus{
                                 	<stop  offset="1" style="stop-color:#000000;stop-opacity:0"/>
                                 </linearGradient>
                                 <g>
-                                <text x="130" y="330" style="font-weight: bold; font-size: 200px;" fill="#303C42"><?php echo $args['upcoming']['day']; ?></text>
-                                <text x="140" y="420" style="font-weight: bold; font-size: 95px;" fill="#303C42"><?php echo $args['upcoming']['month']; ?></text>
+                                <text x="130" y="330" style="font-weight: bold; font-size: 200px;" fill="#303C42">'.$upComingEvent ['day'].'</text>
+                                <text x="140" y="420" style="font-weight: bold; font-size: 95px;" fill="#303C42">'.$upComingEvent ['month'].'</text>
                                 </g><path style="fill:url(#SVGID_2_);" d="M469.333,85.333c0-23.531-19.146-42.667-42.667-42.667h-64v-32C362.667,4.771,357.896,0,352,0
                                 	c-5.896,0-10.667,4.771-10.667,10.667v32h-192v-32C149.333,4.771,144.563,0,138.667,0S128,4.771,128,10.667v32H42.667
                                 	C19.146,42.667,0,61.802,0,85.333v341.333c0,23.531,19.146,42.667,42.667,42.667h309.313v-0.004l0.021,0.004
@@ -96,27 +128,27 @@ class VCRequestSyllabus{
                                 </g></svg>
                             </div>
                             <div class="media-body pl-0 pl-sm-2">
-                                <h4 class='mt-0 mt-sm-1'><?php pll_e('Next cohort starts on'); ?> <?php echo $args['upcoming']['date']; ?></h4>
-                                <h5 class=""><?php echo $args['upcoming']['name']; ?></h5>
+                                <h4 class="mt-0 mt-sm-1">'.pll_e('Next cohort starts on').' '.$upComingEvent ['date'].'</h4>
+                                <h5 class="">'.$upComingEvent ['name'].'</h5>
                             </div>
                             <div class="media-right">
-                                <a href="<?php echo get_permalink( get_page_by_path( wpas_pll_get_slug('apply') ) ); ?>" class='btn btn-danger p-1 apply-btn'><?php pll_e('Apply now'); ?></a>
-                                <p>or <a href="<?php echo get_permalink( get_page_by_path( wpas_pll_get_slug('calendar') ) ); ?>?type=course&l=<?php echo $args['current-location']['bc_location_slug']; ?>"><?php pll_e('review other dates'); ?></a></p>
+                                <a href="'.get_permalink( get_page_by_path( wpas_pll_get_slug("apply") ) ).'" class="btn btn-danger p-1 apply-btn">'.pll_e("Apply now").'</a>
+                                <p>or <a href="'.get_permalink( get_page_by_path( wpas_pll_get_slug('calendar') ) ).'?type=course&l='.$currentLocation["bc_location_slug"].'">'.pll_e("review other dates").'</a></p>
                             </div>
-                        </div>
-                        <?php } else { ?>
-                        <div class="media">
+                        </div>';
+                        } else {
+                        $content.= '<div class="media">
                             <div class="media-body pl-0 pl-sm-2 mt-sm-1">
-                                <h4 class='mt-0 mt-sm-1 mt-md-0'><?php echo (!empty($args['upcoming-message']) && !empty($args['upcoming-message']["message"])) ? $args['upcoming-message']["message"] : pll__('No scheduled dates for this course'); ?></h4>
+                                <h4 class="mt-0 mt-sm-1 mt-md-0">'.(!empty($args["upcoming-message"]) && !empty($args["upcoming-message"]["message"])) ? $args['upcoming-message']["message"] : pll__('No scheduled dates for this course').'</h4>
                             </div>
                             <div class="media-right">
-                                <a href="<?php echo get_permalink( get_page_by_path( wpas_pll_get_slug('calendar') ) ); ?>?type=course&l=<?php echo $args['current-location']['bc_location_slug']; ?>" class='btn btn-danger mt-1 apply-btn'><?php echo (!empty($args['upcoming-message']) && !empty($args['upcoming-message']["btn-message"])) ? $args['upcoming-message']["btn-message"] : pll__('Review other courses'); ?></a>
+                                <a href="'.get_permalink( get_page_by_path( wpas_pll_get_slug('calendar') ) ).'?type=course&l='.$args["current-location"]["bc_location_slug"].'" class="btn btn-danger mt-1 apply-btn">'.(!empty($args['upcoming-message']) && !empty($args['upcoming-message']["btn-message"])) ? $args['upcoming-message']["btn-message"] : pll__('Review other courses').'</a>
                             </div>
                         </div>
-                        <?php } ?>
                     </div>
                 </div>
             </div>
-        </div>
+        </div>';}
+            return $content;
 	}
 }

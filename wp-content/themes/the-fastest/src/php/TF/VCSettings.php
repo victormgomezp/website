@@ -7,6 +7,7 @@ use TF\VCComponents\VCTestimonialCarousel;
 use TF\VCComponents\VCTechnologiesChart;
 use TF\VCComponents\VCUpcomingPrograms;
 use TF\VCComponents\VCAboutTheProgram;
+use TF\VCComponents\VCStickApply;
 use WPAS\Messaging\WPASAdminNotifier;
 
 class VCSettings {
@@ -21,6 +22,9 @@ class VCSettings {
 			$technologiasChart = new VCTechnologiesChart();
 			$upcomingPrograms = new VCUpcomingPrograms();
 			$about = new VCAboutTheProgram();
+			$stickApply = new VCStickApply();
+			
+			
 		}
 		catch(\Exception $e)
 		{

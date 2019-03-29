@@ -5,6 +5,7 @@ namespace TF\Controller;
 use WPAS\Exception\WPASException;
 use TF\Types\PostPostType;
 use TF\Types\CoursePostType;
+use TF\Types\EventPostType;
 use \WP_Query;
 
 class Blog{
