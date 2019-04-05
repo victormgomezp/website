@@ -23,14 +23,14 @@ class VCStickApply{
 	      "base" => self::BASE_NAME,
 	      "category" => "BreatheCode",
 	      "params" => array(
-                  array(
-    	            "type" => "dropdown",
-    	            "heading" => "Position",
-    	            "param_name" => "position",
-    	            "value" => array('top' => 'top',
-    	                            'down' => 'down'),
-    	            "description" => "Stick Apply position"
-    	         ),
+	            array(
+                    "type" => "textfield",
+                    "holder" => "div",
+                    "heading" => "Position",
+                    "param_name" => "position",
+                    "value" => "",
+                    "description" => "Parameter 'Top' and 'Bottom'"
+                ),
                 array(
                     "type" => "textfield",
                     "holder" => "div",
@@ -82,11 +82,12 @@ class VCStickApply{
 	    extract( shortcode_atts( array(
 	      'classnames' => '',
 	      'extrastyles' => '',
-	      'position' => 'down',
+	      'position' => '',
 	   ), $atts ) );
 
         $content = '
-        <div class="footer-bar '.$classnames.'" '.(($position== "top") ? 'style="top: 0;"':'style="bottom: 0;"').'>
+        
+        <div class="footer-bar '.(($position== "Top") ?'fixed-top ' : 'fixed-bottom ') .$classnames.'" style="display: block;">
             <div class="container">
                 <div class="row">
                     <div class="col-12 col-sm-10 col-md-12 col-lg-9 mx-auto px-0">';
@@ -128,12 +129,12 @@ class VCStickApply{
                                 </g></svg>
                             </div>
                             <div class="media-body pl-0 pl-sm-2">
-                                <h4 class="mt-0 mt-sm-1">'.pll_e('Next cohort starts on').' '.$upComingEvent ['date'].'</h4>
+                                <h4 class="mt-0 mt-sm-1">'.pll__("Next cohort starts on ").$upComingEvent ['date'].'</h4>
                                 <h5 class="">'.$upComingEvent ['name'].'</h5>
                             </div>
                             <div class="media-right">
-                                <a href="'.get_permalink( get_page_by_path( wpas_pll_get_slug("apply") ) ).'" class="btn btn-danger p-1 apply-btn">'.pll_e("Apply now").'</a>
-                                <p>or <a href="'.get_permalink( get_page_by_path( wpas_pll_get_slug('calendar') ) ).'?type=course&l='.$currentLocation["bc_location_slug"].'">'.pll_e("review other dates").'</a></p>
+                                <a href="'.get_permalink( get_page_by_path( wpas_pll_get_slug("apply") ) ).'" class="btn btn-danger p-1 apply-btn">'.pll__("Apply now").'</a>
+                                <p>or <a href="'.get_permalink( get_page_by_path( wpas_pll_get_slug('calendar') ) ).'?type=course&l='.$currentLocation["bc_location_slug"].'">'.pll__("review other dates").'</a></p>
                             </div>
                         </div>';
                         } else {
