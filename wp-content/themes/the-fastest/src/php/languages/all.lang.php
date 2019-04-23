@@ -187,7 +187,7 @@ return array(
     	"Pay up-front now with no extra or hidden fees" => 'Pay upufront now with no extra or hidden fees',
     	"Any questions on the financing or extended payment?" => "Any questions on the financing or extended payment?",
     	"Click here to review our Payment Guidebook" => "Click here to review our Payment Guidebook",
-    	'Thanks to our partnership with Skillfund we have managed to create a new special payment plant <strong>starting at $135/mo</strong>' => 'Thanks to our partnership with Skillfund we have managed to create a new special payment plant <strong>starting at $135/mo</strong>',
+    	'Thanks to our partnership with Skills Fund we have managed to create a new special payment plant <strong>starting at $135/mo</strong>' => 'Thanks to our partnership with Skills Fund we have managed to create a new special payment plant <strong>starting at $135/mo</strong>',
 
 //	The Academy
         "Enabling future and current software builders to adapt to the needs of the real world" => "Enabling future and current software builders to adapt to the needs of the real world",
