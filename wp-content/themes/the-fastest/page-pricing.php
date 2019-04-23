@@ -42,7 +42,7 @@ $args = wpas_get_view_data();
         <div class="row">
           <div class="col-sm-8 mx-auto text-center">
             <h4><?php pll_e('Any questions on the financing or extended payment?'); ?></h4> 
-            <h5><a id="financing_guide_download" href='<?php echo content_url(); ?>/uploads/2017/10/4GA-Payment-Guidebook.pdf'><?php pll_e('Click here to review our Payment Guidebook'); ?>.</a></h5>
+            <h5><a id="financing_guide_download" href='<?php echo content_url(); ?>/uploads/2017/10/4GA-Payment-Guidebook-2.pdf'><?php pll_e('Click here to review our Payment Guidebook'); ?>.</a></h5>
           </div>
         </div>
       </div>
