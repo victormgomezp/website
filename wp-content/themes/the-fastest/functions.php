@@ -122,7 +122,7 @@
     $controller->routeAjax([ 'slug' => 'all', 'controller' => 'General:newsletter_signup', 'scope' => 'public' ]);
     $controller->routeAjax([ 'slug' => 'all', 'controller' => 'General:download_syllabus', 'scope' => 'public' ]);
     $controller->routeAjax([ 'slug' => 'all', 'controller' => 'General:get_upcoming_event', 'scope' => 'public' ]);
-    //$controller->routeAjax([ 'slug' => 'apply', 'controller' => 'General:get_incoming_dates' ]);
+    $controller->routeAjax([ 'slug' => 'apply', 'controller' => 'General:get_incoming_dates' ]);
     
     use \WPAS\Controller\WPASAPIController;
     $api = new WPASAPIController([
@@ -157,8 +157,8 @@
     $postTypeManager->newType(['type'=>'landing', 'class' => 'LandingPostType'])->register();
     $postTypeManager->newType(['type'=>'partner', 'class' => 'PartnerPostType'])->register();
     
-    use TF\ActiveCampaign\ACAPI;
-    ACAPI::start();
+    // use TF\ActiveCampaign\ACAPI;
+    // ACAPI::start();
     
     use WPAS\GravityForm\WPASGravityForm;
     if ( class_exists( 'GFCommon' ) )

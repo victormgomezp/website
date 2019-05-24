@@ -69,12 +69,16 @@ class ACAPI{
         $args['global_fields'] = 1;
         $args['full'] = 1;
         
-        $list = (array) self::$connector['old']->api("list/list", $args);
-        $list = array_shift($list);
-        $courseField = self::findField($list->fields,$slug);
+        if(isset(self::$connector['old'])){
+            $list = (array) self::$connector['old']->api("list/list", $args);
+            $list = array_shift($list);
+            $courseField = self::findField($list->fields,$slug);
+            
+            if(!$courseField) throw new \Exception('Unable to find custom field: '.$slug);
+            return $courseField;
+        }
         
-        if(!$courseField) throw new \Exception('Unable to find custom field: '.$slug);
-        return $courseField;
+        return null;
     }
     
     private static function findField($fields, $slug){
