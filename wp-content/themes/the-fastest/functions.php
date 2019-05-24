@@ -157,8 +157,8 @@
     $postTypeManager->newType(['type'=>'landing', 'class' => 'LandingPostType'])->register();
     $postTypeManager->newType(['type'=>'partner', 'class' => 'PartnerPostType'])->register();
     
-    // use TF\ActiveCampaign\ACAPI;
-    // ACAPI::start();
+    use TF\ActiveCampaign\ACAPI;
+    ACAPI::start();
     
     use WPAS\GravityForm\WPASGravityForm;
     if ( class_exists( 'GFCommon' ) )

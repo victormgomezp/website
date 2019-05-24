@@ -9,9 +9,9 @@ class ACAPI{
     
     public static function start(){
         
-        $apiOldURL = 'https://4geeks.api-us1.com';
-        $apiURL = 'https://4geeks.api-us1.com/api/3/';
-        $apiKey = "30f9f6fe16d0c589445290af8c87fd7658500c700eda21ad8a232103d0037486c57e7a7d";
+        $apiOldURL = ACTIVE_CAMPAIGN_SERVER;
+        $apiURL = "$apiOldURL/api/3/";
+        $apiKey = ACTIVE_CAMPAIGN_KEY;
         
         if(empty(self::$connector['new'])) self::$connector['new'] = new Connector($apiURL, $apiKey);
         if(empty(self::$connector['old'])) self::$connector['old'] = new \ActiveCampaign($apiOldURL, $apiKey);
