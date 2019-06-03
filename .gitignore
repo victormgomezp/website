@@ -3,7 +3,7 @@
 # http://ironco.de/bare-minimum-git/
 # ver 20150227
 #
-# This file is tailored for a WordPress project 
+# This file is tailored for a WordPress project
 # using the default directory structure
 #
 # This file specifies intentionally untracked files to ignore
@@ -106,6 +106,7 @@ node_modules/
 !webpack.production.js
 !webpack.development.js
 !hooks/
+!gitpod_config/
 !*.lock
 !webpack.dev.js
 !webpack.prod.js
