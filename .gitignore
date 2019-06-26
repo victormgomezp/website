@@ -112,6 +112,7 @@ node_modules/
 !webpack.dev.js
 !webpack.prod.js
 !.env.example
+!.htaccess.example
 
 .env
 !install.sh
