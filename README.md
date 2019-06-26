@@ -2,24 +2,28 @@
 
 ## Installing the LMS
 
-0) **Clone this repository and get into the website2 directory**
+1) **Clone this repository and get into the website2 directory**
 ```sh
 $ git clone git@github.com:4GeeksAcademy/website.git
 $ cd website
 ```
 
-1) **Install WP-CLI by going to the following website: [http://wp-cli.org](http://wp-cli.org/#installing)**
+2) Update the .env file
 
-    Note: Here you can find [all wp commands](https://developer.wordpress.org/cli/commands/)
-
-2) **Dowload wordpress latest version**
 ```sh
-$ wp core download
+export DB_USER="root"
+export DB_NAME="wordpress"
+export DB_PASS=""
+export SITE_NAME="My 4Geeks Super Site"
+export SITE_URL="$(gp url 8080)"
+export SITE_USER="gitpod"
+export SITE_PASS="12341234"
+export SITE_EMAIL="my@email.com"
 ```
 
-3) **Generate configuration file (wp-config.php)
+2) Run install bash script
 ```sh
-$ wp core config --dbname={yourdatabase} --dbuser={yourusername} --dbpass={YOUR DATABASE PASSWORD}
+$ sh install.sh
 ```
 
 4) Include these new variables into your configuration file:
@@ -71,11 +75,11 @@ $ npm run build:dev
 ### You can run the unit testing  like this:
 ```
 ./vendor/bin/phpunit wp-content/themes/the-fastest/tests/ --colors
-``` 
+```
 ## The Application Uses the following plugins
 
 These are all the mandatory plugins for the wordpress instalation (any other plugin is not really mandatory)
-    
+
 | Included Via      | Plugin        |
 | -                 | -             |
 | composer install  | [polylang](https://wordpress.org/plugins/polylang/)     |
@@ -94,7 +98,7 @@ These are all the mandatory plugins for the wordpress instalation (any other plu
 
 2. Gravity Forms: This plugin handles most of the interactions with the user. We use the "User Registration add-on" to implement the sign-up functionality. All the other forms are heavily integrated as weel, each of the Gravity Forms takes care of a very particular but important data imput from the user.
 
-3. VC Comporser: This plugin is the reason for the platform being on wordpress, the idea is to create many components to help the content team create better courses. Components like: Replit Exercise, Quizz, Regex Parser, etc. 
+3. VC Comporser: This plugin is the reason for the platform being on wordpress, the idea is to create many components to help the content team create better courses. Components like: Replit Exercise, Quizz, Regex Parser, etc.
 
 
 ## Author
@@ -116,12 +120,12 @@ These are all the mandatory plugins for the wordpress instalation (any other plu
 - Pricing
 - Students
 - Proyects
-- 
+-
 8:00 yoga including starthub members??
 8:45 am: Setup and coffee
 9 am to 9:55 am: Review last day & weekend activities, Q&A. and brief overall of what we have addressed;
 9:55 am to 10:00 am: Coffee break and bathroom
-10:00 am to 12:30 pm: Lesson time. With new content, 
+10:00 am to 12:30 pm: Lesson time. With new content,
 12:40 pm to 1:50 pm: Lunch Time;
 2:00 pm to 4:00 pm: Project/exercises. Students must build and complete exercises in classes;
 5:00 pm to 6:30 pm: New content. Normally about the same technology or topic addressed in the morning.
