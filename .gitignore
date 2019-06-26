@@ -114,3 +114,4 @@ node_modules/
 !.env.example
 
 .env
+!install.sh
