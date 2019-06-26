@@ -12,7 +12,11 @@ pid-file	= /var/run/mysqld/mysqld.pid
 socket		= /var/run/mysqld/mysqld.sock
 port		= 3306
 basedir		= /usr
+<<<<<<< HEAD
 datadir		= /workspace/website/gitpod_config/mysql/data
+=======
+datadir		= ${GITPOD_REPO_ROOT}/gitpod_config/mysql/data
+>>>>>>> c4d48a70a66476a6a550e62f75c7043bce85e8cb
 tmpdir		= /tmp
 lc-messages-dir	= /usr/share/mysql
 skip-external-locking
@@ -27,9 +31,15 @@ myisam-recover-options  = BACKUP
 query_cache_limit	    = 1M
 query_cache_size        = 16M
 
+<<<<<<< HEAD
 general_log_file        = /workspace/website/gitpod_config/mysql/logs/mysql.log
 general_log             = 1
 log_error               = /workspace/website/gitpod_config/mysql/logs/error.log
+=======
+general_log_file        = ${GITPOD_REPO_ROOT}/gitpod_config/mysql/logs/mysql.log
+general_log             = 1
+log_error               = ${GITPOD_REPO_ROOT}/gitpod_config/mysql/logs/error.log
+>>>>>>> c4d48a70a66476a6a550e62f75c7043bce85e8cb
 
 expire_logs_days	= 10
 max_binlog_size     = 100M
