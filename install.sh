@@ -99,6 +99,13 @@ fi
 wp core config --dbname=$DB_NAME --dbuser=$DB_USER --dbpass=$DB_PASS --extra-php <<PHP
 define( 'WP_DEBUG', true );
 define( 'DISALLOW_FILE_EDIT', true );
+
+define('BREATHECODE_API_HOST', 'https://api.breatheco.de');
+define('BREATHECODE_ASSETS_HOST', 'https://assets.breatheco.de');
+
+define('WP_DEBUG_LOG', false);
+define('WP_ASYNC_LOADING', false);
+define('UGLIFY_HTML', false);
 PHP
 
 echo ""
@@ -112,7 +119,7 @@ fi
 
 # parse the current directory name
 wp core install --url="$SITE_URL" --title="$SITE_NAME" --admin_user="$SITE_USER" --admin_password="$SITE_PASS" --admin_email="$SITE_EMAIL"
-
+#wp theme activate the-fastest
 echo "================================================================="
 print_info "Installation is complete."
 echo "================================================================="

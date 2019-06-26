@@ -175,9 +175,13 @@
 
     }
 
-    $gfManager = new WPAS\Language\WPASLanguages([
-        'languages-directory' => ABSPATH.'wp-content/themes/the-fastest/src/php/languages/'
-    ]);
+    use WPAS\Language\WPASLanguages;
+    if ( class_exists( 'WPASLanguages' ) )
+    {
+        $gfManager = new WPASLanguages([
+            'languages-directory' => ABSPATH.'wp-content/themes/the-fastest/src/php/languages/'
+        ]);
+    }
 
     $vcSettings = new TF\VCSettings();
 
