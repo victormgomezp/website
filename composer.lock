@@ -1,10 +1,10 @@
 {
     "_readme": [
         "This file locks the dependencies of your project to a known state",
-        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "7f777f4cd4c12f201f733018caf1a0c6",
+    "content-hash": "610601e50cda9cd5f48f0593a051aaae",
     "packages": [
         {
             "name": "alesanchezr/vc_dash_components",
@@ -52,7 +52,7 @@
                 "source": "https://github.com/alesanchezr/vc_dash_components/tree/master",
                 "issues": "https://github.com/alesanchezr/vc_dash_components/issues"
             },
-            "time": "2018-02-27 23:15:06"
+            "time": "2018-02-27T23:15:06+00:00"
         },
         {
             "name": "alesanchezr/wpas-wordpress-dash",
@@ -104,7 +104,7 @@
                 "source": "https://github.com/alesanchezr/wpas-wordpress-dash/tree/master",
                 "issues": "https://github.com/alesanchezr/wpas-wordpress-dash/issues"
             },
-            "time": "2019-01-18 01:20:00"
+            "time": "2019-01-18T01:20:00+00:00"
         },
         {
             "name": "composer/installers",
@@ -998,6 +998,26 @@
             "homepage": "https://wordpress.org/plugins/amp/"
         },
         {
+            "name": "wpackagist-plugin/classic-editor",
+            "version": "1.5",
+            "source": {
+                "type": "svn",
+                "url": "https://plugins.svn.wordpress.org/classic-editor/",
+                "reference": "tags/1.5"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://downloads.wordpress.org/plugin/classic-editor.1.5.zip",
+                "reference": null,
+                "shasum": null
+            },
+            "require": {
+                "composer/installers": "~1.0"
+            },
+            "type": "wordpress-plugin",
+            "homepage": "https://wordpress.org/plugins/classic-editor/"
+        },
+        {
             "name": "wpackagist-plugin/duplicate-post",
             "version": "3.2.2",
             "source": {
@@ -1076,26 +1096,6 @@
             },
             "type": "wordpress-plugin",
             "homepage": "https://wordpress.org/plugins/fb-instant-articles/"
-        },
-        {
-            "name": "wpackagist-plugin/ip2location-redirection",
-            "version": "1.13.10",
-            "source": {
-                "type": "svn",
-                "url": "https://plugins.svn.wordpress.org/ip2location-redirection/",
-                "reference": "tags/1.13.10"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/ip2location-redirection.1.13.10.zip",
-                "reference": null,
-                "shasum": null
-            },
-            "require": {
-                "composer/installers": "~1.0"
-            },
-            "type": "wordpress-plugin",
-            "homepage": "https://wordpress.org/plugins/ip2location-redirection/"
         },
         {
             "name": "wpackagist-plugin/polylang",
@@ -2961,6 +2961,26 @@
             },
             "type": "wordpress-plugin",
             "homepage": "https://wordpress.org/plugins/debug-bar/"
+        },
+        {
+            "name": "wpackagist-plugin/ip2location-redirection",
+            "version": "1.13.10",
+            "source": {
+                "type": "svn",
+                "url": "https://plugins.svn.wordpress.org/ip2location-redirection/",
+                "reference": "tags/1.13.10"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://downloads.wordpress.org/plugin/ip2location-redirection.1.13.10.zip",
+                "reference": null,
+                "shasum": null
+            },
+            "require": {
+                "composer/installers": "~1.0"
+            },
+            "type": "wordpress-plugin",
+            "homepage": "https://wordpress.org/plugins/ip2location-redirection/"
         },
         {
             "name": "wpackagist-plugin/query-monitor",

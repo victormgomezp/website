@@ -15,6 +15,7 @@ class ThemeManager{
             ini_set('display_errors', false);
             error_reporting(0);
         }
+        else error_reporting(E_ERROR | E_PARSE);
         
         add_action( 'after_setup_theme', [$this,'register_menus'], 10 );
         add_filter( 'walker_nav_menu_start_el', [$this,'prefix_nav_description'], 10, 4 );
@@ -105,17 +106,20 @@ class ThemeManager{
         if (empty($value) or (isset($_GET['debug']) and $_GET['debug'] == 'true')) {
             /** @var array|WP_Error $response */
             if(defined('WP_DEBUG_CONTEXT') && WP_DEBUG_CONTEXT) self::logOnTopBar("Retreving IP info...");
-            $response = wp_remote_get( 'http://api.ipstack.com/'.$ip.'?access_key='.IPSTACK_KEY );
-            if ( is_array( $response ) && ! is_wp_error( $response ) ) {
-                $headers = $response['headers']; // array of http header lines
-                $result = (array) json_decode($response['body']); // use the content
-                if($result){
-                    set_transient( 'geolocalization_info_'.$ip, array_merge($result, $defaults), 60*60*12 ); # 12 hours  
-                    $value = $result;
-                } 
+            if(defined('IPSTACK_KEY') && !empty(IPSTACK_KEY)){
+                //print_r('fetching ipstack'); die();
+                $response = wp_remote_get( 'http://api.ipstack.com/'.$ip.'?access_key='.IPSTACK_KEY );
+                if ( is_array( $response ) && ! is_wp_error( $response ) ) {
+                    $headers = $response['headers']; // array of http header lines
+                    $result = (array) json_decode($response['body']); // use the content
+                    if($result){
+                        set_transient( 'geolocalization_info_'.$ip, array_merge($result, $defaults), 60*60*12 ); # 12 hours  
+                        $value = $result;
+                    } 
+                    else $value = null;
+                }
                 else $value = null;
             }
-            else $value = null;
              // this code runs when there is no valid transient set
         }
         

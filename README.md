@@ -37,6 +37,10 @@ define('WP_DEBUG_LOG', false);
 define('WP_ASYNC_LOADING', false);
 define('UGLIFY_HTML', false);
 
+define('IPSTACK_KEY', '');
+define('ACTIVE_CAMPAIGN_SERVER', '');
+define('ACTIVE_CAMPAIGN_KEY', '');
+
 define('WP_HOME','https://yourdomain.com');
 define('WP_SITEURL','https://yourdomain.com');
 ```

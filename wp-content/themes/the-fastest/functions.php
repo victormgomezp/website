@@ -14,9 +14,8 @@
 
     use WPAS\Performance\WPASAsyncLoader;
     $publicPath = get_stylesheet_directory_uri();
-    //print_r($publicPath); die();
     $asyncLoader = new WPASAsyncLoader([
-        //'manifest-url' => $publicPath.'/public/manifest.json',
+        'internal-url' => get_stylesheet_directory().'/public/',
         'public-url' => $publicPath.'/public/',
         'debug' => !WP_ASYNC_LOADING,
         'force-jquery' => true,
@@ -158,7 +157,10 @@
     $postTypeManager->newType(['type'=>'partner', 'class' => 'PartnerPostType'])->register();
 
     use TF\ActiveCampaign\ACAPI;
-    ACAPI::start();
+    if(defined('ACTIVE_CAMPAIGN_SERVER') && defined('ACTIVE_CAMPAIGN_KEY') && !empty(ACTIVE_CAMPAIGN_SERVER) && !empty(ACTIVE_CAMPAIGN_KEY)){
+        //print_r("Loading active campaign..."); die();
+        ACAPI::start();
+    }
 
     use WPAS\GravityForm\WPASGravityForm;
     if ( class_exists( 'GFCommon' ) )
@@ -176,7 +178,7 @@
     }
 
     use WPAS\Language\WPASLanguages;
-    if ( class_exists( 'WPASLanguages' ) )
+    if ( class_exists( 'WPAS\Language\WPASLanguages' ) )
     {
         $gfManager = new WPASLanguages([
             'languages-directory' => ABSPATH.'wp-content/themes/the-fastest/src/php/languages/'

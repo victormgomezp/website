@@ -44,7 +44,7 @@ return array(
                     "es" => "Gracias a nuestro partnership con Climb hemos podido crear un plan especial de financiamiento empezando en $135/mes"
                 ],
                 "logo" => "/wp-content/themes/the-fastest/assets/img/climb.jpg",
-                "url" => "https://4geeksacademy.skills.fund/"
+                "url" => "https://climbcredit.com/4geeksacademy"
             ],
             "60" => [
                 "monthly" => 'NO deposit + $203.46 / month',
