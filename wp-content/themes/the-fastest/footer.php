@@ -33,8 +33,8 @@
                                         <a class="dropdown-item location-option" href="#" data-value="all">
                                             <span><strong>United States</strong> <?php wpas_get_inline_svg('assets/icons/flags/inline','united-states.svg'); ?></span>
                                             <address>
-                                                66 W Flagler Street, #900<br />
-                                                Miami, FL 33130<br />
+                                                1801 SW 3rd Av <br />
+                                                Miami, FL 33129<br />
                                                 <?php echo get_option('company-phone-number'); ?><br />
                                                 <?php echo get_option('company-email'); ?><br />
                                             </address> 
