@@ -64,4 +64,36 @@ return array(
     "el-nacional" => [],
     "maracaibo" => [],
     "impact-hub" => []
+    
+    "madrid-spain" => [
+        "upfront" => '5.499€',
+        "financed" => [
+            "6" => [
+                "monthly" => '499€ matrícula + 851€ / mes',
+                "message" => [
+                    "en" => "Thanks to our partnership with Quotanda we have managed to create a flexible placement plan",
+                    "es" => "Gracias a nuestro partnership con Quotanda hemos creado un plan de pagos felxible que es compatible con nuestras becas"
+                ],
+                "logo" => "/wp-content/themes/the-fastest/assets/img/quotanda.png"
+            ],
+            "12" => [
+                "monthly" => '499€ matrícula + 433€ / mes',
+                "message" => [
+                    "en" => "Thanks to our partnership with Quotanda we have managed to create a flexible placement plan",
+                    "es" => "Gracias a nuestro partnership con Quotanda hemos creado un plan de pagos felxible que es compatible con nuestras becas"
+                ],
+                "logo" => "/wp-content/themes/the-fastest/assets/img/quotanda.png"
+            ],
+            "24" => [
+                "monthly" => '499€ matrícula + 224€ / mes',
+                "message" => [
+                    "en" => "Thanks to our partnership with Quotanda we have managed to create a flexible placement plan",
+                    "es" => "Gracias a nuestro partnership con Quotanda hemos creado un plan de pagos felxible que es compatible con nuestras becas"
+                ],
+                "logo" => "/wp-content/themes/the-fastest/assets/img/quotanda.png"
+            ],
+            
+            ]
+        ]
+    ],
 );
